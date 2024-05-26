@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dominio.Usuario">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAASAAAAAQAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Persona">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAAAAAAgAAEgKgAgAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Plan">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Planes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Nivel">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Niveles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Ejercicio">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAgAAAAAAAgAABAAIAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Ejercicios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Local">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAACAAgAABAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Locales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

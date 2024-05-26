@@ -1,7 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Proyecto_GYM_WEB\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\zaske\\onedrive\\escritorio\\gym_atila\\dominio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 264,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +57,78 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Planes.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:22:27.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAgwE4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:18:03.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Locales.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:15:01.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Niveles.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T19:58:37.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T19:44:37.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
+              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-05-26T19:44:09.339Z"
             }
           ]
         },
