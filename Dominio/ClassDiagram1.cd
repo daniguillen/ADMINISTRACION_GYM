@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Nivel">
-    <Position X="10.5" Y="1" Width="1.5" />
+    <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Niveles.cs</FileName>
@@ -36,9 +36,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Local">
-    <Position X="8.5" Y="2.75" Width="1.5" />
+    <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAACAAgAABAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAACAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Locales.cs</FileName>
     </TypeIdentifier>
   </Class>

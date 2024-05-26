@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ACCIONES
 {
-    public class AccionNiveles
+    public class Controller
     {
     }
 }

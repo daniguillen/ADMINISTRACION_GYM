@@ -71,12 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
-    <Compile Include="AccionesEjercicio.cs" />
-    <Compile Include="AccionesLocal.cs" />
-    <Compile Include="AccionesPlanes.cs" />
-    <Compile Include="AccionesUsuario.cs" />
-    <Compile Include="AccionesPersona.cs" />
-    <Compile Include="AccionNiveles.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
