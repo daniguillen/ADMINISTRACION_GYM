@@ -18,12 +18,8 @@ namespace Dominio
             get; set;
         }
 
-        public int Property
-        {
-            get; set;
-        }
 
-        public int Cuil
+        public int Cuit
         {
             get; set;
         }

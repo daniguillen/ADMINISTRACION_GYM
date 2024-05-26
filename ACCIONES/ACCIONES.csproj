@@ -70,6 +70,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AccionesEjercicio.cs" />
+    <Compile Include="AccionesLocal.cs" />
+    <Compile Include="AccionesPlanes.cs" />
+    <Compile Include="AccionesUsuario.cs" />
+    <Compile Include="AccionesPersona.cs" />
+    <Compile Include="AccionNiveles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +87,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{8a13a5d9-6959-4a2f-a48b-d298ed488f25}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

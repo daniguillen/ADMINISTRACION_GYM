@@ -1,24 +1,27 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accionniveles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accioneslocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accionespersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accionesplanes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accionesejercicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\zaske\\onedrive\\escritorio\\gym_atila\\dominio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A13A5D9-6959-4A2F-A48B-D298ED488F25}|..\\Dominio\\Dominio.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\dominio\\locales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,31 +31,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 264,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Bookmark",
@@ -60,75 +43,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Planes.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Planes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "AccionNiveles.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionNiveles.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccionNiveles.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionNiveles.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccionNiveles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T20:22:27.136Z"
+              "WhenOpened": "2024-05-26T21:34:52.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccionesLocal.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesLocal.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccionesLocal.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesLocal.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccionesLocal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T21:33:24.874Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Persona.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Persona.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAgwE4AAAABAAAA",
+              "Title": "AccionesPersona.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesPersona.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccionesPersona.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesPersona.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccionesPersona.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T20:18:03.815Z"
+              "WhenOpened": "2024-05-26T21:32:25.547Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Locales.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Locales.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAbAAAA",
+              "Title": "AccionesPlanes.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesPlanes.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccionesPlanes.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesPlanes.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccionesPlanes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T20:15:01.512Z"
+              "WhenOpened": "2024-05-26T21:32:03.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Niveles.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Niveles.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAAAAAA",
+              "Title": "AccionesEjercicio.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesEjercicio.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccionesEjercicio.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccionesEjercicio.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccionesEjercicio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T19:58:37.16Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T19:44:37.508Z",
+              "WhenOpened": "2024-05-26T21:31:27.273Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ClassDiagram1.cd",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
-              "RelativeToolTip": "..\\..\\..\\..\\Escritorio\\GYM_ATILA\\Dominio\\ClassDiagram1.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2024-05-26T19:44:09.339Z"
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\AccesoDatos.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\AccesoDatos.cs",
+              "RelativeToolTip": "..\\ACCIONES\\AccesoDatos.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAAAcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T21:12:12.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Locales.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Dominio\\Locales.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Locales.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Dominio\\Locales.cs",
+              "RelativeToolTip": "..\\Dominio\\Locales.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:39:46.582Z",
+              "EditorCaption": ""
             }
           ]
         },
