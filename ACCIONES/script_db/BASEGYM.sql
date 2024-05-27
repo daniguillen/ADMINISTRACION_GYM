@@ -56,6 +56,15 @@ ID_GRUPO_MUSCULAR INT NOT NULL REFERENCES GRUPO_MUSCULAR(ID)
 )	
 
 GO
+CREATE TABLE ESTADO(
+ID INT PRIMARY KEY,
+DESCRIPCION VARCHAR(20),
+)
+GO
+CREATE TABLE SEXO(
+ID INT PRIMARY KEY,
+TIPO VARCHAR (20)
+)
 CREATE TABLE PERSONA
 (
 ID INT IDENTITY (1,1)PRIMARY KEY,
@@ -63,17 +72,17 @@ ID_USUARIO INT NOT NULL FOREIGN KEY REFERENCES USUARIO(ID),
 APELLIDO VARCHAR(100)NOT NULL,
 NOMBRE VARCHAR(100) NOT NULL,
 APTO_FISICO NVARCHAR(1000),
-CELULAR VARCHAR(50),
-DIRECCION NVARCHAR (500),
-DNI VARCHAR(50) UNIQUE,
-FECHA_INGRESO DATETIME,
-FECHA_NACIMIENTO DATETIME,
+CELULAR VARCHAR(50)NOT NULL,
+DIRECCION NVARCHAR (500)NOT NULL,
+DNI VARCHAR(50) NOT NULL UNIQUE,
+FECHA_INGRESO DATETIME NOT NULL,
+FECHA_NACIMIENTO DATETIME NOT NULL,
 FOTO NVARCHAR(1000),
 IDPLANES SMALLINT NOT NULL FOREIGN KEY REFERENCES PLANES(ID),
-SEXO CHAR ,
+SEXO INT FOREIGN KEY REFERENCES SEXO(ID),
 TEL_EMERGENCIA VARCHAR(50) NOT NULL,
 ID_ESTABLECIMIENTO INT NOT NULL FOREIGN KEY REFERENCES ESTABLECIMIENTO(ID),
-ESTADO BIT NOT NULL,
+ID_ESTADO INT NOT NULL FOREIGN KEY REFERENCES ESTADO(ID),
 IDNIVEL SMALLINT NOT NULL FOREIGN KEY REFERENCES NIVEL(ID),
 )
 GO
@@ -90,7 +99,19 @@ VALUES
 (2, 'Intermedio'),
 (3, 'Avanzado');
 GO
-
+INSERT INTO ESTADO(ID, DESCRIPCION)
+VALUES 
+(1, 'ACTIVO'),
+(2, 'BAJA'),
+(3, 'DEUDA');
+GO
+INSERT INTO SEXO(ID, TIPO)
+VALUES
+(1, 'MASCULINO'),
+(2, 'FEMININO'),
+(3, 'BINARIO'),
+(4, 'S/D');
+GO
 -- Insertar valores en PLANES
 INSERT INTO PLANES (ID, CUOTA, TIPO_PLAN, DESCRIPCION)
 VALUES 
@@ -181,38 +202,38 @@ VALUES
 GO
 
 -- Insertar valores en PERSONA
-INSERT INTO PERSONA (ID_USUARIO, APELLIDO, NOMBRE, APTO_FISICO, CELULAR, DIRECCION, DNI, FECHA_INGRESO, FECHA_NACIMIENTO, FOTO, IDPLANES, SEXO, TEL_EMERGENCIA, ID_ESTABLECIMIENTO, ESTADO, IDNIVEL)
+INSERT INTO PERSONA (ID_USUARIO, APELLIDO, NOMBRE, APTO_FISICO, CELULAR, DIRECCION, DNI, FECHA_INGRESO, FECHA_NACIMIENTO, FOTO, IDPLANES, SEXO, TEL_EMERGENCIA, ID_ESTABLECIMIENTO, ID_ESTADO, IDNIVEL)
 VALUES 
-(1, 'Pérez', 'Juan', 'Apto', '123-456-7890', 'Calle Principal 123', '12345677', '2022-01-01', '1990-01-01', 'foto1.jpg', 1, 'M', '123-456-7891', 1, 1, 1),
-(2, 'Gómez', 'María', 'Apto', '234-567-8901', 'Calle Norte 456', '23456789', '2022-02-01', '1992-02-02', 'foto2.jpg', 2, 'F', '234-567-8902', 2, 1, 1),
-(3, 'Rodríguez', 'Carlos', 'Apto', '345-678-9012', 'Calle Este 789', '34567892', '2022-03-01', '1988-03-03', 'foto3.jpg', 3, 'M', '345-678-9013', 1, 1, 1),
-(4, 'Fernández', 'Lucía', 'Apto', '456-789-0123', 'Calle Sur 101', '45678903', '2022-04-01', '1991-04-04', 'foto4.jpg', 1, 'F', '456-789-0124', 2, 1, 1),
-(5, 'López', 'Marta', 'Apto', '567-890-1234', 'Avenida Central 202', '56789013', '2022-05-01', '1987-05-05', 'foto5.jpg', 2, 'F', '567-890-1235', 1, 1, 1),
-(6, 'Martínez', 'Jorge', 'Apto', '678-901-2345', 'Calle Oeste 303', '67890123', '2022-06-01', '1993-06-06', 'foto6.jpg', 3, 'M', '678-901-2346', 2, 1, 1),
-(7, 'Sánchez', 'Ana', 'Apto', '789-012-3456', 'Calle Norte 404', '78901234', '2022-07-01', '1989-07-07', 'foto7.jpg', 1, 'F', '789-012-3457', 1, 1, 1),
-(8, 'Ramírez', 'Luis', 'Apto', '890-123-4567', 'Calle Este 505', '89012345', '2022-08-01', '1990-08-08', 'foto8.jpg', 2, 'M', '890-123-4568', 2, 1, 1),
-(9, 'Hernández', 'Laura', 'Apto', '901-234-5678', 'Calle Sur 606', '90123456', '2022-09-01', '1994-09-09', 'foto9.jpg', 3, 'F', '901-234-5679', 1, 1, 1),
-(10, 'García', 'Miguel', 'Apto', '012-345-6789', 'Avenida Principal 707', '01234567', '2022-10-01', '1985-10-10', 'foto10.jpg', 1, 'M', '012-345-6790', 2, 1, 1),
-(11, 'Ruiz', 'Sofía', 'Apto', '123-456-7890', 'Calle Oeste 808', '22222222', '2022-11-01', '1991-11-11', 'foto11.jpg', 2, 'F', '123-456-7891', 1, 1, 1),
-(12, 'Torres', 'Alberto', 'Apto', '234-567-8901', 'Calle Norte 909', '33333333', '2022-12-01', '1988-12-12', 'foto12.jpg', 3, 'M', '234-567-8902', 2, 1, 1),
-(13, 'Ramón', 'Carmen', 'Apto', '345-678-9012', 'Calle Sur 1010', '34567890', '2023-01-01', '1992-01-13', 'foto13.jpg', 1, 'F', '345-678-9013', 1, 1, 1),
-(14, 'Moreno', 'Javier', 'Apto', '456-789-0123', 'Avenida Central 1111', '45678901', '2023-02-01', '1990-02-14', 'foto14.jpg', 2, 'M', '456-789-0124', 2, 1, 1),
-(15, 'Rojas', 'Isabel', 'Apto', '567-890-1234', 'Calle Oeste 1212', '56789012', '2023-03-01', '1989-03-15', 'foto15.jpg', 3, 'F', '567-890-1235', 1, 1, 1),
-(16, 'Flores', 'Pedro', 'Apto', '678-901-2345', 'Calle Norte 1313', '67890124', '2023-04-01', '1988-04-16', 'foto16.jpg', 1, 'M', '678-901-2346', 2, 1, 1),
-(17, 'Vargas', 'Elena', 'Apto', '789-012-3456', 'Calle Este 1414', '78901235', '2023-05-01', '1993-05-17', 'foto17.jpg', 2, 'F', '789-012-3457', 1, 1, 2),
-(18, 'Díaz', 'Felipe', 'Apto', '890-123-4567', 'Calle Sur 1515', '89012346', '2023-06-01', '1991-06-18', 'foto18.jpg', 3, 'M', '890-123-4568', 2, 1, 3),
-(19, 'Álvarez', 'Raquel', 'Apto', '901-234-5678', 'Avenida Principal 1616', '90123457', '2023-07-01', '1994-07-19', 'foto19.jpg', 1, 'F', '901-234-5679', 1, 1, 1),
-(20, 'Romero', 'Tomás', 'Apto', '012-345-6789', 'Calle Oeste 1717', '01234561', '2023-08-01', '1985-08-20', 'foto20.jpg', 2, 'M', '012-345-6790', 2, 1, 2),
-(21, 'Navarro', 'Carla', 'Apto', '123-456-7890', 'Calle Norte 1818', '99999999', '2023-09-01', '1991-09-21', 'foto21.jpg', 3, 'F', '123-456-7891', 1, 1, 1),
-(22, 'Molina', 'Pablo', 'Apto', '234-567-8901', 'Calle Este 1919', '23456787', '2023-10-01', '1988-10-22', 'foto22.jpg', 1, 'M', '234-567-8902', 2, 1, 1),
-(23, 'Silva', 'Beatriz', 'Apto', '345-678-9012', 'Calle Sur 2020', '34567897', '2023-11-01', '1992-11-23', 'foto23.jpg', 2, 'F', '345-678-9013', 1, 1, 2),
-(24, 'Cruz', 'Andrés', 'Apto', '456-789-0123', 'Avenida Central 2121', '45678908', '2023-12-01', '1990-12-24', 'foto24.jpg', 3, 'M', '456-789-0124', 2, 1, 1),
-(25, 'Ortega', 'Sandra', 'Apto', '567-890-1234', 'Calle Oeste 2222', '56789018', '2024-01-01', '1989-01-25', 'foto25.jpg', 1, 'F', '567-890-1235', 1, 1, 1),
-(26, 'Castro', 'David', 'Apto', '678-901-2345', 'Calle Norte 2323', '67890129', '2024-02-01', '1993-02-26', 'foto26.jpg', 2, 'M', '678-901-2346', 2, 1, 2),
-(27, 'Ramos', 'Verónica', 'Apto', '789-012-3456', 'Calle Este 2424', '78901230', '2024-03-01', '1990-03-27', 'foto27.jpg', 3, 'F', '789-012-3457', 1, 1, 1),
-(28, 'Reyes', 'Francisco', 'Apto', '890-123-4567', 'Calle Sur 2525', '89012340', '2024-04-01', '1991-04-28', 'foto28.jpg', 1, 'M', '890-123-4568', 2, 1, 1),
-(29, 'Jiménez', 'Sonia', 'Apto', '901-234-5678', 'Avenida Principal 2626', '90123450', '2024-05-01', '1994-05-29', 'foto29.jpg', 2, 'F', '901-234-5679', 1, 1, 2),
-(30, 'Serrano', 'Alfredo', 'Apto', '012-345-6789', 'Calle Oeste 2727', '01234565', '2024-06-01', '1985-06-30', 'foto30.jpg', 3, 'M', '012-345-6790', 2, 1, 3);
+(1, 'Pérez', 'Juan', 'Apto', '123-456-7890', 'Calle Principal 123', '12345677', '2022-01-01', '1990-01-01', 'foto1.jpg', 1, 1, '123-456-7891', 1, 1, 1),
+(2, 'Gómez', 'María', 'Apto', '234-567-8901', 'Calle Norte 456', '23456789', '2022-02-01', '1992-02-02', 'foto2.jpg', 2, 1, '234-567-8902', 2, 1, 1),
+(3, 'Rodríguez', 'Carlos', 'Apto', '345-678-9012', 'Calle Este 789', '34567892', '2022-03-01', '1988-03-03', 'foto3.jpg', 3, 1, '345-678-9013', 1, 1, 1),
+(4, 'Fernández', 'Lucía', 'Apto', '456-789-0123', 'Calle Sur 101', '45678903', '2022-04-01', '1991-04-04', 'foto4.jpg', 1, 1, '456-789-0124', 2, 1, 1),
+(5, 'López', 'Marta', 'Apto', '567-890-1234', 'Avenida Central 202', '56789013', '2022-05-01', '1987-05-05', 'foto5.jpg', 2, 2, '567-890-1235', 1, 1, 1),
+(6, 'Martínez', 'Jorge', 'Apto', '678-901-2345', 'Calle Oeste 303', '67890123', '2022-06-01', '1993-06-06', 'foto6.jpg', 3, 2, '678-901-2346', 2, 1, 1),
+(7, 'Sánchez', 'Ana', 'Apto', '789-012-3456', 'Calle Norte 404', '78901234', '2022-07-01', '1989-07-07', 'foto7.jpg', 1, 1, '789-012-3457', 1, 1, 1),
+(8, 'Ramírez', 'Luis', 'Apto', '890-123-4567', 'Calle Este 505', '89012345', '2022-08-01', '1990-08-08', 'foto8.jpg', 2, 1, '890-123-4568', 2, 1, 1),
+(9, 'Hernández', 'Laura', 'Apto', '901-234-5678', 'Calle Sur 606', '90123456', '2022-09-01', '1994-09-09', 'foto9.jpg', 3, 2, '901-234-5679', 1, 1, 1),
+(10, 'García', 'Miguel', 'Apto', '012-345-6789', 'Avenida Principal 707', '01234567', '2022-10-01', '1985-10-10', 'foto10.jpg', 1, 3, '012-345-6790', 2, 1, 1),
+(11, 'Ruiz', 'Sofía', 'Apto', '123-456-7890', 'Calle Oeste 808', '22222222', '2022-11-01', '1991-11-11', 'foto11.jpg', 2, 4, '123-456-7891', 1, 1, 1),
+(12, 'Torres', 'Alberto', 'Apto', '234-567-8901', 'Calle Norte 909', '33333333', '2022-12-01', '1988-12-12', 'foto12.jpg', 3, 1, '234-567-8902', 2, 1, 1),
+(13, 'Ramón', 'Carmen', 'Apto', '345-678-9012', 'Calle Sur 1010', '34567890', '2023-01-01', '1992-01-13', 'foto13.jpg', 1, 1, '345-678-9013', 1, 1, 1),
+(14, 'Moreno', 'Javier', 'Apto', '456-789-0123', 'Avenida Central 1111', '45678901', '2023-02-01', '1990-02-14', 'foto14.jpg', 2, 1, '456-789-0124', 2, 1, 1),
+(15, 'Rojas', 'Isabel', 'Apto', '567-890-1234', 'Calle Oeste 1212', '56789012', '2023-03-01', '1989-03-15', 'foto15.jpg', 3, 2, '567-890-1235', 1, 1, 1),
+(16, 'Flores', 'Pedro', 'Apto', '678-901-2345', 'Calle Norte 1313', '67890124', '2023-04-01', '1988-04-16', 'foto16.jpg', 1, 1, '678-901-2346', 2, 1, 1),
+(17, 'Vargas', 'Elena', 'Apto', '789-012-3456', 'Calle Este 1414', '78901235', '2023-05-01', '1993-05-17', 'foto17.jpg', 2, 2, '789-012-3457', 1, 1, 2),
+(18, 'Díaz', 'Felipe', 'Apto', '890-123-4567', 'Calle Sur 1515', '89012346', '2023-06-01', '1991-06-18', 'foto18.jpg', 3, 1, '890-123-4568', 2, 1, 3),
+(19, 'Álvarez', 'Raquel', 'Apto', '901-234-5678', 'Avenida Principal 1616', '90123457', '2023-07-01', '1994-07-19', 'foto19.jpg', 1, 2, '901-234-5679', 1, 1, 1),
+(20, 'Romero', 'Tomás', 'Apto', '012-345-6789', 'Calle Oeste 1717', '01234561', '2023-08-01', '1985-08-20', 'foto20.jpg', 2, 2, '012-345-6790', 2, 1, 2),
+(21, 'Navarro', 'Carla', 'Apto', '123-456-7890', 'Calle Norte 1818', '99999999', '2023-09-01', '1991-09-21', 'foto21.jpg', 3, 1, '123-456-7891', 1, 1, 1),
+(22, 'Molina', 'Pablo', 'Apto', '234-567-8901', 'Calle Este 1919', '23456787', '2023-10-01', '1988-10-22', 'foto22.jpg', 1, 2, '234-567-8902', 2, 1, 1),
+(23, 'Silva', 'Beatriz', 'Apto', '345-678-9012', 'Calle Sur 2020', '34567897', '2023-11-01', '1992-11-23', 'foto23.jpg', 2, 2, '345-678-9013', 1, 1, 2),
+(24, 'Cruz', 'Andrés', 'Apto', '456-789-0123', 'Avenida Central 2121', '45678908', '2023-12-01', '1990-12-24', 'foto24.jpg', 3, 1, '456-789-0124', 2, 1, 1),
+(25, 'Ortega', 'Sandra', 'Apto', '567-890-1234', 'Calle Oeste 2222', '56789018', '2024-01-01', '1989-01-25', 'foto25.jpg', 1, 2, '567-890-1235', 1, 1, 1),
+(26, 'Castro', 'David', 'Apto', '678-901-2345', 'Calle Norte 2323', '67890129', '2024-02-01', '1993-02-26', 'foto26.jpg', 2, 1, '678-901-2346', 2, 1, 2),
+(27, 'Ramos', 'Verónica', 'Apto', '789-012-3456', 'Calle Este 2424', '78901230', '2024-03-01', '1990-03-27', 'foto27.jpg', 3, 2, '789-012-3457', 1, 1, 1),
+(28, 'Reyes', 'Francisco', 'Apto', '890-123-4567', 'Calle Sur 2525', '89012340', '2024-04-01', '1991-04-28', 'foto28.jpg', 1, 1, '890-123-4568', 2, 1, 1),
+(29, 'Jiménez', 'Sonia', 'Apto', '901-234-5678', 'Avenida Principal 2626', '90123450', '2024-05-01', '1994-05-29', 'foto29.jpg', 2, 2, '901-234-5679', 1, 1, 2),
+(30, 'Serrano', 'Alfredo', 'Apto', '012-345-6789', 'Calle Oeste 2727', '01234565', '2024-06-01', '1985-06-30', 'foto30.jpg', 3, 1, '012-345-6790', 2, 1, 3);
 GO
 
 -- Insertar valores en RUTINA
