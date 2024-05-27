@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="script_db\BASEGYM.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
