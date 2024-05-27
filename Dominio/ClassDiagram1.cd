@@ -3,21 +3,21 @@
   <Class Name="Dominio.Usuario">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAASAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAACAAAAAQAAAAA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Persona">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAEAAAAAAAgAAEgKgAgAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAAAAAgAAEgKgAgAAAQAkAAAAAABAARAACAAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Plan">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAABAAAAABAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Planes.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,18 +28,60 @@
       <FileName>Niveles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Dominio.Ejercicio">
+  <Class Name="Dominio.TipoEjercicio">
     <Position X="1" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAgAAAAAAAgAABAAIAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Ejercicios.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoEjercicio.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Dominio.Local">
+  <Class Name="Dominio.Establecimiento">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAACAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAgAAAACAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Locales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Sexo">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Rutina">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAgAAoAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rutina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Ejercicio">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAgAAAAAAAgAABAAACAAAAAAAAAAAAABg=</HashCode>
+      <FileName>Ejercicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.GrupoMuscular">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrupoMuscular.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Dificultad">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dificultad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Estado">
+    <Position X="6" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estado.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

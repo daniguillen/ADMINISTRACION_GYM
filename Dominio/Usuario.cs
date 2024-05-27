@@ -8,24 +8,11 @@ namespace Dominio
 {
     public class Usuario
     {
-        public string Mail
-        {
-            get; set;
-        }
+        public string Mail {get; set;}
 
-        public int IDUsuario
-        {
-            get; set;
-        }
+        public int ID {get; set;}
 
-        public System.Web.Configuration.FormsAuthPasswordFormat Password
-        {
-            get; set;
-        }
+        public System.Web.Configuration.FormsAuthPasswordFormat Password {get; set;}
 
-        public int IDNivel
-        {
-            get; set;
-        }
     }
 }

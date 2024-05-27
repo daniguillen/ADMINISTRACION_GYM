@@ -8,14 +8,8 @@ namespace Dominio
 {
     public class Nivel
     {
-        public int ID
-        {
-            get; set;
-        }
+        public int ID {get; set;}
 
-        public int level
-        {
-            get; set;
-        }
+        public string level {get; set;}
     }
 }
