@@ -124,6 +124,10 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="VistaMisEntrenamientos.aspx" />
+    <Content Include="VistaPerfilUsuarioCliente.aspx" />
+    <Content Include="RegistroPersona.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -182,6 +186,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VistaUsuarioCliente.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -213,7 +218,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaMisEntrenamientos.aspx.cs">
+      <DependentUpon>VistaMisEntrenamientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaMisEntrenamientos.aspx.designer.cs">
+      <DependentUpon>VistaMisEntrenamientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPerfilUsuarioCliente.aspx.cs">
+      <DependentUpon>VistaPerfilUsuarioCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaPerfilUsuarioCliente.aspx.designer.cs">
+      <DependentUpon>VistaPerfilUsuarioCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroPersona.aspx.cs">
+      <DependentUpon>RegistroPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroPersona.aspx.designer.cs">
+      <DependentUpon>RegistroPersona.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +267,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuarioCliente.aspx.cs">
+      <DependentUpon>VistaUsuarioCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaUsuarioCliente.aspx.designer.cs">
+      <DependentUpon>VistaUsuarioCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
