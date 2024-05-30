@@ -21,6 +21,11 @@
         </div>
     </nav>
 
+
+    <asp:Label Text="text" ID="lblSaludoUser" runat="server" />
+
+
+
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
