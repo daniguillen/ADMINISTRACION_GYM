@@ -1,11 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VistaUsuarioCliente.aspx.cs" Inherits="Proyecto_GYM_WEB.VistaUsuarioCliente" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="NavbarUsuarios" ContentPlaceHolderID="NavbarUsuarios" runat="server">
 
-
-
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">NOMBREGYM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +12,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="VistaPerfilUsuarioCliente.aspx">Mi perfil</a>
                     <a class="nav-link active" href="VistaMisEntrenamientos.aspx">Mis Entrenamientos</a>
-                    <a class="btn btn-dark" href="Login.aspx">Cerrar Sesion</a>
+                    <a class="btn btn-danger" href="Login.aspx">Cerrar Sesion</a>
                 </div>
             </div>
         </div>

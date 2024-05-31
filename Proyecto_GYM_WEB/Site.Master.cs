@@ -11,7 +11,12 @@ namespace Proyecto_GYM_WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Prueba para sacar navbarMaster en otras paginas
+            // string NavbarOcultoParaPaginas= System.IO.Path.GetFileName(Request.Url.AbsolutePath);
+            //   if(NavbarOcultoParaPaginas == "VistaUsuarioCliente.aspx")
+            //  {
+            //      NavbarPanel.Visible = false;
+            //  }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Dominio
 
         public string Direccion { get; set;}
 
-        public SqlDateTime Fecha_Nacimiento { get; set;}
+        public DateTime Fecha_Nacimiento { get; set;}
 
         public int Sexo { get; set;}
 
@@ -30,7 +30,7 @@ namespace Dominio
 
         public string Cel { get; set; }
 
-        public SqlDateTime Fecha_ingreso { get; set; }
+        public DateTime Fecha_ingreso { get; set; }
 
         public int ID_Planes { get; set;}
 

@@ -14,5 +14,9 @@ namespace Dominio
 
         public System.Web.Configuration.FormsAuthPasswordFormat Password {get; set;}
 
+        public Nivel nivel = new Nivel();
+
     }
+
+
 }

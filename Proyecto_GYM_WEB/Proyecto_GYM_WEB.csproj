@@ -130,6 +130,7 @@
     <Content Include="VistaEntrenador-Usu-AsignarRutina.aspx" />
     <Content Include="VistaEntrenador-Usuarios.aspx" />
     <Content Include="VistaMisEntrenamientos.aspx" />
+    <Content Include="VistaPerfilEntrenador.aspx" />
     <Content Include="VistaPerfilUsuarioCliente.aspx" />
     <Content Include="RegistroPersona.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="VistaMisEntrenamientos.aspx.designer.cs">
       <DependentUpon>VistaMisEntrenamientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPerfilEntrenador.aspx.cs">
+      <DependentUpon>VistaPerfilEntrenador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaPerfilEntrenador.aspx.designer.cs">
+      <DependentUpon>VistaPerfilEntrenador.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaPerfilUsuarioCliente.aspx.cs">
       <DependentUpon>VistaPerfilUsuarioCliente.aspx</DependentUpon>

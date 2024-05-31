@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %>  APP GYM ASP.NET</title>
@@ -13,10 +13,9 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 <body>
     <form runat="server">
@@ -38,6 +37,12 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+
+        <!-- <asp:Panel ID="NavbarPanel" runat="server">--Prueba para sacar navbarMaster en otras paginas-->
+
+            <asp:ContentPlaceHolder ID="NavbarUsuarios" runat="server">
+
+            <asp:ContentPlaceHolder ID="NavbarEntrenador" runat="server">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
@@ -55,6 +60,13 @@
                 </div>
             </div>
         </nav>
+            </asp:ContentPlaceHolder>
+            </asp:ContentPlaceHolder>
+        <!-- </asp:Panel> -->
+
+
+
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
