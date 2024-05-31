@@ -11,9 +11,11 @@ namespace Proyecto_GYM_WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //Capturo el valor: "PRUEBA"
-          // string user = Request.QueryString["txtNombre_Ingreso"].ToString();
-          //  lblSaludoUser.Text = user + "Tu ingreso fue existoso";
+            string a = "b";
+            Session["navbar"] = a;
+            //Capturo el valor: "PRUEBA"
+            // string user = Request.QueryString["txtNombre_Ingreso"].ToString();
+            //  lblSaludoUser.Text = user + "Tu ingreso fue existoso";
         }
     }
 }
