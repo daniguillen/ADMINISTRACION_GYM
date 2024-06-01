@@ -16,6 +16,7 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="ccs/StyleSheet1.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -38,31 +39,67 @@
             </Scripts>
         </asp:ScriptManager>
 
-      <asp:ContentPlaceHolder ID=NavbarUsuarios runat=server>
+        <asp:ContentPlaceHolder ID="NavbarUsuarios" runat="server">
         </asp:ContentPlaceHolder>
 
-       <asp:ContentPlaceHolder ID="NavbarEntrenador" runat="server">
-         </asp:ContentPlaceHolder>  
-        
-           <asp:ContentPlaceHolder ID="Navbardefault" runat="server">
-             </asp:ContentPlaceHolder>
-       
+        <asp:ContentPlaceHolder ID="NavbarEntrenador" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <%if (Session["navbar"].ToString() != "b" && Session["navbar"].ToString() != "c")
+            {  %>
+        <nav class="navbar  navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark  navPersonalizado">
+            <div class="container  justify-content-xl-between " id="containe">
+                
+            <a class="navbar-brand logo" runat="server" href="~/">GYM</a>
+
+              
+                
+
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse  d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Default">INICIO</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/About">NOSOTROS</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">PLANES</a></li>
+                            <li class="nav-item"><a href="Login.aspx?id" class="btn btn-success me-2">BLOG</a></li>
+                            <li class="nav-item"><a href="Login.aspx?id" class="btn btn-success me-2">REGISTRO</a></li>
+                            <li class="nav-item"><a href="Login.aspx?id" class="btn btn-success me-2">INGRESAR</a></li>
+
+                        </ul>
+                    </div>
+                
+            </div>
+
+        </nav>
+
+
+
+
+        <%} %>
         <!-- </asp:Panel> -->
 
 
+        <!-- 
+            
+            
+            
+
+            -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
 
 
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - APP GYM ASP.NET</p>
-            </footer>
-        </div>
     </form>
+
+
+
+
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/FuncionesInternas.js ") %>
     </asp:PlaceHolder>
 </body>
 </html>

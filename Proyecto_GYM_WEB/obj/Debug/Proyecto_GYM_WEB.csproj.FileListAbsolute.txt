@@ -310,3 +310,9 @@ C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\Proyecto_GYM_WEB\o
 C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\Proyecto_GYM_WEB\obj\Debug\Proyecto.F0691337.Up2Date
 C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\Proyecto_GYM_WEB\obj\Debug\Proyecto_GYM_WEB.dll
 C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\Proyecto_GYM_WEB\obj\Debug\Proyecto_GYM_WEB.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\ACCIONES.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\Dominio.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\ACCIONES.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\ACCIONES.dll.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\Dominio.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\Proyecto_GYM_WEB\bin\Dominio.dll.config
