@@ -103,8 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Assets\cali.png" />
     <Content Include="Assets\IMG.jpg" />
     <Content Include="Assets\Img2.png" />
+    <Content Include="Assets\Mancuernas.png" />
+    <Content Include="Assets\pila.png" />
+    <Content Include="Assets\spining.png" />
     <Content Include="ccs\StyleSheet1.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />

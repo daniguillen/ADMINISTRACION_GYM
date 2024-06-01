@@ -1,47 +1,204 @@
 ﻿body, li, a {
-    list-style:none;
-    text-decoration:none;
-   
-   
+    list-style: none;
+    text-decoration: none;
 }
+
 main {
     background-color: black;
     max-width: 100vw;
     overflow: hidden;
 }
-    a:hover {
-        text-decoration: none;
-    }
-    li:hover {
-        text-decoration: none;
-    }
+
+a:hover {
+    text-decoration: none;
+}
+
+li:hover {
+    text-decoration: none;
+}
 
 
-h1,h3, span, small, p, li, a {
+h1, h3, span, small, p, li, a {
     color: #74EB1E;
 }
-.navPersonalizado {
-border-radius:0;
+
+h2 {
+    font-weight: bold;
+    color: black;
 }
-.navPersonalizado {
-padding-right:3em;
-box-sizing:border-box;
+
+h5 {
+    color: white;
 }
+
+.navPersonalizado {
+    border-radius: 0;
+}
+
+.navPersonalizado {
+    box-sizing: border-box;
+    background: linear-gradient(to left, #74EB1E, #2C6D00);
+    min-width: 100%;
+}
+
 #containe {
     margin: 0 !important;
     min-width: 100%;
-    
 }
-.navbar {
-padding:0 ;
+
+.container {
+    margin-top: 6em;
+    margin-bottom: 6em;
 }
+
+
 .navbar {
+    padding: 0;
+    border: none;
+}
+
+.navbar {
+}
+
+.egg {
+    --size: 130%;
+    background: var(--gradient);
+    width: var(--size);
+    height: 150px;
+    border-radius: 50% 0 50% 0;
+}
+
+footer {
+    height: 4em;
     background: linear-gradient(to left, #74EB1E, #2C6D00);
 }
-.egg {
-    width: 150px;
-    height: 200px;
-    border-radius: 50% / 60% 60% 40% 40%;
+
+.card {
+    background: linear-gradient(to left, #74EB1E,#20420C);
+    border: none;
+  
+    border-radius: 15px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.precio {
+    color: ghostwhite;
+    text-align: center;
+}
+
+    .precio span {
+        color: ghostwhite;
+    }
+
+.parrafoNosotro {
+    font-size: 30px;
+}
+
+.containerAcerca {
+    margin-top: 6em;
+    width: 100%;
+    margin-bottom: 6em;
+}
+
+.containerAcerca2 {
+    width: 60%;
+}
+
+    .containerAcerca2 p {
+        text-align: justify;
+        padding-left: 5em;
+        padding-right: 5em;
+        box-sizing: border-box;
+    }
+
+.SubContainerAcerca h3 {
+    font-size: 35px;
+}
+
+.SubContainerAcerca {
+    align-items: center;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.tranformar {
+    opacity: 0; /* Comienza invisible */
+    transform: translateX(-100%);
+    transition: transform 1s, opacity 1s;
+}
+
+    .tranformar.slide-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+
+.imagen {
+
+padding:0
 
 }
 
+.imagen img{
+    margin-bottom:5em;
+    min-width:90%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 994px) {
+    .egg {
+        --size: 130.2%;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 3em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .egg {
+        --size: 105%; /* Ajusta según tu diseño */
+        position: absolute;
+        left: -10px; /* Mueve el elemento 20px hacia la izquierda */
+    }
+    .card {
+        width: 90%;
+        margin-bottom: 3em;
+        position: relative;
+        height: 30em;
+    }
+    .card-body {
+        position: absolute;
+        bottom: 0;
+    }
+
+
+
+
+}
