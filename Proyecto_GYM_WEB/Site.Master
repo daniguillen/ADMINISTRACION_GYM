@@ -47,8 +47,8 @@
 
         <%if (Session["navbar"].ToString() != "b" && Session["navbar"].ToString() != "c")
             {  %>
-        <nav class="navbar  navbar-expand-sm navbar-toggleable-sm navbar-dark navPersonalizado">
-            <div class="container  justify-content-xl-between " id="containe">
+        <nav class="navbar  navbar-expand-sm navbar-toggleable-sm navbar-dark navPersonalizado mb-0">
+            <div class="container  justify-content-xl-between  " id="containe">
                 
             <a class="navbar-brand logo" runat="server" href="~/">GYM</a>
 
