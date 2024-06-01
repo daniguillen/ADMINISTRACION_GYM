@@ -3,8 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        
+        <img src="Assets/Img2.png" />
 
+      
      
     </main>
 

@@ -27,5 +27,7 @@ box-sizing:border-box;
 .navbar {
 padding:0 ;
 }
-
+.navbar {
+    background: linear-gradient(to left, #74EB1E, #2C6D00);
+}
 
