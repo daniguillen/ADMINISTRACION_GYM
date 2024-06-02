@@ -12,16 +12,18 @@ namespace Proyecto_GYM_WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Session["navbar"].ToString() == "c") { 
-            NavbarUsuarios.Controls.Add(LoadNavbarEntrenador());
-            }
-            else if(Session["navbar"].ToString() == "b")
+            if (!IsPostBack)
             {
+                if (Session["navbar"].ToString() == "c")
+                {
+                    NavbarUsuarios.Controls.Add(LoadNavbarEntrenador());
+                }
+                else if (Session["navbar"].ToString() == "b")
+                {
 
-                NavbarUsuarios.Controls.Add(LoadNavbarUsuario());
+                    NavbarUsuarios.Controls.Add(LoadNavbarUsuario());
+                }
             }
-            
 
 
 

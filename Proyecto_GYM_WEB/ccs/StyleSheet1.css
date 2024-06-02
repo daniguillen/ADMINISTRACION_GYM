@@ -18,8 +18,12 @@ li:hover {
 }
 
 
-h1, h3, span, small, p, li, a {
-    color: #74EB1E;
+h1, h3, p {
+    background: linear-gradient(to left, #74EB1E, #2C6D00);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 h2 {
@@ -156,6 +160,10 @@ padding:0
     min-width:90%
 }
 
+.noticias{
+
+    max-width:600px
+}
 
 
 
@@ -197,7 +205,16 @@ padding:0
         position: absolute;
         bottom: 0;
     }
-
+    .LblInformacion {
+        max-width: 60%;
+        height: 5em;
+        background: linear-gradient(to left,#fcfc90, #E3C912);
+    }
+    .informacion {
+        display: flex;
+        justify-content: center;
+       
+    }
 
 
 
