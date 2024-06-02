@@ -11,7 +11,8 @@ namespace Proyecto_GYM_WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string a = "c";
+            Session["navbar"] = a;
         }
     }
 }
