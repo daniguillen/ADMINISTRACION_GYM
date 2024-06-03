@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Assets\brazo2.png" />
     <Content Include="Assets\cali.png" />
     <Content Include="Assets\IMG.jpg" />
     <Content Include="Assets\Img2.png" />
@@ -137,7 +138,7 @@
     <Content Include="VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador-EntrenamientosABM.aspx" />
     <Content Include="VistaEntrenador-Usu-AsignarRutina.aspx" />
-    <Content Include="VistaEntrenador-Usuarios.aspx" />
+    <Content Include="VistaEntrenador-DetalleABM.aspx" />
     <Content Include="VistaMisEntrenamientos.aspx" />
     <Content Include="VistaPerfilEntrenador.aspx" />
     <Content Include="VistaPerfilUsuarioCliente.aspx" />
@@ -261,12 +262,12 @@
     <Compile Include="VistaEntrenador-Usu-AsignarRutina.aspx.designer.cs">
       <DependentUpon>VistaEntrenador-Usu-AsignarRutina.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistaEntrenador-Usuarios.aspx.cs">
-      <DependentUpon>VistaEntrenador-Usuarios.aspx</DependentUpon>
+    <Compile Include="VistaEntrenador-DetalleABM.aspx.cs">
+      <DependentUpon>VistaEntrenador-DetalleABM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistaEntrenador-Usuarios.aspx.designer.cs">
-      <DependentUpon>VistaEntrenador-Usuarios.aspx</DependentUpon>
+    <Compile Include="VistaEntrenador-DetalleABM.aspx.designer.cs">
+      <DependentUpon>VistaEntrenador-DetalleABM.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaMisEntrenamientos.aspx.cs">
       <DependentUpon>VistaMisEntrenamientos.aspx</DependentUpon>

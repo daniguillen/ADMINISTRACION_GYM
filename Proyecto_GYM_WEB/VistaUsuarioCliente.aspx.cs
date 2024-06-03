@@ -23,7 +23,7 @@ namespace Proyecto_GYM_WEB
             Session["navbar"] = a;
                        
             Controller controller = new Controller();
-             Perfil=controller.Cliente(1);
+            Perfil=controller.Cliente(1);
             Plan.ID = Perfil.ID_Plan;
             Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
             

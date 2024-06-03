@@ -10,9 +10,9 @@ namespace ACCIONES
 {
     public class Controller
     {
-        public List<Usuario> listar_Clientes() 
+        public List<Usuario> listar_Clientes()
         {
-            List<Usuario> Aux=new List<Usuario>();
+            List<Usuario> Aux = new List<Usuario>();
 
             return Aux;
         }
@@ -27,7 +27,7 @@ namespace ACCIONES
 
             while (datos.Lector.Read())
             {
-              
+
             }
 
             datos.cerrarConexion();
@@ -35,25 +35,25 @@ namespace ACCIONES
 
         }
 
-        public Usuario Cliente( int idusuario)
+        public Usuario Cliente(int idusuario)
         {
             AccesoDatos accesoDatos = new AccesoDatos();
-           
+
 
             try
             {
                 accesoDatos.setearQuery("SELECT  u.ID, u.MAIL, p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, p.FOTO, p.DNI, p.APTO_FISICO, \r\np.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, p.ID_ESTABLECIMIENTO , p.ESTADO, p.IDNIVEL,\r\nR.ID AS ID_RUTINA , d.NOMBRE_DIA, R.ID_EJERCICIO FROM PERSONA p \r\nINNER JOIN USUARIO u on u.ID=p.ID \r\ninner join RUTINA r on r.ID_PERSONA=p.ID \r\ninner join DIA d on r.DIA=d.ID    \r\nWHERE P.ID=1");
                 accesoDatos.setearParametro("@ID", idusuario);
                 accesoDatos.ejecutarLectura();
-                
-                Usuario aux= new Usuario();
+
+                Usuario aux = new Usuario();
                 int id_ant = -1;
 
-                while (accesoDatos.Lector.Read()){
+                while (accesoDatos.Lector.Read()) {
 
-                    if (accesoDatos.Lector.GetInt32(0)== idusuario) { 
+                    if (accesoDatos.Lector.GetInt32(0) == idusuario) {
 
-                    int id = accesoDatos.Lector.GetInt32(0);
+                        int id = accesoDatos.Lector.GetInt32(0);
                         if (id != id_ant)
                         {
                             aux.ID = id;
@@ -73,10 +73,10 @@ namespace ACCIONES
                             aux.ID_Establecimiento = accesoDatos.Lector.GetInt32(14);
                             aux.Estado = accesoDatos.Lector.GetBoolean(15);
                             aux.ID_Nivel = accesoDatos.Lector.GetInt16(16);
-                           
+
                             id_ant = id;
                         }
-                        Rutina auxRutina=new Rutina();
+                        Rutina auxRutina = new Rutina();
 
                         auxRutina.ID = accesoDatos.Lector.GetInt32(17);
                         auxRutina.Dia = accesoDatos.Lector.GetString(18);
@@ -86,9 +86,9 @@ namespace ACCIONES
 
 
                 }
-                    return aux;
+                return aux;
 
-                
+
 
             }
             catch (Exception ex)
@@ -115,6 +115,9 @@ namespace ACCIONES
                 while (datos.Lector.Read())
                 {
                     Ejercicio ejercicio = new Ejercicio();
+                    ejercicio.Tipo_Ejercicio = new TipoEjercicio();
+                    ejercicio.Tipo_Dificultad = new Dificultad();
+                    ejercicio.Grupo_Muscular = new GrupoMuscular();
                     ejercicio.ID = datos.Lector.GetInt32(0);
                     ejercicio.Descripcion = datos.Lector.GetString(1);
                     ejercicio.Nombre = datos.Lector.GetString(2);
@@ -131,7 +134,7 @@ namespace ACCIONES
                     aux.Add(ejercicio);
 
                 }
-               return aux;
+                return aux;
             }
             catch (Exception ex)
             {
@@ -166,7 +169,7 @@ namespace ACCIONES
                 }
                 return Aux;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -174,6 +177,42 @@ namespace ACCIONES
             {
                 datos.cerrarConexion();
             }
+
         }
+
+        public List<GrupoMuscular> ListarGrupoMuscular()
+        {
+            AccesoDatos datos = new AccesoDatos ();
+
+            try
+            {
+                List<GrupoMuscular> aux = new List<GrupoMuscular>();
+                datos.setearQuery("Select * from GRUPO_MUSCULAR ");
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read()) 
+                {
+                    GrupoMuscular grupoMusc = new GrupoMuscular(); 
+                    grupoMusc.ID= datos.Lector.GetInt32(0);
+                    grupoMusc.Descripcion = datos.Lector.GetString(1);
+
+                    aux.Add(grupoMusc);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
+
+
     }
 }
