@@ -39,73 +39,43 @@
 
     </div>
     <div class="container">
-        <div class="row">
+        <table class="table">
+          <thead >   
+            <tr>
+                <th></th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+            </tr>
+            <tr>
+                <td>1:00</td>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$ejercicio
 
-           
-            <div class="col-2">
-                <h3>Lunes</h3>
-                <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Martes</h3>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Miercoles</h3>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Jueves</h3>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Viernes</h3>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Sabado</h3>
-                 <p>crosffit</p> <img src="#" alt="Alternate Text" />
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-            <div class="col-1">
-                <h3>Domingo</h3>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-                 <p>crosffit</p>
-            </div>
-           
+ 
 
+                    <br />
+                    Hora: $horario
 
-        </div>
+                </td>
+                <td>$100</td>
+                <td>$100</td>
+                <td>$100</td>
+                <td>$100</td>
+            </tr>
+              </thead>
+        </table>
 
 
     </div>
+
+
+
 
 
 
