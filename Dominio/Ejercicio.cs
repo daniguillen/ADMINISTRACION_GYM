@@ -16,13 +16,13 @@ namespace Dominio
 
         public int Repeticiones {get; set;}
 
-        public int ID_Tipo {get; set;}
+        public TipoEjercicio Tipo_Ejercicio {get; set;}
 
-        public int ID_Dificultad {get; set;}
+        public Dificultad Tipo_Dificultad {get; set;}
 
         public string Video {get; set;}
 
-        public int ID_Grupo_Muscular {get; set;}
+        public GrupoMuscular Grupo_Muscular {get; set;}
 
 
     }

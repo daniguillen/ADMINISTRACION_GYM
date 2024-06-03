@@ -6,12 +6,15 @@ using System.ComponentModel;
 
 namespace Dominio
 {
-    public class Usuario
+    public class Usuario : Persona
     {
+
+       public Usuario()
+        {
+            Persona Persona = new Persona();
+        }
         public string Mail {get; set;}
-
-        public int ID {get; set;}
-
+               
         public System.Web.Configuration.FormsAuthPasswordFormat Password {get; set;}
 
         public Nivel nivel = new Nivel();

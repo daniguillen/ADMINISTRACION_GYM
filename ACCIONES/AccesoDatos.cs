@@ -34,6 +34,12 @@ namespace ACCIONES
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = sp;
         }
+        
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue( nombre, valor);
+        }
+        
         public void ejecutarLectura()
         {
             comando.Connection = conexion;

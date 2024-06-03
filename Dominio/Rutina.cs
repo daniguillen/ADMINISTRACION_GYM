@@ -12,8 +12,7 @@ namespace Dominio
 
         public int ID_Ejercicio {get; set;}
 
-        public DateTime Dia {get; set;}
+        public string Dia {get; set;}
 
-        public int ID_Persona {get; set;}
     }
 }
