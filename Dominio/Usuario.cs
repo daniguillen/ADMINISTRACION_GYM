@@ -15,7 +15,7 @@ namespace Dominio
         }
         public string Mail {get; set;}
                
-        public System.Web.Configuration.FormsAuthPasswordFormat Password {get; set;}
+        public string Password {get; set;}
 
         public Nivel nivel = new Nivel();
 

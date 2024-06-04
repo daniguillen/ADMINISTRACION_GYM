@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
+    <main class="mainDefaul">
 
         <img class="img-fluid" src="Assets/Img2.png" />
 

@@ -50,5 +50,6 @@ namespace Dominio
         public int ID_Nivel { get; set; }
 
         public List<Rutina> rutina { get; set; }
+        
     }
 }

@@ -17,6 +17,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="ccs/StyleSheet1.css" rel="stylesheet" />
+    <link href="ccs/styles.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -35,6 +36,7 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+                
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -100,6 +102,13 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
         <%: Scripts.Render("~/Scripts/FuncionesInternas.js ") %>
+
+
+
+
+
+        <%: Scripts.Render("~/Scripts/scripts.js") %>
+<%: Scripts.Render("~/Scripts/datatables-simple-demo.js ") %>
     </asp:PlaceHolder>
 </body>
 </html>

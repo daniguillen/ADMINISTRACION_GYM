@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_GYM_WEB
+namespace Proyecto_GYM_WEB.VistasAministrador
 {
 
 
-    public partial class VistaEntrenador_Clases
+    public partial class AdministradorGeneral
     {
     }
 }

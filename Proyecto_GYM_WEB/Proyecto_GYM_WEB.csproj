@@ -111,6 +111,7 @@
     <Content Include="Assets\pila.png" />
     <Content Include="Assets\spining.png" />
     <Content Include="Assets\usuario.png" />
+    <Content Include="ccs\styles.css" />
     <Content Include="ccs\StyleSheet1.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -130,11 +131,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="datatables-simple-demo.js" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="scripts.js" />
+    <Content Include="Scripts\datatables-simple-demo.js" />
     <Content Include="Scripts\FuncionesInternas.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador-EntrenamientosABM.aspx" />
     <Content Include="VistaEntrenador-Usu-AsignarRutina.aspx" />
@@ -202,6 +207,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VistaPrincipalEntrenador.aspx" />
+    <Content Include="VistasAministrador\AdministradorGeneral.aspx" />
     <Content Include="VistaUsuarioCliente.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -325,6 +331,13 @@
     </Compile>
     <Compile Include="VistaPrincipalEntrenador.aspx.designer.cs">
       <DependentUpon>VistaPrincipalEntrenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistasAministrador\AdministradorGeneral.aspx.cs">
+      <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistasAministrador\AdministradorGeneral.aspx.designer.cs">
+      <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaUsuarioCliente.aspx.cs">
       <DependentUpon>VistaUsuarioCliente.aspx</DependentUpon>

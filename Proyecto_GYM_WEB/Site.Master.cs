@@ -10,10 +10,12 @@ namespace Proyecto_GYM_WEB
 {
     public partial class SiteMaster : MasterPage
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                
                 if (Session["navbar"] != null && Session["navbar"].ToString() == "c")
                 {
                     NavbarUsuarios.Controls.Add(LoadNavbarEntrenador());

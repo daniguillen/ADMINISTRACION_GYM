@@ -4,9 +4,12 @@
 }
 
 main {
-    background-color: black;
+   
     max-width: 100vw;
     overflow: hidden;
+}
+.mainDefaul {
+    background-color:black;
 }
 
 a:hover {

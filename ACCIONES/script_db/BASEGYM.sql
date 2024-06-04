@@ -93,6 +93,16 @@ ID_EJERCICIO INT FOREIGN KEY REFERENCES EJERCICIO(ID),
 DIA INT NOT NULL FOREIGN KEY REFERENCES DIA(ID),
 ID_PERSONA INT FOREIGN KEY REFERENCES PERSONA(ID),
 )
+GO
+create table dia2 (
+Lunes varchar (100),
+Martes varchar (100),
+Miercoles varchar (100),
+Jueves varchar (100),
+Viernes varchar (100),
+Sabado varchar (100),
+Domingo varchar (100)
+)
 -- Insertar valores en NIVEL
 INSERT INTO NIVEL (ID, LEVEL)
 VALUES 
