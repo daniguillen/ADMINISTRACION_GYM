@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="AdministradorGeneral.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorGeneral" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid px-4 bg-custom-dark">
+    <div class="container-fluid  px-4 bg-custom-dark">
         <h1 class="mt-4">Tables</h1>
         <ul class="breadcrumb mb-4">
             <li class="breadcrumb-item">Entrenadores</li>
@@ -13,12 +13,12 @@
             </span>
         </div>
         <div class="card mb-4 ">
-            <div class="card-header">
-                <i class="fas fa-table me-1"></i>
+            <div class="card-header   ">
+                <i class="fas fa-table me-1 "></i>
                 DataTable Example
             </div>
-            <div class="card-body">
-                <table id="datatablesSimple" class="table table-striped table-bordered">
+            <div class="card-body ">
+                <table id="datatablesSimple" class="table table-striped table-bordered bg-light    ">
                     <thead>
                         <tr>
                             <th>Dni</th>
@@ -32,6 +32,7 @@
                             <th>Sexo</th>
                             <th>Fecha Ingreso</th>
                             <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
 
@@ -50,6 +51,12 @@
                             <th><%= usuario.Sexo %></th>
                             <th><%= usuario.Fecha_ingreso.Day + " / "+usuario.Fecha_ingreso.Month + " / " +usuario.Fecha_ingreso.Year %></th>
                             <th><%= usuario.Estado.ToString()=="True"?"Activo":"Inactivo" %></th>
+                            <th><a href="AdministradorEditarUsuario.aspx?id=<%=usuario.ID %>" class="btn btn-secondary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="bottom-0" >Editar</span>
+                                    </a></th>
                         </tr>
                         <% } %>
                     </tbody>
@@ -58,11 +65,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 </asp:Content>

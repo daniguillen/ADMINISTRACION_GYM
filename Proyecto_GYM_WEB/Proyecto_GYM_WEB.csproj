@@ -137,8 +137,10 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="scripts.js" />
+    <Content Include="Scripts\attribution.js" />
     <Content Include="Scripts\datatables-simple-demo.js" />
     <Content Include="Scripts\FuncionesInternas.js" />
+    <Content Include="Scripts\LICENSE.txt" />
     <Content Include="Scripts\scripts.js" />
     <Content Include="VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador-EntrenamientosABM.aspx" />
@@ -207,6 +209,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VistaPrincipalEntrenador.aspx" />
+    <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
     <Content Include="VistasAministrador\AdministradorGeneral.aspx" />
     <Content Include="VistaUsuarioCliente.aspx" />
     <Content Include="Web.config" />
@@ -332,6 +335,13 @@
     <Compile Include="VistaPrincipalEntrenador.aspx.designer.cs">
       <DependentUpon>VistaPrincipalEntrenador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VistasAministrador\AdministradorEditarUsuario.aspx.cs">
+      <DependentUpon>AdministradorEditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistasAministrador\AdministradorEditarUsuario.aspx.designer.cs">
+      <DependentUpon>AdministradorEditarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VistasAministrador\AdministradorGeneral.aspx.cs">
       <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,6 +364,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

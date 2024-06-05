@@ -10,9 +10,9 @@ namespace Proyecto_GYM_WEB
 {
     public partial class SiteMaster : MasterPage
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
+        Session["navbar"]="";
             if (!IsPostBack)
             {
                 
