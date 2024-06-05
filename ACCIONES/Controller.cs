@@ -301,7 +301,101 @@ namespace ACCIONES
 
         }
 
+        public List<Dificultad> ListadoDeDificultad()
+        {
+            try
+            {
+                List<Dificultad> aux = new List<Dificultad>();
+                datos.setearQuery("SELECT * FROM DIFICULTAD");
+                datos.ejecutarLectura();
 
+                while (datos.Lector.Read())
+                {
+                    Dificultad dificultad = new Dificultad();
+                    dificultad.ID = datos.Lector.GetInt32(0);
+                    dificultad.Descripcion = datos.Lector.GetString(1);
+
+                    aux.Add(dificultad);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+        public List<TipoEjercicio> ListadoTipoEjercicio()
+        {
+            try
+            {
+                List<TipoEjercicio> aux = new List<TipoEjercicio>();
+                datos.setearQuery("SELECT * FROM TIPO_EJERCICIO");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    TipoEjercicio tipoEjercicio = new TipoEjercicio();
+                    tipoEjercicio.ID = datos.Lector.GetInt32(0);
+                    tipoEjercicio.Descripcion = datos.Lector.GetString(1);
+
+                    aux.Add(tipoEjercicio);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+        public void agregarGrupoMusucular(GrupoMuscular grupoNuevo)
+        {
+            try
+            {
+                //datos.setearQuery("INSERT Into GRUPO_MUSCULAR (ID,DESCRIPCION) VALUES ('" + grupoNuevo.ID + "','" + grupoNuevo.Descripcion + "'");
+                datos.setearQuery("INSERT Into GRUPO_MUSCULAR (ID,DESCRIPCION) values (@ID,@DESCRIPCION)");
+                datos.setearParametro("@ID", grupoNuevo.ID);
+                datos.setearParametro("@DESCRIPCION", grupoNuevo.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void agregarEjercicio(Ejercicio ejercicioNuevo)
+        {
+            try
+            {
+                //datos.setearQuery("INSERT INTO EJERCICIO (DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO,ID_TIPO,ID_GRUPO_MUSCULAR) VALUES ('" + ejercicioNuevo.Descripcion + "','" + ejercicioNuevo.Nombre + "','" + ejercicioNuevo.Repeticiones + "','" + ejercicioNuevo.Tipo_Dificultad.ID + "', '" + ejercicioNuevo.Video + "','" + ejercicioNuevo.Tipo_Ejercicio.ID + "','" + ejercicioNuevo.Grupo_Muscular.ID + "'");
+                datos.setearQuery("INSERT into EJERCICIO (DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO,ID_TIPO,ID_GRUPO_MUSCULAR) values (@DESCRIPCION,@NOMBRE,@REPETICIONES,@ID_DIFICULTAD,@VIDEO,@ID_TIPO,@ID_GRUPO_MUSCULAR)");
+                datos.setearParametro("@DESCRIPCION", ejercicioNuevo.Descripcion);
+                datos.setearParametro("@NOMBRE", ejercicioNuevo.Nombre);
+                datos.setearParametro("@REPETICIONES", ejercicioNuevo.Repeticiones);
+                datos.setearParametro("@ID_DIFICULTAD", ejercicioNuevo.Tipo_Dificultad.ID);
+                datos.setearParametro("@VIDEO", ejercicioNuevo.Video);
+                datos.setearParametro("@ID_TIPO", ejercicioNuevo.Tipo_Ejercicio.ID);
+                datos.setearParametro("@ID_GRUPO_MUSCULAR", ejercicioNuevo.Grupo_Muscular.ID);
+                
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally 
+            { 
+                datos.cerrarConexion();
+            }
+        }
 
     }
 }
