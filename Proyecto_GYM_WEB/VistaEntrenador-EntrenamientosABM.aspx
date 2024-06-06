@@ -8,44 +8,7 @@
     <div class="container">
         <asp:Button ID="btnOpenModal" runat="server" CssClass="btn btn-primary" Text="Agregar Nuevo Registro" OnClick="btnOpenModal_Click" />
 
-        <table class="table">
-            <thead>
-                <tr>
-
-                    <%foreach (Dominio.GrupoMuscular grupoMusc in ListagrupoMusculares)
-                        {
-                    %>
-
-                    <th><%=grupoMusc.Descripcion %></th>
-
-
-                    <%   } %>
-                </tr>
-            </thead>
-            <tr>
-                <%foreach (Dominio.Ejercicio ejerci in ListaEjercicios)
-                    {
-                %>
-                <%foreach (Dominio.GrupoMuscular grupoMusc in ListagrupoMusculares)
-                    {
-                %>
-
-
-                <%if (ejerci.Grupo_Muscular.ID == grupoMusc.ID)
-                    {  %>
-                <th><%=ejerci.Nombre %></th>
-
-                <%} %>
-
-
-                <%   } %>
-
-
-                <%   } %>
-            </tr>
-
-        </table>
-
+        <asp:Literal ID="myLiteralControl" runat="server"></asp:Literal>
     </div>
 
 
@@ -55,20 +18,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">FORMULARIO DE ALTA.</h5>
+                    <h5 class="modal-title ">FORMULARIO ALTA EJERCICIO.</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <%--        AGREGAR GRUPO MUSCULAR--%>
+
+
+                    <%--        AGREGAR EJERCICIO --%>
                     <div class="container">
-                        <div class="mb-3">
-                            <label for="lblDescripcion" class="form-label">Grupo Muscular nuevo:</label>
-                            <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-
-                        <%--        AGREGAR EJERCICIO --%>
-
                         <div class="mb-3">
                             <label for="lblDescripcion" class="form-label">Descripcion ejercicio nuevo:</label>
                             <asp:TextBox ID="txtDescripcionEj" runat="server" CssClass="form-control"></asp:TextBox>
@@ -92,13 +50,12 @@
                         <div class="mb-3">
                             <label for="lblIdTipo" class="form-label">Tipo ID:</label>
                             <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control"></asp:DropDownList>
-                        </div>
+                        </div>                    
                         <div class="mb-3">
                             <label for="lblIdGrupoMusc" class="form-label">IdGrupoMuscu:</label>
                             <asp:DropDownList ID="ddlGrupoMuscu" runat="server" CssClass="form-control"></asp:DropDownList>
                         </div>
-
-                    </div>
+                    </div>                 
                 </div>
                 <div class="modal-footer">
                     <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">Volver</a>
@@ -110,25 +67,9 @@
     </div>
 
 
-
-    <%-- <hr />
-
-    <h3>Desea agregar grupo muscular o ejercicio nuevo</h3>
-    <div>
-
-        <asp:RadioButton ID="rdbGrupoMuscular" runat="server" />
-        <label>Grupo Muscular</label>
-    </div>
-    <div>
-
-        <asp:RadioButton ID="rdbEjercicio" runat="server" />
-        <label>Ejercicio</label>
-    </div>
-
-    <a href="VistaEntrenador-DetalleABM.aspx" class="btn btn-primary">Aceptar</a>--%>
-
     <script>        
         function openModal() {
+            console.log("entro al modal");
             var modal = document.getElementById('nuevoModal');
             modal.style.display = 'block';
             modal.classList.add('show');
@@ -140,6 +81,7 @@
             modal.classList.remove('show');
 
         }
+       
     </script>
 
 </asp:Content>

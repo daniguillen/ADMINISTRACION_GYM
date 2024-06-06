@@ -192,7 +192,10 @@ VALUES
 ('Piernas'),
 ('Brazos'),
 ('Hombros'),
-('Abdominales');
+('Abdominales'),
+('Triceps'),
+('Femoral'),
+('Gemelos');
 GO
 
 -- Insertar valores en TIPO_EJERCICIO

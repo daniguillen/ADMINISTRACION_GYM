@@ -197,21 +197,21 @@ namespace ACCIONES
                 while (datos.Lector.Read())
                 {
                 Rutina aux = new Rutina();
-
-                        aux.ID = datos.Lector.GetInt32(0);
-                        aux.ejercicio.Dia = datos.Lector.GetString(1);
-                        aux.ejercicio.ID = datos.Lector.GetInt32(2);
-                        aux.ejercicio.Descripcion= datos.Lector.GetString(3);
-                        aux.ejercicio.Nombre= datos.Lector.GetString(4);
-                        aux.ejercicio.Repeticiones = datos.Lector.GetInt32(5);
-                        aux.ejercicio.Tipo_Ejercicio.ID= datos.Lector.GetInt32(6);
-                        aux.ejercicio.Tipo_Ejercicio.Descripcion= datos.Lector.GetString(7);
-                        aux.ejercicio.Tipo_Dificultad.ID= datos.Lector.GetInt32(8);
-                        aux.ejercicio.Tipo_Dificultad.Descripcion = datos.Lector.GetString(9);
-                        aux.ejercicio.Video = datos.Lector.GetString(10);
-                        aux.ejercicio.Grupo_Muscular.ID= datos.Lector.GetInt32(11);
-                        aux.ejercicio.Grupo_Muscular.Descripcion = datos.Lector.GetString(12);
-
+                        
+                        //aux.ID = datos.Lector.GetInt32(0);
+                        //aux.ejercicio.dia = datos.Lector.GetString(1);
+                        //aux.ejercicio.ID = datos.Lector.GetInt32(2);
+                        //aux.ejercicio.Descripcion= datos.Lector.GetString(3);
+                        //aux.ejercicio.Nombre= datos.Lector.GetString(4);
+                        //aux.ejercicio.Repeticiones = datos.Lector.GetInt32(5);
+                        //aux.ejercicio.Tipo_Ejercicio.ID= datos.Lector.GetInt32(6);
+                        //aux.ejercicio.Tipo_Ejercicio.Descripcion= datos.Lector.GetString(7);
+                        //aux.ejercicio.Tipo_Dificultad.ID= datos.Lector.GetInt32(8);
+                        //aux.ejercicio.Tipo_Dificultad.Descripcion = datos.Lector.GetString(9);
+                        //aux.ejercicio.Video = datos.Lector.GetString(10);
+                        //aux.ejercicio.Grupo_Muscular.ID= datos.Lector.GetInt32(11);
+                        //aux.ejercicio.Grupo_Muscular.Descripcion = datos.Lector.GetString(12);
+                      
                     listitaRutina.Add(aux); 
                 }
 
@@ -398,8 +398,7 @@ namespace ACCIONES
             try
             {
                 //datos.setearQuery("INSERT Into GRUPO_MUSCULAR (ID,DESCRIPCION) VALUES ('" + grupoNuevo.ID + "','" + grupoNuevo.Descripcion + "'");
-                datos.setearQuery("INSERT Into GRUPO_MUSCULAR (ID,DESCRIPCION) values (@ID,@DESCRIPCION)");
-                datos.setearParametro("@ID", grupoNuevo.ID);
+                datos.setearQuery("INSERT Into GRUPO_MUSCULAR (DESCRIPCION) values (@DESCRIPCION)");
                 datos.setearParametro("@DESCRIPCION", grupoNuevo.Descripcion);
                 datos.ejecutarAccion();
             }

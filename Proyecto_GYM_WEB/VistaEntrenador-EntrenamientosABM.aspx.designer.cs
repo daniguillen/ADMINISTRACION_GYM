@@ -24,13 +24,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Button btnOpenModal;
 
         /// <summary>
-        /// Control txtDescripcion.
+        /// Control myLiteralControl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.Literal myLiteralControl;
 
         /// <summary>
         /// Control txtDescripcionEj.
