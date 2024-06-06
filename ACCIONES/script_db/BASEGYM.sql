@@ -1,4 +1,3 @@
-
 create database GymBase
 go 
 use GymBase
@@ -38,15 +37,15 @@ NOMBRE VARCHAR (200),
 )
 GO
 CREATE TABLE DIFICULTAD(
-ID INT PRIMARY KEY,
+ID INT IDENTITY (1,1) PRIMARY KEY,
 DESCRIPCION VARCHAR (100))
 GO
 CREATE TABLE GRUPO_MUSCULAR(
-ID INT PRIMARY KEY,
+ID INT IDENTITY (1,1) PRIMARY KEY,
 DESCRIPCION VARCHAR(100))
 GO
 CREATE TABLE TIPO_EJERCICIO(
-ID INT PRIMARY KEY,
+ID INT IDENTITY (1,1) PRIMARY KEY,
 DESCRIPCION VARCHAR(100))
 GO
 CREATE TABLE EJERCICIO(
@@ -179,31 +178,31 @@ VALUES
 GO
 
 -- Insertar valores en DIFICULTAD
-INSERT INTO DIFICULTAD (ID, DESCRIPCION)
+INSERT INTO DIFICULTAD (DESCRIPCION)
 VALUES 
-(1, 'Fácil'),
-(2, 'Medio'),
-(3, 'Difícil');
+('Fácil'),
+('Medio'),
+('Difícil');
 GO
 
 -- Insertar valores en GRUPO_MUSCULAR
-INSERT INTO GRUPO_MUSCULAR (ID, DESCRIPCION)
+INSERT INTO GRUPO_MUSCULAR (DESCRIPCION)
 VALUES 
-(1, 'Pecho'),
-(2, 'Espalda'),
-(3, 'Piernas'),
-(4, 'Brazos'),
-(5, 'Hombros'),
-(6, 'Abdominales');
+('Pecho'),
+('Espalda'),
+('Piernas'),
+('Brazos'),
+('Hombros'),
+('Abdominales');
 GO
 
 -- Insertar valores en TIPO_EJERCICIO
-INSERT INTO TIPO_EJERCICIO (ID, DESCRIPCION)
+INSERT INTO TIPO_EJERCICIO (DESCRIPCION)
 VALUES 
-(1, 'Entrenamiento de fuerza'),
-(2, 'Cardio'),
-(3, 'Flexibilidad'),
-(4, 'Equilibrio');
+('Entrenamiento de fuerza'),
+('Cardio'),
+('Flexibilidad'),
+('Equilibrio');
 GO
 
 -- Insertar valores en EJERCICIO
@@ -266,4 +265,3 @@ VALUES
 (2, 3, 2, 2),
 (2, 4, 5, 2),
 (2, 5, 7, 3)
-
