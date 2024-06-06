@@ -14,7 +14,7 @@ namespace Dominio
     {
         public Persona()
         {
-            rutina=new List<Rutina>();
+           
         }
 
         public int ID { get; set; }
@@ -49,7 +49,7 @@ namespace Dominio
 
         public int ID_Nivel { get; set; }
 
-        public List<Rutina> rutina { get; set; }
+        public int ID_rutina { get; set; }
         
     }
 }

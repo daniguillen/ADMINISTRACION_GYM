@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VistaUsuarioCliente.aspx.cs" Inherits="Proyecto_GYM_WEB.VistaUsuarioCliente" %>
 
+
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
+
+
     <div id="noticias" class="d-flex justify-content-center align-items-center mb-5">
-
-
 
         <div class="row">
             <div class="col-2">
                 <div class="card" style="width: 18rem;">
-                    <img src="Assets/usuario.png" class="card-img-top" alt="Assets/usuario.png">
+                    <img src="/Assets/usuario.png" class="card-img-top" alt="Assets/usuario.png">
                     <div class="card-body">
                         <h5 class="card-title"><% =Perfil.Nombre+" "+Perfil.Apellido %> </h5>
                         <p class="card-text"><%=Plan.Tipo_Plan  %></p>
@@ -28,7 +29,7 @@
 
         <div class="col-2">
             <div class="card" style="width: 18rem;">
-                <img src="Assets/usuario.png" class="card-img-top" alt="Assets/usuario.png">
+                <img src="/Assets/usuario.png" class="card-img-top" alt="Assets/usuario.png">
                 <div class="card-body">
                     <h5 class="card-title">Entrenador</h5>
                     <p class="card-text">datos</p>
@@ -38,46 +39,39 @@
         </div>
 
     </div>
-    <div class="container">
-        <table class="table">
-          <thead >   
-            <tr>
-                <th></th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miercoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
-                <th>Sabado</th>
-                <th>Domingo</th>
-            </tr>
-            <tr>
-                <td>1:00</td>
-                <td>Peter</td>
-                <td>Griffin</td>
-                <td>$ejercicio
 
- 
+    <div class="row">
 
-                    <br />
-                    Hora: $horario
+        <div class="row">
+            <% for (int x = 0; x < 7; x++)
+                {
+                    DayOfWeek dia = (DayOfWeek)x; // Obtén el día de la semana
+                    var ejerciciosDelDia = RutinaCliente.ejercicio.Where(e => e.Dia == dia.ToString()).ToList();
+                    // Filtra la lista de ejercicios para el día actual
 
-                </td>
-                <td>$100</td>
-                <td>$100</td>
-                <td>$100</td>
-                <td>$100</td>
-            </tr>
-              </thead>
-        </table>
+                    if (ejerciciosDelDia.Count > 0)
+                    { // Solo muestra la tarjeta si hay ejercicios para el día
+            %>
+            <div class="card" style="width: 18rem;">
+                <h3><%=dia.ToString() %></h3>
+                <div class="card-body">
+                    <h5 class="card-title">Ejercicios</h5>
+                    <ul>
+                        <% foreach (var ejercicio in ejerciciosDelDia)
+                            { %>
+                        <li><%=ejercicio.Nombre %></li>
+                        <% } %>
+                    </ul>
+                    <a href="/VistaCliente/Vista_Detalle_Ejericios_Clientes" class="btn btn-primary">Ver Ejercicios</a>
+                </div>
+            </div>
+            <% } // Cierra el if 
+                } %>
+        </div>
 
 
     </div>
 
 
-
-
-
-
-
 </asp:Content>
+

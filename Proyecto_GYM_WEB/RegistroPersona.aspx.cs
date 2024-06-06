@@ -16,7 +16,7 @@ namespace Proyecto_GYM_WEB
 
         protected void btnGuardar_Ingreso(object sender, EventArgs e)
         {
-            Response.Redirect("VistaUsuarioCliente.aspx");
+            Response.Redirect("VistaCliente/VistaUsuarioCliente");
         }
     }
 }

@@ -66,7 +66,7 @@
         </div>
         <div class="mt-3">
         <asp:Button Text="Guardar ingreso" CssClass="btn btn-primary" OnClick="btnGuardar_Ingreso" runat="server" />
-        <a href="Login.aspx" class="btn btn-danger">Cancelar</a>
+        <a href="Default.aspx" class="btn btn-danger">Cancelar</a>
         </div>
     </div>
 

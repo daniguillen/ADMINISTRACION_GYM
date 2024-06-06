@@ -147,7 +147,7 @@
     <Content Include="VistaEntrenador-Usu-AsignarRutina.aspx" />
     <Content Include="VistaMisEntrenamientos.aspx" />
     <Content Include="VistaPerfilEntrenador.aspx" />
-    <Content Include="VistaPerfilUsuarioCliente.aspx" />
+    <Content Include="VistaCliente\VistaPerfilUsuarioCliente.aspx" />
     <Content Include="RegistroPersona.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -210,8 +210,8 @@
     <Content Include="VistaPrincipalEntrenador.aspx" />
     <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
     <Content Include="VistasAministrador\AdministradorGeneral.aspx" />
-    <Content Include="VistaUsuarioCliente.aspx" />
-    <Content Include="Vista_Detalle_Ejericios_Clientes.aspx" />
+    <Content Include="VistaCliente\VistaUsuarioCliente.aspx" />
+    <Content Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -285,11 +285,11 @@
     <Compile Include="VistaPerfilEntrenador.aspx.designer.cs">
       <DependentUpon>VistaPerfilEntrenador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistaPerfilUsuarioCliente.aspx.cs">
+    <Compile Include="VistaCliente\VistaPerfilUsuarioCliente.aspx.cs">
       <DependentUpon>VistaPerfilUsuarioCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistaPerfilUsuarioCliente.aspx.designer.cs">
+    <Compile Include="VistaCliente\VistaPerfilUsuarioCliente.aspx.designer.cs">
       <DependentUpon>VistaPerfilUsuarioCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -342,24 +342,23 @@
     <Compile Include="VistasAministrador\AdministradorGeneral.aspx.designer.cs">
       <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistaUsuarioCliente.aspx.cs">
+    <Compile Include="VistaCliente\VistaUsuarioCliente.aspx.cs">
       <DependentUpon>VistaUsuarioCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistaUsuarioCliente.aspx.designer.cs">
+    <Compile Include="VistaCliente\VistaUsuarioCliente.aspx.designer.cs">
       <DependentUpon>VistaUsuarioCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Detalle_Ejericios_Clientes.aspx.cs">
+    <Compile Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx.cs">
       <DependentUpon>Vista_Detalle_Ejericios_Clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista_Detalle_Ejericios_Clientes.aspx.designer.cs">
+    <Compile Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx.designer.cs">
       <DependentUpon>Vista_Detalle_Ejericios_Clientes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="VistaCliente\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

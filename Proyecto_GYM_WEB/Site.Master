@@ -50,27 +50,24 @@
         <asp:ContentPlaceHolder ID="NavbarEntrenador" runat="server">
         </asp:ContentPlaceHolder>
 
-        <%if (Session["navbar"].ToString() != "b" && Session["navbar"].ToString() != "c")
+        <%if (Session["navbar"].ToString() != "u" && Session["navbar"].ToString() != "c")
             {  %>
         <nav class="navbar  navbar-expand-sm navbar-toggleable-sm navbar-dark navPersonalizado mb-0">
             <div class="container  justify-content-xl-between  " id="containe">
                 
             <a class="navbar-brand logo" runat="server" href="~/">GYM</a>
 
-              
-                
-
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse  d-sm-inline-flex justify-content-between">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/Default">INICIO</a></li>
-                            <li class="nav-item"><a class="nav-link" runat="server" href="~/About">NOSOTROS</a></li>
-                            <li class="nav-item"><a class="nav-link" runat="server" href=" ~/Planes">PLANES</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="#about">NOSOTROS</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="#planes">PLANES</a></li>
                            
-                            <li class="nav-item"><a href="~/Login.aspx?id" runat="server" class="btn btn-success me-2">REGISTRO</a></li>
+                            <li class="nav-item"><a href="RegistroPersona.aspx" runat="server" class="btn btn-success me-2">REGISTRO</a></li>
                             <li class="nav-item"><a href="~/Login.aspx?id" runat="server" class="btn btn-success me-2">INGRESAR</a></li>
 
                         </ul>
@@ -81,34 +78,16 @@
         </nav>
 
 
-
-
         <%} %>
-        <!-- </asp:Panel> -->
-
-
-        <!-- 
-            
-            
-            
-
-            -->
+      
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
 
-
     </form>
-
-
-
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
         <%: Scripts.Render("~/Scripts/FuncionesInternas.js ") %>
-
-
-
-
 
         <%: Scripts.Render("~/Scripts/scripts.js") %>
         <%: Scripts.Render("~/Scripts/datatables-simple-demo.js ") %>

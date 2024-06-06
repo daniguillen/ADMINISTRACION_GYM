@@ -98,7 +98,7 @@
 
 
 
-        <div class="containerAcerca  d-flex justify-content-center ">
+        <div class="containerAcerca  d-flex justify-content-center " id="about">
 
             <div class="containerAcerca2 d-flex justify-content-center">
 

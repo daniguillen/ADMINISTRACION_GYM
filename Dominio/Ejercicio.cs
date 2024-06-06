@@ -8,7 +8,11 @@ namespace Dominio
 {
     public class Ejercicio
     {
-
+        public Ejercicio() { 
+        Tipo_Ejercicio= new TipoEjercicio();
+        Tipo_Dificultad= new Dificultad();
+        Grupo_Muscular= new GrupoMuscular();
+        }
         public int ID {get; set;}
 
         public string Descripcion {get; set;}
@@ -25,6 +29,7 @@ namespace Dominio
 
         public GrupoMuscular Grupo_Muscular {get; set;}
 
+        public string Dia { get; set; }
 
     }
 }
