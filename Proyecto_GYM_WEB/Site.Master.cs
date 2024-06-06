@@ -20,7 +20,7 @@ namespace Proyecto_GYM_WEB
                 {
                     NavbarUsuarios.Controls.Add(LoadNavbarEntrenador());
                 }
-                else if (Session["navbar"].ToString() == "b")
+                else if (Session["navbar"] != null && Session["navbar"].ToString() == "b")
                 {
 
                     NavbarUsuarios.Controls.Add(LoadNavbarUsuario());
