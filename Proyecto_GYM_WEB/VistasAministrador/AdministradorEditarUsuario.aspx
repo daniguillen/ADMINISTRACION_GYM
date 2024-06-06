@@ -1,19 +1,18 @@
-﻿<%@ Page Title="" Language="C#" 
-    MasterPageFile="~/Site.Master" AutoEventWireup="true" 
-    CodeBehind="AdministradorEditarUsuario.aspx.cs" 
+﻿<%@ Page Title="" Language="C#"
+    MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="AdministradorEditarUsuario.aspx.cs"
     Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorEditarUsuario" %>
 
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<asp:Label ID="Label1" runat="server" Text="Label">hla</asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Label">hla</asp:Label>
 
 
 
 
 
-
-        <div class="container-fluid px-4 bg-custom-dark">
+    <div class="container-fluid px-4 bg-custom-dark">
         <h1 class="mt-4">Tables</h1>
         <ul class="breadcrumb mb-4">
             <li class="breadcrumb-item">Entrenadores</li>
@@ -26,10 +25,12 @@
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 DataTable Example
+           
             </div>
             <div class="card-body">
                 <table id="datatablesSimple" class="table table-striped table-bordered bg-light">
                     <thead>
+                        
                         <tr>
                             <th>Dni</th>
                             <th>Nombre Completo</th>

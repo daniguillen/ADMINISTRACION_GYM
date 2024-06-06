@@ -1,6 +1,45 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="AdministradorGeneral.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorGeneral" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div>
+        <asp:Button ID="Button1" runat="server" CssClass="btn btn-dark" Text="Agregar Cliente" />
+        <asp:Button ID="Button2" runat="server" CssClass="btn btn-dark" Text="Buscar Cliente" />
+    </div>
+
+    <table style="width: 100%;">
+        <tr>
+            <td>DNI</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:TextBox ID="Text1" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="Text2" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox3" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox4" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox6" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox7" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="TextBox8" runat="server" /></td>
+            <td>
+                <asp:TextBox ID="Text3" runat="server" /><input id="Button4" type="button" value="Guardar" /></td>
+
+        </tr>
+    </table>
+
     <div class="container-fluid  px-4 bg-custom-dark">
         <h1 class="mt-4">Tables</h1>
         <ul class="breadcrumb mb-4">
@@ -47,16 +86,16 @@
                             <th><%= usuario.Tel_Emergencia %></th>
                             <th><%= usuario.Mail %></th>
                             <th><%= usuario.Password %></th>
-                           <th><%= DateTime.Now.Year - usuario.Fecha_Nacimiento.Year - (usuario.Fecha_Nacimiento.Date > DateTime.Now.Date ? 1 : 0) %></th>
+                            <th><%= DateTime.Now.Year - usuario.Fecha_Nacimiento.Year - (usuario.Fecha_Nacimiento.Date > DateTime.Now.Date ? 1 : 0) %></th>
                             <th><%= usuario.Sexo %></th>
                             <th><%= usuario.Fecha_ingreso.Day + " / "+usuario.Fecha_ingreso.Month + " / " +usuario.Fecha_ingreso.Year %></th>
                             <th><%= usuario.Estado.ToString()=="True"?"Activo":"Inactivo" %></th>
                             <th><a href="AdministradorEditarUsuario.aspx?id=<%=usuario.ID %>" class="btn btn-secondary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-arrow-right"></i>
-                                        </span>
-                                        <span class="bottom-0" >Editar</span>
-                                    </a></th>
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                                <span class="bottom-0">Editar</span>
+                            </a></th>
                         </tr>
                         <% } %>
                     </tbody>
