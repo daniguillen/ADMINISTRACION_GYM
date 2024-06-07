@@ -27,8 +27,20 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 ListUsuarios = (List<Usuario>)Session["ModificarCliente"];
 
                 elUsuarioEditar = ListUsuarios.Find(x => x.ID == IdUsuarioRecibido);
-    
 
+                TxtDniEditar.Text = elUsuarioEditar.DNI.ToString();
+                TxtNombreEditar.Text = elUsuarioEditar.Nombre;
+                TxtApellidoEditar.Text = elUsuarioEditar.Apellido;
+                TxtPlanEditar.Text = elUsuarioEditar.ID_Plan.ToString();
+                TxtCelularEditar.Text = elUsuarioEditar.Cel;
+                TxtTelEmergenciaEditar.Text = elUsuarioEditar.Tel_Emergencia;
+                TxtEmailEditar.Text = elUsuarioEditar.Mail;
+                TxtPasswordEditar.Text = elUsuarioEditar.Password;
+                TxtFechaNacimientoEditar.Text = elUsuarioEditar.Fecha_Nacimiento.ToString("yyyy-MM-dd");
+                TxtSexoEditar.Text = elUsuarioEditar.Sexo.ToString();
+                TxtFechaIngresoEditar.Text = elUsuarioEditar.Fecha_ingreso.ToString("yyyy-MM-dd");
+                TxtEstadoEditar.Text = elUsuarioEditar.Estado ? "Activo" : "Inactivo";
+                TxtNivelEditar.Text = elUsuarioEditar.ID_Plan.ToString();
 
             }
         }
