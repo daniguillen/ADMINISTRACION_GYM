@@ -193,26 +193,45 @@ namespace ACCIONES
                 datos.ejecutarLectura();
 
                 List<Rutina> listitaRutina= new List<Rutina>();
+                int rut_ant = -1;
+                int eje_ant = -1;
 
                 while (datos.Lector.Read())
                 {
-                Rutina aux = new Rutina();
+                    Rutina Rutina_aux = new Rutina();
+                  
+                    
+                     int idrutina = datos.Lector.GetInt32(0);
+
+                     if (idrutina != rut_ant){
+                        Rutina_aux.ID = idrutina;
+
+                        int id_ejer = datos.Lector.GetInt32(2);
+                        if (id_ejer != eje_ant)
+                        {
+                         Ejercicio eje_aux = new Ejercicio();
+                            eje_aux.Dia = datos.Lector.GetString(1);
+                            eje_aux.Descripcion=datos.Lector.GetString(3);
+                            eje_aux.Nombre = datos.Lector.GetString(4);
+                            eje_aux.Repeticiones=datos.Lector.GetInt32(5);
+                            eje_aux.Tipo_Ejercicio.ID = datos.Lector.GetInt32(6);
+                            eje_aux.Tipo_Ejercicio.Descripcion = datos.Lector.GetString(7);
+                            eje_aux.Tipo_Dificultad.ID = datos.Lector.GetInt32(8);
+                            eje_aux.Tipo_Dificultad.Descripcion=datos.Lector.GetString(9);
+                            eje_aux.Video=datos.Lector.GetString(10);
+                            eje_aux.Grupo_Muscular.ID=datos.Lector.GetInt32(11);
+                            eje_aux.Grupo_Muscular.Descripcion=datos.Lector.GetString(12);
+
+                            Rutina_aux.ejercicio.Add(eje_aux);
+
+                            eje_ant = id_ejer;
+                        }
+
+                        rut_ant = idrutina;
                         
-                        //aux.ID = datos.Lector.GetInt32(0);
-                        //aux.ejercicio.dia = datos.Lector.GetString(1);
-                        //aux.ejercicio.ID = datos.Lector.GetInt32(2);
-                        //aux.ejercicio.Descripcion= datos.Lector.GetString(3);
-                        //aux.ejercicio.Nombre= datos.Lector.GetString(4);
-                        //aux.ejercicio.Repeticiones = datos.Lector.GetInt32(5);
-                        //aux.ejercicio.Tipo_Ejercicio.ID= datos.Lector.GetInt32(6);
-                        //aux.ejercicio.Tipo_Ejercicio.Descripcion= datos.Lector.GetString(7);
-                        //aux.ejercicio.Tipo_Dificultad.ID= datos.Lector.GetInt32(8);
-                        //aux.ejercicio.Tipo_Dificultad.Descripcion = datos.Lector.GetString(9);
-                        //aux.ejercicio.Video = datos.Lector.GetString(10);
-                        //aux.ejercicio.Grupo_Muscular.ID= datos.Lector.GetInt32(11);
-                        //aux.ejercicio.Grupo_Muscular.Descripcion = datos.Lector.GetString(12);
-                      
-                    listitaRutina.Add(aux); 
+
+                        }
+                          listitaRutina.Add(Rutina_aux); 
                 }
 
 
