@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.WebSockets;
 using ACCIONES;
 using Dominio;
 
@@ -14,6 +15,7 @@ namespace Proyecto_GYM_WEB
         Controller objController = new Controller();
         public List<Ejercicio> ListaEjercicios = new List<Ejercicio>();
         public List<GrupoMuscular> ListagrupoMusculares = new List<GrupoMuscular>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -43,6 +45,19 @@ namespace Proyecto_GYM_WEB
                     ddlGrupoMuscu.DataValueField = "ID";
                     ddlGrupoMuscu.DataTextField = "Descripcion";
                     ddlGrupoMuscu.DataBind();
+
+                    List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
+                    //ddlEjercicios.DataSource = listaEjercicio;      //DropdownList
+                    //ddlEjercicios.DataValueField = "ID";
+                    //ddlEjercicios.DataTextField = "Nombre";
+                    //ddlEjercicios.DataBind();
+
+                    lbxEjercicio.DataSource = listaEjercicio;       //ListBox
+                    lbxEjercicio.DataValueField = "ID";
+                    lbxEjercicio.DataTextField = "Nombre";
+                    lbxEjercicio.DataBind();
+
+
                 }
             }
             catch (Exception ex)
@@ -104,8 +119,8 @@ namespace Proyecto_GYM_WEB
             string tablaCompleta = "<table>" + musculos + ejercicio + "</table>";
 
             myLiteralControl.Text = tablaCompleta;
-           
-            
+
+
 
         }
 
@@ -129,23 +144,21 @@ namespace Proyecto_GYM_WEB
             {
                 Ejercicio nuevoEjercicio = new Ejercicio();
 
-                AccesoDatos datos = new AccesoDatos();
+                nuevoEjercicio.Descripcion = txtDescripcionEj.Text;
+                nuevoEjercicio.Nombre = txtNombre.Text;
+                nuevoEjercicio.Repeticiones = int.Parse(txtRepeticiones.Text);
+                nuevoEjercicio.Tipo_Dificultad = new Dificultad();
+                nuevoEjercicio.Tipo_Dificultad.ID = int.Parse(ddlDificultad.SelectedValue);
+                nuevoEjercicio.Video = txtVideo.Text;
+                nuevoEjercicio.Tipo_Ejercicio = new TipoEjercicio();
+                nuevoEjercicio.Tipo_Ejercicio.ID = int.Parse(ddlTipo.SelectedValue);
 
-                    nuevoEjercicio.Descripcion = txtDescripcionEj.Text;
-                    nuevoEjercicio.Nombre = txtNombre.Text;
-                    nuevoEjercicio.Repeticiones = int.Parse(txtRepeticiones.Text);
-                    nuevoEjercicio.Tipo_Dificultad = new Dificultad();
-                    nuevoEjercicio.Tipo_Dificultad.ID = int.Parse(ddlDificultad.SelectedValue);
-                    nuevoEjercicio.Video = txtVideo.Text;
-                    nuevoEjercicio.Tipo_Ejercicio = new TipoEjercicio();
-                    nuevoEjercicio.Tipo_Ejercicio.ID = int.Parse(ddlTipo.SelectedValue);
+                nuevoEjercicio.Grupo_Muscular = new GrupoMuscular();
+                nuevoEjercicio.Grupo_Muscular.ID = int.Parse(ddlGrupoMuscu.SelectedValue);
 
-                    nuevoEjercicio.Grupo_Muscular = new GrupoMuscular();
-                    nuevoEjercicio.Grupo_Muscular.ID = int.Parse(ddlGrupoMuscu.SelectedValue);
-
-                    objController.agregarEjercicio(nuevoEjercicio);
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
-                    Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);                
+                objController.agregarEjercicio(nuevoEjercicio);
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
+                Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
 
             }
             catch (Exception ex)
@@ -157,12 +170,46 @@ namespace Proyecto_GYM_WEB
 
         }
 
+        protected void btnAgregarRutina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Rutina nuevaRutina = new Rutina();
+                List<int> listaIdSeleccionada = new List<int>();
+                nuevaRutina.Nombre = txtNombreRutina.Text;
+                nuevaRutina.Descripcion = txtDescripcionRutina.Text;
+                    
+                foreach (ListItem item in lbxEjercicio.Items)
+                {
+                    if (item.Selected)
+                    {                      
+                        int ejercicioId = int.Parse(item.Value);
+                        listaIdSeleccionada.Add(ejercicioId);                   
+                    }
+                }
+                   
+
+            }
+              
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
+                //redirigir a pantalla error.
+            }
+        }
         protected void btnOpenModal_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
-           
+
         }
 
-       
+        protected void btnOpenModal2_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
+
+        }
+
+
     }
 }

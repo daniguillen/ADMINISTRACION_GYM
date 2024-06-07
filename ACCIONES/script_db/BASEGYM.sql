@@ -88,6 +88,9 @@ GO
 CREATE TABLE RUTINA(
 ID INT PRIMARY KEY IDENTITY (1,1) ,
 ID_PERSONA INT FOREIGN KEY REFERENCES PERSONA(ID),
+NOMBRE VARCHAR(50) NOT NULL,
+DESCRIPCION VARCHAR(300)
+
 )
 GO
 CREATE TABLE RUTINA_EJERCICIO (
@@ -252,8 +255,8 @@ GO
 
 -- Insertar valores en RUTINA
 
-INSERT INTO RUTINA ( ID_PERSONA)
-VALUES (1), (2), (4),(6), (11), (14);
+INSERT INTO RUTINA ( ID_PERSONA,NOMBRE,DESCRIPCION)
+VALUES (1,'Spinning','Con una buena bici'), (2,'Boxeo','Quien se la aguanta'), (4,'Musculación','Todo trabado'),(6,'Ballet','En puntita de pie'), (11,'Gluteos','Salis con una buena cola'), (14,'Crossfit','A quien le da la nafta');
 
 INSERT INTO RUTINA_EJERCICIO (ID_RUTINA,ID_DIA, ID_EJERCICIO, HORARIO)
 VALUES (2, 1, 1, 8), (2, 2 ,2,8), (2, 3 ,4,9), (2, 4, 3,8), (2, 5 ,2,10), (2, 6, 1,13);

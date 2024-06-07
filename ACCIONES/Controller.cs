@@ -445,7 +445,7 @@ namespace ACCIONES
                 datos.setearParametro("@VIDEO", ejercicioNuevo.Video);
                 datos.setearParametro("@ID_TIPO", ejercicioNuevo.Tipo_Ejercicio.ID);
                 datos.setearParametro("@ID_GRUPO_MUSCULAR", ejercicioNuevo.Grupo_Muscular.ID);
-                
+
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -456,6 +456,16 @@ namespace ACCIONES
             { 
                 datos.cerrarConexion();
             }
+        }
+
+        public void agregarRutina(Rutina rutiNueva)
+        {
+            try
+            {
+              //  datos.setearQuery(INSERT INTO RUTINA )
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion();}
         }
 
     }
