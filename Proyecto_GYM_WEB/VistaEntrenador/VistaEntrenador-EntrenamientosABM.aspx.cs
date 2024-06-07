@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -175,22 +176,37 @@ namespace Proyecto_GYM_WEB
             try
             {
                 Rutina nuevaRutina = new Rutina();
-                List<int> listaIdSeleccionada = new List<int>();
                 nuevaRutina.Nombre = txtNombreRutina.Text;
                 nuevaRutina.Descripcion = txtDescripcionRutina.Text;
-                    
+                nuevaRutina.ejercicio = new List<Ejercicio>();
+
+
                 foreach (ListItem item in lbxEjercicio.Items)
                 {
+
+
                     if (item.Selected)
-                    {                      
-                        int ejercicioId = int.Parse(item.Value);
-                        listaIdSeleccionada.Add(ejercicioId);                   
+                    {
+
+                        foreach (int index in lbxEjercicio.GetSelectedIndices())
+                        {
+
+                            Ejercicio ejer = ListaEjercicios.Find(y => y.ID == index);
+
+                            Label1.Text = index.ToString();
+
+                            if (ejer != null)
+                            {
+                                nuevaRutina.ejercicio.Add(ejer);
+                            }
+                        }
+
+
+
+
                     }
                 }
-                   
-
             }
-              
             catch (Exception ex)
             {
                 Session.Add("error", ex);
