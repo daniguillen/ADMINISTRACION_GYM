@@ -1,44 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="AdministradorGeneral.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorGeneral" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div>
-        <asp:Button ID="Button1" runat="server" CssClass="btn btn-dark" Text="Agregar Cliente" />
-        <asp:Button ID="Button2" runat="server" CssClass="btn btn-dark" Text="Buscar Cliente" />
-    </div>
 
-    <table style="width: 100%;">
-        <tr>
-            <td>DNI</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="Text1" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="Text2" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox2" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox3" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox4" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox5" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox6" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox7" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="TextBox8" runat="server" /></td>
-            <td>
-                <asp:TextBox ID="Text3" runat="server" /><input id="Button4" type="button" value="Guardar" /></td>
 
-        </tr>
-    </table>
+
+  <div class="mt-3">
+    <a href="/RegistroPersona.aspx" class="btn btn-primary">Ir a Registro de Persona</a>
+</div>
+      <div class="mt-3">
+    <a href="/RegistroPersona.aspx" class="btn btn-primary">Modificar</a>
+</div>
+
+
+    <asp:Button ID="Button4" runat="server" Text="Button" CssClass="btn btn-secondary btn-icon-split" />
 
     <div class="container-fluid  px-4 bg-custom-dark">
         <h1 class="mt-4">Tables</h1>
@@ -96,6 +72,7 @@
                                 </span>
                                 <span class="bottom-0">Editar</span>
                             </a></th>
+
                         </tr>
                         <% } %>
                     </tbody>
@@ -104,4 +81,10 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
 </asp:Content>

@@ -56,5 +56,10 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Lógica del evento de clic del botón
+        }
     }
 }
