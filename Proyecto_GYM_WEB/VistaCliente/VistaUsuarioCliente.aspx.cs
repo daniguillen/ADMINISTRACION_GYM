@@ -12,13 +12,13 @@ namespace Proyecto_GYM_WEB
 {
     public partial class VistaUsuarioCliente : System.Web.UI.Page
     {
-       
 
-        public Usuario Perfil=new Usuario();
-        public Plan Plan=new Plan();
+
+        public Usuario Perfil = new Usuario();
+        public Plan Plan = new Plan();
         public string na = "u";
         public Rutina RutinaCliente = new Rutina();
-       
+        public string[] dia_semana={"LUNES", "MARTES","MIERCOLES","JUEVES","VIERNES","SABADO","DOMINGO"};
 
         protected void Page_Load(object sender, EventArgs e)
 

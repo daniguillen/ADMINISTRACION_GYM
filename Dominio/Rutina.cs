@@ -17,7 +17,7 @@ namespace Dominio
 
         public List<Ejercicio> ejercicio {get; set;}
 
-       
+        public int hora { get; set; }
 
     }
 }
