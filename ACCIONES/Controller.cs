@@ -19,9 +19,49 @@ namespace ACCIONES
             datos = new AccesoDatos();
         }
 
+
+        public void eliminarPorID(int a) {
+
+            try {
+                datos.setearQuery("update PERSONA set ESTADO=0 where ID="+a+";");
+                    datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+        public void ActivarClientePorID(int a)
+        {
+
+            try
+            {
+                datos.setearQuery("update PERSONA set ESTADO=1 where ID=" + a + ";");
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
         public List<Usuario> listar_Clientes()
         {
-            // AccesoDatos datos = new Controller();
+
             List<Usuario> ListaUsuario = new List<Usuario>();
 
             try
@@ -73,7 +113,7 @@ namespace ACCIONES
         }
         public List<Usuario> listar_Instructores()
         {
-            // AccesoDatos datos = new Controller();
+
             List<Usuario> ListaUsuario = new List<Usuario>();
 
             try

@@ -76,7 +76,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             if (int.TryParse(e.CommandArgument.ToString(), out userId))
             {
                 Label1.Text = "ID del usuario: " + userId.ToString();
-                
+                dato.eliminarPorID(userId);
                 ListaUsuarios = dato.listar_Clientes();
                 BindRepeater(); 
             }
@@ -85,5 +85,22 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 Label1.Text = "No se pudo obtener el ID del usuario.";
             }
         }
-    }
+
+       
+
+            protected void BtnActivar(object sender, CommandEventArgs e)
+        {
+            int userId;
+            if (int.TryParse(e.CommandArgument.ToString(), out userId))
+            {
+               
+                dato.ActivarClientePorID(userId);
+                ListaUsuarios = dato.listar_Clientes();
+                BindRepeater();
+            }
+
+        }
+  
+        }
+    
 }

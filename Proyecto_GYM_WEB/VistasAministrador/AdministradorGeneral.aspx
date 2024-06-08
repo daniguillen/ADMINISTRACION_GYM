@@ -77,7 +77,8 @@
                                         </span>
                                         <span class="bottom-0">Editar</span>
                                     </a>
-                                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("DNI") %>' OnCommand="BtnEliminar_Command" />
+                                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnEliminar_Command" />
+                                    <asp:Button ID="BtnAgregar" runat="server" Text="Activar" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnActivar" />
                                 </td>
                             </tr>
                         </ItemTemplate>
