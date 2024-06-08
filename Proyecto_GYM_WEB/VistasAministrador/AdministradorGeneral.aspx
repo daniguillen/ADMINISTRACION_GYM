@@ -25,7 +25,7 @@
         <div class="m-2">
             <div class="bg-dark text-light">
                 <h5 class="mb-2">Mensajes a usuarios y entrenadores</h5>
-                <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-light mt-2"></asp:Label>
+                
             </div>
             <div class="">
                 <asp:TextBox ID="TextBox1" CssClass="form-control mb-lg-1 bg-dark text-light" runat="server"></asp:TextBox>
@@ -57,7 +57,8 @@
                             <tr>
                                 <td><%# Eval("DNI") %></td>
                                 <td><%# Eval("Nombre") + " " + Eval("Apellido") %></td>
-                                <td><%# Eval("ID_Plan") %></td>
+                                <td><%# Convert.ToInt32(Eval("ID_Plan")) == 1 ? "Basic" : Convert.ToInt32(Eval("ID_Plan")) == 2 ? "Standar" : Convert.ToInt32(Eval("ID_Plan")) == 3 ? "Premium" : "Empleado" %></td>
+
                                 <td><%# Eval("Cel") %></td>
                                 <td><%# Eval("Tel_Emergencia") %></td>
                                 <td><%# Eval("Mail") %></td>
