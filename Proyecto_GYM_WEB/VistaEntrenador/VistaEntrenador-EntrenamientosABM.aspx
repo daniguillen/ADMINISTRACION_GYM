@@ -6,9 +6,16 @@
     <h2>GRILLA DE EJERCICIOS POR GRUPO MUSCULAR</h2>
      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <div class="container">
+<<<<<<< Updated upstream:Proyecto_GYM_WEB/VistaEntrenador/VistaEntrenador-EntrenamientosABM.aspx
         <asp:Button ID="btnOpenModal" runat="server" CssClass="btn btn-primary" Text="AGREGAR REGISTRO DE EJERCICIO" OnClick="btnOpenModal_Click" />
         <asp:Button ID="btnOpenModal2" runat="server" CssClass="btn btn-primary" Text="AGREGAR REGISTRO DE RUTINA" OnClick="btnOpenModal2_Click" />
         <asp:Literal ID="myLiteralControl" runat="server"></asp:Literal>
+=======
+        <asp:Button ID="btnOpenModal" runat="server" CssClass="btn btn-primary" Text="Agregar Nuevo Registro" OnClick="btnOpenModal_Click" />
+
+        <asp:Literal ID="myLiteralControl" runat="server"></asp:Literal>
+
+>>>>>>> Stashed changes:Proyecto_GYM_WEB/VistaEntrenador-EntrenamientosABM.aspx
     </div>
 
 
