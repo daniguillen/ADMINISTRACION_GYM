@@ -6,14 +6,11 @@
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around w-100">
                 <div class="d-flex justify-content-between ">
-
                     <asp:Button ID="BtnEntrenador" CssClass="btn btn-primary m-2" runat="server" Text="Entrenadores" OnClick="Entrenadores" />
                     <asp:Button ID="BtnUsuario" CssClass="btn btn-primary m-2" runat="server" Text="Usuarios" OnClick="Usuarios" />
                     <asp:Button ID="BtnRutina" CssClass="btn btn-primary m-2" runat="server" Text="Rutinas" />
-
                 </div>
-                <div class="d-flex justify-content-lg-around  ">
-
+                <div class="d-flex justify-content-lg-around">
                     <asp:Label AssociatedControlID="TxtBusquedad" runat="server" Text="Filtrar por: " CssClass="text-light m-1"></asp:Label>
                     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select m-1">
                         <asp:ListItem Text="Usuario" Value="Usuario"></asp:ListItem>
@@ -25,9 +22,10 @@
                 </div>
             </li>
         </ul>
-        <div class=" m-2">
-            <div class=" bg-dark text-light">
+        <div class="m-2">
+            <div class="bg-dark text-light">
                 <h5 class="mb-2">Mensajes a usuarios y entrenadores</h5>
+                <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-light mt-2"></asp:Label>
             </div>
             <div class="">
                 <asp:TextBox ID="TextBox1" CssClass="form-control mb-lg-1 bg-dark text-light" runat="server"></asp:TextBox>
@@ -54,33 +52,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% foreach (var usuario in ListaUsuarios)
-                        { %>
-                    <tr>
-                        <th><%= usuario.DNI %></th>
-                        <th><%= usuario.Nombre + " " + usuario.Apellido %></th>
-                        <th><%= usuario.ID_Plan %></th>
-                        <th><%= usuario.Cel %></th>
-                        <th><%= usuario.Tel_Emergencia %></th>
-                        <th><%= usuario.Mail %></th>
-                        <th><%= usuario.Password %></th>
-                        <th><%= DateTime.Now.Year - usuario.Fecha_Nacimiento.Year - (usuario.Fecha_Nacimiento.Date > DateTime.Now.Date ? 1 : 0) %></th>
-                        <th><%= usuario.Sexo %></th>
-                        <th><%= usuario.Fecha_ingreso.Day + " / "+usuario.Fecha_ingreso.Month + " / " +usuario.Fecha_ingreso.Year %></th>
-                        <th><%= usuario.Estado.ToString()=="True"?"Activo":"Inactivo" %></th>
-                        <th>
-                            <a href="AdministradorEditarUsuario.aspx?id=<%=usuario.ID %>" class="btn btn-secondary btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-arrow-right"></i>
-                                </span>
-                                <span class="bottom-0">Editar</span>
-                            </a>
-                        </th>
-                    </tr>
-                    <% } %>
+                    <asp:Repeater ID="RepeaterUsuarios" runat="server">
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Eval("DNI") %></td>
+                                <td><%# Eval("Nombre") + " " + Eval("Apellido") %></td>
+                                <td><%# Eval("ID_Plan") %></td>
+                                <td><%# Eval("Cel") %></td>
+                                <td><%# Eval("Tel_Emergencia") %></td>
+                                <td><%# Eval("Mail") %></td>
+                                <td><%# Eval("Password") %></td>
+                                <td>
+                                    <%# DateTime.Now.Year - Convert.ToDateTime(Eval("Fecha_Nacimiento")).Year - (Convert.ToDateTime(Eval("Fecha_Nacimiento")).Date > DateTime.Now.Date ? 1 : 0) %>
+                                </td>
+                                <td><%# Eval("Sexo") %></td>
+                                <td>
+                                    <%# Convert.ToDateTime(Eval("Fecha_ingreso")).Day + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Month + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Year %>
+                                </td>
+                                <td><%# Convert.ToBoolean(Eval("Estado")) ? "Activo" : "Inactivo" %></td>
+                                <td>
+                                    <a href="AdministradorEditarUsuario.aspx?id=<%# Eval("ID") %>" class="btn btn-secondary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="bottom-0">Editar</span>
+                                    </a>
+                                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("DNI") %>' OnCommand="BtnEliminar_Command" />
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                                   
                 </tbody>
             </table>
         </div>
     </div>
+    
 </asp:Content>
 

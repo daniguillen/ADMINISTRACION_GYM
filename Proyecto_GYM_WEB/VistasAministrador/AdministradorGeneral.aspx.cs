@@ -2,11 +2,7 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace Proyecto_GYM_WEB.VistasAministrador
 {
@@ -38,6 +34,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                     if (!IsPostBack)
                     {
                         ListaUsuarios = dato.listar_Clientes();
+                        BindRepeater();
                     }
                 }
             }
@@ -47,19 +44,46 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             }
         }
 
+        private void BindRepeater()
+        {
+            RepeaterUsuarios.DataSource = ListaUsuarios;
+            RepeaterUsuarios.DataBind();
+        }
+
         protected void Buscar(object sender, EventArgs e)
         {
             ListaUsuarios = dato.listar_Instructores();
+            BindRepeater();
         }
+
         protected void Entrenadores(object sender, EventArgs e)
         {
             ListaUsuarios = dato.listar_Instructores();
             LiteralUsuarios.Text = "<h1>Entrenadores</h1>";
+            BindRepeater();
         }
+
         protected void Usuarios(object sender, EventArgs e)
         {
             ListaUsuarios = dato.listar_Clientes();
             LiteralUsuarios.Text = "<h1>Clientes</h1>";
+            BindRepeater();
+        }
+
+        protected void BtnEliminar_Command(object sender, CommandEventArgs e)
+        {
+            int userId;
+            if (int.TryParse(e.CommandArgument.ToString(), out userId))
+            {
+                Label1.Text = "ID del usuario: " + userId.ToString();
+                
+                ListaUsuarios = dato.listar_Clientes();
+                BindRepeater(); 
+            }
+            else
+            {
+                Label1.Text = "No se pudo obtener el ID del usuario.";
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Proyecto_GYM_WEB
         public Usuario Perfil = new Usuario();
         public Plan Plan = new Plan();
         public string na = "u";
-        public Rutina_ejercicio RutinaCliente = new Rutina_ejercicio();
+      //  public Rutina_ejercicio RutinaCliente = new Rutina_ejercicio();
         public string[] dia_semana={"LUNES", "MARTES","MIERCOLES","JUEVES","VIERNES","SABADO","DOMINGO"};
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace Proyecto_GYM_WEB
                 Perfil = controller.Cliente(1);
                 Plan.ID = Perfil.ID_Plan;
                 Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
-                RutinaCliente.ID = Perfil.ID_rutina;
+              //  RutinaCliente.ID = Perfil.ID_rutina;
                // RutinaCliente = controller.ListarRutinas().Find(x=>x.ID==RutinaCliente.ID);
                 
                 

@@ -7,6 +7,7 @@ using System.Web;
 using Dominio;
 
 
+
 namespace ACCIONES
 {
     public class Controller
@@ -183,7 +184,7 @@ namespace ACCIONES
 
 
         }
-
+        /*
         public List<Rutina_ejercicio> ListarRutinas()
         {
             try
@@ -211,7 +212,8 @@ namespace ACCIONES
                         if (id_ejer != eje_ant)
                         {
                          Ejercicio eje_aux = new Ejercicio();
-                            eje_aux.Dia = datos.Lector.GetString(2);
+                          
+                       //     eje_aux.Dia = datos.Lector.GetString(2);
                             eje_aux.Descripcion=datos.Lector.GetString(4);
                             eje_aux.Nombre = datos.Lector.GetString(5);
                             eje_aux.Repeticiones=datos.Lector.GetInt32(6);
@@ -254,7 +256,7 @@ namespace ACCIONES
 
 
         }
-
+        */
         public List<Ejercicio> ListarEjercicios()
         {
 
@@ -457,7 +459,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
+        /*
         public void agregarRutina(Rutina_ejercicio rutiNueva)
         {
             try
@@ -467,6 +469,6 @@ namespace ACCIONES
             catch (Exception ex) { throw ex; }
             finally { datos.cerrarConexion();}
         }
-
+        */
     }
 }

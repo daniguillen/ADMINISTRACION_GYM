@@ -170,7 +170,7 @@ namespace Proyecto_GYM_WEB
             }
 
         }
-
+        /*
         protected void btnAgregarRutina_Click(object sender, EventArgs e)
         {
             try
@@ -227,5 +227,6 @@ namespace Proyecto_GYM_WEB
         }
 
 
+    }*/
     }
 }
