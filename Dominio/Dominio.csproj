@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Dificultad.cs" />
     <Compile Include="Ejercicio.cs" />
+    <Compile Include="Rutina_cliente.cs" />
     <Compile Include="TipoEjercicio.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="GrupoMuscular.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Planes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rutina.cs" />
+    <Compile Include="Rutina_ejercicio.cs" />
     <Compile Include="Sexo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

@@ -29,7 +29,7 @@ namespace Dominio
 
         public GrupoMuscular Grupo_Muscular {get; set;}
 
-        public string Dia { get; set; }
+        
 
     }
 }
