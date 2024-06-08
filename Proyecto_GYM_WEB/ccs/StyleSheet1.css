@@ -1,6 +1,7 @@
 ﻿body, li, a {
     list-style: none;
     text-decoration: none;
+
 }
 
 main {
@@ -81,12 +82,15 @@ footer {
 }
 
 .card {
-    background: linear-gradient(to left, #74EB1E,#20420C);
     border: none;
-  
+    background: linear-gradient(to left, #74EB1E, #2C6D00);
     border-radius: 15px;
     padding: 1em;
     box-sizing: border-box;
+}
+.cardAdmin {
+    background:none;
+        background-color: rgb(108, 117, 125) !important;
 }
 
 .precio {
