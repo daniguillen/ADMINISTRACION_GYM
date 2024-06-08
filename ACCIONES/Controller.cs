@@ -184,7 +184,7 @@ namespace ACCIONES
 
         }
 
-        public List<Rutina> ListarRutinas()
+        public List<Rutina_ejercicio> ListarRutinas()
         {
             try
             {
@@ -192,13 +192,13 @@ namespace ACCIONES
                
                 datos.ejecutarLectura();
 
-                List<Rutina> listitaRutina= new List<Rutina>();
+                List<Rutina_ejercicio> listitaRutina= new List<Rutina_ejercicio>();
                 int rut_ant = -1;
                 int eje_ant = -1;
 
                 while (datos.Lector.Read())
                 {
-                    Rutina Rutina_aux = new Rutina();
+                    Rutina_ejercicio Rutina_aux = new Rutina_ejercicio();
 
                   
                     
@@ -458,7 +458,7 @@ namespace ACCIONES
             }
         }
 
-        public void agregarRutina(Rutina rutiNueva)
+        public void agregarRutina(Rutina_ejercicio rutiNueva)
         {
             try
             {

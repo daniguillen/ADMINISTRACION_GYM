@@ -175,7 +175,7 @@ namespace Proyecto_GYM_WEB
         {
             try
             {
-                Rutina nuevaRutina = new Rutina();
+                Rutina_ejercicio nuevaRutina = new Rutina_ejercicio();
                 nuevaRutina.Nombre = txtNombreRutina.Text;
                 nuevaRutina.Descripcion = txtDescripcionRutina.Text;
                 nuevaRutina.ejercicio = new List<Ejercicio>();

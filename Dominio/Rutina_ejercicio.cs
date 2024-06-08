@@ -7,20 +7,19 @@ using System.Collections.Generic;
 
 namespace Dominio
 {
-    public class Rutina
+    public class Rutina_ejercicio
     {
-        public Rutina()
+        public Rutina_ejercicio()
         {
             ejercicio= new List<Ejercicio>();
         }
         public int ID {get; set;}
-
+        public int id_rutina_cliente { get; set; }
         public List<Ejercicio> ejercicio {get; set;}
 
         public int hora { get; set;} 
-
-        public string Nombre {  get; set; }
-        public string Descripcion {  get; set; }
+      
+        public string dia { get; set;} 
 
     }
 }
