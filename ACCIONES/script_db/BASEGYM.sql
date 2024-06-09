@@ -3,8 +3,8 @@ go
 use GymBase
 go 
 create TABLE NIVEL(
-ID SMALLINT PRIMARY KEY CHECK (ID BETWEEN 1 AND 3),
-LEVEL varchar(50),
+ID INT PRIMARY KEY CHECK (ID BETWEEN 1 AND 3),
+Nivel_Acceso varchar(50),
 )
 GO
 CREATE TABLE DIA(
@@ -13,10 +13,10 @@ NOMBRE_DIA VARCHAR(20) NOT NULL UNIQUE
 )
 GO
 CREATE TABLE PLANES(
-ID SMALLINT NOT NULL PRIMARY KEY,
-CUOTA MONEY NOT NULL,
+ID INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+CUOTA MONEY,
 TIPO_PLAN VARCHAR(10) NOT NULL,
-DESCRIPCION VARCHAR(500)
+DESCRIPCION VARCHAR(500) not null,
 )
 GO
 create table USUARIO
@@ -37,7 +37,7 @@ NOMBRE VARCHAR (200),
 )
 GO
 CREATE TABLE DIFICULTAD(
-ID INT IDENTITY (1,1) PRIMARY KEY,
+ID INT PRIMARY KEY,
 DESCRIPCION VARCHAR (100))
 GO
 CREATE TABLE GRUPO_MUSCULAR(
@@ -75,14 +75,15 @@ CELULAR VARCHAR(50)NOT NULL,
 DIRECCION NVARCHAR (500)NOT NULL,
 DNI VARCHAR(50) NOT NULL UNIQUE,
 FECHA_INGRESO DATETIME NOT NULL,
+FECHA_BAJA DATETIME,
 FECHA_NACIMIENTO DATETIME NOT NULL,
 FOTO NVARCHAR(1000),
-IDPLANES SMALLINT NOT NULL FOREIGN KEY REFERENCES PLANES(ID),
+IDPLANES INT NOT NULL FOREIGN KEY REFERENCES PLANES(ID),
 SEXO INT FOREIGN KEY REFERENCES SEXO(ID),
 TEL_EMERGENCIA VARCHAR(50) NOT NULL,
 ID_ESTABLECIMIENTO INT NOT NULL FOREIGN KEY REFERENCES ESTABLECIMIENTO(ID),
 ESTADO BIT NOT NULL DEFAULT 1, 
-IDNIVEL SMALLINT NOT NULL FOREIGN KEY REFERENCES NIVEL(ID),
+IDNIVEL INT NOT NULL FOREIGN KEY REFERENCES NIVEL(ID),
 )
 GO
 CREATE TABLE RUTINA(
@@ -105,7 +106,7 @@ CREATE TABLE RUTINA_EJERCICIO (
 
 -- Insertar valores en NIVEL
 
-INSERT INTO NIVEL (ID, LEVEL)
+INSERT INTO NIVEL (ID, Nivel_Acceso)
 VALUES 
 (1, 'USUARIO'),
 (2, 'INSTRUCTOR'),
@@ -130,11 +131,12 @@ VALUES
 (4, 'S/D');
 GO
 -- Insertar valores en PLANES
-INSERT INTO PLANES (ID, CUOTA, TIPO_PLAN, DESCRIPCION)
+INSERT INTO PLANES ( CUOTA, TIPO_PLAN, DESCRIPCION)
 VALUES 
-(1, 50.00, 'Básico', 'Plan básico con acceso a todos los equipos del gimnasio'),
-(2, 70.00, 'Estándar', 'Plan estándar con clases grupales adicionales'),
-(3, 90.00, 'Premium', 'Plan premium con entrenador personal y guía nutricional');
+( 50.00, 'Básico', 'Plan básico con acceso a todos los equipos del gimnasio'),
+( 70.00, 'Estándar', 'Plan estándar con clases grupales adicionales'),
+( 90.00, 'Premium', 'Plan premium con entrenador personal y guía nutricional'),
+( 00.00, 'Empleado', 'Beneficio para empleados');
 GO
 
 -- Insertar valores en USUARIO
@@ -180,11 +182,11 @@ VALUES
 GO
 
 -- Insertar valores en DIFICULTAD
-INSERT INTO DIFICULTAD (DESCRIPCION)
+INSERT INTO DIFICULTAD (ID, DESCRIPCION)
 VALUES 
-('Fácil'),
-('Medio'),
-('Difícil');
+(1,'Fácil'),
+(2,'Medio'),
+(3,'Difícil');
 GO
 
 -- Insertar valores en GRUPO_MUSCULAR
@@ -254,9 +256,12 @@ VALUES
 GO
 
 -- Insertar valores en RUTINA
-
+GO
 INSERT INTO RUTINA ( ID_PERSONA,NOMBRE,DESCRIPCION)
-VALUES (1,'Spinning','Con una buena bici'), (2,'Boxeo','Quien se la aguanta'), (4,'Musculación','Todo trabado'),(6,'Ballet','En puntita de pie'), (11,'Gluteos','Salis con una buena cola'), (14,'Crossfit','A quien le da la nafta');
+VALUES (1,'Spinning','Con una buena bici'), (1,'Boxeo','Quien se la aguanta'), (1,'Musculación','Todo trabado'),(1,'Ballet','En puntita de pie'), (1,'Gluteos','Salis con una buena cola'), (2,'Crossfit','A quien le da la nafta');
+GO
 
 INSERT INTO RUTINA_EJERCICIO (ID_RUTINA,ID_DIA, ID_EJERCICIO, HORARIO)
-VALUES (2, 1, 1, 8), (2, 2 ,2,8), (2, 3 ,4,9), (2, 4, 3,8), (2, 5 ,2,10), (2, 6, 1,13);
+VALUES (1, 1, 1, 8), (1, 2 ,2,8), (1, 3 ,4,9), (1, 4, 3,8), (1, 5 ,2,10), (1, 6, 1,13);
+
+SELECT * FROM PERSONA

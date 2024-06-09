@@ -3,8 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistasaministrador\\administradorgeneral.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasaministrador\\administradorgeneral.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{8A13A5D9-6959-4A2F-A48B-D298ED488F25}|..\\Dominio\\Dominio.csproj|c:\\utn\\c3\\programacion3\\administracion gym\\administracion_gym\\dominio\\ejercicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A13A5D9-6959-4A2F-A48B-D298ED488F25}|..\\Dominio\\Dominio.csproj|c:\\utn\\c3\\programacion3\\administracion gym\\administracion_gym\\dominio\\dificultad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A13A5D9-6959-4A2F-A48B-D298ED488F25}|..\\Dominio\\Dominio.csproj|c:\\utn\\c3\\programacion3\\administracion gym\\administracion_gym\\dominio\\rutina_ejercicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistasaministrador\\administradorgeneral.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -27,7 +37,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 150,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 10,
+=======
+          "SelectedChildIndex": 6,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,6 +73,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 2,
               "Title": "Controller.cs",
               "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\ACCIONES\\Controller.cs",
@@ -105,6 +120,53 @@
               "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAministrador\\AdministradorGeneral.aspx.cs",
               "RelativeToolTip": "VistasAministrador\\AdministradorGeneral.aspx.cs",
               "ViewState": "AQIAAFQAAAAAAAAAAAAwwGgAAAAEAAAA",
+=======
+              "DocumentIndex": 0,
+              "Title": "Ejercicio.cs",
+              "DocumentMoniker": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Ejercicio.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Ejercicio.cs",
+              "ToolTip": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Ejercicio.cs",
+              "RelativeToolTip": "..\\Dominio\\Ejercicio.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T21:40:53.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dificultad.cs",
+              "DocumentMoniker": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Dificultad.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Dificultad.cs",
+              "ToolTip": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Dificultad.cs",
+              "RelativeToolTip": "..\\Dominio\\Dificultad.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T21:40:45.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Rutina_cliente.cs",
+              "DocumentMoniker": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Rutina_cliente.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Rutina_cliente.cs",
+              "ToolTip": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Rutina_cliente.cs",
+              "RelativeToolTip": "..\\Dominio\\Rutina_cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T02:45:24.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Rutina_ejercicio.cs",
+              "DocumentMoniker": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Rutina_ejercicio.cs",
+              "RelativeDocumentMoniker": "..\\Dominio\\Rutina_ejercicio.cs",
+              "ToolTip": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Dominio\\Rutina_ejercicio.cs",
+              "RelativeToolTip": "..\\Dominio\\Rutina_ejercicio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T16:06:13.686Z",
               "EditorCaption": ""
