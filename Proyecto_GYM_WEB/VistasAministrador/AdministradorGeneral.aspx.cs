@@ -52,13 +52,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         protected void Buscar(object sender, EventArgs e)
         {
-            ListaUsuarios = dato.listar_Instructores();
+            ListaUsuarios = dato.listar_Clientes();
             BindRepeater();
         }
 
         protected void Entrenadores(object sender, EventArgs e)
         {
-            ListaUsuarios = dato.listar_Instructores();
+            ListaUsuarios = dato.listar_Clientes();
             LiteralUsuarios.Text = "<h1>Entrenadores</h1>";
             BindRepeater();
         }
@@ -70,13 +70,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             BindRepeater();
         }
 
-        protected void BtnEliminar_Command(object sender, CommandEventArgs e)
+        protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {
             int userId;
             if (int.TryParse(e.CommandArgument.ToString(), out userId))
             {
                 Label1.Text = "ID del usuario: " + userId.ToString();
-                dato.eliminarPorID(userId);
+                dato.Eliminar_Persona_x_ID(userId);
                 ListaUsuarios = dato.listar_Clientes();
                 BindRepeater(); 
             }
@@ -94,7 +94,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             if (int.TryParse(e.CommandArgument.ToString(), out userId))
             {
                
-                dato.ActivarClientePorID(userId);
+                dato.Activar_Cliente_PorID(userId);
                 ListaUsuarios = dato.listar_Clientes();
                 BindRepeater();
             }

@@ -14,12 +14,11 @@ namespace Dominio
             ejercicio= new List<Ejercicio>();
         }
         public int ID {get; set;}
-        public int id_rutina_cliente { get; set; }
         public List<Ejercicio> ejercicio {get; set;}
 
         public int hora { get; set;} 
       
-        public string dia { get; set;} 
+        public Dias dia { get; set;} 
 
     }
 }

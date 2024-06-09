@@ -29,7 +29,7 @@ namespace Proyecto_GYM_WEB
 
                 Controller controller = new Controller();
                 Perfil = controller.Cliente(1);
-                Plan.ID = Perfil.ID_Plan;
+                Plan.ID = Perfil.plan.ID;
                 Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
               //  RutinaCliente.ID = Perfil.ID_rutina;
                // RutinaCliente = controller.ListarRutinas().Find(x=>x.ID==RutinaCliente.ID);

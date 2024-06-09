@@ -57,7 +57,7 @@
                             <tr>
                                 <td><%# Eval("DNI") %></td>
                                 <td><%# Eval("Nombre") + " " + Eval("Apellido") %></td>
-                                <td><%# Eval("ID_Plan") %></td>
+                                <td><%# Eval("plan.Tipo_Plan") %></td>
                                 <td><%# Eval("Cel") %></td>
                                 <td><%# Eval("Tel_Emergencia") %></td>
                                 <td><%# Eval("Mail") %></td>
@@ -65,7 +65,7 @@
                                 <td>
                                     <%# DateTime.Now.Year - Convert.ToDateTime(Eval("Fecha_Nacimiento")).Year - (Convert.ToDateTime(Eval("Fecha_Nacimiento")).Date > DateTime.Now.Date ? 1 : 0) %>
                                 </td>
-                                <td><%# Eval("Sexo") %></td>
+                                <td><%# Eval("Sexo.Tipo") %></td>
                                 <td>
                                     <%# Convert.ToDateTime(Eval("Fecha_ingreso")).Day + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Month + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Year %>
                                 </td>
@@ -77,7 +77,7 @@
                                         </span>
                                         <span class="bottom-0">Editar</span>
                                     </a>
-                                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnEliminar_Command" />
+                                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnEliminar_Persona_Command" />
                                     <asp:Button ID="BtnAgregar" runat="server" Text="Activar" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnActivar" />
                                 </td>
                             </tr>

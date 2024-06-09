@@ -70,11 +70,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dias.cs" />
     <Compile Include="Dificultad.cs" />
     <Compile Include="Ejercicio.cs" />
-    <Compile Include="Rutina_cliente.cs" />
+    <Compile Include="Rutina.cs" />
     <Compile Include="TipoEjercicio.cs" />
-    <Compile Include="Estado.cs" />
     <Compile Include="GrupoMuscular.cs" />
     <Compile Include="Locales.cs" />
     <Compile Include="Niveles.cs" />

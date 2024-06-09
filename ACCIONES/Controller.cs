@@ -20,7 +20,7 @@ namespace ACCIONES
         }
 
 
-        public void eliminarPorID(int a) {
+        public void Eliminar_Persona_x_ID(int a) {
 
             try {
                 datos.setearQuery("update PERSONA set ESTADO=0 where ID="+a+";");
@@ -38,7 +38,7 @@ namespace ACCIONES
 
 
         }
-        public void ActivarClientePorID(int a)
+        public void Activar_Cliente_PorID(int a)
         {
 
             try
@@ -66,7 +66,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT  u.ID, u.MAIL, p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, p.ID_ESTABLECIMIENTO , p.ESTADO, p.IDNIVEL ,u.PASWORD FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID   where IDNIVEL=1 ");
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO\r\nFROM PERSONA p\r\nINNER JOIN USUARIO u on u.ID=p.ID \r\nINNER JOIN PLANES PL ON PL.ID=P.IDPLANES\r\nINNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL\r\nINNER JOIN SEXO S ON P.SEXO=S.ID\r\n\r\n\r\n");
 
                 datos.ejecutarLectura();
 
@@ -78,22 +78,28 @@ namespace ACCIONES
 
                     aux.ID = datos.Lector.GetInt32(0);
                     aux.Mail = datos.Lector.GetString(1);
-                    aux.Nombre = datos.Lector.GetString(2);
-                    aux.Apellido = datos.Lector.GetString(3);
-                    aux.Direccion = datos.Lector.GetString(4);
-                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(5);
-                    aux.Sexo = datos.Lector.GetInt32(6);
-                    aux.Foto = datos.Lector.GetString(7);
-                    aux.DNI = datos.Lector.GetString(8);
-                    aux.Apto_Fisico = datos.Lector.GetString(9);
-                    aux.Tel_Emergencia = datos.Lector.GetString(10);
-                    aux.Cel = datos.Lector.GetString(11);
-                    aux.Fecha_ingreso = datos.Lector.GetDateTime(12);
-                    aux.ID_Plan = datos.Lector.GetInt16(13);
-                    aux.ID_Establecimiento = datos.Lector.GetInt32(14);
-                    aux.Estado = datos.Lector.GetBoolean(15);
-                    aux.ID_Nivel = datos.Lector.GetInt16(16);
-                    aux.Password = datos.Lector.GetString(17);
+                    aux.Password = datos.Lector.GetString(2);
+                    aux.nivel.ID = datos.Lector.GetInt32(3);
+                    aux.nivel.level = datos.Lector.GetString(4);
+                    aux.Nombre = datos.Lector.GetString(5);
+                    aux.Apellido = datos.Lector.GetString(6);
+                    aux.Direccion = datos.Lector.GetString(7);
+                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    aux.sexo.ID = datos.Lector.GetInt32(9);
+                    aux.sexo.Tipo = datos.Lector.GetString(10);
+                    aux.Foto = datos.Lector.GetString(11);
+                    aux.DNI = datos.Lector.GetString(12);
+                    aux.Apto_Fisico = datos.Lector.GetString(13);
+                    aux.Tel_Emergencia = datos.Lector.GetString(14);
+                    aux.Cel = datos.Lector.GetString(15);
+                    aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    aux.plan.ID = datos.Lector.GetInt32(17);
+                    aux.plan.Descripcion = datos.Lector.GetString(18);
+                    aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    aux.Estado = datos.Lector.GetBoolean(22);
+                   
 
                     ListaUsuario.Add(aux);
                 }
@@ -111,65 +117,17 @@ namespace ACCIONES
 
 
         }
-        public List<Usuario> listar_Instructores()
-        {
-
-            List<Usuario> ListaUsuario = new List<Usuario>();
-
-            try
-            {
-                datos.setearQuery("SELECT  u.ID, u.MAIL, p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, p.ID_ESTABLECIMIENTO , p.ESTADO, p.IDNIVEL  FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID   where IDNIVEL=2 ");
-
-                datos.ejecutarLectura();
-
-                Usuario aux = new Usuario();
-
-                while (datos.Lector.Read())
-                {
-
-
-                    aux.ID = datos.Lector.GetInt32(0);
-                    aux.Mail = datos.Lector.GetString(1);
-                    aux.Nombre = datos.Lector.GetString(2);
-                    aux.Apellido = datos.Lector.GetString(3);
-                    aux.Direccion = datos.Lector.GetString(4);
-                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(5);
-                    aux.Sexo = datos.Lector.GetInt32(6);
-                    aux.Foto = datos.Lector.GetString(7);
-                    aux.DNI = datos.Lector.GetString(8);
-                    aux.Apto_Fisico = datos.Lector.GetString(9);
-                    aux.Tel_Emergencia = datos.Lector.GetString(10);
-                    aux.Cel = datos.Lector.GetString(11);
-                    aux.Fecha_ingreso = datos.Lector.GetDateTime(12);
-                    aux.ID_Plan = datos.Lector.GetInt16(13);
-                    aux.ID_Establecimiento = datos.Lector.GetInt32(14);
-                    aux.Estado = datos.Lector.GetBoolean(15);
-                    aux.ID_Nivel = datos.Lector.GetInt16(16);
-
-                    ListaUsuario.Add(aux);
-                }
-                return ListaUsuario;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-
-
-        }
+       
 
         public Usuario Cliente(int idusuario)
         {
 
             try
             {
-                datos.setearQuery("SELECT  u.ID, u.MAIL, p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, p.ID_ESTABLECIMIENTO , p.ESTADO, p.IDNIVEL, R.ID FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID INNER JOIN RUTINA R ON R.ID_PERSONA=P.ID WHERE p.ID=@ID");
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO\r\nFROM PERSONA p\r\nINNER JOIN USUARIO u on u.ID=p.ID \r\nINNER JOIN PLANES PL ON PL.ID=P.IDPLANES\r\nINNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL\r\nINNER JOIN SEXO S ON P.SEXO=S.ID WHERE p.ID=@ID");
                 datos.setearParametro("@ID", idusuario);
+                
+
                 datos.ejecutarLectura();
 
                 Usuario aux = new Usuario();
@@ -181,28 +139,34 @@ namespace ACCIONES
                     if (datos.Lector.GetInt32(0) == idusuario)
                     {
 
-                                              
-                           
-                            aux.ID = datos.Lector.GetInt32(0);
-                            aux.Mail = datos.Lector.GetString(1);
-                            aux.Nombre = datos.Lector.GetString(2);
-                            aux.Apellido = datos.Lector.GetString(3);
-                            aux.Direccion = datos.Lector.GetString(4);
-                            aux.Fecha_Nacimiento = datos.Lector.GetDateTime(5);
-                            aux.Sexo = datos.Lector.GetInt32(6);
-                            aux.Foto = datos.Lector.GetString(7);
-                            aux.DNI = datos.Lector.GetString(8);
-                            aux.Apto_Fisico = datos.Lector.GetString(9);
-                            aux.Tel_Emergencia = datos.Lector.GetString(10);
-                            aux.Cel = datos.Lector.GetString(11);
-                            aux.Fecha_ingreso = datos.Lector.GetDateTime(12);
-                            aux.ID_Plan = datos.Lector.GetInt16(13);
-                            aux.ID_Establecimiento = datos.Lector.GetInt32(14);
-                            aux.Estado = datos.Lector.GetBoolean(15);
-                            aux.ID_Nivel = datos.Lector.GetInt16(16);
-                            aux.ID_rutina = datos.Lector.GetInt32(17);
 
-                        
+
+                        aux.ID = datos.Lector.GetInt32(0);
+                        aux.Mail = datos.Lector.GetString(1);
+                        aux.Password = datos.Lector.GetString(2);
+                        aux.nivel.ID = datos.Lector.GetInt32(3);
+                        aux.nivel.level = datos.Lector.GetString(4);
+                        aux.Nombre = datos.Lector.GetString(5);
+                        aux.Apellido = datos.Lector.GetString(6);
+                        aux.Direccion = datos.Lector.GetString(7);
+                        aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                        aux.sexo.ID = datos.Lector.GetInt32(9);
+                        aux.sexo.Tipo = datos.Lector.GetString(10);
+                        aux.Foto = datos.Lector.GetString(11);
+                        aux.DNI = datos.Lector.GetString(12);
+                        aux.Apto_Fisico = datos.Lector.GetString(13);
+                        aux.Tel_Emergencia = datos.Lector.GetString(14);
+                        aux.Cel = datos.Lector.GetString(15);
+                        aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                        aux.plan.ID = datos.Lector.GetInt32(17);
+                        aux.plan.Descripcion = datos.Lector.GetString(18);
+                        aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                        aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                        aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                        aux.Estado = datos.Lector.GetBoolean(22);
+
+
+
                     }
 
 
@@ -224,62 +188,80 @@ namespace ACCIONES
 
 
         }
-        /*
-        public List<Rutina_ejercicio> ListarRutinas()
+        
+        public List<Rutina> ListarRutinas()
         {
             try
             {
-                datos.setearQuery("SELECT R.ID AS RUT_ID, RE.HORARIO, D.NOMBRE_DIA, E.ID AS EJER_ID, E.DESCRIPCION, E.NOMBRE, E.\r\nREPETICIONES, TE.ID AS TIPO_ID, TE.DESCRIPCION, DI.ID AS DIF_ID, DI.DESCRIPCION, E.VIDEO, GM.ID, GM.DESCRIPCION  FROM RUTINA R \r\nINNER JOIN RUTINA_EJERCICIO RE ON R.ID=RE.ID_RUTINA INNER JOIN DIA D ON D.ID=RE.ID_DIA \r\nINNER JOIN EJERCICIO E ON E.ID=RE.ID_EJERCICIO INNER JOIN TIPO_EJERCICIO TE ON TE.ID=E.ID_TIPO \r\nINNER JOIN DIFICULTAD DI ON DI.ID=E.ID_DIFICULTAD \r\nINNER JOIN GRUPO_MUSCULAR GM ON E.ID_GRUPO_MUSCULAR=GM.ID ");
+                datos.setearQuery("SELECT R.ID AS RUTINA_ID, R.NOMBRE, R.DESCRIPCION, r.ESTADO, RE.ID AS id_RUTI_EJE, RE.HORARIO, D.ID AS ID_DIA, D.NOMBRE_DIA, E.ID AS ID_EJER, E.DESCRIPCION, E.NOMBRE, E.REPETICIONES, TE.ID AS ID_TIPO_EJER, TE.DESCRIPCION, DI.ID AS ID_DIFICULTAD, DI.DESCRIPCION, E.VIDEO, GM.ID AS ID_GRUPO_MUSCULAR, GM.DESCRIPCION  FROM RUTINA R\r\nINNER JOIN RUTINA_EJERCICIO RE ON R.ID=RE.ID_RUTINA \r\nINNER JOIN DIA D ON D.ID=RE.ID_DIA \r\nINNER JOIN EJERCICIO E ON E.ID=RE.ID_EJERCICIO \r\nINNER JOIN TIPO_EJERCICIO TE ON TE.ID=E.ID_TIPO\r\nINNER JOIN DIFICULTAD DI ON DI.ID=E.ID_DIFICULTAD \r\nINNER JOIN GRUPO_MUSCULAR GM ON E.ID_GRUPO_MUSCULAR=GM.ID\r\n");
                
                 datos.ejecutarLectura();
-
-                List<Rutina_ejercicio> listitaRutina= new List<Rutina_ejercicio>();
+                List <Rutina> ListitaRutina = new List <Rutina>();
                 int rut_ant = -1;
                 int eje_ant = -1;
+                int rut_ejer_ant = -1;
 
                 while (datos.Lector.Read())
                 {
-                    Rutina_ejercicio Rutina_aux = new Rutina_ejercicio();
 
-                  
-                    
-                     int idrutina = datos.Lector.GetInt32(0);
+                    Rutina Rutina_aux = new Rutina();
 
-                     if (idrutina != rut_ant){
+
+
+                    int idrutina = datos.Lector.GetInt32(0);
+
+                    if (idrutina != rut_ant)
+                    {
+
                         Rutina_aux.ID = idrutina;
-                        Rutina_aux.hora= datos.Lector.GetInt32(1);
-                        int id_ejer = datos.Lector.GetInt32(1);
-                        if (id_ejer != eje_ant)
+                        Rutina_aux.nombre = datos.Lector.GetString(1);
+                        Rutina_aux.descripcion = datos.Lector.GetString(2);
+                        Rutina_aux.estado = datos.Lector.GetBoolean(3);
+
+                        int id_rut_ejer = datos.Lector.GetInt32(4);
+
+                        if (id_rut_ejer != rut_ejer_ant)
                         {
-                         Ejercicio eje_aux = new Ejercicio();
-                          
-                       //     eje_aux.Dia = datos.Lector.GetString(2);
-                            eje_aux.Descripcion=datos.Lector.GetString(4);
-                            eje_aux.Nombre = datos.Lector.GetString(5);
-                            eje_aux.Repeticiones=datos.Lector.GetInt32(6);
-                            eje_aux.Tipo_Ejercicio.ID = datos.Lector.GetInt32(7);
-                            eje_aux.Tipo_Ejercicio.Descripcion = datos.Lector.GetString(8);
-                            eje_aux.Tipo_Dificultad.ID = datos.Lector.GetInt32(9);
-                            eje_aux.Tipo_Dificultad.Descripcion=datos.Lector.GetString(10);
-                            eje_aux.Video=datos.Lector.GetString(11);
-                            eje_aux.Grupo_Muscular.ID=datos.Lector.GetInt32(12);
-                            eje_aux.Grupo_Muscular.Descripcion=datos.Lector.GetString(12);
+                            Rutina_ejercicio Ru_ejer = new Rutina_ejercicio();
 
-                            Rutina_aux.ejercicio.Add(eje_aux);
+                            Ru_ejer.ID = id_rut_ejer;
+                            Ru_ejer.hora = datos.Lector.GetInt32(5);
+                            Ru_ejer.dia.id = datos.Lector.GetInt32(6);
+                            Ru_ejer.dia.dia = datos.Lector.GetString(7);
 
-                            eje_ant = id_ejer;
+                            int id_ejer = datos.Lector.GetInt32(8);
+
+
+
+
+                            Ejercicio eje_aux = new Ejercicio();
+                            eje_aux.ID = id_ejer;
+                            eje_aux.Descripcion = datos.Lector.GetString(9);
+                            eje_aux.Nombre = datos.Lector.GetString(10);
+                            eje_aux.Repeticiones = datos.Lector.GetInt32(11);
+                            eje_aux.Tipo_Ejercicio.ID = datos.Lector.GetInt32(12);
+                            eje_aux.Tipo_Ejercicio.Descripcion = datos.Lector.GetString(13);
+                            eje_aux.Tipo_Dificultad.ID = datos.Lector.GetInt32(14);
+                            eje_aux.Tipo_Dificultad.Descripcion = datos.Lector.GetString(15);
+                            eje_aux.Video = datos.Lector.GetString(16);
+                            eje_aux.Grupo_Muscular.ID = datos.Lector.GetInt32(17);
+                            eje_aux.Grupo_Muscular.Descripcion = datos.Lector.GetString(18);
+
+                            Ru_ejer.ejercicio.Add(eje_aux);
+
+
+                            rut_ant = idrutina;
+
                         }
 
-                        rut_ant = idrutina;
-                        
+                        ListitaRutina.Add(Rutina_aux);
 
-                        }
-                          listitaRutina.Add(Rutina_aux); 
+
+                    }
+
+
                 }
-
-
-                
-                return listitaRutina;
+                return ListitaRutina;
 
 
 
@@ -296,7 +278,7 @@ namespace ACCIONES
 
 
         }
-        */
+        
         public List<Ejercicio> ListarEjercicios()
         {
 
@@ -351,7 +333,7 @@ namespace ACCIONES
                 while (datos.Lector.Read())
                 {
                     Plan plancito = new Plan();
-                    plancito.ID = datos.Lector.GetInt16(0);
+                    plancito.ID = datos.Lector.GetInt32(0);
                     plancito.Cuotas = datos.Lector.GetSqlMoney(1);
                     plancito.Tipo_Plan = datos.Lector.GetString(2);
                     plancito.Descripcion = datos.Lector.GetString(3);
@@ -499,6 +481,8 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
+       
+        
         /*
         public void agregarRutina(Rutina_ejercicio rutiNueva)
         {
