@@ -107,10 +107,12 @@
     <Content Include="Assets\cali.png" />
     <Content Include="Assets\IMG.jpg" />
     <Content Include="Assets\Img2.png" />
+    <Content Include="Assets\Lionel_Scaloni_-_2022.jpg" />
     <Content Include="Assets\Mancuernas.png" />
     <Content Include="Assets\pila.png" />
     <Content Include="Assets\spining.png" />
     <Content Include="Assets\usuario.png" />
+    <Content Include="Assets\usuario1.jpg" />
     <Content Include="ccs\styles.css" />
     <Content Include="ccs\StyleSheet1.css" />
     <Content Include="Contact.aspx" />

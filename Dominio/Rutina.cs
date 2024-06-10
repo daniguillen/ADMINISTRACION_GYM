@@ -17,6 +17,7 @@ namespace Dominio
         public string descripcion { get; set; }
         
         public bool estado { get; set; }
+        public bool personal { get; set; }
 
         public List<Rutina_ejercicio> rutina_Ejercicios { get; set; }  
 

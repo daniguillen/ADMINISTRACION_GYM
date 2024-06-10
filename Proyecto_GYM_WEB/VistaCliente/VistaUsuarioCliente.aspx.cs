@@ -31,11 +31,12 @@ namespace Proyecto_GYM_WEB
                 Perfil = controller.Cliente(1);
                 Plan.ID = Perfil.plan.ID;
                 Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
-              //  RutinaCliente.ID = Perfil.ID_rutina;
-               // RutinaCliente = controller.ListarRutinas().Find(x=>x.ID==RutinaCliente.ID);
-                
-                
-                
+                Rutina rutinas = controller.Rutinas_id(Perfil.ID_rutina);
+                GridViewRutinas.DataSource = rutinas.rutina_Ejercicios;
+                GridViewRutinas.DataBind();
+
+
+
             }
 
            
