@@ -61,6 +61,10 @@ namespace ACCIONES
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex) { throw ex; }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public void cerrarConexion()

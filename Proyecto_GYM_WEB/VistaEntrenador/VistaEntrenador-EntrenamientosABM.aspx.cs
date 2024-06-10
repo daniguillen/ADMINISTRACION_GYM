@@ -56,13 +56,20 @@ namespace Proyecto_GYM_WEB
                     ddlGrupoMuscu.DataBind();
 
                     List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
-                    lbxEjercicio.DataSource = listaEjercicio;       
+                    lbxEjercicio.DataSource = listaEjercicio;
                     lbxEjercicio.DataValueField = "ID";
                     lbxEjercicio.DataTextField = "Nombre";
                     lbxEjercicio.DataBind();
 
                     ddlDia.DataSource = dia_semana;
                     ddlDia.DataBind();
+
+                    List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
+                    ddlIDRutina.DataSource = listaRutina;
+                    ddlIDRutina.DataValueField = "ID";
+                    ddlIDRutina.DataTextField = "Nombre";
+                    ddlIDRutina.DataBind();
+
 
                     Session["ListaEjercicios"] = listaEjercicio;
                 }
@@ -185,32 +192,11 @@ namespace Proyecto_GYM_WEB
             try
             {
 
-                Rutina_ejercicio nuevaRutinaEjercicio = new Rutina_ejercicio();
                 Rutina nuevarutina = new Rutina();
-                nuevaRutinaEjercicio.ejercicio = new List<Ejercicio>();
-                Dias diaNuevo = new Dias();
 
                 nuevarutina.nombre = txtNombreRutina.Text;
                 nuevarutina.descripcion = txtDescripcionRutina.Text;
-
-                foreach (ListItem item in lbxEjercicio.Items)
-                {
-
-
-                    if (item.Selected)
-                    {
-                        int ejercicioID = int.Parse(item.Value);
-                        Ejercicio ejer = ListaEjercicios.Find(y => y.ID == ejercicioID);
-
-                        if (ejer != null)
-                        {
-                            nuevaRutinaEjercicio.ejercicio.Add(ejer);
-                        }
-
-                    }
-                }
-
-                diaNuevo.dia = ddlDia.Text;
+                objController.agregarRutina(nuevarutina);
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
 
             }
@@ -219,6 +205,37 @@ namespace Proyecto_GYM_WEB
                 Session.Add("error", ex);
                 throw;
                 //redirigir a pantalla error.
+            }
+        }
+        protected void btnAgregarEjercicioARutina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Rutina_ejercicio nuevaRutinaEjercicio = new Rutina_ejercicio();
+                Dias diaNuevo = new Dias();
+                foreach (ListItem item in lbxEjercicio.Items)
+                {
+                    if (item.Selected)
+                    {
+                        int ejercicioID = int.Parse(item.Value);
+                        Ejercicio ejer = ListaEjercicios.Find(y => y.ID == ejercicioID);
+                        nuevaRutinaEjercicio.ejercicio.Add(ejer);                                                 
+                    }
+                }
+                var rutinaID = int.Parse(ddlIDRutina.SelectedValue);
+                diaNuevo.dia = ddlDia.Text;
+
+                foreach (var item in nuevaRutinaEjercicio.ejercicio)
+                { 
+                    objController.agregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo);                
+                }
+
+                Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
             }
         }
         protected void btnOpenModal_Click(object sender, EventArgs e)
@@ -232,7 +249,10 @@ namespace Proyecto_GYM_WEB
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
 
         }
-
+        protected void btnOpenModal3_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal3();", true);
+        }
         protected void btnSalirX1_Click(object sender, EventArgs e)
         {
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
@@ -242,5 +262,11 @@ namespace Proyecto_GYM_WEB
         {
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
         }
+
+        protected void btnbtnSalirX3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+        }
+
     }
 }

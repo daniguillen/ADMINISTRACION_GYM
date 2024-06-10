@@ -185,6 +185,10 @@ h5.modal-title {
 .uP {
     margin-top: -90px;
 }
+
+.form-label{
+    font-weight:bold;
+}
 /*********TABLA************/
 .table-class {
     width: 100%;

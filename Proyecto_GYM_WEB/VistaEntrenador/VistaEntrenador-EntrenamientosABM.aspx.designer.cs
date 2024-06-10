@@ -33,6 +33,15 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Button btnOpenModal2;
 
         /// <summary>
+        /// Control btnOpenModal3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOpenModal3;
+
+        /// <summary>
         /// Control myLiteralControl.
         /// </summary>
         /// <remarks>
@@ -150,6 +159,33 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionRutina;
 
         /// <summary>
+        /// Control btnAgregarRutina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarRutina;
+
+        /// <summary>
+        /// Control btnbtnSalirX3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnbtnSalirX3;
+
+        /// <summary>
+        /// Control ddlIDRutina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlIDRutina;
+
+        /// <summary>
         /// Control lbxEjercicio.
         /// </summary>
         /// <remarks>
@@ -168,12 +204,12 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.DropDownList ddlDia;
 
         /// <summary>
-        /// Control btnAgregarRutina.
+        /// Control btnAgregarEjercicioARutina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarRutina;
+        protected global::System.Web.UI.WebControls.Button btnAgregarEjercicioARutina;
     }
 }
