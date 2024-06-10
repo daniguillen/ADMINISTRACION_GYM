@@ -175,11 +175,36 @@ padding:0
     max-width:600px
 }
 
+/********MODAL**************/
+
 h5.modal-title {
     color: black;
     font-size: 20px; 
     margin-bottom: 10px; 
-    
+}
+.uP {
+    margin-top: -90px;
+}
+/*********TABLA************/
+.table-class {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header-class {
+    background-color: darkslategray;
+    text-align: left;
+    color: #f2f2f2;
+}
+
+.row-class {
+    border-bottom: 1px solid #ddd;
+    color: aliceblue;
+}
+
+.cell-class {
+    padding: 8px;
+    text-align: left;
 }
 
 

@@ -15,15 +15,6 @@ namespace Proyecto_GYM_WEB
     {
 
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// Control btnOpenModal.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Literal myLiteralControl;
 
         /// <summary>
-        /// Control Button2.
+        /// Control btnSalirX1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnSalirX1;
 
         /// <summary>
         /// Control txtDescripcionEj.
@@ -159,15 +150,6 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionRutina;
 
         /// <summary>
-        /// Control ddlEjercicios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEjercicios;
-
-        /// <summary>
         /// Control lbxEjercicio.
         /// </summary>
         /// <remarks>
@@ -177,13 +159,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.ListBox lbxEjercicio;
 
         /// <summary>
-        /// Control txtDia.
+        /// Control ddlDia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDia;
 
         /// <summary>
         /// Control btnAgregarRutina.

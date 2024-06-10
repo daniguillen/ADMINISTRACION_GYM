@@ -14,8 +14,16 @@ namespace Proyecto_GYM_WEB
     public partial class VistaEntrenador_EntrenamientosABM : System.Web.UI.Page
     {
         Controller objController = new Controller();
-        public List<Ejercicio> ListaEjercicios = new List<Ejercicio>();
+        public List<Ejercicio> ListaEjercicios
+        {
+            get
+            {
+                return (List<Ejercicio>)Session["ListaEjercicios"];
+            }
+            set { Session["ListaEjercicios"] = value; }
+        }
         public List<GrupoMuscular> ListagrupoMusculares = new List<GrupoMuscular>();
+        public string[] dia_semana = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" };
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,17 +56,15 @@ namespace Proyecto_GYM_WEB
                     ddlGrupoMuscu.DataBind();
 
                     List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
-                    //ddlEjercicios.DataSource = listaEjercicio;      //DropdownList
-                    //ddlEjercicios.DataValueField = "ID";
-                    //ddlEjercicios.DataTextField = "Nombre";
-                    //ddlEjercicios.DataBind();
-
-                    lbxEjercicio.DataSource = listaEjercicio;       //ListBox
+                    lbxEjercicio.DataSource = listaEjercicio;       
                     lbxEjercicio.DataValueField = "ID";
                     lbxEjercicio.DataTextField = "Nombre";
                     lbxEjercicio.DataBind();
 
+                    ddlDia.DataSource = dia_semana;
+                    ddlDia.DataBind();
 
+                    Session["ListaEjercicios"] = listaEjercicio;
                 }
             }
             catch (Exception ex)
@@ -68,13 +74,16 @@ namespace Proyecto_GYM_WEB
                 //Redireccion pantalla error
             }
 
-
-            string musculos = "<tr>";
+            string tableClass = "table-class";  // Clase para la tabla
+            string headerClass = "header-class";  // Clase para los encabezados
+            string rowClass = "row-class";  // Clase para las filas
+            string cellClass = "cell-class";  // Clase para las celdas
+            string musculos = $"<tr class='{headerClass}'>";
             string ejercicio = "";
 
             for (int i = 0; i < ListagrupoMusculares.Count; i++)
             {
-                musculos += "<th>" + ListagrupoMusculares[i].Descripcion + "</th>";
+                musculos += $"<th class='{cellClass}'>" + ListagrupoMusculares[i].Descripcion + "</th>";
             }
             musculos += "</tr>";
 
@@ -102,22 +111,22 @@ namespace Proyecto_GYM_WEB
 
             for (int i = 0; i < maxEjercicios; i++)
             {
-                ejercicio += "<tr>";
+                ejercicio += $"<tr class='{rowClass}'>";
                 foreach (var grupo in ListagrupoMusculares)
                 {
                     if (i < ejerciciosPorGrupo[grupo.ID].Count)
                     {
-                        ejercicio += "<td>" + ejerciciosPorGrupo[grupo.ID][i] + "</td>";
+                        ejercicio += $"<td class='{cellClass}'>" + ejerciciosPorGrupo[grupo.ID][i] + "</td>";
                     }
                     else
                     {
-                        ejercicio += "<td></td>";
+                        ejercicio += $"<td class='{cellClass}'></td>";
                     }
                 }
                 ejercicio += "</tr>";
             }
             //string styloTabla= "class="
-            string tablaCompleta = "<table>" + musculos + ejercicio + "</table>";
+            string tablaCompleta = $"<table class='{tableClass}'>" + musculos + ejercicio + "</table>";
 
             myLiteralControl.Text = tablaCompleta;
 
@@ -170,16 +179,19 @@ namespace Proyecto_GYM_WEB
             }
 
         }
-        /*
+
         protected void btnAgregarRutina_Click(object sender, EventArgs e)
         {
             try
             {
-                Rutina_ejercicio nuevaRutina = new Rutina_ejercicio();
-                nuevaRutina.Nombre = txtNombreRutina.Text;
-                nuevaRutina.Descripcion = txtDescripcionRutina.Text;
-                nuevaRutina.ejercicio = new List<Ejercicio>();
 
+                Rutina_ejercicio nuevaRutinaEjercicio = new Rutina_ejercicio();
+                Rutina nuevarutina = new Rutina();
+                nuevaRutinaEjercicio.ejercicio = new List<Ejercicio>();
+                Dias diaNuevo = new Dias();
+
+                nuevarutina.nombre = txtNombreRutina.Text;
+                nuevarutina.descripcion = txtDescripcionRutina.Text;
 
                 foreach (ListItem item in lbxEjercicio.Items)
                 {
@@ -187,25 +199,20 @@ namespace Proyecto_GYM_WEB
 
                     if (item.Selected)
                     {
+                        int ejercicioID = int.Parse(item.Value);
+                        Ejercicio ejer = ListaEjercicios.Find(y => y.ID == ejercicioID);
 
-                        foreach (int index in lbxEjercicio.GetSelectedIndices())
+                        if (ejer != null)
                         {
-
-                            Ejercicio ejer = ListaEjercicios.Find(y => y.ID == index);
-
-                            Label1.Text = index.ToString();
-
-                            if (ejer != null)
-                            {
-                                nuevaRutina.ejercicio.Add(ejer);
-                            }
+                            nuevaRutinaEjercicio.ejercicio.Add(ejer);
                         }
-
-
-
 
                     }
                 }
+
+                diaNuevo.dia = ddlDia.Text;
+                Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+
             }
             catch (Exception ex)
             {
@@ -226,7 +233,14 @@ namespace Proyecto_GYM_WEB
 
         }
 
+        protected void btnSalirX1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+        }
 
-    }*/
+        protected void btnSalirX2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+        }
     }
 }
