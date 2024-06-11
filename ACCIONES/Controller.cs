@@ -594,19 +594,13 @@ namespace ACCIONES
         {
 
             try
-            {
-
-                
-
-                datos.setearQuery("INSERT INTO RUTINA_EJERCICIO(ID_RUTINA,ID_EJERCICIO,ID_DIA,HORARIO) VALUES (@ID_RUTINA,@ID_EJERCICIO,@ID_DIA,@HORARIO)");
+            {              
+                datos.setearQuery("INSERT INTO RUTINA_EJERCICIO (ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO) \r\nVALUES (@ID_RUTINA, @ID_EJERCICIO, @ID_DIA, @HORARIO) ");
                 datos.setearParametro("@ID_RUTINA",rutinaID);
                 datos.setearParametro("@ID_EJERCICIO", idEjercicio);               
                 datos.setearParametro("@ID_DIA", 1);
                 datos.setearParametro("@HORARIO",10);
                 datos.ejecutarAccion();
-                
-
-
             }
 
             catch (Exception ex) { throw ex; }
