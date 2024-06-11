@@ -81,7 +81,7 @@ namespace Proyecto_GYM_WEB
                 //Redireccion pantalla error
             }
 
-            string tableClass = "table-class";  // Clase para la tabla
+            string tableClass = "table table-striped table-bordered table-dark";  // Clase para la tabla
             string headerClass = "header-class";  // Clase para los encabezados
             string rowClass = "row-class";  // Clase para las filas
             string cellClass = "cell-class";  // Clase para las celdas
@@ -226,7 +226,8 @@ namespace Proyecto_GYM_WEB
                 diaNuevo.dia = ddlDia.Text;
 
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
-                { 
+                {
+                    objController.datos = new AccesoDatos();
                     objController.agregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo);                
                 }
 

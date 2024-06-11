@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\UTN\\C3\\PROGRAMACION3\\ADMINISTRACION GYM\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
   "Documents": [
     {
@@ -11,6 +12,10 @@
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistacliente\\vistausuariocliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
+=======
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
+  "Documents": [],
+>>>>>>> 4b35a0327ff3a4a6591ef944297700e3cc320c75
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,7 +23,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 150,
+<<<<<<< HEAD
           "SelectedChildIndex": 6,
+=======
+          "SelectedChildIndex": -1,
+>>>>>>> 4b35a0327ff3a4a6591ef944297700e3cc320c75
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +35,21 @@
             },
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
+=======
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+>>>>>>> 4b35a0327ff3a4a6591ef944297700e3cc320c75
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
@@ -39,6 +63,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+<<<<<<< HEAD
             },
             {
               "$type": "Bookmark",
@@ -69,6 +94,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-06-10T22:35:20.095Z",
               "EditorCaption": ""
+=======
+>>>>>>> 4b35a0327ff3a4a6591ef944297700e3cc320c75
             }
           ]
         },
