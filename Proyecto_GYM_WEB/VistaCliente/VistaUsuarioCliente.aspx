@@ -42,7 +42,7 @@
                             <h5 class="card-text">Entrenador</h5>
                             <br />
                             <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
-                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2">Solicitar Rutina</a>
+                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2 ms">Solicitar Rutina</a>
                         </div>
                     </div>
                 </div>
