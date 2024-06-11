@@ -11,16 +11,16 @@ namespace Proyecto_GYM_WEB
 {
 
 
-    public partial class VistaPrincipalEntrenador
+    public partial class vistaListarRutinas
     {
 
         /// <summary>
-        /// Control btnModificar.
+        /// Control RepeaterListarRutina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterListarRutina;
     }
 }

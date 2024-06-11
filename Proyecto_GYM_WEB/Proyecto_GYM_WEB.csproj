@@ -143,6 +143,7 @@
     <Content Include="Scripts\FuncionesInternas.js" />
     <Content Include="Scripts\LICENSE.txt" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="VistaEntrenador\vistaListarRutinas.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-EntrenamientosABM.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-Usu-AsignarRutina.aspx" />
@@ -207,6 +208,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VistaEntrenador\VistaPrincipalEntrenador.aspx" />
+    <Content Include="VistaEntrenador\VistaPerfil-Entrenador.aspx" />
     <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
     <Content Include="VistasAministrador\AdministradorGeneral.aspx" />
     <Content Include="VistaCliente\VistaUsuarioCliente.aspx" />
@@ -248,6 +250,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaListarRutinas.aspx.cs">
+      <DependentUpon>vistaListarRutinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaListarRutinas.aspx.designer.cs">
+      <DependentUpon>vistaListarRutinas.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\VistaEntrenador-Clases.aspx.cs">
       <DependentUpon>VistaEntrenador-Clases.aspx</DependentUpon>
@@ -312,6 +321,13 @@
     </Compile>
     <Compile Include="VistaEntrenador\VistaPrincipalEntrenador.aspx.designer.cs">
       <DependentUpon>VistaPrincipalEntrenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\VistaPerfil-Entrenador.aspx.cs">
+      <DependentUpon>VistaPerfil-Entrenador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\VistaPerfil-Entrenador.aspx.designer.cs">
+      <DependentUpon>VistaPerfil-Entrenador.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistasAministrador\AdministradorEditarUsuario.aspx.cs">
       <DependentUpon>AdministradorEditarUsuario.aspx</DependentUpon>

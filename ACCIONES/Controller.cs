@@ -528,11 +528,35 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
+        public List<Dias> ListarDias()
+        {
+            try
+            {
+                List<Dias> aux = new List<Dias>();
+                datos.setearQuery("SELECT * FROM DIA");
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                    Dias dias = new Dias();
+                    dias.id = datos.Lector.GetInt32(0);
+                    dias.dia = datos.Lector.GetString(1);
+
+                    aux.Add(dias);
+                }
+                return aux;
+            }           
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
         public void agregarGrupoMusucular(GrupoMuscular grupoNuevo)
         {
             try
             {
-                //datos.setearQuery("INSERT Into GRUPO_MUSCULAR (ID,DESCRIPCION) VALUES ('" + grupoNuevo.ID + "','" + grupoNuevo.Descripcion + "'");
                 datos.setearQuery("INSERT Into GRUPO_MUSCULAR (DESCRIPCION) values (@DESCRIPCION)");
                 datos.setearParametro("@DESCRIPCION", grupoNuevo.Descripcion);
                 datos.ejecutarAccion();
@@ -590,7 +614,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
-        public void agregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia)
+        public void agregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia, Rutina_ejercicio nuevaRutinaEjercicio)
         {
 
             try
@@ -598,8 +622,8 @@ namespace ACCIONES
                 datos.setearQuery("INSERT INTO RUTINA_EJERCICIO (ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO) \r\nVALUES (@ID_RUTINA, @ID_EJERCICIO, @ID_DIA, @HORARIO) ");
                 datos.setearParametro("@ID_RUTINA",rutinaID);
                 datos.setearParametro("@ID_EJERCICIO", idEjercicio);               
-                datos.setearParametro("@ID_DIA", 1);
-                datos.setearParametro("@HORARIO",10);
+                datos.setearParametro("@ID_DIA", dia.id);
+                datos.setearParametro("@HORARIO", nuevaRutinaEjercicio.hora);
                 datos.ejecutarAccion();
             }
 
@@ -637,7 +661,36 @@ namespace ACCIONES
             }
         }
 
+        public List<AuxTablaRutina> ListarTablaRutinas()
+        {
+            try
+            {
+                List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
+                datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
+                datos.ejecutarLectura();
+                while(datos.Lector.Read())
+                {
+                    AuxTablaRutina auxTabla = new AuxTablaRutina();
+                    auxTabla.ID_Rutina= datos.Lector.GetInt32(0);
+                    auxTabla.NombreRutina = datos.Lector.GetString(1);
+                    auxTabla.DescripcionRutina = datos.Lector.GetString(2);
+                    auxTabla.DiaNombre = datos.Lector.GetString(3);
+                    auxTabla.NombreEjercicio = datos.Lector.GetString(4);
+                    auxTabla.Repeticiones = datos.Lector.GetInt32(5);
+                    aux.Add(auxTabla);
 
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
     }
 }

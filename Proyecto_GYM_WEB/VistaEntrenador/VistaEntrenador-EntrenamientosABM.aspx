@@ -49,8 +49,8 @@
                                 <asp:DropDownList ID="ddlDificultad" CssClass="form-control" runat="server"></asp:DropDownList>
                             </div>
                             <div class="mb-3">
-                                <label for="lblVideo" class="form-label">VIDEO:</label>
-                                <asp:TextBox ID="txtVideo" runat="server" CssClass="form-control" type="file"></asp:TextBox>
+                                <label for="lblVideo" class="form-label">INGRESE URL DEL VIDEO:</label>
+                                <asp:TextBox ID="txtVideo" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <label for="lblIdTipo" class="form-label">TIPO:</label>
@@ -123,58 +123,61 @@
                             <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
                             <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
                         </div>
+                        <div class="mb-3">
+                            <label for="lblHorario" class="form-label">HORARIO:</label>
+                            <asp:TextBox ID="txtHora" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">VOLVER</a>
-                    <asp:Button ID="btnAgregarEjercicioARutina" runat="server" type="button" CssClass="btn btn-primary" Text="GUARDAR" OnClick="btnAgregarEjercicioARutina_Click" />
+                    <div class="modal-footer">
+                        <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">VOLVER</a>
+                        <asp:Button ID="btnAgregarEjercicioARutina" runat="server" type="button" CssClass="btn btn-primary" Text="GUARDAR" OnClick="btnAgregarEjercicioARutina_Click" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>        
-        function openModal() {
-            console.log("entro al modal");
-            var modal = document.getElementById('nuevoModal');
-            modal.style.display = 'block';
-            modal.classList.add('show');
+        <script>        
+            function openModal() {
+                console.log("entro al modal");
+                var modal = document.getElementById('nuevoModal');
+                modal.style.display = 'block';
+                modal.classList.add('show');
 
-        }
-        function closeModal() {
-            var modal = document.getElementById('nuevoModal');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
+            }
+            function closeModal() {
+                var modal = document.getElementById('nuevoModal');
+                modal.style.display = 'none';
+                modal.classList.remove('show');
 
-        }
-        function openModal2() {
-            console.log("entro al modal");
-            var modal = document.getElementById('nuevoModal2');
-            modal.style.display = 'block';
-            modal.classList.add('show');
+            }
+            function openModal2() {
+                console.log("entro al modal");
+                var modal = document.getElementById('nuevoModal2');
+                modal.style.display = 'block';
+                modal.classList.add('show');
 
-        }
-        function closeModal2() {
-            var modal = document.getElementById('nuevoModal2');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
+            }
+            function closeModal2() {
+                var modal = document.getElementById('nuevoModal2');
+                modal.style.display = 'none';
+                modal.classList.remove('show');
 
-        }
-        function openModal3() {
-            console.log("entro al modal");
-            var modal = document.getElementById('nuevoModal3');
-            modal.style.display = 'block';
-            modal.classList.add('show');
+            }
+            function openModal3() {
+                console.log("entro al modal");
+                var modal = document.getElementById('nuevoModal3');
+                modal.style.display = 'block';
+                modal.classList.add('show');
 
-        }
-        function closeModal3() {
-            var modal = document.getElementById('nuevoModal3');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
+            }
+            function closeModal3() {
+                var modal = document.getElementById('nuevoModal3');
+                modal.style.display = 'none';
+                modal.classList.remove('show');
 
-        }
+            }
 
-    </script>
-
+        </script>
 </asp:Content>
 

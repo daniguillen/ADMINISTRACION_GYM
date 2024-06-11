@@ -2,6 +2,6 @@
 <asp:Content  ContentPlaceHolderID="MainContent" runat="server">
 
 
-
+    <asp:Button ID="btnModificar" runat="server" Text="Modificar Rutina" CssClass="form-control"/>
 
 </asp:Content>

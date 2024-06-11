@@ -23,12 +23,10 @@ namespace Proyecto_GYM_WEB
             set { Session["ListaEjercicios"] = value; }
         }
         public List<GrupoMuscular> ListagrupoMusculares = new List<GrupoMuscular>();
-        public string[] dia_semana = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" };
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             try
             {
                 if (!IsPostBack)
@@ -61,7 +59,11 @@ namespace Proyecto_GYM_WEB
                     lbxEjercicio.DataTextField = "Nombre";
                     lbxEjercicio.DataBind();
 
-                    ddlDia.DataSource = dia_semana;
+
+                    List<Dias> listaDias = objController.ListarDias();
+                    ddlDia.DataSource = listaDias;
+                    ddlDia.DataValueField = "ID";
+                    ddlDia.DataTextField = "dia";
                     ddlDia.DataBind();
 
                     List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
@@ -136,12 +138,7 @@ namespace Proyecto_GYM_WEB
             string tablaCompleta = $"<table class='{tableClass}'>" + musculos + ejercicio + "</table>";
 
             myLiteralControl.Text = tablaCompleta;
-
-
-
         }
-
-
 
         private void CargaListaEjercicios()
         {
@@ -151,9 +148,7 @@ namespace Proyecto_GYM_WEB
         private void CargaGruposMusculares()
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
-
         }
-
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -184,14 +179,12 @@ namespace Proyecto_GYM_WEB
                 throw;
                 //redirigir a pantalla error.
             }
-
         }
 
         protected void btnAgregarRutina_Click(object sender, EventArgs e)
         {
             try
             {
-
                 Rutina nuevarutina = new Rutina();
 
                 nuevarutina.nombre = txtNombreRutina.Text;
@@ -223,12 +216,13 @@ namespace Proyecto_GYM_WEB
                     }
                 }
                 var rutinaID = int.Parse(ddlIDRutina.SelectedValue);
-                diaNuevo.dia = ddlDia.Text;
+                diaNuevo.id = int.Parse(ddlDia.SelectedValue);
+                nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
 
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
                 {
                     objController.datos = new AccesoDatos();
-                    objController.agregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo);                
+                    objController.agregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);                
                 }
 
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
@@ -242,13 +236,10 @@ namespace Proyecto_GYM_WEB
         protected void btnOpenModal_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
-
         }
-
         protected void btnOpenModal2_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
-
         }
         protected void btnOpenModal3_Click(object sender, EventArgs e)
         {
