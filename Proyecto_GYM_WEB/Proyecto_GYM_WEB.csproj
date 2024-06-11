@@ -113,7 +113,6 @@
     <Content Include="Assets\spining.png" />
     <Content Include="Assets\usuario.png" />
     <Content Include="Assets\usuario1.jpg" />
-    <Content Include="ccs\styles.css" />
     <Content Include="ccs\StyleSheet1.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />

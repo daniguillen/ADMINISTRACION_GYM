@@ -22,9 +22,8 @@
 
                   <div class="fluid-width-video-wrapper " >
 
-                    <video src="https://youtu.be/Ej7IphKJNf0"  widht="100%" height="250px" controls preload="auto" CssClass="style="shadow-lg: p-3 mb-5 bg-body rounded">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hLQl3WQQoQ0?si=VNvU0wU1E9y-Ms2k" title="Nombre del Ejercicio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <p>Su navegador no soporta vídeos HTML5.</p>
-                     </video>
 
                   </div>
             </div>

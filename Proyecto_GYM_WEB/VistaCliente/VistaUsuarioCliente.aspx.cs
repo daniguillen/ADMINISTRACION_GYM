@@ -32,8 +32,8 @@ namespace Proyecto_GYM_WEB
                 Plan.ID = Perfil.plan.ID;
                 Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
                 Rutina rutinas = controller.Rutinas_id(Perfil.ID_rutina);
-                GridViewRutinas.DataSource = rutinas.rutina_Ejercicios;
-                GridViewRutinas.DataBind();
+               // GridViewRutinas.DataSource = rutinas.rutina_Ejercicios;
+              //  GridViewRutinas.DataBind();
 
 
 

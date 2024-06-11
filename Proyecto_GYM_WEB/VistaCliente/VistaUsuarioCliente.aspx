@@ -34,8 +34,6 @@
                 </div>
 
 
-
-
                 <div class="col-2 d-flex me-5">
                     <div class="card" style="width: 18rem;">
                         <img src="/Assets/Lionel_Scaloni_-_2022.jpg" class="card-img-top" alt="Assets/usuario.png">
@@ -52,31 +50,166 @@
 
         </div>
 
-        <div class="row">
-        <div class="card-body d-flex justify-content-center me-5">
-            <asp:GridView ID="GridViewRutinas" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered bg-light">
-                <Columns>
-                    <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                    <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
-                    <asp:BoundField DataField="estado" HeaderText="Estado"></asp:BoundField>
-                    <asp:TemplateField HeaderText="Ejercicios">
-                        <ItemTemplate>
-                            <asp:Repeater ID="RepeaterEjercicios" runat="server">
-                                <ItemTemplate>
-                                    <div>
-                                        <strong><%# Eval("ejercicio.Nombre") %></strong>
-                                        <br />
-                                        Día: <%# Eval("dia") %>
-                                        <br />
-                                        Hora: <%# Eval("hora") %>
-                                    </div>
-                                    <hr />
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
+
+        <div class="row ">
+
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-striped table-bordered bg-light">
+                    <thead>
+
+                        <tr>
+                            <th></th>
+                            <th>LUNES</th>
+                            <th>MARTES</th>
+                            <th>MIERCOLES</th>
+                            <th>JUEVES</th>
+                            <th>VIERNES</th>
+                            <th>SABADO</th>
+                            <th>DOMINGO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7:00 A 8:00</td>
+                            <td>
+                                <button type="button" onclick="evento('1')">Click me</button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8:00 A 9:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9:00 A 10:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11:00 A 12:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12:00 A 13:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13:00 A 14:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14:00 A 15:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Elongacion</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15:00 A 16:00</td>
+                            <td>Spinning</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16:00 A 17:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Crossfit</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17:00 A 18:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>18:00 A 19:00</td>
+                            <td>Full body</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>19:00 A 20:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>21:00 A 22:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-    </div>
+        <script>
+            function evento(a) {
+                window.location.href = "https://localhost:44386/VistaCliente/VistaUsuarioCliente?id=" + a;
+                console.log(a);
+            }
+    </script>
 </asp:Content>
