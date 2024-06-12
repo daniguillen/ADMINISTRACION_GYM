@@ -4,9 +4,27 @@
 
     
 }
+#datatablesSimple {
+    font-size: xx-small;
+}
+.table-dark td,th {
+    vertical-align: middle;
+    text-align:center;
+}
+.BotonesTablaAdministrador {
 
+    display:flex;
+    justify-content:center;
+    margin:3px;
+
+
+}
+.btnAdministrador {
+
+    padding:1px !important;
+    margin:2px;
+}
 main {
-   
     max-width: 100vw;
     overflow: hidden;
 }

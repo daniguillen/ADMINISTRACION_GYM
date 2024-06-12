@@ -101,7 +101,7 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
-                    aux.ID_rutina = datos.Lector.GetInt32(23);
+                  //  aux.ID_rutina = datos.Lector.GetInt32(23);
 
 
                     ListaUsuario.Add(aux);
