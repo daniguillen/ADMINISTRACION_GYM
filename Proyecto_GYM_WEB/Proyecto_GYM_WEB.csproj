@@ -207,6 +207,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VistaEntrenador\vistaModificarRutina.aspx" />
     <Content Include="VistaEntrenador\VistaPrincipalEntrenador.aspx" />
     <Content Include="VistaEntrenador\VistaPerfil-Entrenador.aspx" />
     <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
@@ -314,6 +315,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaModificarRutina.aspx.cs">
+      <DependentUpon>vistaModificarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaModificarRutina.aspx.designer.cs">
+      <DependentUpon>vistaModificarRutina.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\VistaPrincipalEntrenador.aspx.cs">
       <DependentUpon>VistaPrincipalEntrenador.aspx</DependentUpon>

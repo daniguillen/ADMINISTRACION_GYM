@@ -20,24 +20,57 @@
                         <td>DESCRIPCION</td>
                         <td>DIA</td>
                         <td>EJERCICIOS</td>
-                        <td>REPETICIONES</td>
                         <td>ACCIONES</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <asp:Repeater ID="RepeaterListarRutina" runat="server">
-
-                        <ItemTemplate>
-                            <tr>
-                                <td hidden><%# Eval("ID_Rutina") %></td>
-                                <td><%# Eval("NombreRutina") %></td>
-                                <td><%# Eval("DescripcionRutina") %></td>
-                                <td><%# Eval("DiaNombre") %></td>
-                                <td><%# Eval("NombreEjercicio") %></td>
-                                <td><%# Eval("Repeticiones") %></td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <% 
+                        int rutinaID = -1;
+                        for (int i = 0; i < ListaTablaRuti.Count(); i++)
+                        {
+                            bool nuevaRuti = rutinaID != ListaTablaRuti[i].ID_Rutina;
+                            if (nuevaRuti)
+                            {
+                                rutinaID = ListaTablaRuti[i].ID_Rutina;
+                            %>
+                    <tr>
+                        <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
+                        <td><%= ListaTablaRuti[i].NombreRutina %></td>
+                        <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
+                        <td><%= ListaTablaRuti[i].DiaNombre %></td>
+                        <td>
+                            <div>
+                                <%--<span><%= ListaTablaRuti[i].NombreEjercicio %></span>
+                                <span><%= ListaTablaRuti[i].Repeticiones %></span>--%>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar</a>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <tr>
+                        <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div>
+                                <span><%= ListaTablaRuti[i].NombreEjercicio %></span> - 
+                               
+                                <span><%= ListaTablaRuti[i].Repeticiones %> reps</span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <%
+                            }
+                        }
+                    %>
                 </tbody>
             </table>
         </div>

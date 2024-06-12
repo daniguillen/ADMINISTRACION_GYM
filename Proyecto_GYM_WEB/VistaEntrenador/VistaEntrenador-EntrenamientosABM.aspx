@@ -11,6 +11,7 @@
                     <asp:Button ID="btnOpenModal" runat="server" CssClass="btn btn-primary m-2" Text="AGREGAR EJERCICIO" OnClick="btnOpenModal_Click" />
                     <asp:Button ID="btnOpenModal2" runat="server" CssClass="btn btn-primary m-2" Text="AGREGAR RUTINA" OnClick="btnOpenModal2_Click" />
                     <asp:Button ID="btnOpenModal3" runat="server" CssClass="btn btn-primary m-2" Text="AGREGAR EJERCICIO A RUTINA" OnClick="btnOpenModal3_Click" />
+                    <asp:Button ID="btnlistar" runat="server" Text="LISTAR RUTINAS" CssClass="btn btn-success m-2" OnClick="btnlistar_Click"/>
                 </div>
 
             </li>

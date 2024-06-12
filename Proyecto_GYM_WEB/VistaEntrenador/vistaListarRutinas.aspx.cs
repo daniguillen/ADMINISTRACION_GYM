@@ -16,9 +16,9 @@ namespace Proyecto_GYM_WEB
         {
             get
             {
-                return (List<AuxTablaRutina>)Session["ListaRutina"];
+                return (List<AuxTablaRutina>)Session["ModifListaRutina"];
             }
-            set { Session["ListaRutina"] = value; }
+            set { Session["ModifListaRutina"] = value; }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,10 +27,7 @@ namespace Proyecto_GYM_WEB
             if (!IsPostBack)
             {
                 tablaRutina = objController.ListarTablaRutinas();
-                RepeaterListarRutina.DataSource = tablaRutina;
-                RepeaterListarRutina.DataBind();
-
-                Session["ListaRutina"] = tablaRutina;
+                Session["ModifListaRutina"] = tablaRutina;
             }
         }
     }

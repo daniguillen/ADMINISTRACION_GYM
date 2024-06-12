@@ -260,5 +260,9 @@ namespace Proyecto_GYM_WEB
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
         }
 
+        protected void btnlistar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaListarRutinas.aspx", false);
+        }
     }
 }

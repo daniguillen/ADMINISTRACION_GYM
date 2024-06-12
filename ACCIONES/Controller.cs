@@ -660,13 +660,14 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
+        //Metodo para listar las rutinas con sus ejercicios
         public List<AuxTablaRutina> ListarTablaRutinas()
         {
             try
             {
                 List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
-                datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
+               // datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
+                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");     
                 datos.ejecutarLectura();
                 while(datos.Lector.Read())
                 {
@@ -690,6 +691,33 @@ namespace ACCIONES
             {
                 datos.cerrarConexion();
             }
+        }
+
+        //Creo el metodo para realizar la modificación de la rutina
+        public Rutina RutinaIdParaModificar(int ID_Rutina)
+        {
+            try
+            {
+                datos.setearQuery("SELECT ID,NOMBRE, DESCRIPCION FROM RUTINA WHERE ID = @ID");
+                datos.setearParametro("@ID",ID_Rutina);
+                datos.ejecutarLectura();
+
+                Rutina Rutina_aux = new Rutina();
+                while (datos.Lector.Read())
+                {
+                    Rutina_aux.ID=datos.Lector.GetInt32(0);
+                    Rutina_aux.nombre=datos.Lector.GetString(1);
+                    Rutina_aux.descripcion=datos.Lector.GetString(2);
+
+                    
+                }
+                return Rutina_aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion();}
         }
 
     }
