@@ -694,7 +694,7 @@ namespace ACCIONES
         }
 
         //Creo el metodo para realizar la modificación de la rutina
-        public Rutina RutinaIdParaModificar(int ID_Rutina)
+        public Rutina RutinaIdParaModificarRutina(int ID_Rutina)
         {
             try
             {
@@ -718,6 +718,72 @@ namespace ACCIONES
                 throw ex;
             }
             finally { datos.cerrarConexion();}
+        }
+
+        //Modificar Rutina
+
+        public void ModificarRutina(Rutina modifRutina)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE RUTINA SET NOMBRE = @NOMBRE, DESCRIPCION = @DESCRIPCION WHERE ID=@ID ");
+                
+                datos.setearParametro("@ID", modifRutina.ID);
+                datos.setearParametro("@NOMBRE", modifRutina.nombre);
+                datos.setearParametro("@DESCRIPCION", modifRutina.descripcion);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public Rutina_ejercicio Rutina_EjercicioIdParaModificarRutina(int ID_Rutina)
+        {
+            try
+            {
+                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
+
+                datos.setearParametro("@ID_RUTINA", ID_Rutina);
+                datos.ejecutarLectura();
+
+                Rutina_ejercicio rutina_Ejercicio_aux = new Rutina_ejercicio();
+                //rutina_Ejercicio_aux.ID= ID_Rutina;
+                rutina_Ejercicio_aux.ejercicio= new List<Ejercicio>();
+                var objEjercicio = new Ejercicio();
+                rutina_Ejercicio_aux.dia = new Dias();
+               
+
+                while (datos.Lector.Read())
+                {
+                    if (ID_Rutina == datos.Lector.GetInt32(0))
+                    {
+                        objEjercicio.ID = datos.Lector.GetInt32(0);
+                        rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
+                    }
+                
+                    rutina_Ejercicio_aux.dia.id=datos.Lector.GetInt32(2);
+                }
+
+
+                return rutina_Ejercicio_aux;
+
+               
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally { datos.cerrarConexion() ; } 
+
         }
 
     }

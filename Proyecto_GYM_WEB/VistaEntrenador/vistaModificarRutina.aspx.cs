@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -34,10 +35,22 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     ddlDia.DataValueField = "ID";
                     ddlDia.DataTextField = "dia";
                     ddlDia.DataBind();
-              
-                    Rutina objRuti = objController.RutinaIdParaModificar(int.Parse(Request.QueryString["id"]));
-                    txtNombreRutina.Text = objRuti.nombre;
-                    txtDescripcionRutina.Text = objRuti.descripcion;
+
+
+                    if (Request.QueryString["id"] != null)
+                    {
+                        int rutinaid = int.Parse(Request.QueryString["id"]);
+                        hfRutinaID.Value = rutinaid.ToString();
+
+
+                        Rutina objRuti = objController.RutinaIdParaModificarRutina(rutinaid);
+                        txtNombreRutina.Text = objRuti.nombre;
+                        txtDescripcionRutina.Text = objRuti.descripcion;
+
+                        Rutina_ejercicio objRuti_Ejer= objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
+                        ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
+                        lbxEjercicio.SelectedValue = objRuti_Ejer.ejercicio.ToString();
+                    }
 
                 }
 
@@ -47,6 +60,55 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 throw ex;
             }
 
+        }
+
+        protected void btnModificarRutina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(hfRutinaID.Value != null)
+                {
+                int id = int.Parse(hfRutinaID.Value);
+                string nombre = txtNombreRutina.Text;
+                string descripcion = txtDescripcionRutina.Text;
+                int dia = int.Parse(ddlDia.SelectedValue);
+
+
+                    List<Ejercicio> ejerciciosSeleccionados = new List<Ejercicio>();
+                    foreach(ListItem item in lbxEjercicio.Items)
+                    {
+                        if(item.Selected)
+                        {
+                            ejerciciosSeleccionados.Add(new Ejercicio { ID = int.Parse(item.Value) });
+                        
+                        }
+                    }
+                    
+                    Rutina rutinaModificar = new Rutina
+                    
+                {
+                    ID = id,
+                    nombre = nombre,
+                    descripcion = descripcion,
+                    
+                };
+                    Rutina_ejercicio rutina_EjercicioModificar = new Rutina_ejercicio
+                    {
+                       
+
+                    };
+                
+
+
+
+
+                    objController.ModificarRutina(rutinaModificar);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

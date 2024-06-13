@@ -28,6 +28,11 @@
             <label for="lblHorario" class="form-label">HORARIO:</label>
             <asp:TextBox ID="txtHora" runat="server" CssClass="form-control"></asp:TextBox>
         </div>--%>
+
+            <div>
+                <asp:Button ID="btnModificarRutina" Text="text" runat="server" CssClass="form-control" Onclick="btnModificarRutina_Click"/>
+            </div>
         </div>
     </div>
+    <asp:HiddenField ID="hfRutinaID" runat="server"/>
 </asp:Content>

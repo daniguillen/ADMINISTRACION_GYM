@@ -4,7 +4,7 @@
 
 
     <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark ">
-        <h1>GRILLA DE RUTINAS</h1>
+        <h1>RUTINA STANDART</h1>
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around">
                 <div class="d-flex justify-content-between">
@@ -16,9 +16,9 @@
             <table class="table table-striped table-bordered table-dark" id="tablaRutina">
                 <thead class="header-class">
                     <tr class="row-class">
+                        <td>DIA</td>
                         <td>RUTINA</td>
                         <td>DESCRIPCION</td>
-                        <td>DIA</td>
                         <td>EJERCICIOS</td>
                         <td>ACCIONES</td>
                     </tr>
@@ -35,14 +35,11 @@
                             %>
                     <tr>
                         <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
+                        <td><%= ListaTablaRuti[i].DiaNombre %></td>
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
                         <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
-                        <td><%= ListaTablaRuti[i].DiaNombre %></td>
                         <td>
-                            <div>
-                                <%--<span><%= ListaTablaRuti[i].NombreEjercicio %></span>
-                                <span><%= ListaTablaRuti[i].Repeticiones %></span>--%>
-                            </div>
+                            
                         </td>
                         <td>
                             <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar</a>
