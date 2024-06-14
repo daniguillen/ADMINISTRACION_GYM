@@ -18,6 +18,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
         Controller objController = new Controller();
         public List<Ejercicio> listEjercicio = new List<Ejercicio>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -47,9 +48,23 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         txtNombreRutina.Text = objRuti.nombre;
                         txtDescripcionRutina.Text = objRuti.descripcion;
 
-                        Rutina_ejercicio objRuti_Ejer= objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
+
+
+
+                        Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
                         ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
-                        lbxEjercicio.SelectedValue = objRuti_Ejer.ejercicio.ToString();
+                        //lbxEjercicio.SelectedValue = objRuti_Ejer.ejercicio.ToString(); //Me trae los ejercicios que estan para modificar
+
+                        foreach(ListItem item in lbxEjercicio.Items)
+                        {
+                            if (objRuti_Ejer.ejercicio.Contains(item.Value))
+                            {
+                                item.Selected = true;
+                            }
+                        }
+
+
+
                     }
 
                 }
@@ -66,43 +81,54 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
-                if(hfRutinaID.Value != null)
+                if (hfRutinaID.Value != null)
                 {
-                int id = int.Parse(hfRutinaID.Value);
-                string nombre = txtNombreRutina.Text;
-                string descripcion = txtDescripcionRutina.Text;
-                int dia = int.Parse(ddlDia.SelectedValue);
+                    int id = int.Parse(hfRutinaID.Value);
+                    string nombre = txtNombreRutina.Text;
+                    string descripcion = txtDescripcionRutina.Text;
+                    int idDiaSeleccionado = int.Parse(ddlDia.SelectedValue);
 
 
                     List<Ejercicio> ejerciciosSeleccionados = new List<Ejercicio>();
-                    foreach(ListItem item in lbxEjercicio.Items)
+                    foreach (ListItem item in lbxEjercicio.Items)
                     {
-                        if(item.Selected)
+                        if (item.Selected)
                         {
                             ejerciciosSeleccionados.Add(new Ejercicio { ID = int.Parse(item.Value) });
-                        
+
                         }
                     }
-                    
+
                     Rutina rutinaModificar = new Rutina
-                    
-                {
-                    ID = id,
-                    nombre = nombre,
-                    descripcion = descripcion,
-                    
-                };
-                    Rutina_ejercicio rutina_EjercicioModificar = new Rutina_ejercicio
+
                     {
-                       
+                        ID = id,
+                        nombre = nombre,
+                        descripcion = descripcion,
 
                     };
-                
-
-
-
-
+                    Dias diasModif = new Dias
+                    {
+                        
+                       id = idDiaSeleccionado,
+                    };
                     objController.ModificarRutina(rutinaModificar);
+
+                    Rutina_ejercicio rutina_EjercicioModi = new Rutina_ejercicio
+                    {
+                        ejercicio = ejerciciosSeleccionados,
+                    };
+                    var idEjercicioAnterior = 0;
+                    for (int i = 0; i < ejerciciosSeleccionados.Count(); i++)
+                    {
+                        //if (rutina_EjercicioModi.ejercicio[i].ID == )
+                    objController.datos = new AccesoDatos();
+                    objController.ModificarRutinaEjercicio(rutinaModificar, diasModif.id, rutina_EjercicioModi.ejercicio[i].ID, idEjercicioAnterior);
+                        
+                        
+                    }
+
+                    Response.Redirect("vistaListarRutinas.aspx", false);
                 }
             }
             catch (Exception ex)
