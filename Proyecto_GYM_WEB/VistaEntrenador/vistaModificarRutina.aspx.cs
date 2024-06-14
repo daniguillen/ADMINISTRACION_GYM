@@ -55,7 +55,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
                         //lbxEjercicio.SelectedValue = objRuti_Ejer.ejercicio.ToString(); //Me trae los ejercicios que estan para modificar
 
-                        foreach(ListItem item in lbxEjercicio.Items)
+                  /*      foreach(ListItem item in lbxEjercicio.Items)
                         {
                             if (objRuti_Ejer.ejercicio.Contains(item.Value))
                             {
@@ -64,7 +64,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         }
 
 
-
+                        */
                     }
 
                 }

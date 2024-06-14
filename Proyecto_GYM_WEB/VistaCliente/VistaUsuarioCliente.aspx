@@ -51,7 +51,7 @@
         </div>
 
 
-        <div class="row ">
+        <div class="row me-5">
 
             <div class="card-body">
                 <table id="datatablesSimple" class="table table-striped table-bordered bg-light">

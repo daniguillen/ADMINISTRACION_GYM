@@ -31,52 +31,52 @@
 
                 <div class="form-group">
                     <label for="TxtNombreEditar">Nombre:</label>
-                    <asp:TextBox ID="TxtNombreEditar" runat="server" CssClass="form-control" Text='<%=usuario.Nombre %>'></asp:TextBox>
+                    <asp:TextBox ID="TxtNombreEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtApellidoEditar">Apellido:</label>
-                    <asp:TextBox ID="TxtApellidoEditar" runat="server" CssClass="form-control" Text="<%=usuario.Apellido %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtApellidoEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtPlanEditar">Plan:</label>
-                    <asp:TextBox ID="TxtPlanEditar" runat="server" CssClass="form-control" Text="<%=usuario.plan.Tipo_Plan %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtPlanEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtCelularEditar">Celular:</label>
-                    <asp:TextBox ID="TxtCelularEditar" runat="server" CssClass="form-control" Text="<%=usuario.Cel %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtCelularEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtTelEmergenciaEditar">Tel Emergencia:</label>
-                    <asp:TextBox ID="TxtTelEmergenciaEditar" runat="server" CssClass="form-control" Text="<%=usuario.Tel_Emergencia %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtTelEmergenciaEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtEmailEditar">Email:</label>
-                    <asp:TextBox ID="TxtEmailEditar" runat="server" CssClass="form-control" Text="<%=usuario.Mail %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtEmailEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtPasswordEditar">Password:</label>
-                    <asp:TextBox ID="TxtPasswordEditar" runat="server" CssClass="form-control" Text="<%=usuario.Password %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtPasswordEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtFechaNacimientoEditar">Fecha Nacimiento:</label>
-                    <asp:TextBox ID="TxtFechaNacimientoEditar" Type="date" runat="server" CssClass="form-control" Text="<%=usuario.Fecha_Nacimiento %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtFechaNacimientoEditar" Type="date" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtSexoEditar">Sexo:</label>
-                    <asp:TextBox ID="TxtSexoEditar" runat="server" CssClass="form-control" Text="<%=usuario.sexo.Tipo %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtSexoEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtFechaIngresoEditar">Fecha Ingreso:</label>
-                    <asp:TextBox ID="TxtFechaIngresoEditar" runat="server" CssClass="form-control" Text="<%=usuario.Fecha_ingreso %>"></asp:TextBox>
+                    <asp:TextBox ID="TxtFechaIngresoEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
 
@@ -88,7 +88,7 @@
                         </span>
                         <span class="bottom-0">Guardar</span>
                     </a>
-                    <a href="AdministradorGeneral.aspx" class="btn btn-secondary btn-icon-split ms-5">
+                    <a href="/VistaCliente/VistaUsuarioCliente.aspx" class="btn btn-secondary btn-icon-split ms-5">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
                         </span>
