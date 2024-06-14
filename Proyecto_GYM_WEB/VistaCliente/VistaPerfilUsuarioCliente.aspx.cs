@@ -14,7 +14,7 @@ namespace Proyecto_GYM_WEB
         protected void Page_Load(object sender, EventArgs e)
         {
             usuario = (Usuario)Session["PerfilUsuario"];
-
+            TxtDniEditar.Text = usuario.DNI;
         }
     }
 }

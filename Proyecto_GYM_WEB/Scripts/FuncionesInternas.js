@@ -9,9 +9,9 @@ $(window).on('resize', function () {
         $(".inscribete").addClass("mb-5");
         $(".inscribete").addClass("mt-5");
 
-        
 
-       
+
+
         $(".promos").addClass("mb-5");
         $(".promos").addClass("mt-5");
         $(".promos").removeClass("col-8");
@@ -31,7 +31,7 @@ $(window).on('resize', function () {
     }
 
 
-   
+
 
 });
 
@@ -46,7 +46,7 @@ $(window).on('resize', function () {
 
     }
     else {
-  
+
         $(".promos").removeClass("flex-column");
         $(".promos").removeClass("align-items-center");
 
@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 });
+
+
 
 
 

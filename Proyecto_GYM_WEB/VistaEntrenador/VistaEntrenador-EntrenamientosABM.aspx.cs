@@ -152,6 +152,7 @@ namespace Proyecto_GYM_WEB
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
 
+
             try
             {
                 Ejercicio nuevoEjercicio = new Ejercicio();

@@ -206,10 +206,11 @@
             </div>
 
         </div>
-        <script>
-            function evento(a) {
-                window.location.href = "https://localhost:44386/VistaCliente/VistaUsuarioCliente?id=" + a;
-                console.log(a);
-            }
+    </div>
+    <script>
+        function evento(a) {
+            window.location.href = "https://localhost:44386/VistaCliente/VistaUsuarioCliente?id=" + a;
+            console.log(a);
+        }
     </script>
 </asp:Content>

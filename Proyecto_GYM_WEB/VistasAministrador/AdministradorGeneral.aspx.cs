@@ -2,6 +2,7 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Proyecto_GYM_WEB.VistasAministrador
@@ -52,7 +53,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         protected void Buscar(object sender, EventArgs e)
         {
-                Label1.Text = TxtBusquedad.Text;
+            Label1.Text = TxtBusquedad.Text;
         }
 
         protected void Entrenadores(object sender, EventArgs e)
@@ -92,12 +93,12 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Rutinas(object sender, EventArgs e)
         {
             LiteralUsuarios.Text = "<h1> Rutina </h1>";
-            
-            
+
+
         }
-            protected void MensajeAUsuarioYEntrenadores(object sender, EventArgs e)
+        protected void MensajeAUsuarioYEntrenadores(object sender, EventArgs e)
         {
-            TextBox2.Text ="Mensaje enviado: "+ TextBox1.Text;
+            TextBox2.Text = "Mensaje enviado: " + TextBox1.Text;
             TextBox1.Text = "";
         }
 
@@ -132,6 +133,66 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         }
 
+        protected void Modificar(object sender, CommandEventArgs e)
+        {
+            string[] valores = e.CommandArgument.ToString().Split(',');
+
+            // Asigna valores a los TextBox
+            TxtDNI.Text = valores[1];
+            TxtNombre.Text = valores[2];
+            TxtApellido.Text = valores[3];
+            TxtPlan.Text = valores[4];
+            TxtTelEmerg.Text = valores[5];
+            TxtMail.Text = valores[6];
+            TxtSexo.Text = valores[8];
+            TxtEstado.Text = valores[9];
+
+            // Actualiza los labels con JavaScript
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "UpdateLabels",
+                $"document.getElementById('{TxtDNI.ClientID}').value = '{valores[1]}';" +
+                $"document.getElementById('{TxtNombre.ClientID}').value = '{valores[2]}';" +
+                $"document.getElementById('{TxtApellido.ClientID}').value = '{valores[3]}';" +
+                $"document.getElementById('{TxtPlan.ClientID}').value = '{valores[4]}';" +
+                $"document.getElementById('{TxtTelEmerg.ClientID}').value = '{valores[5]}';" +
+                $"document.getElementById('{TxtMail.ClientID}').value = '{valores[6]}';" +
+                $"document.getElementById('{TxtSexo.ClientID}').value = '{valores[8]}';" +
+                $"document.getElementById('{TxtEstado.ClientID}').value = '{valores[9]}';",
+                true);
+
+            // Abre el modal
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#exampleModal').modal('show');", true);
+        }
+
+        protected void BtnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            // Obtiene los valores de los TextBox
+            int id = int.Parse(TxtDNI.Text);
+            string nombre = TxtNombre.Text;
+            // ... obtener otros valores de los TextBox
+
+            // Actualiza el usuario en la base de datos
+            Usuario usuario = new Usuario();
+            usuario.ID = id;
+            usuario.Nombre = nombre;
+            // ... asignar otros valores al objeto usuario
+
+            // Llama al método para actualizar el usuario en el Controller
+            //   dato.ActualizarUsuario(usuario);
+
+            // Cierra el modal
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
+
+            // Recarga la página para actualizar la lista de usuarios
+            Response.Redirect(Request.RawUrl);
+        }
+
+
+
+
+
+
+
     }
+
 
 }
