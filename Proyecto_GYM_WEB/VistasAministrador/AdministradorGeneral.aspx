@@ -56,6 +56,7 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             <asp:Repeater ID="RepeaterUsuarios" runat="server">
                                 <ItemTemplate>
                                     <tr>
@@ -73,10 +74,10 @@
                                         <td>
                                             <%# Convert.ToDateTime(Eval("Fecha_ingreso")).Day + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Month + " / " + Convert.ToDateTime(Eval("Fecha_ingreso")).Year %>
                                         </td>
-                                        <td><%# Convert.ToBoolean(Eval("Estado")) ? "Activo" : "Inactivo" %></td>
+                                        <td><%# Eval("Estado").Equals(true) ? "Activo" : "Inactivo" %></td>
                                         <td class="BotonesTablaAdministrador">
                                             <asp:Button ID="BtnModal" runat="server" OnCommand="Modificar" Text="Modificar" CssClass="btn btn-secondary btn-icon-split btnAdministrador"
-                                                OnClientClick='<%# "showModal(\"" + Eval("DNI") + "\",\"" + Eval("Nombre") + "\",\"" + Eval("Apellido") + "\",\"" + Eval("plan.Tipo_Plan") + "\",\"" + Eval("Cel") + "\",\"" + Eval("Tel_Emergencia") + "\",\"" + Eval("Mail") + "\",\"" + Eval("Password") + "\",\"" + Eval("Sexo.Tipo") + "\",\"" + Eval("Estado") + "\"); return false;" %>' CommandArgument='<%# Eval("ID") + "," + Eval("DNI") + "," + Eval("Nombre") + "," + Eval("Apellido") + "," + Eval("plan.Tipo_Plan") + "," + Eval("Cel") + "," + Eval("Tel_Emergencia") + "," + Eval("Mail") + "," + Eval("Password") + "," + Eval("Sexo.Tipo") + "," + Eval("Estado") %>' />
+                                                OnClientClick='<%# "showModal(\""+ Eval("DNI") +"\",\"" + Eval("Nombre") + "\",\"" + Eval("Apellido") + "\",\"" + Eval("plan.Tipo_Plan") + "\",\"" + Eval("Cel") + "\",\"" + Eval("Tel_Emergencia") + "\",\"" + Eval("Mail") + "\",\"" + Eval("Password") + "\",\"" + Eval("Sexo.Tipo") + "\",\"" + (Eval("Estado").Equals(true) ? "Activo" : "Inactivo") + "\"); return false;" %>' CommandArgument='<%#Eval("ID")+"," + Eval("DNI") + "," + Eval("Nombre") + "," + Eval("Apellido") + "," + Eval("plan.Tipo_Plan") + "," + Eval("Cel") + "," + Eval("Tel_Emergencia") + "," + Eval("Mail") + "," + Eval("Password") + "," + Eval("Sexo.Tipo") + "," +( Eval("Estado").Equals(true) ? "Activo" : "Inactivo" )%>' />
                                             <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" class="btn btn-secondary btn-icon-split btnAdministrador" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnEliminar_Persona_Command" />
                                             <asp:Button ID="BtnAgregar" runat="server" Text="Activar" class="btn btn-secondary btn-icon-split btnAdministrador" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnActivar" />
                                         </td>
@@ -92,72 +93,104 @@
 
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="TxtDNI">DNI:</label>
-                        <asp:TextBox ID="TxtDNI" runat="server" CssClass="form-control" TextMode="SingleLine" Enabled="false"></asp:TextBox>
+
+<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:HiddenField ID="HfModificarId" runat="server"  ClientIDMode="Static"/>
+                            <div class="form-group">
+                                <label for="TxtDNI">DNI:</label>
+                                <asp:TextBox ID="TxtDNI" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtNombre">Nombre:</label>
+                                <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtApellido">Apellido:</label>
+                                <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="DdlPlan">Plan:</label>
+                                <asp:DropDownList ID="DdlPlan" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+                                    <asp:ListItem Text="Básico" Value="Básico"></asp:ListItem>
+                                    <asp:ListItem Text="Estándar" Value="Estándar"></asp:ListItem>
+                                    <asp:ListItem Text="Premium" Value="Premium"></asp:ListItem>
+                                    <asp:ListItem Text="Empleado" Value="Empleado"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtCel">Tel Personal:</label>
+                                <asp:TextBox ID="TxtCel" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtTelEmerg">Tel Emergencia:</label>
+                                <asp:TextBox ID="TxtTelEmerg" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtMail">Email:</label>
+                                <asp:TextBox ID="TxtMail" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="TxtPassword">Contraseña:</label>
+                                <asp:TextBox ID="TxtPassword" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="DdlSexo">Sexo:</label>
+                                <asp:DropDownList ID="DdlSexo" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+                                    <asp:ListItem Text="MASCULINO" Value="MASCULINO"></asp:ListItem>
+                                    <asp:ListItem Text="FEMININO" Value="FEMININO"></asp:ListItem>
+                                    <asp:ListItem Text="BINARIO" Value="BINARIO"></asp:ListItem>
+                                    <asp:ListItem Text="S/D" Value="S/D"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <label for="DdlEstado">Estado:</label>
+                                <asp:DropDownList ID="DdlEstado" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+                                    <asp:ListItem Text="ACTIVO" Value="Activo"></asp:ListItem>
+                                    <asp:ListItem Text="INACTIVO" Value="Inactivo"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <asp:Button ID="BtnGuardarCambios" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="BtnGuardarCambios_Click" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="TxtNombre">Nombre:</label>
-                        <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtApellido">Apellido:</label>
-                        <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtPlan">Plan:</label>
-                        <asp:TextBox ID="TxtPlan" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtTelEmerg">Tel Emergencia:</label>
-                        <asp:TextBox ID="TxtTelEmerg" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtMail">Email:</label>
-                        <asp:TextBox ID="TxtMail" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtSexo">Sexo:</label>
-                        <asp:TextBox ID="TxtSexo" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="TxtEstado">Estado:</label>
-                        <asp:TextBox ID="TxtEstado" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <asp:Button ID="BtnGuardarCambios" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="BtnGuardarCambios_Click" />
                 </div>
             </div>
-        </div>
-    </div>
 
-
+        </ContentTemplate>
+</asp:UpdatePanel>
 
 
 
 
 
     <script>
-        function showModal(dni, nombre, apellido, plan, cel, telEmergencia, mail, password, sexo, estado) {
+        function showModal(dni, nombre, apellido, plan, cel, telEmergencia, mail, password, sexo, estado,) {
             document.getElementById('<%= TxtDNI.ClientID %>').value = dni;
             document.getElementById('<%= TxtNombre.ClientID %>').value = nombre;
             document.getElementById('<%= TxtApellido.ClientID %>').value = apellido;
-            document.getElementById('<%= TxtPlan.ClientID %>').value = plan;
+            document.getElementById('<%= DdlPlan.ClientID %>').value = plan;
+            document.getElementById('<%= TxtCel.ClientID %>').value = cel;
             document.getElementById('<%= TxtTelEmerg.ClientID %>').value = telEmergencia;
             document.getElementById('<%= TxtMail.ClientID %>').value = mail;
-            document.getElementById('<%= TxtSexo.ClientID %>').value = sexo;
-            document.getElementById('<%= TxtEstado.ClientID %>').value = estado;
-
+            document.getElementById('<%= TxtPassword.ClientID %>').value = password;
+            document.getElementById('<%= DdlSexo.ClientID %>').value = sexo;
+            document.getElementById('<%= DdlEstado.ClientID %>').value = estado;
+            document.getElementById('HfModificarId').value = idUsuario; 
             var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
             modal.show();
     </script>

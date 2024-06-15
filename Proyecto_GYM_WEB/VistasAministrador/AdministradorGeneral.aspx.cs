@@ -11,17 +11,19 @@ namespace Proyecto_GYM_WEB.VistasAministrador
     {
         public Controller dato = new Controller();
 
-        // Cambié el almacenamiento de ListaUsuarios para usar Session
+
         public List<Usuario> ListaUsuarios
         {
             get { return (List<Usuario>)Session["ModificarCliente"]; }
             set { Session["ModificarCliente"] = value; }
         }
 
+        public int ModificarId;
         public Usuario UsuarioEditar { get; set; } = new Usuario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Session["TOKEN"] = "ENTRO";
             if (Session["TOKEN"] != null)
             {
@@ -34,6 +36,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 {
                     if (!IsPostBack)
                     {
+                        ModificarId = -1;
                         ListaUsuarios = dato.listar_Clientes();
                         BindRepeater();
                     }
@@ -93,6 +96,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Rutinas(object sender, EventArgs e)
         {
             LiteralUsuarios.Text = "<h1> Rutina </h1>";
+            
 
 
         }
@@ -133,66 +137,98 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         }
 
+
         protected void Modificar(object sender, CommandEventArgs e)
         {
+          
             string[] valores = e.CommandArgument.ToString().Split(',');
-
-            // Asigna valores a los TextBox
+            
+            HfModificarId.Value = valores[0];
             TxtDNI.Text = valores[1];
             TxtNombre.Text = valores[2];
             TxtApellido.Text = valores[3];
-            TxtPlan.Text = valores[4];
-            TxtTelEmerg.Text = valores[5];
-            TxtMail.Text = valores[6];
-            TxtSexo.Text = valores[8];
-            TxtEstado.Text = valores[9];
+            TxtCel.Text = valores[5];
+            TxtTelEmerg.Text = valores[6];
+            TxtMail.Text = valores[7];
+            TxtPassword.Text = valores[8];
 
-            // Actualiza los labels con JavaScript
+
+            string sexo = valores[9];
+            if (!string.IsNullOrEmpty(sexo) && (sexo == "MASCULINO" || sexo == "FEMININO" || sexo == "BINARIO" || sexo == "S/D"))
+            {
+                DdlSexo.SelectedValue = sexo;
+            }
+            else
+            {
+                DdlSexo.SelectedIndex = 0;
+            }
+            string estado = valores[10];
+            if (!string.IsNullOrEmpty(estado) && (estado == "ACTIVO" || estado == "INACTIVO"))
+            {
+                DdlEstado.SelectedValue = estado;
+            }
+            else
+            {
+                DdlEstado.SelectedIndex = 0;
+            }
+            string plan = valores[4];
+            if (!string.IsNullOrEmpty(plan) && (plan == "Básico" || plan == "Estándar" || plan == "Premium" || plan == "Empleado"))
+            {
+                DdlPlan.SelectedValue = plan;
+            }
+            else
+            {
+                DdlPlan.SelectedIndex = 0;
+            }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "UpdateLabels",
                 $"document.getElementById('{TxtDNI.ClientID}').value = '{valores[1]}';" +
                 $"document.getElementById('{TxtNombre.ClientID}').value = '{valores[2]}';" +
                 $"document.getElementById('{TxtApellido.ClientID}').value = '{valores[3]}';" +
-                $"document.getElementById('{TxtPlan.ClientID}').value = '{valores[4]}';" +
-                $"document.getElementById('{TxtTelEmerg.ClientID}').value = '{valores[5]}';" +
-                $"document.getElementById('{TxtMail.ClientID}').value = '{valores[6]}';" +
-                $"document.getElementById('{TxtSexo.ClientID}').value = '{valores[8]}';" +
-                $"document.getElementById('{TxtEstado.ClientID}').value = '{valores[9]}';",
+                $"document.getElementById('{DdlPlan.ClientID}').value = '{valores[4]}';" +
+                $"document.getElementById('{TxtCel.ClientID}').value = '{valores[5]}';" +
+                $"document.getElementById('{TxtTelEmerg.ClientID}').value = '{valores[6]}';" +
+                $"document.getElementById('{TxtMail.ClientID}').value = '{valores[7]}';" +
+                $"document.getElementById('{TxtPassword.ClientID}').value = '{valores[8]}';" +
+                $"document.getElementById('{DdlSexo.ClientID}').value = '{valores[9]}';" +
+                $"document.getElementById('{DdlEstado.ClientID}').value = '{valores[10]}';" +
+                $"if (document.getElementById('{DdlSexo.ClientID}').value !== '{valores[9]}') document.getElementById('{DdlSexo.ClientID}').value = '';" +
+                $"if (document.getElementById('{DdlEstado.ClientID}').value !== '{valores[10]}') document.getElementById('{DdlEstado.ClientID}').value = '';" +
+                $"if (document.getElementById('{DdlPlan.ClientID}').value !== '{valores[4]}') document.getElementById('{DdlPlan.ClientID}').value = '';",
                 true);
-
-            // Abre el modal
+            UpdatePanel2.Update();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#exampleModal').modal('show');", true);
         }
 
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
-            // Obtiene los valores de los TextBox
-            int id = int.Parse(TxtDNI.Text);
-            string nombre = TxtNombre.Text;
-            // ... obtener otros valores de los TextBox
 
-            // Actualiza el usuario en la base de datos
+
+
             Usuario usuario = new Usuario();
-            usuario.ID = id;
-            usuario.Nombre = nombre;
-            // ... asignar otros valores al objeto usuario
+            string valor = HfModificarId.Value;
+           usuario.ID = int.Parse(HfModificarId.Value);
+            usuario.DNI = TxtDNI.Text;
+            usuario.Nombre = TxtNombre.Text;
+            usuario.Apellido = TxtApellido.Text;
+            usuario.plan.Tipo_Plan = DdlPlan.SelectedValue;
+            usuario.Cel = TxtCel.Text;
+            usuario.Tel_Emergencia = TxtTelEmerg.Text;
+            usuario.Mail = TxtMail.Text;
+            usuario.Password = TxtPassword.Text;
+            usuario.sexo.Tipo = DdlSexo.SelectedValue;
+            usuario.Estado = DdlEstado.SelectedValue.Equals(true)?true:false;
 
-            // Llama al método para actualizar el usuario en el Controller
+
+
+          //  ModificarId = -1;
+
             //   dato.ActualizarUsuario(usuario);
 
-            // Cierra el modal
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
 
-            // Recarga la página para actualizar la lista de usuarios
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
             Response.Redirect(Request.RawUrl);
         }
 
-
-
-
-
-
-
     }
-
 
 }

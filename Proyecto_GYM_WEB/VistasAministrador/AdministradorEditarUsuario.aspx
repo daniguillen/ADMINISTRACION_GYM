@@ -2,15 +2,7 @@
     MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="AdministradorEditarUsuario.aspx.cs"
     Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorEditarUsuario" %>
-
-
-
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-
-
-
-
-
     <div class="container-fluid">
         <div id="datatablesSimple2" class="row">
             <div class="col-12">

@@ -132,6 +132,24 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Repeater RepeaterUsuarios;
 
         /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+
+        /// <summary>
+        /// Control HfModificarId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HfModificarId;
+
+        /// <summary>
         /// Control TxtDNI.
         /// </summary>
         /// <remarks>
@@ -159,13 +177,22 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.TextBox TxtApellido;
 
         /// <summary>
-        /// Control TxtPlan.
+        /// Control DdlPlan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPlan;
+        protected global::System.Web.UI.WebControls.DropDownList DdlPlan;
+
+        /// <summary>
+        /// Control TxtCel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtCel;
 
         /// <summary>
         /// Control TxtTelEmerg.
@@ -186,22 +213,31 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.TextBox TxtMail;
 
         /// <summary>
-        /// Control TxtSexo.
+        /// Control TxtPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSexo;
+        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
 
         /// <summary>
-        /// Control TxtEstado.
+        /// Control DdlSexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtEstado;
+        protected global::System.Web.UI.WebControls.DropDownList DdlSexo;
+
+        /// <summary>
+        /// Control DdlEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlEstado;
 
         /// <summary>
         /// Control BtnGuardarCambios.
