@@ -22,9 +22,10 @@ namespace Proyecto_GYM_WEB
             TxtTelEmergenciaEditar.Text= usuario.Tel_Emergencia;
             TxtEmailEditar.Text=usuario.Mail;
             TxtPasswordEditar.Text= usuario.Password;
-            TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString();
+
+            TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
             TxtSexoEditar.Text = usuario.sexo.Tipo;
-            TxtFechaIngresoEditar.Text=usuario.Fecha_ingreso.ToString();
+            TxtFechaIngresoEditar.Text=usuario.Fecha_ingreso.ToShortDateString();
 
 
 
