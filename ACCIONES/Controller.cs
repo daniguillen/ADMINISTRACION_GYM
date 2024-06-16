@@ -19,27 +19,7 @@ namespace ACCIONES
             datos = new AccesoDatos();
         }
 
-
-        public void Eliminar_Persona_x_ID(int a)
-        {
-
-            try
-            {
-                datos.setearQuery("update PERSONA set ESTADO=0 where ID=" + a + ";");
-                datos.ejecutarLectura();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-
-
-        }
+  //clientes
         public void Activar_Cliente_PorID(int a)
         {
 
@@ -60,7 +40,26 @@ namespace ACCIONES
 
 
         }
+        public void Eliminar_Persona_x_ID(int a)
+        {
 
+            try
+            {
+                datos.setearQuery("update PERSONA set ESTADO=0 where ID=" + a + ";");
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
         public List<Usuario> listar_Clientes()
         {
 
@@ -68,7 +67,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA\r\nFROM PERSONA p\r\nINNER JOIN USUARIO u on u.ID=p.ID \r\nINNER JOIN PLANES PL ON PL.ID=P.IDPLANES\r\nINNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL\r\nINNER JOIN SEXO S ON P.SEXO=S.ID\r\n\r\n\r\n");
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID");
 
                 datos.ejecutarLectura();
 
@@ -101,8 +100,7 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
-                    //  aux.ID_rutina = datos.Lector.GetInt32(23);
-
+             
 
                     ListaUsuario.Add(aux);
                 }
@@ -120,8 +118,6 @@ namespace ACCIONES
 
 
         }
-
-
         public Usuario Cliente(int idusuario)
         {
 
@@ -192,7 +188,181 @@ namespace ACCIONES
 
 
         }
+        //busca un usuario o entrenador sin filtro
+        public Usuario BuscarAllCliente(string buscar)
+        {
 
+            try
+            {
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where p.NOMBRE like '%' + @Buscar + '%' or p.APELLIDO like '%'+ @Buscar + '%'or p.DNI=@Buscar");
+                datos.setearParametro("@Buscar", buscar);
+                datos.ejecutarLectura();
+
+                Usuario aux = null;
+
+
+                while (datos.Lector.Read())
+                {
+                    aux = new Usuario();
+                    aux.ID = datos.Lector.GetInt32(0);
+                    aux.Mail = datos.Lector.GetString(1);
+                    aux.Password = datos.Lector.GetString(2);
+                    aux.nivel.ID = datos.Lector.GetInt32(3);
+                    aux.nivel.level = datos.Lector.GetString(4);
+                    aux.Nombre = datos.Lector.GetString(5);
+                    aux.Apellido = datos.Lector.GetString(6);
+                    aux.Direccion = datos.Lector.GetString(7);
+                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    aux.sexo.ID = datos.Lector.GetInt32(9);
+                    aux.sexo.Tipo = datos.Lector.GetString(10);
+                    aux.Foto = datos.Lector.GetString(11);
+                    aux.DNI = datos.Lector.GetString(12);
+                    aux.Apto_Fisico = datos.Lector.GetString(13);
+                    aux.Tel_Emergencia = datos.Lector.GetString(14);
+                    aux.Cel = datos.Lector.GetString(15);
+                    aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    aux.plan.ID = datos.Lector.GetInt32(17);
+                    aux.plan.Descripcion = datos.Lector.GetString(18);
+                    aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    aux.Estado = datos.Lector.GetBoolean(22);
+                }
+                return aux;
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+        //buscar por usuario
+        public Usuario BuscarOneCliente(string buscar)
+        {
+
+            try
+            {
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where (p.NOMBRE like '%' + @Buscar + '%' or p.APELLIDO like '%'+ @Buscar + '%'or p.DNI=@Buscar) and u.IDNIVEL=1");
+                datos.setearParametro("@Buscar", buscar);
+                datos.ejecutarLectura();
+
+                Usuario aux = null;
+
+
+                while (datos.Lector.Read())
+                {
+                    aux = new Usuario();
+                    aux.ID = datos.Lector.GetInt32(0);
+                    aux.Mail = datos.Lector.GetString(1);
+                    aux.Password = datos.Lector.GetString(2);
+                    aux.nivel.ID = datos.Lector.GetInt32(3);
+                    aux.nivel.level = datos.Lector.GetString(4);
+                    aux.Nombre = datos.Lector.GetString(5);
+                    aux.Apellido = datos.Lector.GetString(6);
+                    aux.Direccion = datos.Lector.GetString(7);
+                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    aux.sexo.ID = datos.Lector.GetInt32(9);
+                    aux.sexo.Tipo = datos.Lector.GetString(10);
+                    aux.Foto = datos.Lector.GetString(11);
+                    aux.DNI = datos.Lector.GetString(12);
+                    aux.Apto_Fisico = datos.Lector.GetString(13);
+                    aux.Tel_Emergencia = datos.Lector.GetString(14);
+                    aux.Cel = datos.Lector.GetString(15);
+                    aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    aux.plan.ID = datos.Lector.GetInt32(17);
+                    aux.plan.Descripcion = datos.Lector.GetString(18);
+                    aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    aux.Estado = datos.Lector.GetBoolean(22);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public Usuario BuscarOneEntrenador(string buscar)
+        {
+
+            try
+            {
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where (p.NOMBRE like '%' + @Buscar + '%' or p.APELLIDO like '%'+ @Buscar + '%'or p.DNI=@Buscar) and u.IDNIVEL=2");
+                datos.setearParametro("@Buscar", buscar);
+                datos.ejecutarLectura();
+
+                Usuario aux = null;
+
+
+                while (datos.Lector.Read())
+                {
+                    aux = new Usuario();
+                    aux.ID = datos.Lector.GetInt32(0);
+                    aux.Mail = datos.Lector.GetString(1);
+                    aux.Password = datos.Lector.GetString(2);
+                    aux.nivel.ID = datos.Lector.GetInt32(3);
+                    aux.nivel.level = datos.Lector.GetString(4);
+                    aux.Nombre = datos.Lector.GetString(5);
+                    aux.Apellido = datos.Lector.GetString(6);
+                    aux.Direccion = datos.Lector.GetString(7);
+                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    aux.sexo.ID = datos.Lector.GetInt32(9);
+                    aux.sexo.Tipo = datos.Lector.GetString(10);
+                    aux.Foto = datos.Lector.GetString(11);
+                    aux.DNI = datos.Lector.GetString(12);
+                    aux.Apto_Fisico = datos.Lector.GetString(13);
+                    aux.Tel_Emergencia = datos.Lector.GetString(14);
+                    aux.Cel = datos.Lector.GetString(15);
+                    aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    aux.plan.ID = datos.Lector.GetInt32(17);
+                    aux.plan.Descripcion = datos.Lector.GetString(18);
+                    aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    aux.Estado = datos.Lector.GetBoolean(22);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Rutinas
         public List<Rutina> ListarRutinas()
 
         {
@@ -369,8 +539,6 @@ namespace ACCIONES
 
 
         }
-
-
         public List<Ejercicio> ListarEjercicios()
         {
 
@@ -412,29 +580,56 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
-        public List<Plan> ListarPLan()
+        public void agregarRutina(Rutina rutiNueva)
+        {
+            try
+            {
+                datos.setearQuery("INSERT INTO RUTINA(NOMBRE, DESCRIPCION, PERSONAL, ESTADO) VALUES (@NOMBRE,@DESCRIPCION,@PERSONAL,@ESTADO)");
+                datos.setearParametro("@NOMBRE", rutiNueva.nombre);
+                datos.setearParametro("@DESCRIPCION", rutiNueva.descripcion);
+                datos.setearParametro("@PERSONAL", 0);
+                datos.setearParametro("@ESTADO", 1);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion(); }
+        }
+        public void agregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia, Rutina_ejercicio nuevaRutinaEjercicio)
         {
 
             try
             {
-                List<Plan> Aux = new List<Plan>();
-                datos.setearQuery("select * from PLANES");
-                datos.ejecutarLectura();
+                datos.setearQuery("INSERT INTO RUTINA_EJERCICIO (ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO) \r\nVALUES (@ID_RUTINA, @ID_EJERCICIO, @ID_DIA, @HORARIO) ");
+                datos.setearParametro("@ID_RUTINA", rutinaID);
+                datos.setearParametro("@ID_EJERCICIO", idEjercicio);
+                datos.setearParametro("@ID_DIA", dia.id);
+                datos.setearParametro("@HORARIO", nuevaRutinaEjercicio.hora);
+                datos.ejecutarAccion();
+            }
 
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion(); }
+        }
+        public List<Rutina> ListarRutinaParaAgregarEjercicio()
+        {
+
+            try
+            {
+                List<Rutina> aux = new List<Rutina>();
+                datos.setearQuery("SELECT * FROM RUTINA");
+                datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
-                    Plan plancito = new Plan();
-                    plancito.ID = datos.Lector.GetInt32(0);
-                    plancito.Cuotas = datos.Lector.GetSqlMoney(1);
-                    plancito.Tipo_Plan = datos.Lector.GetString(2);
-                    plancito.Descripcion = datos.Lector.GetString(3);
+                    Rutina ruti = new Rutina();
+                    ruti.ID = datos.Lector.GetInt32(0);
+                    ruti.nombre = datos.Lector.GetString(1);
+                    ruti.descripcion = datos.Lector.GetString(2);
+                    ruti.personal = datos.Lector.GetBoolean(3);
+                    ruti.estado = datos.Lector.GetBoolean(4);
 
-                    Aux.Add(plancito);
-
-
+                    aux.Add(ruti);
                 }
-                return Aux;
+                return aux;
             }
             catch (Exception ex)
             {
@@ -444,9 +639,170 @@ namespace ACCIONES
             {
                 datos.cerrarConexion();
             }
+        }
+        public void ModificarRutina(Rutina modifRutina)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE RUTINA SET NOMBRE = @NOMBRE, DESCRIPCION = @DESCRIPCION WHERE ID=@ID ");
+
+                datos.setearParametro("@ID", modifRutina.ID);
+                datos.setearParametro("@NOMBRE", modifRutina.nombre);
+                datos.setearParametro("@DESCRIPCION", modifRutina.descripcion);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public Rutina_ejercicio Rutina_EjercicioIdParaModificarRutina(int ID_Rutina)
+        {
+            try
+            {
+                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
+
+                datos.setearParametro("@ID_RUTINA", ID_Rutina);
+                datos.ejecutarLectura();
+
+                Rutina_ejercicio rutina_Ejercicio_aux = new Rutina_ejercicio();
+                //rutina_Ejercicio_aux.ID= ID_Rutina;
+                rutina_Ejercicio_aux.ejercicio = new List<Ejercicio>();
+                var objEjercicio = new Ejercicio();
+                rutina_Ejercicio_aux.dia = new Dias();
+
+
+                while (datos.Lector.Read())
+                {
+                    if (ID_Rutina == datos.Lector.GetInt32(0))
+                    {
+                        objEjercicio.ID = datos.Lector.GetInt32(0);
+                        rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
+                    }
+
+                    rutina_Ejercicio_aux.dia.id = datos.Lector.GetInt32(2);
+                }
+
+
+                return rutina_Ejercicio_aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally { datos.cerrarConexion(); }
 
         }
+        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO, ID_DIA =@ID_DIA WHERE ID_RUTINA =@ID_RUTINAA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
+                datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
+                datos.setearParametro("@ID_RUTINAA", rutina.ID);
+                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
+                datos.setearParametro("@ID_DIA", idDia);
 
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public List<AuxTablaRutina> ListarTablaRutinas()
+        {
+            try
+            {
+                List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
+                // datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
+                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    AuxTablaRutina auxTabla = new AuxTablaRutina();
+                    auxTabla.ID_Rutina = datos.Lector.GetInt32(0);
+                    auxTabla.NombreRutina = datos.Lector.GetString(1);
+                    auxTabla.DescripcionRutina = datos.Lector.GetString(2);
+                    auxTabla.DiaNombre = datos.Lector.GetString(3);
+                    auxTabla.NombreEjercicio = datos.Lector.GetString(4);
+                    auxTabla.Repeticiones = datos.Lector.GetInt32(5);
+                    aux.Add(auxTabla);
+
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public Rutina RutinaIdParaModificarRutina(int ID_Rutina)
+        {
+            try
+            {
+                datos.setearQuery("SELECT ID,NOMBRE, DESCRIPCION FROM RUTINA WHERE ID = @ID");
+                datos.setearParametro("@ID", ID_Rutina);
+                datos.ejecutarLectura();
+
+                Rutina Rutina_aux = new Rutina();
+                while (datos.Lector.Read())
+                {
+                    Rutina_aux.ID = datos.Lector.GetInt32(0);
+                    Rutina_aux.nombre = datos.Lector.GetString(1);
+                    Rutina_aux.descripcion = datos.Lector.GetString(2);
+
+
+                }
+                return Rutina_aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+ //musculacion
+        public List<TipoEjercicio> ListadoTipoEjercicio()
+        {
+            try
+            {
+                List<TipoEjercicio> aux = new List<TipoEjercicio>();
+                datos.setearQuery("SELECT * FROM TIPO_EJERCICIO");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    TipoEjercicio tipoEjercicio = new TipoEjercicio();
+                    tipoEjercicio.ID = datos.Lector.GetInt32(0);
+                    tipoEjercicio.Descripcion = datos.Lector.GetString(1);
+
+                    aux.Add(tipoEjercicio);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
         public List<GrupoMuscular> ListarGrupoMuscular()
         {
 
@@ -502,75 +858,6 @@ namespace ACCIONES
             }
             finally { datos.cerrarConexion(); }
         }
-
-        public List<TipoEjercicio> ListadoTipoEjercicio()
-        {
-            try
-            {
-                List<TipoEjercicio> aux = new List<TipoEjercicio>();
-                datos.setearQuery("SELECT * FROM TIPO_EJERCICIO");
-                datos.ejecutarLectura();
-
-                while (datos.Lector.Read())
-                {
-                    TipoEjercicio tipoEjercicio = new TipoEjercicio();
-                    tipoEjercicio.ID = datos.Lector.GetInt32(0);
-                    tipoEjercicio.Descripcion = datos.Lector.GetString(1);
-
-                    aux.Add(tipoEjercicio);
-                }
-                return aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally { datos.cerrarConexion(); }
-        }
-
-        public List<Dias> ListarDias()
-        {
-            try
-            {
-                List<Dias> aux = new List<Dias>();
-                datos.setearQuery("SELECT * FROM DIA");
-                datos.ejecutarLectura();
-
-                while (datos.Lector.Read())
-                {
-                    Dias dias = new Dias();
-                    dias.id = datos.Lector.GetInt32(0);
-                    dias.dia = datos.Lector.GetString(1);
-
-                    aux.Add(dias);
-                }
-                return aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally { datos.cerrarConexion(); }
-        }
-
-        public void agregarGrupoMusucular(GrupoMuscular grupoNuevo)
-        {
-            try
-            {
-                datos.setearQuery("INSERT Into GRUPO_MUSCULAR (DESCRIPCION) values (@DESCRIPCION)");
-                datos.setearParametro("@DESCRIPCION", grupoNuevo.Descripcion);
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
-
         public void agregarEjercicio(Ejercicio ejercicioNuevo)
         {
             try
@@ -596,60 +883,13 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
-
-
-        public void agregarRutina(Rutina rutiNueva)
+        public void agregarGrupoMusucular(GrupoMuscular grupoNuevo)
         {
             try
             {
-                datos.setearQuery("INSERT INTO RUTINA(NOMBRE, DESCRIPCION, PERSONAL, ESTADO) VALUES (@NOMBRE,@DESCRIPCION,@PERSONAL,@ESTADO)");
-                datos.setearParametro("@NOMBRE", rutiNueva.nombre);
-                datos.setearParametro("@DESCRIPCION", rutiNueva.descripcion);
-                datos.setearParametro("@PERSONAL", 0);
-                datos.setearParametro("@ESTADO", 1);
+                datos.setearQuery("INSERT Into GRUPO_MUSCULAR (DESCRIPCION) values (@DESCRIPCION)");
+                datos.setearParametro("@DESCRIPCION", grupoNuevo.Descripcion);
                 datos.ejecutarAccion();
-            }
-            catch (Exception ex) { throw ex; }
-            finally { datos.cerrarConexion(); }
-        }
-
-        public void agregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia, Rutina_ejercicio nuevaRutinaEjercicio)
-        {
-
-            try
-            {
-                datos.setearQuery("INSERT INTO RUTINA_EJERCICIO (ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO) \r\nVALUES (@ID_RUTINA, @ID_EJERCICIO, @ID_DIA, @HORARIO) ");
-                datos.setearParametro("@ID_RUTINA", rutinaID);
-                datos.setearParametro("@ID_EJERCICIO", idEjercicio);
-                datos.setearParametro("@ID_DIA", dia.id);
-                datos.setearParametro("@HORARIO", nuevaRutinaEjercicio.hora);
-                datos.ejecutarAccion();
-            }
-
-            catch (Exception ex) { throw ex; }
-            finally { datos.cerrarConexion(); }
-        }
-        public List<Rutina> ListarRutinaParaAgregarEjercicio()
-        {
-
-            try
-            {
-                List<Rutina> aux = new List<Rutina>();
-                datos.setearQuery("SELECT * FROM RUTINA");
-                datos.ejecutarLectura();
-                while (datos.Lector.Read())
-                {
-                    Rutina ruti = new Rutina();
-                    ruti.ID = datos.Lector.GetInt32(0);
-                    ruti.nombre = datos.Lector.GetString(1);
-                    ruti.descripcion = datos.Lector.GetString(2);
-                    ruti.personal = datos.Lector.GetBoolean(3);
-                    ruti.estado = datos.Lector.GetBoolean(4);
-
-                    aux.Add(ruti);
-                }
-                return aux;
             }
             catch (Exception ex)
             {
@@ -660,151 +900,88 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
+
+ //otros
+        public List<Plan> ListarPLan()
+        {
+
+            try
+            {
+                List<Plan> Aux = new List<Plan>();
+                datos.setearQuery("select * from PLANES");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Plan plancito = new Plan();
+                    plancito.ID = datos.Lector.GetInt32(0);
+                    plancito.Cuotas = datos.Lector.GetSqlMoney(1);
+                    plancito.Tipo_Plan = datos.Lector.GetString(2);
+                    plancito.Descripcion = datos.Lector.GetString(3);
+
+                    Aux.Add(plancito);
+
+
+                }
+                return Aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+        public List<Dias> ListarDias()
+        {
+            try
+            {
+                List<Dias> aux = new List<Dias>();
+                datos.setearQuery("SELECT * FROM DIA");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Dias dias = new Dias();
+                    dias.id = datos.Lector.GetInt32(0);
+                    dias.dia = datos.Lector.GetString(1);
+
+                    aux.Add(dias);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //Metodo para listar las rutinas con sus ejercicios
-        public List<AuxTablaRutina> ListarTablaRutinas()
-        {
-            try
-            {
-                List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
-                // datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
-                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
-                datos.ejecutarLectura();
-                while (datos.Lector.Read())
-                {
-                    AuxTablaRutina auxTabla = new AuxTablaRutina();
-                    auxTabla.ID_Rutina = datos.Lector.GetInt32(0);
-                    auxTabla.NombreRutina = datos.Lector.GetString(1);
-                    auxTabla.DescripcionRutina = datos.Lector.GetString(2);
-                    auxTabla.DiaNombre = datos.Lector.GetString(3);
-                    auxTabla.NombreEjercicio = datos.Lector.GetString(4);
-                    auxTabla.Repeticiones = datos.Lector.GetInt32(5);
-                    aux.Add(auxTabla);
-
-                }
-                return aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
 
         //Creo el metodo para realizar la modificación de la rutina
-        public Rutina RutinaIdParaModificarRutina(int ID_Rutina)
-        {
-            try
-            {
-                datos.setearQuery("SELECT ID,NOMBRE, DESCRIPCION FROM RUTINA WHERE ID = @ID");
-                datos.setearParametro("@ID", ID_Rutina);
-                datos.ejecutarLectura();
-
-                Rutina Rutina_aux = new Rutina();
-                while (datos.Lector.Read())
-                {
-                    Rutina_aux.ID = datos.Lector.GetInt32(0);
-                    Rutina_aux.nombre = datos.Lector.GetString(1);
-                    Rutina_aux.descripcion = datos.Lector.GetString(2);
-
-
-                }
-                return Rutina_aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally { datos.cerrarConexion(); }
-        }
 
         //Modificar Rutina
 
-        public void ModificarRutina(Rutina modifRutina)
-        {
-            try
-            {
-                datos.setearQuery("UPDATE RUTINA SET NOMBRE = @NOMBRE, DESCRIPCION = @DESCRIPCION WHERE ID=@ID ");
-
-                datos.setearParametro("@ID", modifRutina.ID);
-                datos.setearParametro("@NOMBRE", modifRutina.nombre);
-                datos.setearParametro("@DESCRIPCION", modifRutina.descripcion);
-
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
-
-        public Rutina_ejercicio Rutina_EjercicioIdParaModificarRutina(int ID_Rutina)
-        {
-            try
-            {
-                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
-
-                datos.setearParametro("@ID_RUTINA", ID_Rutina);
-                datos.ejecutarLectura();
-
-                Rutina_ejercicio rutina_Ejercicio_aux = new Rutina_ejercicio();
-                //rutina_Ejercicio_aux.ID= ID_Rutina;
-                rutina_Ejercicio_aux.ejercicio = new List<Ejercicio>();
-                var objEjercicio = new Ejercicio();
-                rutina_Ejercicio_aux.dia = new Dias();
 
 
-                while (datos.Lector.Read())
-                {
-                    if (ID_Rutina == datos.Lector.GetInt32(0))
-                    {
-                        objEjercicio.ID = datos.Lector.GetInt32(0);
-                        rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
-                    }
-
-                    rutina_Ejercicio_aux.dia.id = datos.Lector.GetInt32(2);
-                }
-
-
-                return rutina_Ejercicio_aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-
-            }
-            finally { datos.cerrarConexion(); }
-
-        }
-
-        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior)
-        {
-            try
-            {
-                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO, ID_DIA =@ID_DIA WHERE ID_RUTINA =@ID_RUTINAA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
-                datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
-                datos.setearParametro("@ID_RUTINAA", rutina.ID);
-                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
-                datos.setearParametro("@ID_DIA", idDia);
-
-
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
 
     }
 }

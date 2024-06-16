@@ -10,17 +10,17 @@ namespace Proyecto_GYM_WEB.VistasAministrador
     public partial class AdministradorGeneral : System.Web.UI.Page
     {
         public Controller dato = new Controller();
-
-
+ //sera 1 al entrar es usuario, si esta en tabla entrenador 2 y si no es rutina 3
+        public int usuarioEntrenadorRutina = 1;
+        public List<Rutina> ListarRutina= new List<Rutina>(); 
+ //este id es el que tomare en el modal para modificarlo
+        public int ModificarId;
         public List<Usuario> ListaUsuarios
         {
             get { return (List<Usuario>)Session["ModificarCliente"]; }
             set { Session["ModificarCliente"] = value; }
         }
-
-        public int ModificarId;
         public Usuario UsuarioEditar { get; set; } = new Usuario();
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -47,18 +47,63 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 Response.Redirect("/");
             }
         }
-
         private void BindRepeater()
         {
             RepeaterUsuarios.DataSource = ListaUsuarios;
             RepeaterUsuarios.DataBind();
         }
-
         protected void Buscar(object sender, EventArgs e)
         {
-            Label1.Text = TxtBusquedad.Text;
-        }
 
+            Usuario aux;
+            void buscar() {
+                List<Usuario> usuario = new List<Usuario>();
+                Label1.Text = TxtBusquedad.Text;
+                if (!TxtBusquedad.Text.Equals(""))
+                {
+                    
+                    if (aux != null)
+                    {
+                        usuario.Add(aux);
+                        ListaUsuarios = usuario;
+                    }
+                    else
+                    {
+                        Resultado.Text = "Sin Resultado";
+                        Resultado.Visible = true;
+                    }
+                }
+                else
+                {
+                    Resultado.Text = "Sin Resultado";
+                    Resultado.Visible = true;
+                }
+            }
+//no hay filtro (Persona y entrenadores)
+            if (DropDownList1.SelectedValue.Equals("")) {
+                aux = dato.BuscarAllCliente(TxtBusquedad.Text);
+                buscar();
+            }
+//filtrar por usuario
+            if (DropDownList1.SelectedValue.Equals("1"))
+            {
+                aux = dato.BuscarOneCliente(TxtBusquedad.Text);
+                buscar();
+            }
+//filtrar por Entranadores
+            if (DropDownList1.SelectedValue.Equals("2"))
+            {
+                aux = dato.BuscarOneEntrenador(TxtBusquedad.Text);
+                buscar();
+            }
+//filtrar Rutinas no esta hecha
+            if (DropDownList1.SelectedValue.Equals("3"))
+            {
+                
+            }
+
+            BindRepeater();
+        }
         protected void Entrenadores(object sender, EventArgs e)
         {
 
@@ -72,11 +117,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
+            usuarioEntrenadorRutina = 2;
             LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
             ListaUsuarios = AuxListaUsuarios;
+            Resultado.Visible = false;
+            Resultado.Text = "";
             BindRepeater();
         }
-
         protected void Usuarios(object sender, EventArgs e)
         {
             ListaUsuarios = dato.listar_Clientes();
@@ -89,23 +136,30 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
+            usuarioEntrenadorRutina = 1;
             LiteralUsuarios.Text = "<h1> Usuarios </h1>";
             ListaUsuarios = AuxListaUsuarios;
+            Resultado.Visible = false;
+            Resultado.Text = "";
             BindRepeater();
         }
         protected void Rutinas(object sender, EventArgs e)
         {
+            usuarioEntrenadorRutina = 3;
             LiteralUsuarios.Text = "<h1> Rutina </h1>";
-            
-
+            Resultado.Visible = false;
+            Resultado.Text = "";
+            ListarRutina = dato.ListarRutinas();
+            //BindRepeater().c;
 
         }
         protected void MensajeAUsuarioYEntrenadores(object sender, EventArgs e)
         {
             TextBox2.Text = "Mensaje enviado: " + TextBox1.Text;
             TextBox1.Text = "";
+            Resultado.Visible = false;
+            Resultado.Text = "";
         }
-
         protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {
             int userId;
@@ -121,9 +175,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 Label1.Text = "No se pudo obtener el ID del usuario.";
             }
         }
-
-
-
         protected void BtnActivar(object sender, CommandEventArgs e)
         {
             int userId;
@@ -136,8 +187,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             }
 
         }
-
-
         protected void Modificar(object sender, CommandEventArgs e)
         {
           
@@ -198,7 +247,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             UpdatePanel2.Update();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#exampleModal').modal('show');", true);
         }
-
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
 
@@ -206,7 +254,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
             Usuario usuario = new Usuario();
             string valor = HfModificarId.Value;
-           usuario.ID = int.Parse(HfModificarId.Value);
+            usuario.ID = int.Parse(HfModificarId.Value);
             usuario.DNI = TxtDNI.Text;
             usuario.Nombre = TxtNombre.Text;
             usuario.Apellido = TxtApellido.Text;

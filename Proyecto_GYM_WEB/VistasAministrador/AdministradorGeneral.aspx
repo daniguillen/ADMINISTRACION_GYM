@@ -13,18 +13,20 @@
                 <div class="d-flex justify-content-lg-around">
                     <asp:Label AssociatedControlID="TxtBusquedad" runat="server" Text="Filtrar por: " CssClass="text-light m-1"></asp:Label>
                     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select m-1">
-                        <asp:ListItem Text="Usuario" Value="Usuario"></asp:ListItem>
-                        <asp:ListItem Text="Entrenador" Value="Entrenador"></asp:ListItem>
-                        <asp:ListItem Text="Rutina" Value="Rutina"></asp:ListItem>
+                        <asp:ListItem Text="Seleccion.." Value=""></asp:ListItem>
+                        <asp:ListItem Text="Usuario" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Entrenador" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Rutina" Value="3"></asp:ListItem>
                     </asp:DropDownList>
                     <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1 bg-dark text-light" runat="server"></asp:TextBox>
                     <asp:Button ID="BtnBuscar" CssClass="btn btn-primary m-1" runat="server" OnClick="Buscar" Text="Buscar" UseSubmitBehavior="false" />
+                    <asp:Label ID="Resultado" runat="server" Text="" CssClass="text-light m-1" Visible="false"></asp:Label>
                 </div>
             </li>
         </ul>
         <div class="m-2">
             <div class="bg-dark text-light">
-                <h5 class="mb-2">Mensajes a usuarios y entrenadores</h5>
+                <h5 class="mb-2">Mensajes a usuarios y entrenadores<%=usuarioEntrenadorRutina %></h5>
                 <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-light mt-2"></asp:Label>
             </div>
             <asp:Label ID="TextBox2" runat="server" Text="" CssClass="text-light mt-2"></asp:Label>
@@ -35,7 +37,12 @@
             </div>
         </div>
 
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+
+
+
+        <!--========= Tabla de los Usuarios y Entrenadores =========-->
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
             <ContentTemplate>
                 <div class="table-responsive mx-auto">
                     <table id="datatablesSimple" class="table table-striped table-bordered table-dark ">
@@ -59,6 +66,7 @@
 
                             <asp:Repeater ID="RepeaterUsuarios" runat="server">
                                 <ItemTemplate>
+                                    <% if(usuarioEntrenadorRutina==1 || usuarioEntrenadorRutina == 2) {  %>
                                     <tr>
                                         <td><%# Eval("DNI") %></td>
                                         <td><%# Eval("Nombre") + " " + Eval("Apellido") %></td>
@@ -82,6 +90,15 @@
                                             <asp:Button ID="BtnAgregar" runat="server" Text="Activar" class="btn btn-secondary btn-icon-split btnAdministrador" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnActivar" />
                                         </td>
                                     </tr>
+<!--=========Fin Tabla Rutina =========-->
+                                    <%} else {  %>
+
+
+
+
+                                    <h1>Hola</h1>
+                                    <% }; %>
+¿<!--=========Fin Tabla Rutina =========-->
                                 </ItemTemplate>
                             </asp:Repeater>
                         </tbody>
@@ -90,12 +107,52 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
+    <!--=========Fin Tabla de los Usuarios y Entrenadores =========-->
+
+
+
+<!--========= Rutina =========-->
+     
 
 
 
 
-<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-    <ContentTemplate>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--=========Modal Tabla de los Usuarios y Entrenadores =========-->
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -105,7 +162,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <asp:HiddenField ID="HfModificarId" runat="server"  ClientIDMode="Static"/>
+                            <asp:HiddenField ID="HfModificarId" runat="server" ClientIDMode="Static" />
                             <div class="form-group">
                                 <label for="TxtDNI">DNI:</label>
                                 <asp:TextBox ID="TxtDNI" runat="server" CssClass="form-control" TextMode="SingleLine"></asp:TextBox>
@@ -172,8 +229,8 @@
             </div>
 
         </ContentTemplate>
-</asp:UpdatePanel>
-
+    </asp:UpdatePanel>
+<!--=========FIn Modal Tabla de los Usuarios y Entrenadores =========-->
 
 
 
@@ -190,7 +247,7 @@
             document.getElementById('<%= TxtPassword.ClientID %>').value = password;
             document.getElementById('<%= DdlSexo.ClientID %>').value = sexo;
             document.getElementById('<%= DdlEstado.ClientID %>').value = estado;
-            document.getElementById('HfModificarId').value = idUsuario; 
+            document.getElementById('HfModificarId').value = idUsuario;
             var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
             modal.show();
     </script>
