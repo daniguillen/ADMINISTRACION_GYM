@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="form-group">
-                            <label for="TxtDniEditar">DNI:</label>
+                            <label for="TxtDniEditar" CssClass="text-light" >DNI:</label>
                             <asp:TextBox ID="TxtDniEditar" runat="server" CssClass="form-control bg-secondary"></asp:TextBox>
                         </div>
                     </div>

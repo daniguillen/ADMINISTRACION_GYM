@@ -27,9 +27,9 @@
         <div class="m-2">
             <div class="bg-dark text-light">
                 <h5 class="mb-2">Mensajes a usuarios y entrenadores<%=usuarioEntrenadorRutina %></h5>
-                <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-light mt-2"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Label" AssociatedControlID="TextBox1" CssClass="text-light mt-2"></asp:Label>
             </div>
-            <asp:Label ID="TextBox2" runat="server" Text="" CssClass="text-light mt-2"></asp:Label>
+            <asp:Label ID="TextBox2" runat="server" Text="dsa" CssClass="text-light mt-2"></asp:Label>
 
             <div class="">
                 <asp:TextBox ID="TextBox1" CssClass="form-control mb-lg-1 bg-dark text-light" runat="server"></asp:TextBox>

@@ -1,14 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VistaPerfilUsuarioCliente.aspx.cs" Inherits="Proyecto_GYM_WEB.PerfilUsuario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="container">
-        <div class="row">
+  
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
+     <style>
+     body {
+         background-color: black;
+     }
+ </style>
+    <div class="container" ">
+        <div class="row"  >
             <div class="col-9">
                 <h1>Perfil</h1>
 
             </div>
-            <div class="col-4">
+            <div class="col-4 ">
                 .
            <!--FOTO DE PERFIL-->
                 <div class="card" style="width: 18rem;">
@@ -25,69 +30,64 @@
             <di class="col-6">
                 <!--DATOS DE LA PERSONA--->
                 <div class="form-group">
-                    <label for="TxtDniEditar">DNI:</label>
+                    <label  for="TxtDniEditar" Class="text-light mt-2">DNI</label>
                     <asp:TextBox ID="TxtDniEditar" runat="server" CssClass="form-control"  ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtNombreEditar">Nombre:</label>
+                    <label for="TxtNombreEditar" Class="text-light mt-2">Nombre:</label>
                     <asp:TextBox ID="TxtNombreEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtApellidoEditar">Apellido:</label>
+                    <label for="TxtApellidoEditar" Class="text-light mt-2">Apellido:</label>
                     <asp:TextBox ID="TxtApellidoEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtPlanEditar">Plan:</label>
+                    <label for="TxtPlanEditar" Class="text-light mt-2">Plan:</label>
                     <asp:TextBox ID="TxtPlanEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtCelularEditar">Celular:</label>
+                    <label for="TxtCelularEditar" Class="text-light mt-2">Celular:</label>
                     <asp:TextBox ID="TxtCelularEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtTelEmergenciaEditar">Tel Emergencia:</label>
+                    <label for="TxtTelEmergenciaEditar" Class="text-light mt-2">Tel Emergencia:</label>
                     <asp:TextBox ID="TxtTelEmergenciaEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtEmailEditar">Email:</label>
+                    <label for="TxtEmailEditar" Class="text-light mt-2">Email:</label>
                     <asp:TextBox ID="TxtEmailEditar" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtPasswordEditar">Password:</label>
+                    <label for="TxtPasswordEditar" Class="text-light mt-2">Password:</label>
                     <asp:TextBox ID="TxtPasswordEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtFechaNacimientoEditar">Fecha Nacimiento:</label>
+                    <label for="TxtFechaNacimientoEditar" Class="text-light mt-2" >Fecha Nacimiento:</label>
                     <asp:TextBox ID="TxtFechaNacimientoEditar" Type="date"  runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <label for="TxtSexoEditar">Sexo:</label>
-                    <asp:TextBox ID="TxtSexoEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="TxtSexoEditar" runat="server" CssClass="form-control" Class="text-light mt-2"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtFechaIngresoEditar">Fecha Ingreso:</label>
+                    <label for="TxtFechaIngresoEditar" Class="text-light mt-2">Fecha Ingreso:</label>
                     <asp:TextBox ID="TxtFechaIngresoEditar" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
 
 
                 <div class=" d-flex mt-5">
-
-                    <a href="#" class="btn btn-secondary btn-icon-split">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-                        <span class="bottom-0">Guardar</span>
-                    </a>
+                    <asp:Button ID="BTN_Guardar" runat="server" Text="Guardar" CssClass="btn btn-secondary btn-icon-split" OnClick="BTN_Guardar_Click"/>
+                   
                     <a href="/VistaCliente/VistaUsuarioCliente.aspx" class="btn btn-secondary btn-icon-split ms-5">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-right"></i>
@@ -99,3 +99,4 @@
         </div>
     </div>
 </asp:Content>
+

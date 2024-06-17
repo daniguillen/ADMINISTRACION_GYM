@@ -69,6 +69,7 @@ h4{
     box-sizing: border-box;
     background: linear-gradient(to left, #74EB1E, #2C6D00);
     min-width: 100%;
+    font:bold;
 }
 
 #containe {
@@ -277,6 +278,7 @@ h5.modal-title {
        
     }
 
+   
 
 
 }
