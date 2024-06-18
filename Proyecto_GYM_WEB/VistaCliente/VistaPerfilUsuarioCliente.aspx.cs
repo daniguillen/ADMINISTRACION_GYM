@@ -46,7 +46,7 @@ namespace Proyecto_GYM_WEB
 
 
             Controller datos= new Controller();
-            datos.
+            
 
         }
     }

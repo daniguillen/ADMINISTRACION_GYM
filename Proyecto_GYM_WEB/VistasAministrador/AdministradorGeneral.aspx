@@ -26,7 +26,7 @@
         </ul>
         <div class="m-2">
             <div class="bg-dark text-light">
-                <h5 class="mb-2">Mensajes a usuarios y entrenadores<%=usuarioEntrenadorRutina %></h5>
+                <h5 class="mb-2">Mensajes a usuarios y entrenadores</h5>
                 <asp:Label ID="Label1" runat="server" Text="Label" AssociatedControlID="TextBox1" CssClass="text-light mt-2"></asp:Label>
             </div>
             <asp:Label ID="TextBox2" runat="server" Text="dsa" CssClass="text-light mt-2"></asp:Label>
@@ -42,7 +42,7 @@
 
 
         <!--========= Tabla de los Usuarios y Entrenadores =========-->
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="table-responsive mx-auto">
                     <table id="datatablesSimple" class="table table-striped table-bordered table-dark ">
@@ -66,7 +66,10 @@
 
                             <asp:Repeater ID="RepeaterUsuarios" runat="server">
                                 <ItemTemplate>
-                                    <% if(usuarioEntrenadorRutina==1 || usuarioEntrenadorRutina == 2) {  %>
+                                    <% if (Session["Nivel"] != null && (Convert.ToInt32(Session["Nivel"]) == 1 || Convert.ToInt32(Session["Nivel"]) == 2))
+
+                                        {  %>
+                                   
                                     <tr>
                                         <td><%# Eval("DNI") %></td>
                                         <td><%# Eval("Nombre") + " " + Eval("Apellido") %></td>
@@ -84,14 +87,18 @@
                                         </td>
                                         <td><%# Eval("Estado").Equals(true) ? "Activo" : "Inactivo" %></td>
                                         <td class="BotonesTablaAdministrador">
-                                            <asp:Button ID="BtnModal" runat="server" OnCommand="Modificar" Text="Modificar" CssClass="btn btn-secondary btn-icon-split btnAdministrador"
-                                                OnClientClick='<%# "showModal(\""+ Eval("DNI") +"\",\"" + Eval("Nombre") + "\",\"" + Eval("Apellido") + "\",\"" + Eval("plan.Tipo_Plan") + "\",\"" + Eval("Cel") + "\",\"" + Eval("Tel_Emergencia") + "\",\"" + Eval("Mail") + "\",\"" + Eval("Password") + "\",\"" + Eval("Sexo.Tipo") + "\",\"" + (Eval("Estado").Equals(true) ? "Activo" : "Inactivo") + "\"); return false;" %>' CommandArgument='<%#Eval("ID")+"," + Eval("DNI") + "," + Eval("Nombre") + "," + Eval("Apellido") + "," + Eval("plan.Tipo_Plan") + "," + Eval("Cel") + "," + Eval("Tel_Emergencia") + "," + Eval("Mail") + "," + Eval("Password") + "," + Eval("Sexo.Tipo") + "," +( Eval("Estado").Equals(true) ? "Activo" : "Inactivo" )%>' />
+                                            <asp:Button ID="BtnModal" runat="server" Text="Modificar" CssClass="btn btn-secondary btn-icon-split btnAdministrador"
+                                                OnClientClick='<%# "showModal(\""+ Eval("DNI") +"\",\"" + Eval("Nombre") + "\",\"" + Eval("Apellido") + "\",\"" + Eval("plan.Tipo_Plan") + "\",\"" + Eval("Cel") + "\",\"" + Eval("Tel_Emergencia") + "\",\"" + Eval("Mail") + "\",\"" + Eval("Password") + "\",\"" + Eval("Sexo.Tipo") + "\",\"" + (Eval("Estado").Equals(true) ? "Activo" : "Inactivo") + "\",\"" + Eval("Sexo.id") + "\",\"" + Eval("plan.ID") + "\"); return false;" %>'
+                                                CommandArgument='<%#Eval("ID")+","+ Eval("DNI") + "," + Eval("Nombre") + "," + Eval("Apellido") + "," + Eval("plan.Tipo_Plan") + "," + Eval("Cel") + "," + Eval("Tel_Emergencia") + "," + Eval("Mail") + "," + Eval("Password") + "," + Eval("Sexo.Tipo") + "," +( Eval("Estado").Equals(true) ? "1" : "0" ) + "," + Eval("Sexo.id") + "," + Eval("plan.ID") %>' />
+
                                             <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" class="btn btn-secondary btn-icon-split btnAdministrador" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnEliminar_Persona_Command" />
                                             <asp:Button ID="BtnAgregar" runat="server" Text="Activar" class="btn btn-secondary btn-icon-split btnAdministrador" CommandArgument='<%# Eval("ID") %>' OnCommand="BtnActivar" />
                                         </td>
                                     </tr>
-<!--=========Fin Tabla Rutina =========-->
-                                    <%} else {  %>
+                                    <!--=========inicio Tabla Rutina =========-->
+                                    <%}
+                                        else
+                                        {  %>
 
 
 
@@ -111,44 +118,7 @@
 
 
 
-<!--========= Rutina =========-->
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--========= Rutina =========-->
 
     <!--=========Modal Tabla de los Usuarios y Entrenadores =========-->
     <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
@@ -179,10 +149,10 @@
                                 <label for="DdlPlan">Plan:</label>
                                 <asp:DropDownList ID="DdlPlan" runat="server" CssClass="form-control">
                                     <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
-                                    <asp:ListItem Text="Básico" Value="Básico"></asp:ListItem>
-                                    <asp:ListItem Text="Estándar" Value="Estándar"></asp:ListItem>
-                                    <asp:ListItem Text="Premium" Value="Premium"></asp:ListItem>
-                                    <asp:ListItem Text="Empleado" Value="Empleado"></asp:ListItem>
+                                    <asp:ListItem Text="Básico" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="Estándar" Value="2"></asp:ListItem>
+                                    <asp:ListItem Text="Premium" Value="3"></asp:ListItem>
+                                    <asp:ListItem Text="Empleado" Value="4"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
@@ -205,18 +175,18 @@
                                 <label for="DdlSexo">Sexo:</label>
                                 <asp:DropDownList ID="DdlSexo" runat="server" CssClass="form-control">
                                     <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
-                                    <asp:ListItem Text="MASCULINO" Value="MASCULINO"></asp:ListItem>
-                                    <asp:ListItem Text="FEMININO" Value="FEMININO"></asp:ListItem>
-                                    <asp:ListItem Text="BINARIO" Value="BINARIO"></asp:ListItem>
-                                    <asp:ListItem Text="S/D" Value="S/D"></asp:ListItem>
+                                    <asp:ListItem Text="MASCULINO" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="FEMININO" Value="2"></asp:ListItem>
+                                    <asp:ListItem Text="BINARIO" Value="3"></asp:ListItem>
+                                    <asp:ListItem Text="S/D" Value="4"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label for="DdlEstado">Estado:</label>
                                 <asp:DropDownList ID="DdlEstado" runat="server" CssClass="form-control">
-                                    <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
-                                    <asp:ListItem Text="ACTIVO" Value="Activo"></asp:ListItem>
-                                    <asp:ListItem Text="INACTIVO" Value="Inactivo"></asp:ListItem>
+                                    <asp:ListItem Text="Sele ccione..." Value=""></asp:ListItem>
+                                    <asp:ListItem Text="ACTIVO" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="INACTIVO" Value="0"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -230,13 +200,13 @@
 
         </ContentTemplate>
     </asp:UpdatePanel>
-<!--=========FIn Modal Tabla de los Usuarios y Entrenadores =========-->
+    <!--=========FIn Modal Tabla de los Usuarios y Entrenadores =========-->
 
 
 
 
     <script>
-        function showModal(dni, nombre, apellido, plan, cel, telEmergencia, mail, password, sexo, estado,) {
+        function showModal(dni, nombre, apellido, plan, cel, telEmergencia, mail, password, sexo, estado, sexoId, planId) {
             document.getElementById('<%= TxtDNI.ClientID %>').value = dni;
             document.getElementById('<%= TxtNombre.ClientID %>').value = nombre;
             document.getElementById('<%= TxtApellido.ClientID %>').value = apellido;
@@ -247,10 +217,14 @@
             document.getElementById('<%= TxtPassword.ClientID %>').value = password;
             document.getElementById('<%= DdlSexo.ClientID %>').value = sexo;
             document.getElementById('<%= DdlEstado.ClientID %>').value = estado;
-            document.getElementById('HfModificarId').value = idUsuario;
+
+            // Establecer plan.ID y sexo.id
+         //   document.getElementById('<%=// HfPlanId.ClientID %>').value = planId;
+         //   document.getElementById('<%=// HfSexoId.ClientID %>').value = sexoId;
+
             var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
             modal.show();
-    </script>
-
+        }
+</script>
 
 </asp:Content>

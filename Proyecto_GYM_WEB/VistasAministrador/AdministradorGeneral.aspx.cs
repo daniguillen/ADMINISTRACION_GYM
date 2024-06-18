@@ -10,10 +10,9 @@ namespace Proyecto_GYM_WEB.VistasAministrador
     public partial class AdministradorGeneral : System.Web.UI.Page
     {
         public Controller dato = new Controller();
- //sera 1 al entrar es usuario, si esta en tabla entrenador 2 y si no es rutina 3
-        public int usuarioEntrenadorRutina = 1;
-        public List<Rutina> ListarRutina= new List<Rutina>(); 
- //este id es el que tomare en el modal para modificarlo
+        //sera 1 al entrar es usuario, si esta en tabla entrenador 2 y si no es rutina 3
+        public List<Rutina> ListarRutina = new List<Rutina>();
+        //este id es el que tomare en el modal para modificarlo
         public int ModificarId;
         public List<Usuario> ListaUsuarios
         {
@@ -36,6 +35,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 {
                     if (!IsPostBack)
                     {
+                        Session["Nivel"] = 1;
                         ModificarId = -1;
                         ListaUsuarios = dato.listar_Clientes();
                         BindRepeater();
@@ -52,16 +52,50 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             RepeaterUsuarios.DataSource = ListaUsuarios;
             RepeaterUsuarios.DataBind();
         }
+        private void filtrarPorNivel()
+        {
+
+            ListaUsuarios = dato.listar_Clientes();
+            List<Usuario> AuxListaUsuarios = new List<Usuario>();
+
+            if (Session["Nivel"] != null && Convert.ToInt32(Session["Nivel"]) == 1)
+            {
+                foreach (var i in ListaUsuarios)
+                {
+                    if (i.nivel.ID == 1)
+                    {
+                        AuxListaUsuarios.Add(i);
+                    }
+                }
+                LiteralUsuarios.Text = "<h1> Usuarios </h1>";
+            }
+            else if (Session["Nivel"] != null && Convert.ToInt32(Session["Nivel"]) == 2)
+            {
+                foreach (var i in ListaUsuarios)
+                {
+                    if (i.nivel.ID == 2)
+                    {
+                        AuxListaUsuarios.Add(i);
+                    }
+                }
+                LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
+            }
+
+            ListaUsuarios = AuxListaUsuarios;
+            BindRepeater();
+
+        }
         protected void Buscar(object sender, EventArgs e)
         {
 
             Usuario aux;
-            void buscar() {
+            void buscar()
+            {
                 List<Usuario> usuario = new List<Usuario>();
                 Label1.Text = TxtBusquedad.Text;
                 if (!TxtBusquedad.Text.Equals(""))
                 {
-                    
+
                     if (aux != null)
                     {
                         usuario.Add(aux);
@@ -79,35 +113,37 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                     Resultado.Visible = true;
                 }
             }
-//no hay filtro (Persona y entrenadores)
-            if (DropDownList1.SelectedValue.Equals("")) {
+            //no hay filtro (Persona y entrenadores)
+            if (DropDownList1.SelectedValue.Equals(""))
+            {
                 aux = dato.BuscarAllCliente(TxtBusquedad.Text);
                 buscar();
             }
-//filtrar por usuario
+            //filtrar por usuario
             if (DropDownList1.SelectedValue.Equals("1"))
             {
                 aux = dato.BuscarOneCliente(TxtBusquedad.Text);
                 buscar();
             }
-//filtrar por Entranadores
+            //filtrar por Entranadores
             if (DropDownList1.SelectedValue.Equals("2"))
             {
                 aux = dato.BuscarOneEntrenador(TxtBusquedad.Text);
                 buscar();
             }
-//filtrar Rutinas no esta hecha
+            //filtrar Rutinas no esta hecha
             if (DropDownList1.SelectedValue.Equals("3"))
             {
-                
+
             }
 
             BindRepeater();
         }
         protected void Entrenadores(object sender, EventArgs e)
         {
-
+            Session["Nivel"] = 2;
             ListaUsuarios = dato.listar_Clientes();
+
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
             foreach (var i in ListaUsuarios)
             {
@@ -117,7 +153,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-            usuarioEntrenadorRutina = 2;
+
             LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
             ListaUsuarios = AuxListaUsuarios;
             Resultado.Visible = false;
@@ -126,6 +162,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void Usuarios(object sender, EventArgs e)
         {
+            Session["Nivel"] = 1;
             ListaUsuarios = dato.listar_Clientes();
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
             foreach (var i in ListaUsuarios)
@@ -136,7 +173,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-            usuarioEntrenadorRutina = 1;
+
             LiteralUsuarios.Text = "<h1> Usuarios </h1>";
             ListaUsuarios = AuxListaUsuarios;
             Resultado.Visible = false;
@@ -145,11 +182,11 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void Rutinas(object sender, EventArgs e)
         {
-            usuarioEntrenadorRutina = 3;
+            Session["Nivel"] = 3;
             LiteralUsuarios.Text = "<h1> Rutina </h1>";
             Resultado.Visible = false;
             Resultado.Text = "";
-            ListarRutina = dato.ListarRutinas();
+            //   ListarRutina = dato.ListarRutinas();
             //BindRepeater().c;
 
         }
@@ -160,6 +197,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             Resultado.Visible = false;
             Resultado.Text = "";
         }
+
         protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {
             int userId;
@@ -167,8 +205,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             {
                 Label1.Text = "ID del usuario: " + userId.ToString();
                 dato.Eliminar_Persona_x_ID(userId);
-                ListaUsuarios = dato.listar_Clientes();
-                BindRepeater();
+                filtrarPorNivel();
             }
             else
             {
@@ -182,16 +219,14 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             {
 
                 dato.Activar_Cliente_PorID(userId);
-                ListaUsuarios = dato.listar_Clientes();
-                BindRepeater();
+                filtrarPorNivel();
             }
 
         }
         protected void Modificar(object sender, CommandEventArgs e)
         {
-          
             string[] valores = e.CommandArgument.ToString().Split(',');
-            
+
             HfModificarId.Value = valores[0];
             TxtDNI.Text = valores[1];
             TxtNombre.Text = valores[2];
@@ -201,9 +236,8 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             TxtMail.Text = valores[7];
             TxtPassword.Text = valores[8];
 
-
             string sexo = valores[9];
-            if (!string.IsNullOrEmpty(sexo) && (sexo == "MASCULINO" || sexo == "FEMININO" || sexo == "BINARIO" || sexo == "S/D"))
+            if (!string.IsNullOrEmpty(sexo) && (sexo == "1" || sexo == "2" || sexo == "3" || sexo == "4"))
             {
                 DdlSexo.SelectedValue = sexo;
             }
@@ -211,8 +245,9 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             {
                 DdlSexo.SelectedIndex = 0;
             }
+
             string estado = valores[10];
-            if (!string.IsNullOrEmpty(estado) && (estado == "ACTIVO" || estado == "INACTIVO"))
+            if (!string.IsNullOrEmpty(estado) && (estado == "1" || estado == "0"))
             {
                 DdlEstado.SelectedValue = estado;
             }
@@ -220,8 +255,9 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             {
                 DdlEstado.SelectedIndex = 0;
             }
+
             string plan = valores[4];
-            if (!string.IsNullOrEmpty(plan) && (plan == "Básico" || plan == "Estándar" || plan == "Premium" || plan == "Empleado"))
+            if (!string.IsNullOrEmpty(plan) && (plan == "1" || plan == "2" || plan == "3" || plan == "4"))
             {
                 DdlPlan.SelectedValue = plan;
             }
@@ -229,22 +265,11 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             {
                 DdlPlan.SelectedIndex = 0;
             }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "UpdateLabels",
-                $"document.getElementById('{TxtDNI.ClientID}').value = '{valores[1]}';" +
-                $"document.getElementById('{TxtNombre.ClientID}').value = '{valores[2]}';" +
-                $"document.getElementById('{TxtApellido.ClientID}').value = '{valores[3]}';" +
-                $"document.getElementById('{DdlPlan.ClientID}').value = '{valores[4]}';" +
-                $"document.getElementById('{TxtCel.ClientID}').value = '{valores[5]}';" +
-                $"document.getElementById('{TxtTelEmerg.ClientID}').value = '{valores[6]}';" +
-                $"document.getElementById('{TxtMail.ClientID}').value = '{valores[7]}';" +
-                $"document.getElementById('{TxtPassword.ClientID}').value = '{valores[8]}';" +
-                $"document.getElementById('{DdlSexo.ClientID}').value = '{valores[9]}';" +
-                $"document.getElementById('{DdlEstado.ClientID}').value = '{valores[10]}';" +
-                $"if (document.getElementById('{DdlSexo.ClientID}').value !== '{valores[9]}') document.getElementById('{DdlSexo.ClientID}').value = '';" +
-                $"if (document.getElementById('{DdlEstado.ClientID}').value !== '{valores[10]}') document.getElementById('{DdlEstado.ClientID}').value = '';" +
-                $"if (document.getElementById('{DdlPlan.ClientID}').value !== '{valores[4]}') document.getElementById('{DdlPlan.ClientID}').value = '';",
-                true);
-            UpdatePanel2.Update();
+
+            // Establecer plan.ID y sexo.id en los HiddenField
+        //    HfPlanId.Value = valores[11];
+        //    HfSexoId.Value = valores[12];
+
             ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#exampleModal').modal('show');", true);
         }
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
@@ -258,19 +283,33 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             usuario.DNI = TxtDNI.Text;
             usuario.Nombre = TxtNombre.Text;
             usuario.Apellido = TxtApellido.Text;
-            usuario.plan.Tipo_Plan = DdlPlan.SelectedValue;
-            usuario.Cel = TxtCel.Text;
+        
+            if (int.TryParse(DdlPlan.SelectedValue, out int planId))
+            {
+                usuario.plan.ID = planId;
+            }
             usuario.Tel_Emergencia = TxtTelEmerg.Text;
+            usuario.Cel = TxtCel.Text;
             usuario.Mail = TxtMail.Text;
             usuario.Password = TxtPassword.Text;
-            usuario.sexo.Tipo = DdlSexo.SelectedValue;
-            usuario.Estado = DdlEstado.SelectedValue.Equals(true)?true:false;
+            // Para el DropDownList DdlSexo
+            if (int.TryParse(DdlSexo.SelectedValue, out int sexoId))
+            {
+                usuario.sexo.ID = sexoId;
+            }
 
 
+            // Para el DropDownList DdlEstado
+            if (int.TryParse(DdlEstado.SelectedValue, out int estadoId))
+            {
+                usuario.Estado = estadoId != 0; 
+            }
 
-          //  ModificarId = -1;
+            dato.ModificarUsuarioEntrenador(usuario);
 
-            //   dato.ActualizarUsuario(usuario);
+            ModificarId = -1;
+
+            
 
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
