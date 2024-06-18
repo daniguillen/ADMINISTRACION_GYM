@@ -351,17 +351,6 @@ namespace ACCIONES
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
         //Rutinas
         public List<Rutina> ListarRutinas()
 
@@ -515,7 +504,7 @@ namespace ACCIONES
 
                         rut_ejer_ant = id_rut_ejer;
 
-
+                        Rutina_aux.rutina_Ejercicios.Add(Ru_ejer);
                     }
 
 
