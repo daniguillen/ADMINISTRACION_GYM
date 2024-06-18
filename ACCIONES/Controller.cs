@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Runtime.ConstrainedExecution;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using Dominio;
@@ -24,7 +19,7 @@ namespace ACCIONES
             datos = new AccesoDatos();
         }
 
-        //clientes
+  //clientes
         public void Activar_Cliente_PorID(int a)
         {
 
@@ -105,7 +100,7 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
-
+             
 
                     ListaUsuario.Add(aux);
                 }
@@ -302,7 +297,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-        //buscar por entrenador
+
         public Usuario BuscarOneEntrenador(string buscar)
         {
 
@@ -354,82 +349,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-        //modificar usuario persona
-        public bool ModificarUsuarioEntrenador(Usuario usuario)
-        {
-            bool transaccion;
-            try {
 
-                datos.setearQuery(@"BEGIN TRY
-                    BEGIN TRANSACTION;
-                    UPDATE PERSONA
-                    SET DNI = @DNI, 
-                        NOMBRE = @NOMBRE, 
-                        APELLIDO = @APELLIDO, 
-                        IDPLANES = @IDPLANES, 
-                        TEL_EMERGENCIA = @TEL_EMERGENCIA, 
-                        CELULAR = @CEL, 
-                        SEXO = @IDSEXO, 
-                        ESTADO = @ESTADO
-                    WHERE ID = @ID;
-                    UPDATE USUARIO
-                    SET MAIL = @MAIL, 
-                        PASSWORD = @PASSWORD
-                    WHERE ID_USUARIO = @ID;
-
-                    COMMIT TRANSACTION;
-                END TRY
-                BEGIN CATCH
-  
-                    ROLLBACK TRANSACTION;
-
-                  
-                    DECLARE @ErrorMessage NVARCHAR(4000);
-                    DECLARE @ErrorSeverity INT;
-                    DECLARE @ErrorState INT;
-                    DECLARE @ErrorNumber INT;
-
-                    SELECT
-                        @ErrorMessage = ERROR_MESSAGE(),
-                        @ErrorSeverity = ERROR_SEVERITY(),
-                        @ErrorState = ERROR_STATE(),
-                        @ErrorNumber = ERROR_NUMBER();
-
-                    IF @ErrorNumber BETWEEN 1 AND 25
-                    BEGIN
-                        RAISERROR('Error específico con código de error entre 1 y 25: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);
-                    END
-                    ELSE
-                    BEGIN
-                        RAISERROR('Error general: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);
-                    END
-                END CATCH;");
-                datos.setearParametro("@DNI", usuario.DNI);
-                datos.setearParametro("@NOMBRE", usuario.Nombre);
-                datos.setearParametro("@APELLIDO", usuario.Apellido);
-                datos.setearParametro("@IDPLANES", usuario.plan.ID);
-                datos.setearParametro("@TEL_EMERGENCIA", usuario.Tel_Emergencia);
-                datos.setearParametro("@CEL", usuario.Cel);
-                datos.setearParametro("@IDSEXO", usuario.sexo.ID);
-                datos.setearParametro("@MAIL", usuario.Mail);
-                datos.setearParametro("@PASSWORD", usuario.Password);
-                datos.setearParametro("@ESTADO", usuario.Estado);
-                datos.ejecutarLectura();
-                transaccion =true;
-            } catch {
-
-
-
-                transaccion=false;
-            }
-
-            finally
-            {
-                datos.cerrarConexion();
-            }
-
-            return transaccion;
-            }
 
         //Rutinas
         public List<Rutina> ListarRutinas()
@@ -584,7 +504,7 @@ namespace ACCIONES
 
                         rut_ejer_ant = id_rut_ejer;
 
-
+                        Rutina_aux.rutina_Ejercicios.Add(Ru_ejer);
                     }
 
 
@@ -768,7 +688,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
 
         }
-        public void ModificarRutinaEjercicio(Rutina rutina, int idDia, int ejercicioID, int idEjercicioAnterior)
+        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior)
         {
             try
             {
@@ -847,7 +767,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
-        //musculacion
+ //musculacion
         public List<TipoEjercicio> ListadoTipoEjercicio()
         {
             try
@@ -970,7 +890,7 @@ namespace ACCIONES
             }
         }
 
-        //otros
+ //otros
         public List<Plan> ListarPLan()
         {
 

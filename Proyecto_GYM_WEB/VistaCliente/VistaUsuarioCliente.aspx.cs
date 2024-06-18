@@ -13,12 +13,14 @@ namespace Proyecto_GYM_WEB
     public partial class VistaUsuarioCliente : System.Web.UI.Page
     {
 
-
+        public Rutina rutinas_usuario=new Rutina();
         public Usuario Perfil = new Usuario();
         public Plan Plan = new Plan();
         public string na = "u";
-      //  public Rutina_ejercicio RutinaCliente = new Rutina_ejercicio();
-        public string[] dia_semana={"LUNES", "MARTES","MIERCOLES","JUEVES","VIERNES","SABADO","DOMINGO"};
+       
+        public Rutina_ejercicio RutinaCliente = new Rutina_ejercicio();
+        public List<Dias> dia_semana = new List<Dias>();
+
 
         protected void Page_Load(object sender, EventArgs e)
 
@@ -26,14 +28,16 @@ namespace Proyecto_GYM_WEB
             Session["navbar"] = na;
             if (!IsPostBack)
             {
-
                 Controller controller = new Controller();
+                dia_semana = controller.ListarDias();
+                dia_semana = dia_semana.OrderBy(d => d.id).ToList();
                 Perfil = controller.Cliente(1);
                 Plan.ID = Perfil.plan.ID;
                 Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
-                Rutina rutinas = controller.Rutinas_id(Perfil.ID_rutina);
+                rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
                 Session["PerfilUsuario"] = Perfil;
-               ;
+                RepeaterUsuario.DataSource = dia_semana;
+                RepeaterUsuario.DataBind();
 
 
 
