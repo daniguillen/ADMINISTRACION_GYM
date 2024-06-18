@@ -676,7 +676,6 @@ namespace ACCIONES
             try
             {
                 datos.setearQuery("UPDATE RUTINA SET NOMBRE = @NOMBRE, DESCRIPCION = @DESCRIPCION WHERE ID=@ID ");
-
                 datos.setearParametro("@ID", modifRutina.ID);
                 datos.setearParametro("@NOMBRE", modifRutina.nombre);
                 datos.setearParametro("@DESCRIPCION", modifRutina.descripcion);
@@ -696,13 +695,11 @@ namespace ACCIONES
         {
             try
             {
-                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
-
+                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO  FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
                 datos.setearParametro("@ID_RUTINA", ID_Rutina);
                 datos.ejecutarLectura();
 
                 Rutina_ejercicio rutina_Ejercicio_aux = new Rutina_ejercicio();
-                //rutina_Ejercicio_aux.ID= ID_Rutina;
                 rutina_Ejercicio_aux.ejercicio = new List<Ejercicio>();
                 var objEjercicio = new Ejercicio();
                 rutina_Ejercicio_aux.dia = new Dias();
@@ -717,6 +714,7 @@ namespace ACCIONES
                     }
 
                     rutina_Ejercicio_aux.dia.id = datos.Lector.GetInt32(2);
+                    rutina_Ejercicio_aux.hora = datos.Lector.GetInt32(3);
                 }
 
 
@@ -730,16 +728,16 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
 
         }
-        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior)
+        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior, Rutina_ejercicio rutiEjer)
         {
             try
             {
-                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO, ID_DIA =@ID_DIA WHERE ID_RUTINA =@ID_RUTINAA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
+                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO, ID_DIA =@ID_DIA, HORARIO=@HORARIO WHERE ID_RUTINA =@ID_RUTINAA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
                 datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
                 datos.setearParametro("@ID_RUTINAA", rutina.ID);
                 datos.setearParametro("@ID_EJERCICIO", ejercicioID);
                 datos.setearParametro("@ID_DIA", idDia);
-
+                datos.setearParametro("HORARIO",rutiEjer.hora);
 
                 datos.ejecutarAccion();
             }
@@ -757,8 +755,7 @@ namespace ACCIONES
             try
             {
                 List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
-                // datos.setearQuery("SELECT RE.ID_RUTINA, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES\r\nFROM RUTINA_EJERCICIO RE\r\nINNER JOIN RUTINA R ON RE.ID = R.ID\r\nINNER JOIN DIA D ON D.ID = RE.ID\r\nINNER JOIN EJERCICIO E ON RE.ID_EJERCICIO = E.ID");
-                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
+                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES, RE.HORARIO FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -769,6 +766,7 @@ namespace ACCIONES
                     auxTabla.DiaNombre = datos.Lector.GetString(3);
                     auxTabla.NombreEjercicio = datos.Lector.GetString(4);
                     auxTabla.Repeticiones = datos.Lector.GetInt32(5);
+                    auxTabla.Horario = datos.Lector.GetInt32(6);
                     aux.Add(auxTabla);
 
                 }
@@ -893,7 +891,6 @@ namespace ACCIONES
         {
             try
             {
-                //datos.setearQuery("INSERT INTO EJERCICIO (DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO,ID_TIPO,ID_GRUPO_MUSCULAR) VALUES ('" + ejercicioNuevo.Descripcion + "','" + ejercicioNuevo.Nombre + "','" + ejercicioNuevo.Repeticiones + "','" + ejercicioNuevo.Tipo_Dificultad.ID + "', '" + ejercicioNuevo.Video + "','" + ejercicioNuevo.Tipo_Ejercicio.ID + "','" + ejercicioNuevo.Grupo_Muscular.ID + "'");
                 datos.setearQuery("INSERT into EJERCICIO (DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO,ID_TIPO,ID_GRUPO_MUSCULAR) values (@DESCRIPCION,@NOMBRE,@REPETICIONES,@ID_DIFICULTAD,@VIDEO,@ID_TIPO,@ID_GRUPO_MUSCULAR)");
                 datos.setearParametro("@DESCRIPCION", ejercicioNuevo.Descripcion);
                 datos.setearParametro("@NOMBRE", ejercicioNuevo.Nombre);

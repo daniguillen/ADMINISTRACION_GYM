@@ -14,5 +14,7 @@ namespace Dominio
         public string NombreEjercicio {  get; set;}
         public int Repeticiones {  get; set;}
 
+        public int Horario {  get; set;}
+
     }
 }

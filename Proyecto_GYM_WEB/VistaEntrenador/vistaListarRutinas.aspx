@@ -16,10 +16,10 @@
             <table class="table table-striped table-bordered table-dark" id="tablaRutina">
                 <thead class="header-class">
                     <tr class="row-class">
-                        <td>DIA</td>
+                        <td>DIA - HORARIO</td>                    
                         <td>RUTINA</td>
                         <td>DESCRIPCION</td>
-                        <td>EJERCICIOS</td>
+                        <td>EJERCICIOS - REPETICIONES</td>
                         <td>ACCIONES</td>
                     </tr>
                 </thead>
@@ -35,7 +35,10 @@
                             %>
                     <tr>
                         <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
-                        <td><%= ListaTablaRuti[i].DiaNombre %></td>
+                        <td> 
+                            <span><%= ListaTablaRuti[i].DiaNombre %></span> -
+                            <span><%= ListaTablaRuti[i].Horario %></span> Hs
+                        </td>
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
                         <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
                         <td>
