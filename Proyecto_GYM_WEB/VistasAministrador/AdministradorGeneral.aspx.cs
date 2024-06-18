@@ -305,7 +305,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 usuario.Estado = estadoId != 0; 
             }
 
-            dato.ModificarUsuarioEntrenador(usuario);
+           // dato.ModificarUsuarioEntrenador(usuario);
 
             ModificarId = -1;
 

@@ -1,12 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VistaPerfilUsuarioCliente.aspx.cs" Inherits="Proyecto_GYM_WEB.PerfilUsuario" %>
 
-  
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
      <style>
-     body {
-         background-color: black;
-     }
- </style>
+         body {
+             background-image: url(../Assets/fondo.jpg);
+             background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+             background-repeat: no-repeat; /* Evita que la imagen se repita */
+             background-attachment: fixed; /* Fija la imagen al fondo */
+             background-position: center; /* Centra la imagen */
+             min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+         }
+     </style>
+
     <div class="container" ">
         <div class="row"  >
             <div class="col-9">
@@ -16,7 +22,7 @@
             <div class="col-4 ">
                 .
            <!--FOTO DE PERFIL-->
-                <div class="card" style="width: 18rem;">
+               <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
                     <img src="/Assets/usuario1.jpg" class="card-img-top" alt="Assets/usuario.png">
                     <div class="card-body">
                         <h4 class="card-title"><%= usuario.Nombre+" "+usuario.Apellido %> </h4>
@@ -75,8 +81,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="TxtSexoEditar">Sexo:</label>
-                    <asp:TextBox ID="TxtSexoEditar" runat="server" CssClass="form-control" Class="text-light mt-2"></asp:TextBox>
+                    <label for="TxtSexoEditar"  Class="text-light mt-2">Sexo:</label>
+                       
+                     <asp:DropDownList ID="DdlSexo" runat="server" CssClass="form-control">
+                         <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+                         <asp:ListItem Text="MASCULINO" Value="1"></asp:ListItem>
+                         <asp:ListItem Text="FEMININO" Value="2"></asp:ListItem>
+                         <asp:ListItem Text="BINARIO" Value="3"></asp:ListItem>
+                         <asp:ListItem Text="S/D" Value="4"></asp:ListItem>
+                     </asp:DropDownList>
                 </div>
 
                 <div class="form-group">

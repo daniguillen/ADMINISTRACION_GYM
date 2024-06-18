@@ -14,7 +14,10 @@ namespace Proyecto_GYM_WEB
         public Usuario usuario = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-            usuario = (Usuario)Session["PerfilUsuario"];
+            if (!IsPostBack)
+            {
+
+                usuario = (Usuario)Session["PerfilUsuario"];
             TxtDniEditar.Text = usuario.DNI;
             TxtNombreEditar.Text = usuario.Nombre;
             TxtApellidoEditar.Text = usuario.Apellido;
@@ -25,15 +28,17 @@ namespace Proyecto_GYM_WEB
             TxtPasswordEditar.Text = usuario.Password;
 
             TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
-            TxtSexoEditar.Text = usuario.sexo.Tipo;
+            DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
             TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
-
+            
+            }
 
 
         }
 
         protected void BTN_Guardar_Click(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["PerfilUsuario"];
             usuario.DNI=TxtDniEditar.Text;
             usuario.Nombre=TxtNombreEditar.Text;
             usuario.Apellido=TxtApellidoEditar.Text;
@@ -42,10 +47,18 @@ namespace Proyecto_GYM_WEB
             usuario.Mail = TxtEmailEditar.Text;
             usuario.Password = TxtPasswordEditar.Text;
             usuario.Fecha_Nacimiento = DateTime.Parse(TxtFechaNacimientoEditar.Text);
-            usuario.sexo.Tipo=TxtSexoEditar.Text;
+            if (!string.IsNullOrEmpty(DdlSexo.SelectedValue))
+            {
+              
+                usuario.sexo.ID = int.Parse(DdlSexo.SelectedValue);
+                usuario.sexo.Tipo = DdlSexo.SelectedItem.Text;
+            }
+
+            Session["PerfilUsuario"] = usuario;
 
 
-            Controller datos= new Controller();
+            Controller datos = new Controller();
+            datos.ModificarCliente(usuario);
            
 
         }

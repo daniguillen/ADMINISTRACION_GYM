@@ -188,6 +188,48 @@ namespace ACCIONES
 
 
         }
+
+        public void ModificarCliente(Usuario usuario)
+        {
+            try
+            {
+                // Define la consulta SQL para actualizar los datos del cliente
+                datos.setearQuery("UPDATE PERSONA SET  APELLIDO =@Apellido, NOMBRE = @Nombre, APTO_FISICO = @AptoFisico, CELULAR = @Celular, DIRECCION =@Direccion,  DNI = @DNI, FECHA_INGRESO = @FechaIngreso, FECHA_NACIMIENTO = @FechaNacimiento,FOTO = @Foto, IDPLANES = @IDPlanes, SEXO = @Sexo,  TEL_EMERGENCIA = @TelEmergencia, ID_ESTABLECIMIENTO = @IDEstablecimiento, ESTADO = @Estado, ID_RUTINA=@IDRutina WHERE ID = @ID");
+
+               
+                datos.setearParametro("@ID", usuario.ID);
+                datos.setearParametro("@Nombre", usuario.Nombre);
+                datos.setearParametro("@Apellido", usuario.Apellido);
+                datos.setearParametro("@Direccion", usuario.Direccion);
+                datos.setearParametro("@FechaNacimiento", usuario.Fecha_Nacimiento);
+                datos.setearParametro("@Sexo", usuario.sexo.ID);
+                datos.setearParametro("@Foto", usuario.Foto);
+                datos.setearParametro("@DNI", usuario.DNI);
+                datos.setearParametro("@AptoFisico", usuario.Apto_Fisico);
+                datos.setearParametro("@TelEmergencia", usuario.Tel_Emergencia);
+                datos.setearParametro("@Celular", usuario.Cel);
+                datos.setearParametro("@FechaIngreso", usuario.Fecha_ingreso);
+                datos.setearParametro("@IDPlanes", usuario.plan.ID);
+                datos.setearParametro("@IDEstablecimiento", usuario.ID_Establecimiento);
+                datos.setearParametro("@Estado", usuario.Estado);
+                datos.setearParametro("@IDRutina", usuario.ID_rutina);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+               
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
         //busca un usuario o entrenador sin filtro
         public Usuario BuscarAllCliente(string buscar)
         {
