@@ -39,7 +39,8 @@
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
                         <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
                         <td>
-                            
+                            <span><%= ListaTablaRuti[i].NombreEjercicio %></span> -
+                            <span><%= ListaTablaRuti[i].Repeticiones %></span>
                         </td>
                         <td>
                             <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar</a>

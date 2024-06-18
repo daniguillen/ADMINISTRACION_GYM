@@ -18,7 +18,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
         Controller objController = new Controller();
         public List<Ejercicio> listEjercicio = new List<Ejercicio>();
-        
+        public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 };
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -55,19 +55,34 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
                         //lbxEjercicio.SelectedValue = objRuti_Ejer.ejercicio.ToString(); //Me trae los ejercicios que estan para modificar
 
-                  /*      foreach(ListItem item in lbxEjercicio.Items)
+
+
+                        foreach (ListItem item in lbxEjercicio.Items)
                         {
-                            if (objRuti_Ejer.ejercicio.Contains(item.Value))
-                            {
+                            var desplegableEjercicioAux = new Ejercicio();
+                            desplegableEjercicioAux.ID = int.Parse(item.Value);
+                            if (objRuti_Ejer.ejercicio.Any(x => x.ID == desplegableEjercicioAux.ID))
+
                                 item.Selected = true;
-                            }
                         }
-
-
-                        */
                     }
 
+                    foreach (int hora in horario_rutinas)
+                    {
+                        ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
+                    }
+
+                    // Establecer el DataValueField y enlazar los datos al control
+                    //  ddlHorario.DataValueField = "Value";
+                    //   ddlHorario.DataTextField = "Horario";
+                    ddlHorario.DataBind();
+
+
+
+
                 }
+
+
 
             }
             catch (Exception ex)
@@ -109,8 +124,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     };
                     Dias diasModif = new Dias
                     {
-                        
-                       id = idDiaSeleccionado,
+
+                        id = idDiaSeleccionado,
                     };
                     objController.ModificarRutina(rutinaModificar);
 
@@ -122,10 +137,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     for (int i = 0; i < ejerciciosSeleccionados.Count(); i++)
                     {
                         //if (rutina_EjercicioModi.ejercicio[i].ID == )
-                    objController.datos = new AccesoDatos();
-                    objController.ModificarRutinaEjercicio(rutinaModificar, diasModif.id, rutina_EjercicioModi.ejercicio[i].ID, idEjercicioAnterior);
-                        
-                        
+                        objController.datos = new AccesoDatos();
+                        objController.ModificarRutinaEjercicio(rutinaModificar, diasModif.id, rutina_EjercicioModi.ejercicio[i].ID, idEjercicioAnterior);
+
+
                     }
 
                     Response.Redirect("vistaListarRutinas.aspx", false);

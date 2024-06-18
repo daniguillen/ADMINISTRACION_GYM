@@ -60,6 +60,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.TextBox txtRepeticiones;
 
         /// <summary>
+        /// Control ddlHorario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorario;
+
+        /// <summary>
         /// Control btnModificarRutina.
         /// </summary>
         /// <remarks>

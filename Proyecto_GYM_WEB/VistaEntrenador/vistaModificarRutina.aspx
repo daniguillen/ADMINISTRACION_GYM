@@ -24,13 +24,13 @@
                 <label for="txtRepeticiones">REPETICIONES:</label>
                 <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-            <%--<div class="mb-3">
+           <div class="mb-3">
             <label for="lblHorario" class="form-label">HORARIO:</label>
-            <asp:TextBox ID="txtHora" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>--%>
+             <asp:DropDownList ID="ddlHorario" runat="server" CssClass="form-control"></asp:DropDownList>
+        </div>
 
             <div>
-                <asp:Button ID="btnModificarRutina" Text="text" runat="server" CssClass="form-control" Onclick="btnModificarRutina_Click"/>
+                <asp:Button ID="btnModificarRutina" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" Onclick="btnModificarRutina_Click"/>
             </div>
         </div>
     </div>

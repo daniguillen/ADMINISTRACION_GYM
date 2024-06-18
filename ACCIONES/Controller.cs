@@ -163,7 +163,7 @@ namespace ACCIONES
                         aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                         aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                         aux.Estado = datos.Lector.GetBoolean(22);
-                        aux.ID_rutina = datos.Lector.GetInt32(23);
+                       // aux.ID_rutina = datos.Lector.GetInt32(23);
 
 
 
@@ -712,7 +712,7 @@ namespace ACCIONES
                 {
                     if (ID_Rutina == datos.Lector.GetInt32(0))
                     {
-                        objEjercicio.ID = datos.Lector.GetInt32(0);
+                        objEjercicio.ID = datos.Lector.GetInt32(1);         
                         rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
                     }
 
