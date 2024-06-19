@@ -392,7 +392,80 @@ namespace ACCIONES
             }
         }
 
+        public bool ModificarUsuarioEntrenador(Usuario usuario)
+        {
+            bool transaccion;
+            try
+            {
 
+                datos.setearQuery(@"BEGIN TRY
+                    BEGIN TRANSACTION;
+                    UPDATE PERSONA
+                    SET DNI = @DNI, 
+                        NOMBRE = @NOMBRE, 
+                        APELLIDO = @APELLIDO, 
+                        IDPLANES = @IDPLANES, 
+                        TEL_EMERGENCIA = @TEL_EMERGENCIA, 
+                        CELULAR = @CEL, 
+                        SEXO = @IDSEXO, 
+                        ESTADO = @ESTADO
+                    WHERE ID = @ID;
+                    UPDATE USUARIO
+                    SET MAIL = @MAIL, 
+                        PASSWORD = @PASSWORD
+                    WHERE ID_USUARIO = @ID;
+
+                    COMMIT TRANSACTION;
+                END TRY
+                BEGIN CATCH
+  
+                    ROLLBACK TRANSACTION;
+
+                  
+                    DECLARE @ErrorMessage NVARCHAR(4000);
+                    DECLARE @ErrorSeverity INT;
+                    DECLARE @ErrorState INT;
+                    DECLARE @ErrorNumber INT;
+
+                    SELECT
+                        @ErrorMessage = ERROR_MESSAGE(),
+                        @ErrorSeverity = ERROR_SEVERITY(),
+                        @ErrorState = ERROR_STATE(),
+                        @ErrorNumber = ERROR_NUMBER();
+
+                    IF @ErrorNumber BETWEEN 1 AND 25
+                    BEGIN
+                        RAISERROR('Error específico con código de error entre 1 y 25: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);
+                    END
+                    ELSE
+                    BEGIN
+                        RAISERROR('Error general: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);
+                    END
+                END CATCH;");
+                datos.setearParametro("@DNI", usuario.DNI);
+                datos.setearParametro("@NOMBRE", usuario.Nombre);
+                datos.setearParametro("@APELLIDO", usuario.Apellido);
+                datos.setearParametro("@IDPLANES", usuario.plan.ID);
+                datos.setearParametro("@TEL_EMERGENCIA", usuario.Tel_Emergencia);
+                datos.setearParametro("@CEL", usuario.Cel);
+                datos.setearParametro("@IDSEXO", usuario.sexo.ID);
+                datos.setearParametro("@MAIL", usuario.Mail);
+                datos.setearParametro("@PASSWORD", usuario.Password);
+                datos.setearParametro("@ESTADO", usuario.Estado);
+                datos.ejecutarLectura();
+                transaccion = true;
+            }
+            catch
+            {
+                transaccion = false;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return transaccion;
+        }
         //Rutinas
         public List<Rutina> ListarRutinas()
 

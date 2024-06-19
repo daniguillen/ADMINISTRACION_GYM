@@ -2,6 +2,8 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Runtime.ConstrainedExecution;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -226,64 +228,34 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Modificar(object sender, CommandEventArgs e)
         {
             string[] valores = e.CommandArgument.ToString().Split(',');
+                HfModificarId.Value = valores[0];
+                TxtDNI.Text = valores[1];
+                TxtNombre.Text = valores[2];
+                TxtApellido.Text = valores[3];
+                TxtCel.Text = valores[5];
+                TxtTelEmerg.Text = valores[6];
+                TxtMail.Text = valores[7];
+                TxtPassword.Text = valores[8];
+                DdlSexo.SelectedValue = valores[9];
+                string estadoString = valores[10]; 
+                bool estadoBool = estadoString.Equals("true", StringComparison.OrdinalIgnoreCase);
+                int estadoInt = estadoBool ? 1 : 0;
 
-            HfModificarId.Value = valores[0];
-            TxtDNI.Text = valores[1];
-            TxtNombre.Text = valores[2];
-            TxtApellido.Text = valores[3];
-            TxtCel.Text = valores[5];
-            TxtTelEmerg.Text = valores[6];
-            TxtMail.Text = valores[7];
-            TxtPassword.Text = valores[8];
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal('" + valores[1] + "','" + valores[2] + "','" + valores[3] + "','" + valores[12] + "','" + valores[5] + "','" + valores[6] + "','" + valores[7] + "','" + valores[8] + "','" + valores[11] + "','" + estadoInt + "');", true);
 
-            string sexo = valores[9];
-            if (!string.IsNullOrEmpty(sexo) && (sexo == "1" || sexo == "2" || sexo == "3" || sexo == "4"))
-            {
-                DdlSexo.SelectedValue = sexo;
-            }
-            else
-            {
-                DdlSexo.SelectedIndex = 0;
-            }
-
-            string estado = valores[10];
-            if (!string.IsNullOrEmpty(estado) && (estado == "1" || estado == "0"))
-            {
-                DdlEstado.SelectedValue = estado;
-            }
-            else
-            {
-                DdlEstado.SelectedIndex = 0;
-            }
-
-            string plan = valores[4];
-            if (!string.IsNullOrEmpty(plan) && (plan == "1" || plan == "2" || plan == "3" || plan == "4"))
-            {
-                DdlPlan.SelectedValue = plan;
-            }
-            else
-            {
-                DdlPlan.SelectedIndex = 0;
-            }
-
-            // Establecer plan.ID y sexo.id en los HiddenField
-        //    HfPlanId.Value = valores[11];
-        //    HfSexoId.Value = valores[12];
-
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#exampleModal').modal('show');", true);
         }
+
+
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
-
-
-
+           
             Usuario usuario = new Usuario();
             string valor = HfModificarId.Value;
             usuario.ID = int.Parse(HfModificarId.Value);
             usuario.DNI = TxtDNI.Text;
             usuario.Nombre = TxtNombre.Text;
             usuario.Apellido = TxtApellido.Text;
-        
+
             if (int.TryParse(DdlPlan.SelectedValue, out int planId))
             {
                 usuario.plan.ID = planId;
@@ -302,14 +274,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             // Para el DropDownList DdlEstado
             if (int.TryParse(DdlEstado.SelectedValue, out int estadoId))
             {
-                usuario.Estado = estadoId != 0; 
+                usuario.Estado = estadoId != 0;
             }
 
-           // dato.ModificarUsuarioEntrenador(usuario);
+            // dato.ModificarUsuarioEntrenador(usuario);
 
             ModificarId = -1;
 
-            
 
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
