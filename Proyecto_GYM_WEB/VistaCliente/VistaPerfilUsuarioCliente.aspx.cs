@@ -12,24 +12,44 @@ namespace Proyecto_GYM_WEB
     public partial class PerfilUsuario : System.Web.UI.Page
     {
         public Usuario usuario = new Usuario();
+        public Controller datos = new Controller();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                if (Request.QueryString["id"] == "2")
+                {
+                    usuario = datos.Cliente(18);
+                    TxtDniEditar.Text = usuario.DNI;
+                    TxtNombreEditar.Text = usuario.Nombre;
+                    TxtApellidoEditar.Text = usuario.Apellido;
+                    TxtPlanEditar.Text = usuario.plan.Tipo_Plan;
+                    TxtCelularEditar.Text = usuario.Cel;
+                    TxtTelEmergenciaEditar.Text = usuario.Tel_Emergencia;
+                    TxtEmailEditar.Text = usuario.Mail;
+                    TxtPasswordEditar.Text = usuario.Password;
 
-                usuario = (Usuario)Session["PerfilUsuario"];
-            TxtDniEditar.Text = usuario.DNI;
-            TxtNombreEditar.Text = usuario.Nombre;
-            TxtApellidoEditar.Text = usuario.Apellido;
-            TxtPlanEditar.Text = usuario.plan.Tipo_Plan;
-            TxtCelularEditar.Text = usuario.Cel;
-            TxtTelEmergenciaEditar.Text = usuario.Tel_Emergencia;
-            TxtEmailEditar.Text = usuario.Mail;
-            TxtPasswordEditar.Text = usuario.Password;
+                    TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
+                    DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
+                    TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
 
-            TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
-            DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
-            TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
+                }
+                else
+                {
+                    usuario = (Usuario)Session["PerfilUsuario"];
+                    TxtDniEditar.Text = usuario.DNI;
+                    TxtNombreEditar.Text = usuario.Nombre;
+                    TxtApellidoEditar.Text = usuario.Apellido;
+                    TxtPlanEditar.Text = usuario.plan.Tipo_Plan;
+                    TxtCelularEditar.Text = usuario.Cel;
+                    TxtTelEmergenciaEditar.Text = usuario.Tel_Emergencia;
+                    TxtEmailEditar.Text = usuario.Mail;
+                    TxtPasswordEditar.Text = usuario.Password;
+
+                    TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
+                    DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
+                    TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
+                }
             
             }
 

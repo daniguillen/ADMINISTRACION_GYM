@@ -163,8 +163,15 @@ namespace ACCIONES
                         aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                         aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                         aux.Estado = datos.Lector.GetBoolean(22);
-                       // aux.ID_rutina = datos.Lector.GetInt32(23);
+                        if (aux.nivel.ID == 1)
+                        {
+                            aux.ID_rutina = datos.Lector.GetInt32(23);
+                        }
+                        else
+                        {
+                        aux.ID_rutina = 0;
 
+                        }
 
 
                     }

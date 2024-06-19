@@ -36,89 +36,92 @@
 
                 </div>
 
-            <div class="col-8 d-flex justify-content-center m-5">
+                <div class="col-8 d-flex justify-content-center m-5">
 
-                <asp:Label ID="LblInformacion" runat="server" Font-Size="X-Large" ForeColor="White" BorderStyle="Double" BorderColor="#009933" Text="En este Text van a recibir las noticias con respecto al gimnasio, sea horarios de feriados, o algun informacion relevante"></asp:Label>
+                    <asp:Label ID="LblInformacion" runat="server" Font-Size="X-Large" ForeColor="White" BorderStyle="Double" BorderColor="#009933" Text="En este Text van a recibir las noticias con respecto al gimnasio, sea horarios de feriados, o algun informacion relevante"></asp:Label>
 
-            </div>
+                </div>
 
 
-            <div class="col-2 d-flex me-5">
-                <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-                    <img src="/Assets/Lionel_Scaloni_-_2022.jpg" class="card-img-top" alt="Assets/usuario.png">
-                    <div class="card-body">
-                        <h4 class="card-title">Lionel Scaloni </h4>
-                        <h5 class="card-text">Entrenador</h5>
-                        <br />
-                        <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
-                        <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2 ms">Solicitar Rutina</a>
+                <div class="col-2 d-flex me-5">
+                    <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                        <img src="/Assets/Lionel_Scaloni_-_2022.jpg" class="card-img-top" alt="Assets/usuario.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Lionel Scaloni </h4>
+                            <h5 class="card-text">Entrenador</h5>
+                            <br />
+                            <a href="VistaPerfilUsuarioCliente.aspx?id=2" class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
+                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2 ms">Solicitar Rutina</a>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
 
+        <div class="row me-5">
 
-    <div class="row me-5">
-
-        <div class="card-body">
-            <table id="datatablesSimple" class="table table-striped table-bordered table table-dark table-hover">
-                <thead>
-                    <tr>
-                        <th>Hora</th>
-                        <asp:Repeater ID="RepeaterUsuario" runat="server">
-                            <ItemTemplate>
-                                <th><%# Eval("dia") %></th>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (int x = 8; x <= 22; x++)
-                        { %>
-                    <tr>
-                        <td><%=x %></td>
-                        <% 
-                            // Recorrer cada día
-                            foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
-                            {
-                                // Obtener los ejercicios para este día y hora
-                                var ejerciciosParaDiaYHora = dia.Where(e => e.hora == x);
-
-                                // Verificar si hay ejercicios para este día y hora
-                                if (ejerciciosParaDiaYHora.Any())
-                                { %>
-                        <td>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-striped table-bordered table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <asp:Repeater ID="RepeaterUsuario" runat="server">
+                                <ItemTemplate>
+                                    <th data-dia="<%# Eval("dia") %>" onclick="evento(this)">
+                                        <%# Eval("dia") %>
+                                    </th>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (int x = 8; x <= 22; x++)
+                            { %>
+                        <tr>
+                            <td><%=x %></td>
                             <% 
-                                foreach (var ejercicio in ejerciciosParaDiaYHora)
+                                // Recorrer cada día
+                                foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
                                 {
-                                    // Iterar sobre la lista de ejercicios dentro de rutina_ejercicio
-                                    foreach (var ejercicioIndividual in ejercicio.ejercicio)
+                                    // Obtener los ejercicios para este día y hora
+                                    var ejerciciosParaDiaYHora = dia.Where(e => e.hora == x);
+
+                                    // Verificar si hay ejercicios para este día y hora
+                                    if (ejerciciosParaDiaYHora.Any())
                                     { %>
-                            <%=ejercicioIndividual.Nombre %><br />
+                            <td>
+                                <% 
+                                    foreach (var ejercicio in ejerciciosParaDiaYHora)
+                                    {
+                                        // Iterar sobre la lista de ejercicios dentro de rutina_ejercicio
+                                        foreach (var ejercicioIndividual in ejercicio.ejercicio)
+                                        { %>
+                                <%=ejercicioIndividual.Nombre %><br />
+                                <% }
+                                    }
+                                %>
+                            </td>
+                            <% }
+                                else
+                                { %>
+                            <td></td>
                             <% }
                                 }
                             %>
-                        </td>
-                        <% }
-                            else
-                            { %>
-                        <td></td>
-                        <% }
-                            }
-                        %>
-                    </tr>
-                    <% } %>
-                </tbody>
-            </table>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    </div>
     <script>
-        function evento(a) {
-            window.location.href = "https://localhost:44386/VistaCliente/VistaUsuarioCliente?id=" + a;
-            console.log(a);
+        function evento(element) {
+            var dia = element.dataset.dia;
+            window.location.href = "https://localhost:44386/VistaCliente/Vista_Detalle_Ejericios_Clientes.aspx?id=" + dia;
+            console.log(dia);
         }
     </script>
 </asp:Content>

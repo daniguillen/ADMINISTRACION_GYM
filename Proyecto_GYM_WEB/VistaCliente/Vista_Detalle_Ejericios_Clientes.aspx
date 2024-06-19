@@ -7,22 +7,22 @@
 
         <div class="d-flex justify-content-center mt-4">
 
-            <h1>Rutina Lunes</h1>
+            <h1>Rutina <%=dia_rutina.dia %></h1>
         </div>
         <div class="container mt-0">
-            <%for (int x = 0; x < 5; x++)
-                {  %>
+          <% foreach (var rutinaEjercicio in rutina_usuario.rutina_Ejercicios.Where(e => e.dia.id == dia_rutina.id)) { %>
+                    <% foreach (var ejercicio in rutinaEjercicio.ejercicio) { %>
             <div class="row d-flex justify-content-center">
 
                 <div class="col-7 justify-content-center mt-4">
-                    <h2>Titulo Ejercicio</h2>
+                         <h2><%=ejercicio.Nombre %></h2>
                 </div>
 
                 <div class="col-6">
 
                     <div class="fluid-width-video-wrapper ">
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hLQl3WQQoQ0?si=VNvU0wU1E9y-Ms2k" title="Nombre del Ejercicio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=ejercicio.Video %>" title="<%=ejercicio.Nombre %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <p>Su navegador no soporta vídeos HTML5.</p>
 
                     </div>
@@ -30,15 +30,16 @@
 
                 <div class="col-4 ">
                     <div class="align-items-center">
-
-                        <h4>Tipo Ejercicio</h4>
-                        <h4>dificultad</h4>
-                        <h4>Grupo Muscular</h4>
-                        <h4>Repeticiones</h4>
+                                    <h4>Tipo: <%=ejercicio.Tipo_Ejercicio.Descripcion %></h4>
+                                    <h4>Dificultad: <%=ejercicio.Tipo_Dificultad.Descripcion %></h4>
+                                    <h4>Grupo Muscular: <%=ejercicio.Grupo_Muscular.Descripcion %></h4>
+                                    <h4>Repeticiones: <%=ejercicio.Repeticiones %></h4>
                     </div>
                 </div>
             </div>
             <%} %>
+              <% } %>
+             
         </div>
         <div class="container2">
             <div class="row mb-4">
