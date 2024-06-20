@@ -13,6 +13,7 @@ namespace Proyecto_GYM_WEB
     {
         public Usuario usuario = new Usuario();
         public Controller datos = new Controller();
+        public string nivel="";
         protected void Page_Load(object sender, EventArgs e)
         {
             ImagePerfil.ImageUrl = usuario.Foto;
@@ -20,20 +21,24 @@ namespace Proyecto_GYM_WEB
             {
                 if (Request.QueryString["id"] == "2")
                 {
+                    nivel = "2";
                     usuario = datos.Cliente(18);
                     ImagePerfil.ImageUrl = usuario.Foto;
-                    TxtDniEditar.Text = usuario.DNI;
+                    TxtDniEditar.Visible=false;
                     TxtNombreEditar.Text = usuario.Nombre;
+                    TxtNombreEditar.Enabled=false;
                     TxtApellidoEditar.Text = usuario.Apellido;
-                    TxtPlanEditar.Text = usuario.plan.Tipo_Plan;
-                    TxtCelularEditar.Text = usuario.Cel;
-                    TxtTelEmergenciaEditar.Text = usuario.Tel_Emergencia;
+                    TxtApellidoEditar.Enabled = false;
+                    TxtPlanEditar.Visible = false;
+                    TxtCelularEditar.Visible = false;
+                    TxtTelEmergenciaEditar.Visible = false;
                     TxtEmailEditar.Text = usuario.Mail;
-                    TxtPasswordEditar.Text = usuario.Password;
+                    TxtEmailEditar.Enabled = false;
+                    TxtPasswordEditar.Visible = false;
 
-                    TxtFechaNacimientoEditar.Text = usuario.Fecha_Nacimiento.ToString("yyyy-MM-dd");
-                    DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
-                    TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
+                    TxtFechaNacimientoEditar.Visible = false;
+                    DdlSexo.Visible = false;
+                    TxtFechaIngresoEditar.Visible = false;
 
                 }
                 else
@@ -74,6 +79,7 @@ namespace Proyecto_GYM_WEB
                 usuario.Mail = TxtEmailEditar.Text;
                 usuario.Password = TxtPasswordEditar.Text;
                 usuario.Fecha_Nacimiento = DateTime.Parse(TxtFechaNacimientoEditar.Text);
+                usuario.ID_rutina = 1;
                 if (!string.IsNullOrEmpty(DdlSexo.SelectedValue))
                 {
 
