@@ -811,16 +811,16 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
 
         }
-        public void ModificarRutinaEjerciDiaHora(Dias idDia, Rutina_ejercicio rutina_EjerHora, Rutina rutina) 
+        public void ModificarRutinaEjercicio(Rutina rutina,  int idDia, int ejercicioID, int idEjercicioAnterior, Rutina_ejercicio rutiEjer)
         {
             try
             {
-                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_DIA =@ID_DIA, HORARIO=@HORARIO WHERE ID_RUTINA =@ID_RUTINA ");
-                datos.setearParametro("@ID_DIA", idDia.id);
-                datos.setearParametro("@HORARIO", rutina_EjerHora.hora);
-                datos.setearParametro("@ID_RUTINA", rutina.ID);
-                //datos.setearParametro("@ID_EJERCICIO", ejercicioID);
-               // datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
+                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO, ID_DIA =@ID_DIA, HORARIO=@HORARIO WHERE ID_RUTINA =@ID_RUTINAA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
+                datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
+                datos.setearParametro("@ID_RUTINAA", rutina.ID);
+                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
+                datos.setearParametro("@ID_DIA", idDia);
+                datos.setearParametro("HORARIO",rutiEjer.hora);
 
                 datos.ejecutarAccion();
             }
@@ -833,31 +833,12 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
-        public void ModificarEjercicioParaRutina_Ejercicio(int idrutinaEjercicio, int idEjercicioAnterior, Rutina rutina)
-        {
-            try
-            {
-                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_EJERCICIO=@ID_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA AND ID_EJERCICIO =@ID_EJERCICIOANTERIOR");
-                datos.setearParametro("@ID_EJERCICIO", idrutinaEjercicio);     //Aca va el nuevo valor
-                datos.setearParametro("@ID_RUTINA", rutina.ID);
-                datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
-                datos.ejecutarAccion();
-
-
-            }
-            catch(Exception ex) { throw ex; }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
         public List<AuxTablaRutina> ListarTablaRutinas()
         {
             try
             {
                 List<AuxTablaRutina> aux = new List<AuxTablaRutina>();
-                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES, RE.HORARIO, E.ID FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
+                datos.setearQuery("SELECT  R.ID, R.NOMBRE, R.DESCRIPCION, D.NOMBRE_DIA, E.NOMBRE, E.REPETICIONES, RE.HORARIO FROM RUTINA R INNER JOIN RUTINA_EJERCICIO RE ON R.ID = RE.ID_RUTINA INNER JOIN DIA D ON D.ID = RE.ID_DIA INNER JOIN EJERCICIO E ON E.ID = RE.ID_EJERCICIO ORDER BY R.NOMBRE");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -869,7 +850,6 @@ namespace ACCIONES
                     auxTabla.NombreEjercicio = datos.Lector.GetString(4);
                     auxTabla.Repeticiones = datos.Lector.GetInt32(5);
                     auxTabla.Horario = datos.Lector.GetInt32(6);
-                    auxTabla.ID_Ejercicio = datos.Lector.GetInt32(7);
                     aux.Add(auxTabla);
 
                 }

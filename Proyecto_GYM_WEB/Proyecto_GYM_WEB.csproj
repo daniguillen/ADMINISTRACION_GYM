@@ -210,7 +210,6 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VistaEntrenador\vistaModificarRutina.aspx" />
-    <Content Include="VistaEntrenador\vistaModificarRutinaEjercicio.aspx" />
     <Content Include="VistaEntrenador\VistaPrincipalEntrenador.aspx" />
     <Content Include="VistaEntrenador\VistaPerfil-Entrenador.aspx" />
     <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
@@ -325,13 +324,6 @@
     </Compile>
     <Compile Include="VistaEntrenador\vistaModificarRutina.aspx.designer.cs">
       <DependentUpon>vistaModificarRutina.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VistaEntrenador\vistaModificarRutinaEjercicio.aspx.cs">
-      <DependentUpon>vistaModificarRutinaEjercicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VistaEntrenador\vistaModificarRutinaEjercicio.aspx.designer.cs">
-      <DependentUpon>vistaModificarRutinaEjercicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\VistaPrincipalEntrenador.aspx.cs">
       <DependentUpon>VistaPrincipalEntrenador.aspx</DependentUpon>

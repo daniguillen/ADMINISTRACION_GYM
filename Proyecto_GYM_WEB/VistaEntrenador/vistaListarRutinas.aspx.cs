@@ -20,17 +20,6 @@ namespace Proyecto_GYM_WEB
             }
             set { Session["ModifListaRutina"] = value; }
         }
-
-        public int idRutinaSeleccionada
-        {
-            get
-            {
-                return (int)Session["IdRutinaParaModificar"];
-            }
-            set { Session["IdRutinaParaModificar"] = value; }
-        }
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             List<AuxTablaRutina> tablaRutina = new List<AuxTablaRutina>();
@@ -39,10 +28,7 @@ namespace Proyecto_GYM_WEB
             {
                 tablaRutina = objController.ListarTablaRutinas();
                 Session["ModifListaRutina"] = tablaRutina;
-
             }
         }
-
     }
-
 }
