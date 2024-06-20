@@ -58,27 +58,44 @@ namespace Proyecto_GYM_WEB
 
         protected void BTN_Guardar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = (Usuario)Session["PerfilUsuario"];
-            usuario.DNI=TxtDniEditar.Text;
-            usuario.Nombre=TxtNombreEditar.Text;
-            usuario.Apellido=TxtApellidoEditar.Text;
-            usuario.Cel=TxtCelularEditar.Text;
-            usuario.Tel_Emergencia = TxtTelEmergenciaEditar.Text;
-            usuario.Mail = TxtEmailEditar.Text;
-            usuario.Password = TxtPasswordEditar.Text;
-            usuario.Fecha_Nacimiento = DateTime.Parse(TxtFechaNacimientoEditar.Text);
-            if (!string.IsNullOrEmpty(DdlSexo.SelectedValue))
+            try
             {
-              
-                usuario.sexo.ID = int.Parse(DdlSexo.SelectedValue);
-                usuario.sexo.Tipo = DdlSexo.SelectedItem.Text;
+                
+
+                Usuario usuario = (Usuario)Session["PerfilUsuario"];
+                usuario.DNI = TxtDniEditar.Text;
+                usuario.Nombre = TxtNombreEditar.Text;
+                usuario.Apellido = TxtApellidoEditar.Text;
+                usuario.Cel = TxtCelularEditar.Text;
+                usuario.Tel_Emergencia = TxtTelEmergenciaEditar.Text;
+                usuario.Mail = TxtEmailEditar.Text;
+                usuario.Password = TxtPasswordEditar.Text;
+                usuario.Fecha_Nacimiento = DateTime.Parse(TxtFechaNacimientoEditar.Text);
+                if (!string.IsNullOrEmpty(DdlSexo.SelectedValue))
+                {
+
+                    usuario.sexo.ID = int.Parse(DdlSexo.SelectedValue);
+                    usuario.sexo.Tipo = DdlSexo.SelectedItem.Text;
+                }
+                string ruta = Server.MapPath(".././Assets/perfil/");
+                txtimagen.PostedFile.SaveAs(ruta+"perfil-"+usuario.ID+".jpg");
+
+                usuario.Foto = "~/Assets/perfil-" + usuario.ID + ".jpg";
+
+
+                Controller datos = new Controller();
+                datos.ModificarCliente(usuario);
+
+                Master.FindControl("img");
+                //leer
+                Image img =(Image)Master.FindControl("imgAvatar");
+                img.ImageUrl = usuario.Foto;
+                Session["PerfilUsuario"] = usuario.Foto;
             }
-
-            Session["PerfilUsuario"] = usuario;
-
-
-            Controller datos = new Controller();
-            datos.ModificarCliente(usuario);
+            catch (Exception ex)
+            {
+               Session.Add("error", ex.ToString()); 
+            }
            
 
         }

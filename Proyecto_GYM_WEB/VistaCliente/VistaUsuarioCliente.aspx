@@ -24,7 +24,7 @@
                 <div class="col-2 d-flex me-2 ms-2">
                     <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
 
-                        <img src="/Assets/usuario1.jpg" class="card-img-top" alt="Assets/usuario.png">
+                        <img src="<%=Perfil.Foto %>" class="card-img-top" alt="....">
                         <div class="card-body">
                             <h4 class="card-title"><% =Perfil.Nombre + " " + Perfil.Apellido %> </h4>
                             <h5 class="card-text">Plan: <%=Plan.Tipo_Plan  %></h5>

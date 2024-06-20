@@ -23,12 +23,13 @@
                 .
            <!--FOTO DE PERFIL-->
                <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-                    <img src=" <%=usuario.Foto  %>" class="card-img-top" alt="Assets/usuario.png">
+                  
+                  <asp:Image ID="ImagePerfil" ImageUrl="<%=usuario.Foto%>" runat="server" />
                     <div class="card-body">
                         <h4 class="card-title"><%= usuario.Nombre+" "+usuario.Apellido %> </h4>
                         <h5 class="card-text">Plan: <%=usuario.plan.Tipo_Plan  %></h5>
                         <h5 class="card-text">Dni: <%=usuario.DNI  %></h5>
-                        <br />
+                        <input type="file" id="txtimagen" runat="server"  class="form-control" CssClass="btn btn-secondary btn-icon-split"/>
 
                     </div>
                 </div>
