@@ -60,7 +60,7 @@ namespace ACCIONES
 
 
         }
-        public List<Usuario> listar_Clientes()
+        public List<Usuario> Listar_Clientes()
         {
 
             List<Usuario> ListaUsuario = new List<Usuario>();
@@ -416,11 +416,11 @@ namespace ACCIONES
                         CELULAR = @CEL, 
                         SEXO = @IDSEXO, 
                         ESTADO = @ESTADO
-                    WHERE ID = @ID;
+                    WHERE ID_USUARIO = @ID;
                     UPDATE USUARIO
                     SET MAIL = @MAIL, 
-                        PASSWORD = @PASSWORD
-                    WHERE ID_USUARIO = @ID;
+                        PASWORD = @PASSWORD
+                    WHERE ID = @ID;
 
                     COMMIT TRANSACTION;
                 END TRY
@@ -449,6 +449,7 @@ namespace ACCIONES
                         RAISERROR('Error general: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);
                     END
                 END CATCH;");
+                datos.setearParametro("@ID", usuario.ID);
                 datos.setearParametro("@DNI", usuario.DNI);
                 datos.setearParametro("@NOMBRE", usuario.Nombre);
                 datos.setearParametro("@APELLIDO", usuario.Apellido);
@@ -465,6 +466,8 @@ namespace ACCIONES
             catch
             {
                 transaccion = false;
+              
+
             }
 
             finally
@@ -691,7 +694,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-        public void agregarRutina(Rutina rutiNueva)
+        public void AgregarRutina(Rutina rutiNueva)
         {
             try
             {
@@ -705,7 +708,7 @@ namespace ACCIONES
             catch (Exception ex) { throw ex; }
             finally { datos.cerrarConexion(); }
         }
-        public void agregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia, Rutina_ejercicio nuevaRutinaEjercicio)
+        public void AgregarRutinaXEjercicio(int rutinaID, int idEjercicio, Dias dia, Rutina_ejercicio nuevaRutinaEjercicio)
         {
 
             try
@@ -967,7 +970,7 @@ namespace ACCIONES
             }
             finally { datos.cerrarConexion(); }
         }
-        public void agregarEjercicio(Ejercicio ejercicioNuevo)
+        public void AgregarEjercicio(Ejercicio ejercicioNuevo)
         {
             try
             {
@@ -991,7 +994,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-        public void agregarGrupoMusucular(GrupoMuscular grupoNuevo)
+        public void AgregarGrupoMusucular(GrupoMuscular grupoNuevo)
         {
             try
             {

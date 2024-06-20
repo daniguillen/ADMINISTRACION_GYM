@@ -97,13 +97,13 @@
             <ContentTemplate>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="modal-content align-items-center">
+                            <div class="modal-header justify-content-evenly w-100">
                                 <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <asp:HiddenField ID="HfModificarId" runat="server" ClientIDMode="Static" />
+                                
                                 <div class="form-group">
                                     <label for="TxtDNI">DNI:</label>
                                     <asp:TextBox ID="TxtDNI" runat="server" CssClass="form-control" TextMode="SingleLine" ClientIDMode="Static"></asp:TextBox>
@@ -187,6 +187,7 @@
 
         var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
         modal.show();
+
     }
 </script>
 </asp:Content>

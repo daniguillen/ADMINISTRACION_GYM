@@ -37,10 +37,15 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 {
                     if (!IsPostBack)
                     {
-                        Session["Nivel"] = 1;
-                        ModificarId = -1;
-                        ListaUsuarios = dato.listar_Clientes();
-                        BindRepeater();
+                        if (Session["Nivel"] == null)
+                        {
+                            Session["Nivel"] = 1;
+                            ListaUsuarios = dato.Listar_Clientes();
+                            BindRepeater();
+                        }
+                        else {
+                            FiltrarPorNivel();
+                        }
                     }
                 }
             }
@@ -54,10 +59,10 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             RepeaterUsuarios.DataSource = ListaUsuarios;
             RepeaterUsuarios.DataBind();
         }
-        private void filtrarPorNivel()
+        private void FiltrarPorNivel()
         {
 
-            ListaUsuarios = dato.listar_Clientes();
+            ListaUsuarios = dato.Listar_Clientes();
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
 
             if (Session["Nivel"] != null && Convert.ToInt32(Session["Nivel"]) == 1)
@@ -144,7 +149,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Entrenadores(object sender, EventArgs e)
         {
             Session["Nivel"] = 2;
-            ListaUsuarios = dato.listar_Clientes();
+            ListaUsuarios = dato.Listar_Clientes();
 
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
             foreach (var i in ListaUsuarios)
@@ -165,7 +170,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Usuarios(object sender, EventArgs e)
         {
             Session["Nivel"] = 1;
-            ListaUsuarios = dato.listar_Clientes();
+            ListaUsuarios = dato.Listar_Clientes();
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
             foreach (var i in ListaUsuarios)
             {
@@ -189,7 +194,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             Resultado.Visible = false;
             Resultado.Text = "";
             //   ListarRutina = dato.ListarRutinas();
-            //BindRepeater().c;
+          //  BindRepeater();
 
         }
         protected void MensajeAUsuarioYEntrenadores(object sender, EventArgs e)
@@ -202,12 +207,12 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {
-            int userId;
-            if (int.TryParse(e.CommandArgument.ToString(), out userId))
+       
+            if (int.TryParse(e.CommandArgument.ToString(), out int  userId))
             {
                 Label1.Text = "ID del usuario: " + userId.ToString();
                 dato.Eliminar_Persona_x_ID(userId);
-                filtrarPorNivel();
+                FiltrarPorNivel();
             }
             else
             {
@@ -216,19 +221,20 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void BtnActivar(object sender, CommandEventArgs e)
         {
-            int userId;
-            if (int.TryParse(e.CommandArgument.ToString(), out userId))
+
+            if (int.TryParse(e.CommandArgument.ToString(), out int userId))
             {
 
                 dato.Activar_Cliente_PorID(userId);
-                filtrarPorNivel();
+                FiltrarPorNivel();
             }
 
         }
         protected void Modificar(object sender, CommandEventArgs e)
         {
             string[] valores = e.CommandArgument.ToString().Split(',');
-                HfModificarId.Value = valores[0];
+               
+                Session["ID"]= valores[0];
                 TxtDNI.Text = valores[1];
                 TxtNombre.Text = valores[2];
                 TxtApellido.Text = valores[3];
@@ -241,18 +247,17 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 bool estadoBool = estadoString.Equals("true", StringComparison.OrdinalIgnoreCase);
                 int estadoInt = estadoBool ? 1 : 0;
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal('" + valores[1] + "','" + valores[2] + "','" + valores[3] + "','" + valores[12] + "','" + valores[5] + "','" + valores[6] + "','" + valores[7] + "','" + valores[8] + "','" + valores[11] + "','" + estadoInt + "');", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal('" + valores[1] + "','" + valores[2] + "','" + valores[3] + "','" + valores[12] + "','" + valores[5] + "','" + valores[6] + "','" + valores[7] + "','" + valores[8] + "','" + valores[11] + "','" + estadoInt + "');", true);
 
         }
-
-
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
            
             Usuario usuario = new Usuario();
-            string valor = HfModificarId.Value;
-            usuario.ID = int.Parse(HfModificarId.Value);
+            usuario.ID = int.Parse(Session["ID"].ToString());
+            Session.Remove("ID");
             usuario.DNI = TxtDNI.Text;
+
             usuario.Nombre = TxtNombre.Text;
             usuario.Apellido = TxtApellido.Text;
 
@@ -277,10 +282,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 usuario.Estado = estadoId != 0;
             }
 
-            // dato.ModificarUsuarioEntrenador(usuario);
-
-            ModificarId = -1;
-
+             dato.ModificarUsuarioEntrenador(usuario);
 
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);

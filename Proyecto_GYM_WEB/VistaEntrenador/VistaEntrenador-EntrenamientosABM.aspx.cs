@@ -169,7 +169,7 @@ namespace Proyecto_GYM_WEB
                 nuevoEjercicio.Grupo_Muscular = new GrupoMuscular();
                 nuevoEjercicio.Grupo_Muscular.ID = int.Parse(ddlGrupoMuscu.SelectedValue);
 
-                objController.agregarEjercicio(nuevoEjercicio);
+                objController.AgregarEjercicio(nuevoEjercicio);
                 ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
 
@@ -190,7 +190,7 @@ namespace Proyecto_GYM_WEB
 
                 nuevarutina.nombre = txtNombreRutina.Text;
                 nuevarutina.descripcion = txtDescripcionRutina.Text;
-                objController.agregarRutina(nuevarutina);
+                objController.AgregarRutina(nuevarutina);
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
 
             }
@@ -223,7 +223,7 @@ namespace Proyecto_GYM_WEB
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
                 {
                     objController.datos = new AccesoDatos();
-                    objController.agregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);                
+                    objController.AgregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);                
                 }
 
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
