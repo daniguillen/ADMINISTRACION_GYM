@@ -16,7 +16,7 @@
             <table class="table table-striped table-bordered table-dark" id="tablaRutina">
                 <thead class="header-class">
                     <tr class="row-class">
-                        <td>DIA - HORARIO</td>                    
+                        <td>DIA - HORARIO</td>
                         <td>RUTINA</td>
                         <td>DESCRIPCION</td>
                         <td>EJERCICIOS - REPETICIONES</td>
@@ -35,7 +35,7 @@
                             %>
                     <tr>
                         <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
-                        <td> 
+                        <td>
                             <span><%= ListaTablaRuti[i].DiaNombre %></span> -
                             <span><%= ListaTablaRuti[i].Horario %></span> Hs
                         </td>
@@ -46,7 +46,8 @@
                             <span><%= ListaTablaRuti[i].Repeticiones %></span>
                         </td>
                         <td>
-                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar</a>
+                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar Rutina</a>
+                            <a href="vistaModificarRutinaEjercicio.aspx?id=<%=ListaTablaRuti[i].ID_Ejercicio %>&editarRutina=<%=ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar Ejercicios</a>
                         </td>
                     </tr>
                     <%
@@ -66,7 +67,11 @@
                                 <span><%= ListaTablaRuti[i].Repeticiones %> reps</span>
                             </div>
                         </td>
-                        <td></td>
+                        <td>
+
+                            <a href="vistaModificarRutinaEjercicio.aspx?id=<%=ListaTablaRuti[i].ID_Ejercicio %>&editarRutina=<%=ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar Ejercicios</a>
+
+                        </td>
                     </tr>
                     <%
                             }

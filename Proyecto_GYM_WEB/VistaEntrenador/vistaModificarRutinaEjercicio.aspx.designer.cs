@@ -11,61 +11,43 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 {
 
 
-    public partial class vistaModificarRutina
+    public partial class vistaModificarRutinaEjercicio
     {
 
         /// <summary>
-        /// Control txtNombreRutina.
+        /// Control lbxEjercicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreRutina;
+        protected global::System.Web.UI.WebControls.ListBox lbxEjercicio;
 
         /// <summary>
-        /// Control txtDescripcionRutina.
+        /// Control txtRepeticiones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionRutina;
+        protected global::System.Web.UI.WebControls.TextBox txtRepeticiones;
 
         /// <summary>
-        /// Control ddlHorario.
+        /// Control btnModificarRutinaEjercicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHorario;
+        protected global::System.Web.UI.WebControls.Button btnModificarRutinaEjercicio;
 
         /// <summary>
-        /// Control ddlDia.
+        /// Control hfIdEjercicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDia;
-
-        /// <summary>
-        /// Control btnModificarRutina.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificarRutina;
-
-        /// <summary>
-        /// Control hfRutinaID.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfRutinaID;
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEjercicio;
     }
 }
