@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.ComponentModel;
+using System.Data.Sql;
+using System.Data.SqlTypes;
+using System.Collections.Generic;
 
 
 namespace Dominio
@@ -7,9 +14,9 @@ namespace Dominio
     {
         public Persona()
         {
-            plan = new Plan();
+            plan= new Plan();
             sexo = new Sexo();
-
+           
         }
 
         public int ID { get; set; }
@@ -31,6 +38,6 @@ namespace Dominio
 
         public bool Estado { get; set; }
         public int ID_rutina { get; set; }
-
+        
     }
 }

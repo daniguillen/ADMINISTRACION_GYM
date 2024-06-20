@@ -1,6 +1,11 @@
-﻿using ACCIONES;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ACCIONES;
 using Dominio;
-using System;
 
 namespace Proyecto_GYM_WEB
 {
@@ -45,7 +50,7 @@ namespace Proyecto_GYM_WEB
                     DdlSexo.SelectedItem.Text = usuario.sexo.Tipo;
                     TxtFechaIngresoEditar.Text = usuario.Fecha_ingreso.ToShortDateString();
                 }
-
+            
             }
 
 
@@ -54,17 +59,17 @@ namespace Proyecto_GYM_WEB
         protected void BTN_Guardar_Click(object sender, EventArgs e)
         {
             Usuario usuario = (Usuario)Session["PerfilUsuario"];
-            usuario.DNI = TxtDniEditar.Text;
-            usuario.Nombre = TxtNombreEditar.Text;
-            usuario.Apellido = TxtApellidoEditar.Text;
-            usuario.Cel = TxtCelularEditar.Text;
+            usuario.DNI=TxtDniEditar.Text;
+            usuario.Nombre=TxtNombreEditar.Text;
+            usuario.Apellido=TxtApellidoEditar.Text;
+            usuario.Cel=TxtCelularEditar.Text;
             usuario.Tel_Emergencia = TxtTelEmergenciaEditar.Text;
             usuario.Mail = TxtEmailEditar.Text;
             usuario.Password = TxtPasswordEditar.Text;
             usuario.Fecha_Nacimiento = DateTime.Parse(TxtFechaNacimientoEditar.Text);
             if (!string.IsNullOrEmpty(DdlSexo.SelectedValue))
             {
-
+              
                 usuario.sexo.ID = int.Parse(DdlSexo.SelectedValue);
                 usuario.sexo.Tipo = DdlSexo.SelectedItem.Text;
             }
@@ -74,7 +79,7 @@ namespace Proyecto_GYM_WEB
 
             Controller datos = new Controller();
             datos.ModificarCliente(usuario);
-
+           
 
         }
     }

@@ -1,62 +1,248 @@
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.AssemblyReference.cache
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.CoreCompileInputs.cache
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.pdb
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.rsp
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.rsp
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.AppContext.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Console.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Http.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Sockets.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.ValueTuple.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.rsp
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.pdb
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll.config
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.Up2Date
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.dll
-C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.pdb
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.pdb
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.rsp
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.rsp
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.AppContext.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Console.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Http.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Sockets.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.ValueTuple.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.rsp
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.pdb
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll.config
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.Up2Date
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.dll
+C:\Users\user\Desktop\TUP\Programacion 3\TP FINAL\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.pdb
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.pdb
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.rsp
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.rsp
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Managed.Core.targets
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.AppContext.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Collections.Immutable.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Console.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Globalization.Calendars.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Http.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Sockets.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Reflection.Metadata.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.ValueTuple.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XmlDocument.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.rsp
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.pdb
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll.config
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.AssemblyReference.cache
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.CoreCompileInputs.cache
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.Up2Date
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.dll
+C:\UTN\C3\PROGRAMACION3\ADMINISTRACION GYM\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\ACCIONES.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.exe.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csc.rsp
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.exe.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\csi.rsp
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.AppContext.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Console.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Http.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Net.Sockets.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.ValueTuple.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.exe.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\vbc.rsp
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.pdb
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\Dominio.dll.config
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.AssemblyReference.cache
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.CoreCompileInputs.cache
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.csproj.Up2Date
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.dll
+C:\Users\zaske\OneDrive\Documentos\GitHub\ADMINISTRACION_GYM\ACCIONES\obj\Debug\ACCIONES.pdb
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\ACCIONES.dll.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\ACCIONES.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\ACCIONES.pdb
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csc.exe
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csc.exe.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csc.rsp
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csi.exe
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csi.exe.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\csi.rsp
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.AppContext.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Console.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.IO.Compression.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Net.Http.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Net.Sockets.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.ValueTuple.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Xml.XPath.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\vbc.exe
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\vbc.exe.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\vbc.rsp
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\VBCSCompiler.exe
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\Dominio.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\Dominio.pdb
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\Dominio.dll.config
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\obj\Debug\ACCIONES.csproj.AssemblyReference.cache
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\obj\Debug\ACCIONES.csproj.CoreCompileInputs.cache
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\obj\Debug\ACCIONES.csproj.Up2Date
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\obj\Debug\ACCIONES.dll
+C:\Users\fedex\OneDrive\Escritorio\UTN\PROGRAMACION3\ACCIONES\obj\Debug\ACCIONES.pdb
