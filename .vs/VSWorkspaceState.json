@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ACCIONES",
+    "\\Dominio",
+    "\\Proyecto_GYM_WEB"
   ],
-  "SelectedNode": "\\Proyecto_GYM_WEB.sln",
+  "SelectedNode": "\\Proyecto_GYM_WEB\\Proyecto_GYM_WEB.sln",
   "PreviewInSolutionExplorer": false
 }

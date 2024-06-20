@@ -1,13 +1,10 @@
-﻿using System;
+﻿using ACCIONES;
+using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.WebSockets;
-using ACCIONES;
-using Dominio;
 
 namespace Proyecto_GYM_WEB
 {
@@ -23,7 +20,7 @@ namespace Proyecto_GYM_WEB
             set { Session["ListaEjercicios"] = value; }
         }
         public List<GrupoMuscular> ListagrupoMusculares = new List<GrupoMuscular>();
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -213,17 +210,17 @@ namespace Proyecto_GYM_WEB
                     {
                         int ejercicioID = int.Parse(item.Value);
                         Ejercicio ejer = ListaEjercicios.Find(y => y.ID == ejercicioID);
-                        nuevaRutinaEjercicio.ejercicio.Add(ejer);                                                 
+                        nuevaRutinaEjercicio.ejercicio.Add(ejer);
                     }
                 }
                 var rutinaID = int.Parse(ddlIDRutina.SelectedValue);
                 diaNuevo.id = int.Parse(ddlDia.SelectedValue);
-                nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
+                nuevaRutinaEjercicio.hora = int.Parse(txtHora.Text);
 
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
                 {
                     objController.datos = new AccesoDatos();
-                    objController.AgregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);                
+                    objController.AgregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);
                 }
 
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
