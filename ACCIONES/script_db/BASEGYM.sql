@@ -107,6 +107,19 @@ ID_RUTINA INT FOREIGN KEY REFERENCES RUTINA (ID),
 )
 ;
 
+create table Historial(
+    id int primary key identity(1,1),
+    Id_Persona int foreign key references Persona (id) not null, 
+    ID_Planes int not null,
+    Pago money not null,
+    FechaPago DATETIME DEFAULT GETDATE() NOT NULL,
+    DescripcionNota varchar (100)
+);
+create table Mensajes(
+    id int primary key identity(1,1),
+    DescripcionNota varchar (200),
+    FechaMensaje DATETIME DEFAULT GETDATE() NOT NULL,
+);
 
 
 -- Insertar valores en NIVEL

@@ -74,6 +74,8 @@
     <Compile Include="Dias.cs" />
     <Compile Include="Dificultad.cs" />
     <Compile Include="Ejercicio.cs" />
+    <Compile Include="Historial.cs" />
+    <Compile Include="Mensajes.cs" />
     <Compile Include="Rutina.cs" />
     <Compile Include="TipoEjercicio.cs" />
     <Compile Include="GrupoMuscular.cs" />

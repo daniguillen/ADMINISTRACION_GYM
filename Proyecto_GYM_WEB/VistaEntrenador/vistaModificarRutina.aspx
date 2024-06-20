@@ -27,6 +27,7 @@
             </div>
             <div>
                 <asp:Button ID="btnModificarRutina" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" OnClick="btnModificarRutina_Click" />
+                 <asp:Button ID="btnVolver" runat="server" Text="Cancelar" CssClass="btn btn-secondary m-2" OnClick="btnVolver_Click"/>
             </div>
         </div>
     </div>

@@ -43,6 +43,15 @@ namespace Proyecto_GYM_WEB
             }
         }
 
+        protected void btnOpenModal_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
+        }
+
+        protected void btnSalirX1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaListarRutinas.aspx", false);
+        }
     }
 
 }

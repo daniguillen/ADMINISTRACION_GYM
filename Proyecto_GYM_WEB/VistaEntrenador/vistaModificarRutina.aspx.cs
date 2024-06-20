@@ -102,5 +102,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 throw ex;
             }
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaListarRutinas.aspx", false);
+        }
     }
 }
