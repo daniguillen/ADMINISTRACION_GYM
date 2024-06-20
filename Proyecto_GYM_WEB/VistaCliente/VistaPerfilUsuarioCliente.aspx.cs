@@ -15,11 +15,13 @@ namespace Proyecto_GYM_WEB
         public Controller datos = new Controller();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ImagePerfil.ImageUrl = usuario.Foto;
             if (!IsPostBack)
             {
                 if (Request.QueryString["id"] == "2")
                 {
                     usuario = datos.Cliente(18);
+                    ImagePerfil.ImageUrl = usuario.Foto;
                     TxtDniEditar.Text = usuario.DNI;
                     TxtNombreEditar.Text = usuario.Nombre;
                     TxtApellidoEditar.Text = usuario.Apellido;
@@ -37,6 +39,7 @@ namespace Proyecto_GYM_WEB
                 else
                 {
                     usuario = (Usuario)Session["PerfilUsuario"];
+                    ImagePerfil.ImageUrl = usuario.Foto;
                     TxtDniEditar.Text = usuario.DNI;
                     TxtNombreEditar.Text = usuario.Nombre;
                     TxtApellidoEditar.Text = usuario.Apellido;
@@ -77,20 +80,30 @@ namespace Proyecto_GYM_WEB
                     usuario.sexo.ID = int.Parse(DdlSexo.SelectedValue);
                     usuario.sexo.Tipo = DdlSexo.SelectedItem.Text;
                 }
-                string ruta = Server.MapPath(".././Assets/perfil/");
-                txtimagen.PostedFile.SaveAs(ruta+"perfil-"+usuario.ID+".jpg");
 
-                usuario.Foto = "~/Assets/perfil-" + usuario.ID + ".jpg";
+                if (!txtimagen.Value.Equals(""))
+                {
+                    string ruta = Server.MapPath(".././Assets/perfil/");
+                    txtimagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.ID + ".jpg");
 
+                    usuario.Foto = "../Assets/perfil/perfil-" + usuario.ID + ".jpg";
+                    ImagePerfil.ImageUrl = usuario.Foto;
+                }
+                else
+                {
+                                     
+                    if (!usuario.Foto.Equals(""))
+                    {
+                        ImagePerfil.ImageUrl = usuario.Foto;
+
+                    }
+
+                }
 
                 Controller datos = new Controller();
                 datos.ModificarCliente(usuario);
 
-                Master.FindControl("img");
-                //leer
-                Image img =(Image)Master.FindControl("imgAvatar");
-                img.ImageUrl = usuario.Foto;
-                Session["PerfilUsuario"] = usuario.Foto;
+            
             }
             catch (Exception ex)
             {
