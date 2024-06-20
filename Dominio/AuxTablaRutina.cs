@@ -16,5 +16,7 @@ namespace Dominio
 
         public int Horario {  get; set;}
 
+        public int ID_Ejercicio { get; set;}
+
     }
 }
