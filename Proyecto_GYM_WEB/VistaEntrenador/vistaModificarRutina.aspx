@@ -24,7 +24,7 @@
                     <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
                 </div>
-                <div class="mb-3 mt-xl-5" >
+                <div class="mb-3 mt-xl-5">
                     <asp:CheckBox runat="server" type="radio" Text=" Ver detalles"
                         ID="chkAFiltroAvanzado" AutoPostBack="true"
                         OnCheckedChanged="chkAFiltroAvanzado_CheckedChanged" />
@@ -88,11 +88,11 @@
                     <div class="container">
                         <div class="mb-3">
                             <asp:Label ID="lblFiltroMuscular" runat="server" Text="Filtrar por Grupo muscular" class="form-label"></asp:Label>
-                            <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGrupoMuscular_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                         <div class="mb-3">
                             <asp:Label ID="lblEjercicios" runat="server" Text="Seleccion Ejercicio:" class="form-label"></asp:Label>
-                            <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
                         </div>
                         <div class="mb-3">
                             <label for="lblRepeticiones" class="form-label">Repeticiones:</label>

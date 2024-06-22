@@ -28,16 +28,17 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
-                FiltroAvanzado = chkAFiltroAvanzado.Checked;
+                    FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 if (!IsPostBack)
                 {
+
                     List<Dias> listaDias = objController.ListarDias();
                     ddlDia.DataSource = listaDias;
                     ddlDia.DataValueField = "ID";
                     ddlDia.DataTextField = "dia";
                     ddlDia.DataBind();
 
-                    Session.Add("listaGrupoMuscular", objController.ListarGrupoMuscular());
+                    Session["listaGrupoMuscular"]= objController.ListarGrupoMuscular();
                     ddlGrupoMuscular.DataSource = Session["listaGrupoMuscular"];
                     ddlGrupoMuscular.DataValueField = "ID";
                     ddlGrupoMuscular.DataTextField = "DESCRIPCION";
@@ -63,9 +64,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
                         ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
                         ddlHorario.SelectedValue = objRuti_Ejer.hora.ToString();
-
                     }
 
+                }
+                else
+                {
+                    // Mantén el estado del checkbox durante el postback
+                    FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 }
 
             }
@@ -140,6 +145,19 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void chkAFiltroAvanzado_CheckedChanged(object sender, EventArgs e)
         {
             FiltroAvanzado = chkAFiltroAvanzado.Checked;
+        }
+
+        protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int grupoMuscularID = int.Parse(ddlGrupoMuscular.SelectedValue);
+            List<Ejercicio> listaEjercicios = objController.ListarEjerciciosXGrupoMuscular(grupoMuscularID);
+            Ejercicio objEjer = new Ejercicio();
+            ddlEjercicios.DataSource = listaEjercicios;
+            ddlEjercicios.DataValueField = "ID";
+            ddlEjercicios.DataTextField = "NOMBRE";
+            ddlEjercicios.DataBind();
+
+            txtRepeticiones.Text = objEjer.Repeticiones.ToString();
         }
     }
 }

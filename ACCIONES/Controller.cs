@@ -1032,6 +1032,40 @@ namespace ACCIONES
             }
         }
 
+
+        public  List<Ejercicio> ListarEjerciciosXGrupoMuscular (int grupoMuscularID)
+        {
+            try
+            {
+                List<Ejercicio> aux = new List<Ejercicio>();
+                datos.setearQuery("SELECT e.ID, e.NOMBRE, e.REPETICIONES  FROM EJERCICIO e WHERE e.ID_GRUPO_MUSCULAR = @ID_GRUPO_MUSCULAR");
+                datos.setearParametro("@ID_GRUPO_MUSCULAR", grupoMuscularID);
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                    Ejercicio ejercicio = new Ejercicio();
+                    ejercicio.ID = datos.Lector.GetInt32(0);
+                    ejercicio.Nombre = datos.Lector.GetString(1);
+                    ejercicio.Repeticiones = datos.Lector.GetInt32(2);
+
+                    aux.Add(ejercicio);
+                }
+            return aux;
+            }
+           
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
  //otros
         public List<Plan> ListarPLan()
         {
