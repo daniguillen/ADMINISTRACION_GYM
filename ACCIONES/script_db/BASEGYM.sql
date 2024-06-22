@@ -230,12 +230,73 @@ GO
 -- Insertar valores en EJERCICIO
 INSERT INTO EJERCICIO (DESCRIPCION, NOMBRE, REPETICIONES, ID_DIFICULTAD, VIDEO, ID_TIPO, ID_GRUPO_MUSCULAR)
 VALUES 
+-- Grupo Muscular 1: Pecho
 ('Descripción de Press de Banca', 'Press de Banca', 10, 2, 'pressbanca.mp4', 1, 1),
-('Descripción de Sentadilla', 'Sentadilla', 15, 3, 'sentadilla.mp4', 1, 3),
+('Descripción de Aperturas con mancuernas', 'Aperturas con mancuernas', 12, 2, 'aperturas.mp4', 1, 1),
+('Descripción de Fondos', 'Fondos', 15, 3, 'fondos.mp4', 1, 1),
+('Descripción de Press inclinado', 'Press inclinado', 10, 2, 'pressinclinado.mp4', 1, 1),
+('Descripción de Press declinado', 'Press declinado', 10, 2, 'pressdeclinado.mp4', 1, 1),
+('Descripción de Peck Deck', 'Peck Deck', 12, 2, 'peckdeck.mp4', 1, 1),
+('Descripción de Press con mancuernas', 'Press con mancuernas', 10, 2, 'pressmancuernas.mp4', 1, 1),
+('Descripción de Cruce de cables', 'Cruce de cables', 15, 2, 'crucecables.mp4', 1, 1),
+('Descripción de Press de banca agarre cerrado', 'Press de banca agarre cerrado', 10, 3, 'presscerrado.mp4', 1, 1),
+('Descripción de Push Ups', 'Push Ups', 20, 1, 'pushups.mp4', 1, 1),
+-- Grupo Muscular 2: Espalda
 ('Descripción de Peso Muerto', 'Peso Muerto', 8, 3, 'pesomuerto.mp4', 1, 2),
+('Descripción de Remo con barra', 'Remo con barra', 12, 3, 'remobarra.mp4', 1, 2),
+('Descripción de Jalón al pecho', 'Jalón al pecho', 15, 2, 'jalonpecho.mp4', 1, 2),
+('Descripción de Pull Ups', 'Pull Ups', 10, 3, 'pullups.mp4', 1, 2),
+('Descripción de Remo con mancuernas', 'Remo con mancuernas', 12, 2, 'remomancuernas.mp4', 1, 2),
+('Descripción de Remo en máquina', 'Remo en máquina', 15, 2, 'remomaquina.mp4', 1, 2),
+('Descripción de Jalón tras nuca', 'Jalón tras nuca', 12, 3, 'jalonnuca.mp4', 1, 2),
+('Descripción de Peso muerto rumano', 'Peso muerto rumano', 10, 3, 'pesoromano.mp4', 1, 2),
+('Descripción de Hiperextensiones', 'Hiperextensiones', 15, 1, 'hiperextensiones.mp4', 1, 2),
+('Descripción de Dominadas asistidas', 'Dominadas asistidas', 12, 2, 'dominadasasistidas.mp4', 1, 2),
+-- Grupo Muscular 3: Piernas
+('Descripción de Sentadilla', 'Sentadilla', 15, 3, 'sentadilla.mp4', 1, 3),
+('Descripción de Prensa de pierna', 'Prensa de pierna', 12, 2, 'prensapierna.mp4', 1, 3),
+('Descripción de Extensiones de pierna', 'Extensiones de pierna', 15, 1, 'extensionpierna.mp4', 1, 3),
+('Descripción de Curl de pierna', 'Curl de pierna', 12, 2, 'curlpierna.mp4', 1, 3),
+('Descripción de Peso muerto sumo', 'Peso muerto sumo', 10, 3, 'pesosumo.mp4', 1, 3),
+('Descripción de Zancadas', 'Zancadas', 12, 2, 'zancadas.mp4', 1, 3),
+('Descripción de Sentadilla búlgara', 'Sentadilla búlgara', 10, 3, 'sentabúlgara.mp4', 1, 3),
+('Descripción de Peso muerto a una pierna', 'Peso muerto a una pierna', 12, 3, 'peso1pierna.mp4', 1, 3),
+('Descripción de Elevación de talones', 'Elevación de talones', 20, 1, 'elevacióntalones.mp4', 1, 3),
+('Descripción de Hack Squat', 'Hack Squat', 12, 2, 'hacksquat.mp4', 1, 3),
+-- Grupo Muscular 4: Biceps
 ('Descripción de Curl de Bíceps', 'Curl de Bíceps', 12, 1, 'curlbiceps.mp4', 1, 4),
+('Descripción de Curl con barra', 'Curl con barra', 10, 2, 'curlbarra.mp4', 1, 4),
+('Descripción de Curl martillo', 'Curl martillo', 15, 1, 'curlmartillo.mp4', 1, 4),
+('Descripción de Curl en predicador', 'Curl en predicador', 12, 2, 'curlpredicador.mp4', 1, 4),
+('Descripción de Curl concentrado', 'Curl concentrado', 10, 2, 'curlconcentrado.mp4', 1, 4),
+('Descripción de Curl con polea baja', 'Curl con polea baja', 12, 2, 'curlpolea.mp4', 1, 4),
+('Descripción de Curl spider', 'Curl spider', 10, 2, 'curlspider.mp4', 1, 4),
+('Descripción de Curl con mancuerna en banco inclinado', 'Curl con mancuerna en banco inclinado', 15, 1, 'curlinclinadomp4', 1, 4),
+('Descripción de Curl Zottman', 'Curl Zottman', 12, 2, 'curlzottman.mp4', 1, 4),
+('Descripción de Curl con cuerda en polea', 'Curl con cuerda en polea', 10, 2, 'curlcuerda.mp4', 1, 4),
+-- Grupo Muscular 5:Hombros
 ('Descripción de Press de Hombros', 'Press de Hombros', 10, 2, 'presshombros.mp4', 1, 5),
-('Descripción de Abdominales', 'Abdominales', 20, 1, 'abdominales.mp4', 3, 6);
+('Descripción de Elevaciones laterales', 'Elevaciones laterales', 12, 1, 'elevlaterales.mp4', 1, 5),
+('Descripción de Elevaciones frontales', 'Elevaciones frontales', 15, 1, 'elevfrontales.mp4', 1, 5),
+('Descripción de Pájaros', 'Pájaros', 12, 2, 'pajaros.mp4', 1, 5),
+('Descripción de Press militar', 'Press militar', 10, 3, 'pressmilitar.mp4', 1, 5),
+('Descripción de Remo al mentón', 'Remo al mentón', 15, 2, 'remoalmenton.mp4', 1, 5),
+('Descripción de Press Arnold', 'Press Arnold', 12, 2, 'pressarnold.mp4', 1, 5),
+('Descripción de Elevaciones posteriores', 'Elevaciones posteriores', 15, 2, 'elevposteriores.mp4', 1, 5),
+('Descripción de Encogimientos', 'Encogimientos', 20, 1, 'encogimientos.mp4', 1, 5),
+('Descripción de Face Pulls', 'Face Pulls', 12, 2, 'facepulls.mp4', 1, 5),
+-- Grupo Muscular 6:Abdomen
+('Descripción de Abdominales', 'Abdominales', 20, 1, 'abdominales.mp4', 3, 6),
+('Descripción de Plancha', 'Plancha', 30, 2, 'plancha.mp4', 3, 6),
+('Descripción de Elevación de piernas', 'Elevación de piernas', 15, 1, 'elevpiernas.mp4', 3, 6),
+('Descripción de Crunch', 'Crunch', 20, 1, 'crunch.mp4', 3, 6),
+('Descripción de Bicicleta', 'Bicicleta', 20, 1, 'bicicleta.mp4', 3, 6),
+('Descripción de Russian Twist', 'Russian Twist', 15, 2, 'russiantwist.mp4', 3, 6),
+('Descripción de Mountain Climbers', 'Mountain Climbers', 20, 2, 'mountainclimbers.mp4', 3, 6),
+('Descripción de Elevación de rodillas', 'Elevación de rodillas', 15, 2, 'elevrodillas.mp4', 3, 6),
+('Descripción de Crunch inverso', 'Crunch inverso', 20, 1, 'crunchinverso.mp4', 3, 6),
+('Descripción de Ab Wheel Rollout', 'Ab Wheel Rollout', 15, 3, 'abwheel.mp4', 3, 6);
+
 GO
 
 -- Insertar valores en PERSONA
@@ -276,13 +337,32 @@ GO
 -- Insertar valores en RUTINA
 
 
-INSERT INTO RUTINA ( NOMBRE,DESCRIPCION)
-VALUES ('Spinning','Con una buena bici'), ('Boxeo','Quien se la aguanta'), ('Musculación','Todo trabado'),('Ballet','En puntita de pie'), ('Gluteos','Salis con una buena cola'), ('Crossfit','A quien le da la nafta');
+INSERT INTO RUTINA ( NOMBRE,DESCRIPCION, PERSONAL, ESTADO)
+VALUES('Pecho', 'Rutina enfocada en ejercicios de pecho', 0, 1),
+('Espalda', 'Rutina enfocada en ejercicios de espalda', 0, 1),
+('Piernas', 'Rutina enfocada en ejercicios de piernas', 0, 1),
+('Bíceps', 'Rutina enfocada en ejercicios de bíceps', 0, 1),
+('Hombros', 'Rutina enfocada en ejercicios de hombros', 0, 1),
+('Abdomen', 'Rutina enfocada en ejercicios de abdomen', 0, 1);
 GO
 
 INSERT INTO RUTINA_EJERCICIO (ID_RUTINA,ID_DIA, ID_EJERCICIO, HORARIO)
-VALUES (1, 1, 1, 8), (1, 2 ,2,8), (1, 3 ,4,9), (1, 4, 3,8), (1, 5 ,2,10), (1, 6, 1,13);
-
-
-
-
+VALUES
+--Pecho
+(1, 1, 1, 7),
+(1, 1, 2, 7),
+-- Espalda
+(2, 2, 11, 7),
+(2, 2, 14, 7),
+-- Piernas
+(3, 3, 22, 7), 
+(3, 3, 25, 7),
+-- Bíceps
+(4, 4, 33, 7), 
+(4, 4, 34, 7),
+-- Hombros
+(5, 5, 42, 7),
+(5, 5, 47, 7),
+-- Abdomen
+(6, 6, 56, 7), 
+(6, 6, 57, 7);

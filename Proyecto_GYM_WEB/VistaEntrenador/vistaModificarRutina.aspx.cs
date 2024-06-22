@@ -15,6 +15,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
     {
         Controller objController = new Controller();
         public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
+
+        public List<AuxTablaRutina> ListaTablaRuti
+        {
+            get
+            {
+                return (List<AuxTablaRutina>)Session["ModifListaRutina"];
+            }
+            set { Session["ModifListaRutina"] = value; }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -106,6 +115,20 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("vistaListarRutinas.aspx", false);
+        }
+
+        protected void btnOpenModal_Click(object sender, EventArgs e)
+        {
+            Session["NombreRutina"] = txtNombreRutina.Text;
+            Session["DescripcionRutina"] = txtDescripcionRutina.Text;
+            Session["Horario"] = ddlHorario.SelectedValue;
+            Session["Dia"] = ddlDia.SelectedValue;
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
+        }
+
+        protected void btnSalirX1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
         }
     }
 }
