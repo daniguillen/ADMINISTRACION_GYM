@@ -238,8 +238,10 @@ h5.modal-title {
 }
 
 
-
-
+/*********TABLA vistaModificarRutina checked************/
+.table-responsive {
+    margin-top: 20px;
+}
 
 
 

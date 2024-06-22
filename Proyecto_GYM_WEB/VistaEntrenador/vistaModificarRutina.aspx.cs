@@ -15,7 +15,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
     {
         Controller objController = new Controller();
         public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
-
+        public bool FiltroAvanzado {  get; set; }
         public List<AuxTablaRutina> ListaTablaRuti
         {
             get
@@ -28,6 +28,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
+                FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 if (!IsPostBack)
                 {
                     List<Dias> listaDias = objController.ListarDias();
@@ -36,6 +37,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     ddlDia.DataTextField = "dia";
                     ddlDia.DataBind();
 
+                    Session.Add("listaGrupoMuscular", objController.ListarGrupoMuscular());
+                    ddlGrupoMuscular.DataSource = Session["listaGrupoMuscular"];
+                    ddlGrupoMuscular.DataValueField = "ID";
+                    ddlGrupoMuscular.DataTextField = "DESCRIPCION";
+                    ddlGrupoMuscular.DataBind();
 
                     foreach (int hora in horario_rutinas)
                     {
@@ -129,6 +135,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void btnSalirX1_Click(object sender, EventArgs e)
         {
             Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
+        }
+
+        protected void chkAFiltroAvanzado_CheckedChanged(object sender, EventArgs e)
+        {
+            FiltroAvanzado = chkAFiltroAvanzado.Checked;
         }
     }
 }

@@ -24,55 +24,65 @@
                     <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
                 </div>
-            </div>
-
-            <h3>MODIFICAR EJERCICIOS DENTRO DE LA RUTINA</h3>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-dark" id="tablaRutina">
-                    <thead class="header-class">
-                        <tr class="row-class">
-                            <td>EJERCICIOS - REPETICIONES</td>
-                            <td>ACCIONES</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% 
-                            int rutinaID = int.Parse(Request.QueryString["id"]);
-                            var ejercicios = ListaTablaRuti.Where(x => x.ID_Rutina == rutinaID).ToList();
-                            foreach (var ejercicio in ejercicios)
-                            {
-                        %>
-                        <tr>
-                            <td>
-                                <span><%= ejercicio.NombreEjercicio %></span> -
-                               
-                                <span><%= ejercicio.Repeticiones %></span>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnOpenModal" runat="server" Text="Ver detalles" CssClass="btn btn-primary m-2" OnClick="btnOpenModal_Click" />
-                            </td>
-                        </tr>
-
-                        <% 
-                            }
-                        %>
-                    </tbody>
-                </table>
+                <div class="mb-3 mt-xl-5" >
+                    <asp:CheckBox runat="server" type="radio" Text=" Ver detalles"
+                        ID="chkAFiltroAvanzado" AutoPostBack="true"
+                        OnCheckedChanged="chkAFiltroAvanzado_CheckedChanged" />
+                </div>
             </div>
         </div>
-        <div>
-            <asp:Button ID="btnModificarRutina" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" OnClick="btnModificarRutina_Click" />
-            <asp:Button ID="btnVolver" runat="server" Text="Cancelar" CssClass="btn btn-secondary m-2" OnClick="btnVolver_Click" />
+        <% if (chkAFiltroAvanzado.Checked)
+            { %>
+        <div class="row">
+            <div class="col-12">
+                <h3>MODIFICAR EJERCICIOS DENTRO DE LA RUTINA</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-dark" id="tablaRutina">
+                        <thead class="header-class">
+                            <tr class="row-class">
+                                <td>EJERCICIOS - REPETICIONES</td>
+                                <td>ACCIONES</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% 
+                                int rutinaID = int.Parse(Request.QueryString["id"]);
+                                var ejercicios = ListaTablaRuti.Where(x => x.ID_Rutina == rutinaID).ToList();
+                                foreach (var ejercicio in ejercicios)
+                                {
+                        %>
+                            <tr>
+                                <td>
+                                    <span><%= ejercicio.NombreEjercicio %></span> -
+                               
+                                    <span><%= ejercicio.Repeticiones %></span>
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnOpenModal" runat="server" Text="Ver detalles" CssClass="btn btn-primary m-2" OnClick="btnOpenModal_Click" />
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <div class="row">
+            <div class="col-12">
+                <asp:Button ID="btnModificarRutina" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" OnClick="btnModificarRutina_Click" />
+                <asp:Button ID="btnVolver" runat="server" Text="Cancelar" CssClass="btn btn-secondary m-2" OnClick="btnVolver_Click" />
+            </div>
         </div>
     </div>
 
 
-        <div class="modal" id="nuevoModal" tabindex="-1">
+    <div class="modal" id="nuevoModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title ">MODIFICAR EJERCICIO.</h3>
-                    <asp:Button type="button" ID="btnSalirX1" CssClass="btn-close" data-bs-dismiss="modal" runat="server" aria-label="Close"  OnClick="btnSalirX1_Click"/>
+                    <asp:Button type="button" ID="btnSalirX1" CssClass="btn-close" data-bs-dismiss="modal" runat="server" aria-label="Close" OnClick="btnSalirX1_Click" />
                 </div>
                 <div class="modal-body">
                     <div class="container">
