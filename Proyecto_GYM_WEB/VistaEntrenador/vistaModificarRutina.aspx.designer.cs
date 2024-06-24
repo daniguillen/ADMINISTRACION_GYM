@@ -96,6 +96,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.Button btnSalirX1;
 
         /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
         /// Control lblFiltroMuscular.
         /// </summary>
         /// <remarks>
@@ -141,13 +150,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.TextBox txtRepeticiones;
 
         /// <summary>
-        /// Control btnAgregar.
+        /// Control btnGuardarCambios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        protected global::System.Web.UI.WebControls.Button btnGuardarCambios;
 
         /// <summary>
         /// Control hfRutinaID.

@@ -122,10 +122,52 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 throw ex;
             }
         }
-
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            Response.Redirect("vistaListarRutinas.aspx", false);
+            try
+            {
+                int rutinaid = int.Parse(hfRutinaID.Value);
+
+
+
+                int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
+                int ejercicioNuevo = 0;
+                foreach (ListItem item in ddlEjercicios.Items)
+                {
+                    if (item.Selected)
+                    {
+                        ejercicioNuevo = int.Parse(item.Value);
+
+                    }
+                }
+                
+                objController.ModificarEjercicio(rutinaid, ejercicioIDAnterior, ejercicioNuevo);
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
+              
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int grupoMuscularID = int.Parse(ddlGrupoMuscular.SelectedValue);
+            List<Ejercicio> listaEjercicios = objController.ListarEjerciciosXGrupoMuscular(grupoMuscularID);
+            Ejercicio objEjer = new Ejercicio();
+            ddlEjercicios.DataSource = listaEjercicios;
+            ddlEjercicios.DataValueField = "ID";
+            ddlEjercicios.DataTextField = "NOMBRE";
+            ddlEjercicios.DataBind();
+
+        }
+
+        protected void ddlEjercicios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ejercicioID = int.Parse(ddlEjercicios.SelectedValue);
+            Ejercicio objEjercicioID = objController.BuscarEjercicioPorID(ejercicioID);
+            txtRepeticiones.Text = objEjercicioID.Repeticiones.ToString();
         }
 
         protected void btnOpenModal_Click(object sender, EventArgs e)
@@ -137,6 +179,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
         }
 
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaListarRutinas.aspx", false);
+        }
         protected void btnSalirX1_Click(object sender, EventArgs e)
         {
             Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
@@ -147,17 +193,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             FiltroAvanzado = chkAFiltroAvanzado.Checked;
         }
 
-        protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int grupoMuscularID = int.Parse(ddlGrupoMuscular.SelectedValue);
-            List<Ejercicio> listaEjercicios = objController.ListarEjerciciosXGrupoMuscular(grupoMuscularID);
-            Ejercicio objEjer = new Ejercicio();
-            ddlEjercicios.DataSource = listaEjercicios;
-            ddlEjercicios.DataValueField = "ID";
-            ddlEjercicios.DataTextField = "NOMBRE";
-            ddlEjercicios.DataBind();
 
-            txtRepeticiones.Text = objEjer.Repeticiones.ToString();
-        }
     }
 }

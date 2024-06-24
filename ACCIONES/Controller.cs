@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using System.Web.UI.WebControls;
 using Dominio;
 
 
@@ -19,7 +21,7 @@ namespace ACCIONES
             datos = new AccesoDatos();
         }
 
-  //clientes
+        //clientes
         public void Activar_Cliente_PorID(int a)
         {
 
@@ -100,7 +102,7 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
-             
+
 
                     ListaUsuario.Add(aux);
                 }
@@ -169,7 +171,7 @@ namespace ACCIONES
                         }
                         else
                         {
-                        aux.ID_rutina = 0;
+                            aux.ID_rutina = 0;
 
                         }
 
@@ -203,7 +205,7 @@ namespace ACCIONES
                 // Define la consulta SQL para actualizar los datos del cliente
                 datos.setearQuery("UPDATE PERSONA SET  APELLIDO =@Apellido, NOMBRE = @Nombre, APTO_FISICO = @AptoFisico, CELULAR = @Celular, DIRECCION =@Direccion,  DNI = @DNI, FECHA_INGRESO = @FechaIngreso, FECHA_NACIMIENTO = @FechaNacimiento,FOTO = @Foto, IDPLANES = @IDPlanes, SEXO = @Sexo,  TEL_EMERGENCIA = @TelEmergencia, ID_ESTABLECIMIENTO = @IDEstablecimiento, ESTADO = @Estado, ID_RUTINA=@IDRutina WHERE ID = @ID");
 
-               
+
                 datos.setearParametro("@ID", usuario.ID);
                 datos.setearParametro("@Nombre", usuario.Nombre);
                 datos.setearParametro("@Apellido", usuario.Apellido);
@@ -227,7 +229,7 @@ namespace ACCIONES
             }
             catch (Exception ex)
             {
-               
+
                 throw ex;
             }
             finally
@@ -466,7 +468,7 @@ namespace ACCIONES
             catch
             {
                 transaccion = false;
-              
+
 
             }
 
@@ -792,7 +794,7 @@ namespace ACCIONES
                 {
                     if (ID_Rutina == datos.Lector.GetInt32(0))
                     {
-                        objEjercicio.ID = datos.Lector.GetInt32(1);         
+                        objEjercicio.ID = datos.Lector.GetInt32(1);
                         rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
                     }
 
@@ -811,7 +813,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
 
         }
-        public void ModificarRutinaEjerciDiaHora(Dias idDia, Rutina_ejercicio rutina_EjerHora, Rutina rutina) 
+        public void ModificarRutinaEjerciDiaHora(Dias idDia, Rutina_ejercicio rutina_EjerHora, Rutina rutina)
         {
             try
             {
@@ -820,7 +822,7 @@ namespace ACCIONES
                 datos.setearParametro("@HORARIO", rutina_EjerHora.hora);
                 datos.setearParametro("@ID_RUTINA", rutina.ID);
                 //datos.setearParametro("@ID_EJERCICIO", ejercicioID);
-               // datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
+                // datos.setearParametro("@ID_EJERCICIOANTERIOR", idEjercicioAnterior);
 
                 datos.ejecutarAccion();
             }
@@ -846,7 +848,7 @@ namespace ACCIONES
 
 
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
             finally
             {
                 datos.cerrarConexion();
@@ -910,7 +912,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
- //musculacion
+        //musculacion
         public List<TipoEjercicio> ListadoTipoEjercicio()
         {
             try
@@ -1033,7 +1035,7 @@ namespace ACCIONES
         }
 
 
-        public  List<Ejercicio> ListarEjerciciosXGrupoMuscular (int grupoMuscularID)
+        public List<Ejercicio> ListarEjerciciosXGrupoMuscular(int grupoMuscularID)
         {
             try
             {
@@ -1042,7 +1044,7 @@ namespace ACCIONES
                 datos.setearParametro("@ID_GRUPO_MUSCULAR", grupoMuscularID);
                 datos.ejecutarLectura();
 
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Ejercicio ejercicio = new Ejercicio();
                     ejercicio.ID = datos.Lector.GetInt32(0);
@@ -1051,10 +1053,10 @@ namespace ACCIONES
 
                     aux.Add(ejercicio);
                 }
-            return aux;
+                return aux;
             }
-           
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -1065,8 +1067,90 @@ namespace ACCIONES
         }
 
 
+        public Ejercicio BuscarEjercicioPorID(int ejercicioID)
+        {
+            try
+            {
+                Ejercicio ejercicio = null;
+                datos.setearQuery("SELECT ID, DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO, ID_TIPO, ID_GRUPO_MUSCULAR from EJERCICIO WHERE ID=@ID_EJERCICIO");
+                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
 
- //otros
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    if (datos.Lector.GetInt32(0) == ejercicioID)
+                    {
+                        ejercicio = new Ejercicio();
+                        ejercicio.ID = datos.Lector.GetInt32(0);
+                        ejercicio.Descripcion = datos.Lector.GetString(1);
+                        ejercicio.Nombre = datos.Lector.GetString(2);
+                        ejercicio.Repeticiones = datos.Lector.GetInt32(3);
+                        ejercicio.Tipo_Dificultad.ID = datos.Lector.GetInt32(4);
+                        ejercicio.Video = datos.Lector.GetString(5);
+                        ejercicio.Tipo_Ejercicio.ID = datos.Lector.GetInt32(6);
+                        ejercicio.Grupo_Muscular.ID = datos.Lector.GetInt32(7);
+                    }
+
+                }
+                return ejercicio;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void ModificarEjercicio(int rutinaId,int ejercicioIDAnterior, int ejercicioID)
+        {
+            try
+            {
+                
+                datos.setearQuery("UPDATE RUTINA_EJERCICIO SET  ID_EJERCICIO=@ID_EJERCICIO WHERE ID_RUTINA = @ID_RUTINAS AND ID_EJERCICIO=@ID_EJERCICIOANTERIOR");
+                datos.setearParametro("@ID_RUTINAS", rutinaId);
+                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
+                datos.setearParametro("ID_EJERCICIOANTERIOR", ejercicioIDAnterior);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public  int ObtenerEjercicioIDAnterior(int rutinaId)     //Metodo que lo utilizo para cambiar el ejercicio a rutina.
+        {
+            int ejercicioIdAnterior = 0;
+            try
+            {
+            
+                datos.setearQuery("SELECT ID_EJERCICIO FROM RUTINA_EJERCICIO WHERE ID_RUTINA = @ID_RUTINA");
+                datos.setearParametro("@ID_RUTINA", rutinaId);
+
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                     ejercicioIdAnterior = (int)datos.Lector["ID_EJERCICIO"];
+                }
+            }
+            catch(Exception ex) { throw ex; }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return ejercicioIdAnterior;
+        }
+
+        //otros
         public List<Plan> ListarPLan()
         {
 

@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="vistaModificarRutina.aspx.cs" Inherits="Proyecto_GYM_WEB.VistaEntrenador.vistaModificarRutina" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="container">
         <div class="row">
             <h3>MODIFICAR CAMPOS RUTINA</h3>
@@ -76,7 +75,7 @@
         </div>
     </div>
 
-
+   
     <div class="modal" id="nuevoModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -86,35 +85,32 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>   
+
                         <div class="mb-3">
-                            <asp:Label ID="lblFiltroMuscular" runat="server" Text="Filtrar por Grupo muscular" class="form-label"></asp:Label>
-                            <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGrupoMuscular_SelectedIndexChanged"></asp:DropDownList>
+                            <asp:Label ID="lblFiltroMuscular" runat="server" Text="Filtrar por Grupo muscular" class="form-label"></asp:Label>                
+                            <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGrupoMuscular_SelectedIndexChanged"></asp:DropDownList>                          
                         </div>
                         <div class="mb-3">
                             <asp:Label ID="lblEjercicios" runat="server" Text="Seleccion Ejercicio:" class="form-label"></asp:Label>
-                            <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEjercicios_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                         <div class="mb-3">
                             <label for="lblRepeticiones" class="form-label">Repeticiones:</label>
                             <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button type="button" CssClass="btn btn-primary" ID="btnAgregar" runat="server" Text="Guardar Cambios" />
+                    <asp:Button type="button" CssClass="btn btn-primary" ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click"/>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 
     <asp:HiddenField ID="hfRutinaID" runat="server" />
 
@@ -132,6 +128,16 @@
             modal.classList.remove('show');
 
         }
+
+        document.getElementById('btnGuardarCambios').onclick = function () {
+            closeModal();
+        };
+
+        document.getElementById('btnSalirX1').onclick = function () {
+            closeModal();
+        };
+
+
 
     </script>
 
