@@ -14,6 +14,8 @@ namespace Proyecto_GYM_WEB
     public partial class VistaEntrenador_EntrenamientosABM : System.Web.UI.Page
     {
         Controller objController = new Controller();
+        public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
+
         public List<Ejercicio> ListaEjercicios
         {
             get
@@ -71,6 +73,12 @@ namespace Proyecto_GYM_WEB
                     ddlIDRutina.DataValueField = "ID";
                     ddlIDRutina.DataTextField = "Nombre";
                     ddlIDRutina.DataBind();
+
+                    foreach (int hora in horario_rutinas)
+                    {
+                        ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
+                    }
+                    ddlHorario.DataBind();
 
 
                     Session["ListaEjercicios"] = listaEjercicio;
@@ -157,8 +165,8 @@ namespace Proyecto_GYM_WEB
             {
                 Ejercicio nuevoEjercicio = new Ejercicio();
 
-                nuevoEjercicio.Descripcion = txtDescripcionEj.Text;
                 nuevoEjercicio.Nombre = txtNombre.Text;
+                nuevoEjercicio.Descripcion = txtDescripcionEj.Text;
                 nuevoEjercicio.Repeticiones = int.Parse(txtRepeticiones.Text);
                 nuevoEjercicio.Tipo_Dificultad = new Dificultad();
                 nuevoEjercicio.Tipo_Dificultad.ID = int.Parse(ddlDificultad.SelectedValue);
@@ -218,7 +226,8 @@ namespace Proyecto_GYM_WEB
                 }
                 var rutinaID = int.Parse(ddlIDRutina.SelectedValue);
                 diaNuevo.id = int.Parse(ddlDia.SelectedValue);
-                nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
+                nuevaRutinaEjercicio.hora= int.Parse(ddlHorario.SelectedValue);
+              //  nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
 
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
                 {
@@ -264,6 +273,11 @@ namespace Proyecto_GYM_WEB
         protected void btnlistar_Click(object sender, EventArgs e)
         {
             Response.Redirect("vistaListarRutinas.aspx", false);
+        }
+
+        protected void ddlIDRutina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

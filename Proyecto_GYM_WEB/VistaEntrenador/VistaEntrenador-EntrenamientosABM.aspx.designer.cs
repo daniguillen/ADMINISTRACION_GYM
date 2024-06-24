@@ -69,15 +69,6 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Button btnSalirX1;
 
         /// <summary>
-        /// Control txtDescripcionEj.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionEj;
-
-        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace Proyecto_GYM_WEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
+
+        /// <summary>
+        /// Control txtDescripcionEj.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionEj;
 
         /// <summary>
         /// Control txtRepeticiones.
@@ -213,13 +213,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.DropDownList ddlDia;
 
         /// <summary>
-        /// Control txtHora.
+        /// Control ddlHorario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHora;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHorario;
 
         /// <summary>
         /// Control btnAgregarEjercicioARutina.

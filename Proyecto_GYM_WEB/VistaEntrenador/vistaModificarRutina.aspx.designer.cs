@@ -60,6 +60,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.CheckBox chkAFiltroAvanzado;
 
         /// <summary>
+        /// Control UpdatePanelTabla.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelTabla;
+
+        /// <summary>
         /// Control btnOpenModal.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOpenModal;
+
+        /// <summary>
+        /// Control btnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
 
         /// <summary>
         /// Control btnModificarRutina.

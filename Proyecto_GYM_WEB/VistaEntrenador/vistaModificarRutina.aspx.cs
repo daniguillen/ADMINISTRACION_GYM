@@ -15,7 +15,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
     {
         Controller objController = new Controller();
         public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
-        public bool FiltroAvanzado {  get; set; }
+        public bool FiltroAvanzado { get; set; }
         public List<AuxTablaRutina> ListaTablaRuti
         {
             get
@@ -28,7 +28,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
-                    FiltroAvanzado = chkAFiltroAvanzado.Checked;
+                FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 if (!IsPostBack)
                 {
 
@@ -38,7 +38,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     ddlDia.DataTextField = "dia";
                     ddlDia.DataBind();
 
-                    Session["listaGrupoMuscular"]= objController.ListarGrupoMuscular();
+                    Session["listaGrupoMuscular"] = objController.ListarGrupoMuscular();
                     ddlGrupoMuscular.DataSource = Session["listaGrupoMuscular"];
                     ddlGrupoMuscular.DataValueField = "ID";
                     ddlGrupoMuscular.DataTextField = "DESCRIPCION";
@@ -64,6 +64,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
                         ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
                         ddlHorario.SelectedValue = objRuti_Ejer.hora.ToString();
+
                     }
 
                 }
@@ -127,11 +128,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             try
             {
                 int rutinaid = int.Parse(hfRutinaID.Value);
-
-
-
                 int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
                 int ejercicioNuevo = 0;
+
                 foreach (ListItem item in ddlEjercicios.Items)
                 {
                     if (item.Selected)
@@ -140,12 +139,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
                     }
                 }
-                
+
                 objController.ModificarEjercicio(rutinaid, ejercicioIDAnterior, ejercicioNuevo);
                 ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
-              
+                Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -178,7 +178,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             Session["Dia"] = ddlDia.SelectedValue;
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
         }
-
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("vistaListarRutinas.aspx", false);
@@ -187,12 +186,19 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
         }
-
         protected void chkAFiltroAvanzado_CheckedChanged(object sender, EventArgs e)
         {
             FiltroAvanzado = chkAFiltroAvanzado.Checked;
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int rutinaid = int.Parse(hfRutinaID.Value);
+            int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
 
+            objController.eliminarEjercicio(rutinaid,ejercicioIDAnterior);
+
+            UpdatePanelTabla.Update();
+        }
     }
 }

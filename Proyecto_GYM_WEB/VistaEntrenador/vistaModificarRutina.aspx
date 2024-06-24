@@ -35,35 +35,42 @@
         <div class="row">
             <div class="col-12">
                 <h3>MODIFICAR EJERCICIOS DENTRO DE LA RUTINA</h3>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-dark" id="tablaRutina">
-                        <thead class="header-class">
-                            <tr class="row-class">
-                                <td>EJERCICIOS - REPETICIONES</td>
-                                <td>ACCIONES</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% 
-                                int rutinaID = int.Parse(Request.QueryString["id"]);
-                                var ejercicios = ListaTablaRuti.Where(x => x.ID_Rutina == rutinaID).ToList();
-                                foreach (var ejercicio in ejercicios)
-                                {
+                <asp:UpdatePanel runat="server" ID="UpdatePanelTabla" UpdateMode="Conditional">
+                    <ContentTemplate>
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-dark" id="tablaRutina">
+                                <thead class="header-class">
+                                    <tr class="row-class">
+                                        <td>EJERCICIOS - REPETICIONES</td>
+                                        <td>ACCIONES</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% 
+                                        int rutinaID = int.Parse(Request.QueryString["id"]);
+                                        var ejercicios = ListaTablaRuti.Where(x => x.ID_Rutina == rutinaID).ToList();
+                                        foreach (var ejercicio in ejercicios)
+                                        {
                         %>
-                            <tr>
-                                <td>
-                                    <span><%= ejercicio.NombreEjercicio %></span> -
+                                    <tr>
+                                        <td>
+                                            <span><%= ejercicio.NombreEjercicio %></span> -
                                
                                     <span><%= ejercicio.Repeticiones %></span>
-                                </td>
-                                <td>
-                                    <asp:Button ID="btnOpenModal" runat="server" Text="Ver detalles" CssClass="btn btn-primary m-2" OnClick="btnOpenModal_Click" />
-                                </td>
-                            </tr>
-                            <% } %>
-                        </tbody>
-                    </table>
-                </div>
+                                        </td>
+                                        <td>
+                                            <asp:Button ID="btnOpenModal" runat="server" Text="Ver detalles" class="btn btn-secondary btn-icon-split btnAdministrador" OnClick="btnOpenModal_Click" />
+                                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
         <% } %>
@@ -75,7 +82,7 @@
         </div>
     </div>
 
-   
+
     <div class="modal" id="nuevoModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -86,27 +93,27 @@
                 <div class="modal-body">
                     <div class="container">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>   
+                            <ContentTemplate>
 
-                        <div class="mb-3">
-                            <asp:Label ID="lblFiltroMuscular" runat="server" Text="Filtrar por Grupo muscular" class="form-label"></asp:Label>                
-                            <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGrupoMuscular_SelectedIndexChanged"></asp:DropDownList>                          
-                        </div>
-                        <div class="mb-3">
-                            <asp:Label ID="lblEjercicios" runat="server" Text="Seleccion Ejercicio:" class="form-label"></asp:Label>
-                            <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEjercicios_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lblRepeticiones" class="form-label">Repeticiones:</label>
-                            <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
+                                <div class="mb-3">
+                                    <asp:Label ID="lblFiltroMuscular" runat="server" Text="Filtrar por Grupo muscular" class="form-label"></asp:Label>
+                                    <asp:DropDownList ID="ddlGrupoMuscular" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGrupoMuscular_SelectedIndexChanged"></asp:DropDownList>
+                                </div>
+                                <div class="mb-3">
+                                    <asp:Label ID="lblEjercicios" runat="server" Text="Seleccion Ejercicio:" class="form-label"></asp:Label>
+                                    <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEjercicios_SelectedIndexChanged"></asp:DropDownList>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lblRepeticiones" class="form-label">Repeticiones:</label>
+                                    <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
 
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button type="button" CssClass="btn btn-primary" ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click"/>
+                    <asp:Button type="button" CssClass="btn btn-primary" ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
                 </div>
             </div>
         </div>

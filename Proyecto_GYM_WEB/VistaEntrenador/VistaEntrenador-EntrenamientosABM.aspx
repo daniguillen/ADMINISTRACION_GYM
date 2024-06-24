@@ -33,13 +33,14 @@
                     <div class="modal-body">
                         <%--        AGREGAR EJERCICIO --%>
                         <div class="container">
+
                             <div class="mb-3 uP">
-                                <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
-                                <asp:TextBox ID="txtDescripcionEj" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
-                            <div class="mb-3">
                                 <label for="lblNombre" class="form-label">NOMBRE:</label>
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
+                                <asp:TextBox ID="txtDescripcionEj" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <label for="lblRepeticiones" class="form-label">REPETICIONES:</label>
@@ -112,22 +113,28 @@
                 <div class="modal-body">
                     <%--        AGREGAR EJERCICIO A RUTINA --%>
                     <div class="container">
-                        <div class="mb-3 uP">
-                            <label for="IDRutina" class="form-label">RUTINA:</label>
-                            <asp:DropDownList ID="ddlIDRutina" runat="server" CssClass="form-control"></asp:DropDownList>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lblEjercicios" class="form-label">SELECCIONE EJERCICIOS:</label>
-                            <asp:ListBox ID="lbxEjercicio" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
-                            <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lblHorario" class="form-label">HORARIO:</label>
-                            <asp:TextBox ID="txtHora" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate>
+
+
+                                <div class="mb-3 uP">
+                                    <label for="IDRutina" class="form-label">RUTINA:</label>
+                                    <asp:DropDownList ID="ddlIDRutina" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlIDRutina_SelectedIndexChanged"></asp:DropDownList>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lblEjercicios" class="form-label">SELECCIONE EJERCICIOS:</label>
+                                    <asp:ListBox ID="lbxEjercicio" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
+                                    <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lblHorario" class="form-label">HORARIO:</label>
+                                    <asp:DropDownList runat="server" ID="ddlHorario" CssClass="form-control" ></asp:DropDownList>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </div>
                 </div>
                 <div class="modal-footer">

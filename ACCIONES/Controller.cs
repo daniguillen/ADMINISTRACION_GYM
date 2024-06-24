@@ -716,8 +716,8 @@ namespace ACCIONES
             try
             {
                 datos.setearQuery("INSERT INTO RUTINA_EJERCICIO (ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO) \r\nVALUES (@ID_RUTINA, @ID_EJERCICIO, @ID_DIA, @HORARIO) ");
-                datos.setearParametro("@ID_RUTINA", rutinaID);
                 datos.setearParametro("@ID_EJERCICIO", idEjercicio);
+                datos.setearParametro("@ID_RUTINA", rutinaID);
                 datos.setearParametro("@ID_DIA", dia.id);
                 datos.setearParametro("@HORARIO", nuevaRutinaEjercicio.hora);
                 datos.ejecutarAccion();
@@ -997,8 +997,8 @@ namespace ACCIONES
             try
             {
                 datos.setearQuery("INSERT into EJERCICIO (DESCRIPCION,NOMBRE,REPETICIONES,ID_DIFICULTAD,VIDEO,ID_TIPO,ID_GRUPO_MUSCULAR) values (@DESCRIPCION,@NOMBRE,@REPETICIONES,@ID_DIFICULTAD,@VIDEO,@ID_TIPO,@ID_GRUPO_MUSCULAR)");
-                datos.setearParametro("@DESCRIPCION", ejercicioNuevo.Descripcion);
                 datos.setearParametro("@NOMBRE", ejercicioNuevo.Nombre);
+                datos.setearParametro("@DESCRIPCION", ejercicioNuevo.Descripcion);
                 datos.setearParametro("@REPETICIONES", ejercicioNuevo.Repeticiones);
                 datos.setearParametro("@ID_DIFICULTAD", ejercicioNuevo.Tipo_Dificultad.ID);
                 datos.setearParametro("@VIDEO", ejercicioNuevo.Video);
@@ -1148,6 +1148,23 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
             return ejercicioIdAnterior;
+        }
+
+        public void eliminarEjercicio(int rutinaID, int ejercicioID)
+        {
+            try
+            {
+                datos.setearQuery("DELETE RUTINA_EJERCICIO WHERE ID_EJERCICIO =@ID_EJERCICIO AND ID_RUTINA=@ID_RUTINAEli");
+                datos.setearParametro("@ID_EJERCICIO", ejercicioID);
+                datos.setearParametro("@ID_RUTINAEli", rutinaID);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception e) { throw e; }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         //otros
