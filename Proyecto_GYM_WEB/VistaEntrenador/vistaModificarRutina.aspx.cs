@@ -52,7 +52,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
 
                     if (Request.QueryString["id"] != null)
-                    {
+                    {   //Modifico la rutina 
                         int rutinaid = int.Parse(Request.QueryString["id"]);
                         hfRutinaID.Value = rutinaid.ToString();
 
@@ -128,8 +128,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             try
             {
                 int rutinaid = int.Parse(hfRutinaID.Value);
-                int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
+               // int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid); //REVISAR para eliminar
                 int ejercicioNuevo = 0;
+                int IDejercicioQueMeTraigoDelFront = int.Parse(hfEjercicioID.Value); //Este ejercicio me trae el modal
 
                 foreach (ListItem item in ddlEjercicios.Items)
                 {
@@ -140,9 +141,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     }
                 }
 
-                objController.ModificarEjercicio(rutinaid, ejercicioIDAnterior, ejercicioNuevo);
+                objController.ModificarEjercicio(rutinaid, IDejercicioQueMeTraigoDelFront, ejercicioNuevo);
+                ListaTablaRuti = objController.ListarTablaRutinas();
+
                 ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
                 Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
+
+                UpdatePanel1.Update();
 
             }
             catch (Exception ex)
@@ -161,6 +166,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             ddlEjercicios.DataTextField = "NOMBRE";
             ddlEjercicios.DataBind();
 
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int rutinaid = int.Parse(hfRutinaID.Value);
+            int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
+
+            objController.eliminarEjercicio(rutinaid,ejercicioIDAnterior);
+
+            UpdatePanelTabla.Update();
         }
 
         protected void ddlEjercicios_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,14 +205,5 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             FiltroAvanzado = chkAFiltroAvanzado.Checked;
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int rutinaid = int.Parse(hfRutinaID.Value);
-            int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
-
-            objController.eliminarEjercicio(rutinaid,ejercicioIDAnterior);
-
-            UpdatePanelTabla.Update();
-        }
     }
 }

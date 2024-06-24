@@ -38,7 +38,6 @@
                 <asp:UpdatePanel runat="server" ID="UpdatePanelTabla" UpdateMode="Conditional">
                     <ContentTemplate>
 
-
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-dark" id="tablaRutina">
                                 <thead class="header-class">
@@ -55,13 +54,14 @@
                                         {
                         %>
                                     <tr>
+                                        <td hidden><%= ejercicio.ID_Ejercicio %></td>
                                         <td>
                                             <span><%= ejercicio.NombreEjercicio %></span> -
                                
                                     <span><%= ejercicio.Repeticiones %></span>
                                         </td>
                                         <td>
-                                            <asp:Button ID="btnOpenModal" runat="server" Text="Ver detalles" class="btn btn-secondary btn-icon-split btnAdministrador" OnClick="btnOpenModal_Click" />
+                                            <a href="#" class="btn btn-secondary" data-id="<%= ejercicio.ID_Ejercicio %>" onclick="openModal(this)">Ver detalles</a>
                                             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
                                         </td>
                                     </tr>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
 
                                 <div class="mb-3">
@@ -120,10 +120,11 @@
     </div>
 
     <asp:HiddenField ID="hfRutinaID" runat="server" />
-
+    <asp:HiddenField ID="hfEjercicioID" runat="server" />
     <script>        
-        function openModal() {
-            console.log("entro al modal");
+        function openModal(element) {
+            var ejercicioID = element.getAttribute('data-id');
+            document.getElementById('<%= hfEjercicioID.ClientID %>').value = ejercicioID;
             var modal = document.getElementById('nuevoModal');
             modal.style.display = 'block';
             modal.classList.add('show');

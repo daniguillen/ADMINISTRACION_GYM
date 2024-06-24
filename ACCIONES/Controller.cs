@@ -780,13 +780,12 @@ namespace ACCIONES
         {
             try
             {
-                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO  FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINA");
-                datos.setearParametro("@ID_RUTINA", ID_Rutina);
+                datos.setearQuery("SELECT ID_RUTINA, ID_EJERCICIO, ID_DIA, HORARIO  FROM RUTINA_EJERCICIO WHERE ID_RUTINA =@ID_RUTINAPP");
+                datos.setearParametro("@ID_RUTINAPP", ID_Rutina);
                 datos.ejecutarLectura();
 
                 Rutina_ejercicio rutina_Ejercicio_aux = new Rutina_ejercicio();
                 rutina_Ejercicio_aux.ejercicio = new List<Ejercicio>();
-                var objEjercicio = new Ejercicio();
                 rutina_Ejercicio_aux.dia = new Dias();
 
 
@@ -794,6 +793,7 @@ namespace ACCIONES
                 {
                     if (ID_Rutina == datos.Lector.GetInt32(0))
                     {
+                        var objEjercicio = new Ejercicio();
                         objEjercicio.ID = datos.Lector.GetInt32(1);
                         rutina_Ejercicio_aux.ejercicio.Add(objEjercicio);
                     }
@@ -1107,7 +1107,7 @@ namespace ACCIONES
             }
         }
 
-        public void ModificarEjercicio(int rutinaId,int ejercicioIDAnterior, int ejercicioID)
+        public void ModificarEjercicio(int rutinaId,int IDejercicioQueMeTraigoDelFront, int ejercicioID)
         {
             try
             {
@@ -1115,7 +1115,7 @@ namespace ACCIONES
                 datos.setearQuery("UPDATE RUTINA_EJERCICIO SET  ID_EJERCICIO=@ID_EJERCICIO WHERE ID_RUTINA = @ID_RUTINAS AND ID_EJERCICIO=@ID_EJERCICIOANTERIOR");
                 datos.setearParametro("@ID_RUTINAS", rutinaId);
                 datos.setearParametro("@ID_EJERCICIO", ejercicioID);
-                datos.setearParametro("ID_EJERCICIOANTERIOR", ejercicioIDAnterior);
+                datos.setearParametro("ID_EJERCICIOANTERIOR", IDejercicioQueMeTraigoDelFront);
 
                 datos.ejecutarAccion();
             }
@@ -1125,7 +1125,7 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
+        //REVISION DE METODO SI LO USO...
         public  int ObtenerEjercicioIDAnterior(int rutinaId)     //Metodo que lo utilizo para cambiar el ejercicio a rutina.
         {
             int ejercicioIdAnterior = 0;
