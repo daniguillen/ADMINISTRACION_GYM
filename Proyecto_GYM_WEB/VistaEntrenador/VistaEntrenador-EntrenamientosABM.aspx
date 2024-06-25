@@ -144,7 +144,55 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="nuevoModal4" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title ">FORMULARIO ALTA EJERCICIO.</h3>
+                <asp:Button type="button" ID="btnOpenModalModificarEjercicio" CssClass="btn-close" data-bs-dismiss="modal" runat="server" aria-label="Close" />
 
+            </div>
+            <div class="modal-body">
+                <%--        AGREGAR EJERCICIO --%>
+                <div class="container">
+
+                    <div class="mb-3 uP">
+                        <label for="lblNombre" class="form-label">NOMBRE:</label>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lblRepeticiones" class="form-label">REPETICIONES:</label>
+                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lblIDDificultad" class="form-label">DIFICULTAD:</label>
+                        <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lblVideo" class="form-label">INGRESE URL DEL VIDEO:</label>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lblIdTipo" class="form-label">TIPO:</label>
+                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lblIdGrupoMusc" class="form-label">GRUPO MUSCULAR:</label>
+                        <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">Volver</a>
+                <asp:Button type="button" CssClass="btn btn-primary" ID="btnModificarCambiosEjercicio" runat="server" Text="Guardar Cambios"/>
+            </div>
+        </div>
+    </div>
+</div>
     <script>        
         function openModal() {
             console.log("entro al modal");
@@ -181,6 +229,19 @@
         }
         function closeModal3() {
             var modal = document.getElementById('nuevoModal3');
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+
+        }
+        function openModal4() {
+            console.log("entro al modal");
+            var modal = document.getElementById('nuevoModal4');
+            modal.style.display = 'block';
+            modal.classList.add('show');
+
+        }
+        function closeModal4() {
+            var modal = document.getElementById('nuevoModal4');
             modal.style.display = 'none';
             modal.classList.remove('show');
 

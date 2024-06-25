@@ -15,6 +15,24 @@ namespace Proyecto_GYM_WEB
     {
 
         /// <summary>
+        /// Control ImagePerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImagePerfil;
+
+        /// <summary>
+        /// Control txtimagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile txtimagen;
+
+        /// <summary>
         /// Control TxtDniEditar.
         /// </summary>
         /// <remarks>
@@ -96,13 +114,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.TextBox TxtFechaNacimientoEditar;
 
         /// <summary>
-        /// Control TxtSexoEditar.
+        /// Control DdlSexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSexoEditar;
+        protected global::System.Web.UI.WebControls.DropDownList DdlSexo;
 
         /// <summary>
         /// Control TxtFechaIngresoEditar.
@@ -112,5 +130,14 @@ namespace Proyecto_GYM_WEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtFechaIngresoEditar;
+
+        /// <summary>
+        /// Control BTN_Guardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_Guardar;
     }
 }

@@ -221,7 +221,14 @@ h5.modal-title {
     text-align: left;
     color: #f2f2f2;
 }
+.custom-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
 
+    .custom-link:hover {
+        text-decoration: underline; /* Añade subrayado al pasar el mouse */
+    }
 .row-class {
     border-bottom: 1px solid #ddd;
     color: aliceblue;
@@ -236,6 +243,8 @@ h5.modal-title {
     height: 300px; /* Define la altura de la imagen */
     object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio */
 }
+
+
 
 
 /*********TABLA vistaModificarRutina checked************/

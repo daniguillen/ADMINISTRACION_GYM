@@ -95,6 +95,7 @@ namespace Proyecto_GYM_WEB
             string headerClass = "header-class";  // Clase para los encabezados
             string rowClass = "row-class";  // Clase para las filas
             string cellClass = "cell-class";  // Clase para las celdas
+            string linkClass = "custom-link"; // Clase para los enlaces
             string musculos = $"<tr class='{headerClass}'>";
             string ejercicio = "";
 
@@ -120,7 +121,8 @@ namespace Proyecto_GYM_WEB
                 int grupoMuscularId = ListaEjercicios[j].Grupo_Muscular.ID;
                 if (ejerciciosPorGrupo.ContainsKey(grupoMuscularId))
                 {
-                    ejerciciosPorGrupo[grupoMuscularId].Add(ListaEjercicios[j].Nombre);
+                   // ejerciciosPorGrupo[grupoMuscularId].Add(ListaEjercicios[j].Nombre);
+                    ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
                 }
             }
 
