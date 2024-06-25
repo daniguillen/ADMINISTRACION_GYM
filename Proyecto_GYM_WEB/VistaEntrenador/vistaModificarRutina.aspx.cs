@@ -128,7 +128,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             try
             {
                 int rutinaid = int.Parse(hfRutinaID.Value);
-               // int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid); //REVISAR para eliminar
                 int ejercicioNuevo = 0;
                 int IDejercicioQueMeTraigoDelFront = int.Parse(hfEjercicioID.Value); //Este ejercicio me trae el modal
 
@@ -172,8 +171,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             int rutinaid = int.Parse(hfRutinaID.Value);
             int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
 
-            objController.eliminarEjercicio(rutinaid,ejercicioIDAnterior);
+            objController.eliminarEjercicio(rutinaid, ejercicioIDAnterior);
+            ListaTablaRuti = objController.ListarTablaRutinas();
 
+            Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);
             UpdatePanelTabla.Update();
         }
 
