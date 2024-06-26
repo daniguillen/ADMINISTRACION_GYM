@@ -136,6 +136,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="datatables-simple-demo.js" />
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
@@ -145,6 +146,7 @@
     <Content Include="Scripts\FuncionesInternas.js" />
     <Content Include="Scripts\LICENSE.txt" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx" />
     <Content Include="VistaEntrenador\vistaListarRutinas.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-EntrenamientosABM.aspx" />
@@ -242,6 +244,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +260,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx.cs">
+      <DependentUpon>PantallaPrincipalEntrenador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx.designer.cs">
+      <DependentUpon>PantallaPrincipalEntrenador.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\vistaListarRutinas.aspx.cs">
       <DependentUpon>vistaListarRutinas.aspx</DependentUpon>

@@ -1226,9 +1226,61 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
+        public Usuario IngresoConLogin (string mail, string password) 
+        {
+            Usuario usuario = new Usuario();
 
+            try
+            {
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID WHERE u.MAIL = @MAIL AND u.PASWORD= @PASSWORD");
+                datos.setearParametro("@MAIL", mail);
+                datos.setearParametro("@PASSWORD", password);
 
+                datos.ejecutarLectura();
 
+                if (datos.Lector.Read())
+                {
+
+                    usuario.ID = datos.Lector.GetInt32(0);
+                    usuario.Mail = datos.Lector.GetString(1);
+                    usuario.Password = datos.Lector.GetString(2);
+                    usuario.nivel.ID = datos.Lector.GetInt32(3);
+                    usuario.nivel.level = datos.Lector.GetString(4);
+                    usuario.Nombre = datos.Lector.GetString(5);
+                    usuario.Apellido = datos.Lector.GetString(6);
+                    usuario.Direccion = datos.Lector.GetString(7);
+                    usuario.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    usuario.sexo.ID = datos.Lector.GetInt32(9);
+                    usuario.sexo.Tipo = datos.Lector.GetString(10);
+                    usuario.Foto = datos.Lector.GetString(11);
+                    usuario.DNI = datos.Lector.GetString(12);
+                    usuario.Apto_Fisico = datos.Lector.GetString(13);
+                    usuario.Tel_Emergencia = datos.Lector.GetString(14);
+                    usuario.Cel = datos.Lector.GetString(15);
+                    usuario.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    usuario.plan.ID = datos.Lector.GetInt32(17);
+                    usuario.plan.Descripcion = datos.Lector.GetString(18);
+                    usuario.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    usuario.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    usuario.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    usuario.Estado = datos.Lector.GetBoolean(22);
+
+                    return usuario;
+                }
+                else
+                {
+                    return usuario;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+        }
+
+     
 
 
 

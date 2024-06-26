@@ -16,7 +16,7 @@
             </div>
 
             <div>
-                <asp:Button type="submit" ID="btnIngresoSesion" Text="Iniciar Sesión" runat="server" CssClass="btn btn-primary" />
+                <asp:Button type="submit" ID="btnIngresoSesion" Text="Iniciar Sesión" runat="server" CssClass="btn btn-primary" OnClick="btnIngresoSesion_Click"/>
             </div>
             <div class="mt-3">
                 <a href="RegistroPersona.aspx">Registrarse</a>
