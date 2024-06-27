@@ -245,7 +245,7 @@ namespace Proyecto_GYM_WEB
                 throw;
             }
         }
-        protected void btnOpenModal_Click(object sender, EventArgs e)
+        public void btnOpenModal_Click(object sender, EventArgs e)  //Ya lo pase
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
         }
@@ -257,7 +257,7 @@ namespace Proyecto_GYM_WEB
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal3();", true);
         }
-        protected void btnSalirX1_Click(object sender, EventArgs e)
+        protected void btnSalirX1_Click(object sender, EventArgs e) //Ya lo pase
         {
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
         }

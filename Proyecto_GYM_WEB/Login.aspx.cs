@@ -27,11 +27,8 @@ namespace Proyecto_GYM_WEB
                 usuario.Password = txtContraseña.Text;
                 aux = objController.IngresoConLogin(usuario.Mail, usuario.Password);
 
-
-
                 if (aux.ID != 0)
                 {
-
                     if (aux.nivel.ID == 2)
                     {
 
@@ -39,23 +36,15 @@ namespace Proyecto_GYM_WEB
                         Session["navbar"] = "c";
                         Response.Redirect("VistaEntrenador/PantallaPrincipalEntrenador.aspx", false);
                     }
-
-
-
                 }
                 else
                 {
                     Response.Redirect("error.aspx",false);
                 }
-
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
-
-
             }
         }
     }

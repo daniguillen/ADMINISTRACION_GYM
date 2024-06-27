@@ -20,8 +20,8 @@ namespace Proyecto_GYM_WEB
             ImagePerfil.ImageUrl = usuario.Foto;
             if (!IsPostBack)
             {
-
-                     usuario = objController.BuscarOneEntrenador("Díaz");
+                
+                usuario = (Usuario)Session["Entrenador"];
                     
                     ImagePerfil.ImageUrl = usuario.Foto;
                     TxtDniEditar.Text = usuario.DNI;
@@ -45,7 +45,7 @@ namespace Proyecto_GYM_WEB
             try
             {
 
-
+                usuario = (Usuario)Session["Entrenador"];
                 usuario.DNI = TxtDniEditar.Text;
                 usuario.Nombre = TxtNombreEditar.Text;
                 usuario.Apellido = TxtApellidoEditar.Text;
@@ -83,7 +83,7 @@ namespace Proyecto_GYM_WEB
 
                 Controller datos = new Controller();
                 datos.ModificarCliente(usuario);
-
+                Session["Entrenador"] = usuario;
 
             }
             catch (Exception ex)
