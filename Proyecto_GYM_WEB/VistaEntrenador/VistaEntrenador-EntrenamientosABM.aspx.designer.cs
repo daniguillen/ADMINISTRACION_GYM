@@ -15,24 +15,6 @@ namespace Proyecto_GYM_WEB
     {
 
         /// <summary>
-        /// Control btnOpenModal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOpenModal;
-
-        /// <summary>
-        /// Control btnOpenModal2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOpenModal2;
-
-        /// <summary>
         /// Control btnOpenModal3.
         /// </summary>
         /// <remarks>
@@ -42,13 +24,13 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Button btnOpenModal3;
 
         /// <summary>
-        /// Control btnlistar.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnlistar;
+        protected global::System.Web.UI.WebControls.Button btnVolver;
 
         /// <summary>
         /// Control myLiteralControl.
@@ -60,123 +42,6 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Literal myLiteralControl;
 
         /// <summary>
-        /// Control btnSalirX1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalirX1;
-
-        /// <summary>
-        /// Control txtNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-
-        /// <summary>
-        /// Control txtDescripcionEj.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionEj;
-
-        /// <summary>
-        /// Control txtRepeticiones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRepeticiones;
-
-        /// <summary>
-        /// Control ddlDificultad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDificultad;
-
-        /// <summary>
-        /// Control txtVideo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVideo;
-
-        /// <summary>
-        /// Control ddlTipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
-
-        /// <summary>
-        /// Control ddlGrupoMuscu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGrupoMuscu;
-
-        /// <summary>
-        /// Control btnAgregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
-
-        /// <summary>
-        /// Control btnSalirX2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalirX2;
-
-        /// <summary>
-        /// Control txtNombreRutina.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreRutina;
-
-        /// <summary>
-        /// Control txtDescripcionRutina.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionRutina;
-
-        /// <summary>
-        /// Control btnAgregarRutina.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarRutina;
-
-        /// <summary>
         /// Control btnbtnSalirX3.
         /// </summary>
         /// <remarks>
@@ -186,6 +51,15 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.Button btnbtnSalirX3;
 
         /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+
+        /// <summary>
         /// Control ddlIDRutina.
         /// </summary>
         /// <remarks>
@@ -193,6 +67,15 @@ namespace Proyecto_GYM_WEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIDRutina;
+
+        /// <summary>
+        /// Control ddlGrupoMuscular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrupoMuscular;
 
         /// <summary>
         /// Control lbxEjercicio.

@@ -44,7 +44,7 @@ namespace Proyecto_GYM_WEB
         }
         protected void btnvolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+            Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
         }
     }
 

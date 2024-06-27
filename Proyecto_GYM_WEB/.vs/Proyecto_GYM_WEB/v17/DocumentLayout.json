@@ -3,8 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistacliente\\vistaperfilusuariocliente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistacliente\\vistaperfilusuariocliente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistamodificarrutina.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistamodificarrutina.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistamodificarrutina.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistamodificarrutina.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\pantallaprincipalentrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\pantallaprincipalentrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistaentrenador-entrenamientosabm.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistaentrenador-entrenamientosabm.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistalistarrutinas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistalistarrutinas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistaentrenador-entrenamientosabm.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -13,25 +36,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistaperfil-entrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistaperfil-entrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistaentrenador\\pantallaprincipalentrenador.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\pantallaprincipalentrenador.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\pantallaprincipalentrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\pantallaprincipalentrenador.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\proyecto_gym_web\\vistaentrenador\\vistaentrenador-entrenamientosabm.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistaentrenador\\vistaentrenador-entrenamientosabm.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\user\\desktop\\tup\\programacion 3\\tp final\\administracion_gym\\acciones\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,33 +45,33 @@
       "DocumentGroups": [
         {
           "DockedHeight": 288,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PantallaPrincipalEntrenador.aspx",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx",
-              "RelativeDocumentMoniker": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx",
-              "RelativeToolTip": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-26T17:33:08.296Z",
+              "DocumentIndex": 0,
+              "Title": "vistaModificarRutina.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaModificarRutina.aspx.cs",
+              "RelativeDocumentMoniker": "VistaEntrenador\\vistaModificarRutina.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaModificarRutina.aspx.cs",
+              "RelativeToolTip": "VistaEntrenador\\vistaModificarRutina.aspx.cs",
+              "ViewState": "AQIAALkAAAAAAAAAAAAAAJ0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T18:59:10.456Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PantallaPrincipalEntrenador.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
-              "RelativeDocumentMoniker": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
-              "RelativeToolTip": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAHIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T13:56:03.086Z",
+              "DocumentIndex": 1,
+              "Title": "vistaModificarRutina.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaModificarRutina.aspx",
+              "RelativeDocumentMoniker": "VistaEntrenador\\vistaModificarRutina.aspx",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaModificarRutina.aspx",
+              "RelativeToolTip": "VistaEntrenador\\vistaModificarRutina.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-27T18:58:45.005Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -101,46 +105,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "vistaListarRutinas.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaListarRutinas.aspx",
+              "RelativeDocumentMoniker": "VistaEntrenador\\vistaListarRutinas.aspx",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\vistaListarRutinas.aspx",
+              "RelativeToolTip": "VistaEntrenador\\vistaListarRutinas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-27T20:35:00.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Controller.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\Controller.cs",
               "RelativeDocumentMoniker": "..\\ACCIONES\\Controller.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\ACCIONES\\Controller.cs",
               "RelativeToolTip": "..\\ACCIONES\\Controller.cs",
-              "ViewState": "AQIAANMDAAAAAAAAAAAuwOcDAABDAAAA",
+              "ViewState": "AQIAAK0CAAAAAAAAAAAawLsCAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T02:02:58.493Z",
+              "WhenOpened": "2024-06-27T18:57:17.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VistaPerfil-Entrenador.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaPerfil-Entrenador.aspx.cs",
-              "RelativeDocumentMoniker": "VistaEntrenador\\VistaPerfil-Entrenador.aspx.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaPerfil-Entrenador.aspx.cs",
-              "RelativeToolTip": "VistaEntrenador\\VistaPerfil-Entrenador.aspx.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAAAEUAAABUAAAA",
+              "DocumentIndex": 4,
+              "Title": "VistaEntrenador-EntrenamientosABM.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
+              "RelativeDocumentMoniker": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
+              "RelativeToolTip": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAAALUAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T23:59:52.343Z",
+              "WhenOpened": "2024-06-27T18:57:17.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
-              "RelativeDocumentMoniker": "Login.aspx",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
-              "RelativeToolTip": "Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-27T01:16:13.791Z",
+              "Title": "PantallaPrincipalEntrenador.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
+              "RelativeDocumentMoniker": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
+              "RelativeToolTip": "VistaEntrenador\\PantallaPrincipalEntrenador.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T18:57:17.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Login.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx.cs",
+              "RelativeToolTip": "Login.aspx.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAoAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T20:13:35.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "VistaEntrenador-EntrenamientosABM.aspx",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx",
               "RelativeDocumentMoniker": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx",
@@ -148,20 +178,20 @@
               "RelativeToolTip": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-26T22:30:38.222Z",
+              "WhenOpened": "2024-06-27T16:32:42.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VistaPerfilUsuarioCliente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaPerfilUsuarioCliente.aspx.cs",
-              "RelativeDocumentMoniker": "VistaCliente\\VistaPerfilUsuarioCliente.aspx.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaPerfilUsuarioCliente.aspx.cs",
-              "RelativeToolTip": "VistaCliente\\VistaPerfilUsuarioCliente.aspx.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAAC0AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T20:46:17.955Z",
+              "DocumentIndex": 8,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-27T16:07:19.316Z",
               "EditorCaption": ""
             }
           ]
@@ -177,40 +207,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "140fbb74-4147-4240-aa33-e2b191fac6a1",
-        "Display": 0,
-        "X": 16,
-        "Y": 6,
-        "Width": 1562,
-        "Height": 763,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VistaEntrenador-EntrenamientosABM.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
-              "RelativeDocumentMoniker": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\TUP\\Programacion 3\\TP FINAL\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
-              "RelativeToolTip": "VistaEntrenador\\VistaEntrenador-EntrenamientosABM.aspx.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAABwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T22:32:28.867Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -16,6 +16,7 @@ namespace Proyecto_GYM_WEB
         Controller objController = new Controller();
         public int[] horario_rutinas = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
 
+
         public List<Ejercicio> ListaEjercicios
         {
             get
@@ -25,7 +26,7 @@ namespace Proyecto_GYM_WEB
             set { Session["ListaEjercicios"] = value; }
         }
         public List<GrupoMuscular> ListagrupoMusculares = new List<GrupoMuscular>();
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,22 +39,22 @@ namespace Proyecto_GYM_WEB
                     CargaListaEjercicios();
 
                     List<Dificultad> lista = objController.ListadoDeDificultad();
-                    ddlDificultad.DataSource = lista;
-                    ddlDificultad.DataValueField = "ID";
-                    ddlDificultad.DataTextField = "Descripcion";
-                    ddlDificultad.DataBind();
+                    //ddlDificultad.DataSource = lista;
+                    //ddlDificultad.DataValueField = "ID";
+                    //ddlDificultad.DataTextField = "Descripcion";
+                    //ddlDificultad.DataBind();
 
                     List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
-                    ddlTipo.DataSource = listaTipoEj;
-                    ddlTipo.DataValueField = "ID";
-                    ddlTipo.DataTextField = "Descripcion";
-                    ddlTipo.DataBind();
+                    //ddlTipo.DataSource = listaTipoEj;
+                    //ddlTipo.DataValueField = "ID";
+                    //ddlTipo.DataTextField = "Descripcion";
+                    //ddlTipo.DataBind();
 
                     List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
-                    ddlGrupoMuscu.DataSource = listaGrupo;
-                    ddlGrupoMuscu.DataValueField = "ID";
-                    ddlGrupoMuscu.DataTextField = "Descripcion";
-                    ddlGrupoMuscu.DataBind();
+                    ddlGrupoMuscular.DataSource = listaGrupo;
+                    ddlGrupoMuscular.DataValueField = "ID";
+                    ddlGrupoMuscular.DataTextField = "Descripcion";
+                    ddlGrupoMuscular.DataBind();
 
                     List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
                     lbxEjercicio.DataSource = listaEjercicio;
@@ -121,7 +122,7 @@ namespace Proyecto_GYM_WEB
                 int grupoMuscularId = ListaEjercicios[j].Grupo_Muscular.ID;
                 if (ejerciciosPorGrupo.ContainsKey(grupoMuscularId))
                 {
-                   // ejerciciosPorGrupo[grupoMuscularId].Add(ListaEjercicios[j].Nombre);
+                    // ejerciciosPorGrupo[grupoMuscularId].Add(ListaEjercicios[j].Nombre);
                     ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
                 }
             }
@@ -159,58 +160,7 @@ namespace Proyecto_GYM_WEB
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
         }
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
 
-
-            try
-            {
-                Ejercicio nuevoEjercicio = new Ejercicio();
-
-                nuevoEjercicio.Nombre = txtNombre.Text;
-                nuevoEjercicio.Descripcion = txtDescripcionEj.Text;
-                nuevoEjercicio.Repeticiones = int.Parse(txtRepeticiones.Text);
-                nuevoEjercicio.Tipo_Dificultad = new Dificultad();
-                nuevoEjercicio.Tipo_Dificultad.ID = int.Parse(ddlDificultad.SelectedValue);
-                nuevoEjercicio.Video = txtVideo.Text;
-                nuevoEjercicio.Tipo_Ejercicio = new TipoEjercicio();
-                nuevoEjercicio.Tipo_Ejercicio.ID = int.Parse(ddlTipo.SelectedValue);
-
-                nuevoEjercicio.Grupo_Muscular = new GrupoMuscular();
-                nuevoEjercicio.Grupo_Muscular.ID = int.Parse(ddlGrupoMuscu.SelectedValue);
-
-                objController.AgregarEjercicio(nuevoEjercicio);
-                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "closeModal();", true);
-                Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
-
-            }
-            catch (Exception ex)
-            {
-                Session.Add("error", ex);
-                throw;
-                //redirigir a pantalla error.
-            }
-        }
-
-        protected void btnAgregarRutina_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Rutina nuevarutina = new Rutina();
-
-                nuevarutina.nombre = txtNombreRutina.Text;
-                nuevarutina.descripcion = txtDescripcionRutina.Text;
-                objController.AgregarRutina(nuevarutina);
-                Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
-
-            }
-            catch (Exception ex)
-            {
-                Session.Add("error", ex);
-                throw;
-                //redirigir a pantalla error.
-            }
-        }
         protected void btnAgregarEjercicioARutina_Click(object sender, EventArgs e)
         {
             try
@@ -223,18 +173,18 @@ namespace Proyecto_GYM_WEB
                     {
                         int ejercicioID = int.Parse(item.Value);
                         Ejercicio ejer = ListaEjercicios.Find(y => y.ID == ejercicioID);
-                        nuevaRutinaEjercicio.ejercicio.Add(ejer);                                                 
+                        nuevaRutinaEjercicio.ejercicio.Add(ejer);
                     }
                 }
                 var rutinaID = int.Parse(ddlIDRutina.SelectedValue);
                 diaNuevo.id = int.Parse(ddlDia.SelectedValue);
-                nuevaRutinaEjercicio.hora= int.Parse(ddlHorario.SelectedValue);
-              //  nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
+                nuevaRutinaEjercicio.hora = int.Parse(ddlHorario.SelectedValue);
+                //  nuevaRutinaEjercicio.hora= int.Parse(txtHora.Text);
 
                 foreach (var item in nuevaRutinaEjercicio.ejercicio)
                 {
                     objController.datos = new AccesoDatos();
-                    objController.AgregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);                
+                    objController.AgregarRutinaXEjercicio(rutinaID, item.ID, diaNuevo, nuevaRutinaEjercicio);
                 }
 
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
@@ -245,41 +195,37 @@ namespace Proyecto_GYM_WEB
                 throw;
             }
         }
-        public void btnOpenModal_Click(object sender, EventArgs e)  //Ya lo pase
-        {
-            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
-        }
-        protected void btnOpenModal2_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
-        }
+
         protected void btnOpenModal3_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal3();", true);
         }
-        protected void btnSalirX1_Click(object sender, EventArgs e) //Ya lo pase
-        {
-            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
-        }
 
-        protected void btnSalirX2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
-        }
 
         protected void btnbtnSalirX3_Click(object sender, EventArgs e)
         {
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
         }
 
-        protected void btnlistar_Click(object sender, EventArgs e)
+        protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("vistaListarRutinas.aspx", false);
+            Response.Redirect("PantallaPrincipalEntrenador", false);
         }
 
         protected void ddlIDRutina_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int grupoMuscularID = int.Parse(ddlGrupoMuscular.SelectedValue);
+            List<Ejercicio> listaEjercicios = objController.ListarEjerciciosXGrupoMuscular(grupoMuscularID);
+            Ejercicio objEjer = new Ejercicio();
+            lbxEjercicio.DataSource = listaEjercicios;
+            lbxEjercicio.DataValueField = "ID";
+            lbxEjercicio.DataTextField = "NOMBRE";
+            lbxEjercicio.DataBind();
+        }   
     }
 }
