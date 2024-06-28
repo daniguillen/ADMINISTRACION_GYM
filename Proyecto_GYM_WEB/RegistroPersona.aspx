@@ -17,10 +17,7 @@
                     <label class="form-check-label text-dark">Ingrese Apellido:</label>
                     <asp:TextBox ID="txtApellido_Ingreso" CssClass="form-control" runat="server" />
                 </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Nombre de usuario:</label>
-                    <asp:TextBox ID="txtNombreUsuario" CssClass="form-control" runat="server" />
-                </div>
+
                 <div class="form-group">
                     <label class="form-check-label text-dark">Ingrese Contraseña:</label>
                     <asp:TextBox ID="txtContraseña" CssClass="form-control" TextMode="Password" runat="server" />
@@ -39,27 +36,38 @@
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Fecha Nacimiento:</label>
-                    <asp:TextBox ID="txtFechaNac" CssClass="form-control" TextMode="Date" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Mail:</label>
-                    <asp:TextBox ID="txtMail" CssClass="form-control" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Celular:</label>
-                    <asp:TextBox ID="txtCelular" CssClass="form-control Celular" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Tel. Emergencia:</label>
-                    <asp:TextBox ID="txtTelEmergencia" CssClass="form-control Celular" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese su Dirección:</label>
-                    <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" />
-                </div>
-                <div class="row mt-3">
-                    <label class="form-check-label text-dark">Adjunte Apto Físico:</label>
+                    <!--PLANES AGREGAR abm-->
+                    <label class="form-check-label text-dark">PLANES:</label>
+                    <asp:DropDownList ID="ddlplanes" CssClass="form-control" runat="server">
+                        <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+                        <asp:ListItem Text="BASICO" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="STANDART" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="PREMIUM" Value="3"></asp:ListItem>
+                       </asp:DropDownList>
+                 </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="form-check-label text-dark">Ingrese Fecha Nacimiento:</label>
+                            <asp:TextBox ID="txtFechaNac" CssClass="form-control" TextMode="Date" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label text-dark">Ingrese Mail:</label>
+                            <asp:TextBox ID="txtMail" CssClass="form-control" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label text-dark">Ingrese Celular:</label>
+                            <asp:TextBox ID="txtCelular" CssClass="form-control Celular" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label text-dark">Ingrese Tel. Emergencia:</label>
+                            <asp:TextBox ID="txtTelEmergencia" CssClass="form-control Celular" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label text-dark">Ingrese su Dirección:</label>
+                            <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" />
+                        </div>
+                        <div class="row mt-3">
+                            <%--   <label class="form-check-label text-dark">Adjunte Apto Físico:</label>
                     <div class="col">
                         <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="txtBoxArchivoAptoFisico" />
                     </div>
@@ -68,9 +76,9 @@
                     <label class="form-check-label text-dark">Suba una foto para su perfil:</label>
                     <div class="col">
                         <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="TextBox2" />
+                    </div>--%>
+                        </div>
                     </div>
-                </div>
-            </div>
         </div>
         <div class="row mt-3">
             <div class="col-md-6 offset-md-3">
@@ -79,13 +87,13 @@
             </div>
         </div>
     </div>
-
+    <!-- mascara para celular-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
     <script>
         $(document).ready(function () {
-            $(".Celular").inputmask({ "mask": "(999) 999-9999" });
+            $(".Celular").inputmask({ "mask": "(999) 9999-9999" });
         });
     </script>
 </asp:Content>

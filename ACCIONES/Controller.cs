@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
@@ -198,6 +199,48 @@ namespace ACCIONES
 
         }
 
+        public void AltaCliente(Usuario usuario)
+        {
+            try
+
+              
+            {
+                datos.setearProcedimiento("EXEC SP_Nuevo_cliente @mail, @pasword, @apellido, @nombre, @aptofisico, @celular, @direccion, @dni, @fecha_nacimiento, @foto, @idplan, @sexo, @tel_emergencia, @id_establecimiento, @id_rutina");
+
+                // Define los parámetros del procedimiento almacenado
+                datos.setearParametro("@mail", usuario.Mail);
+                datos.setearParametro("@pasword", usuario.Password);
+                datos.setearParametro("@apellido", usuario.Apellido);
+                datos.setearParametro("@nombre", usuario.Nombre);
+                datos.setearParametro("@aptofisico", usuario.Apto_Fisico);
+                datos.setearParametro("@celular", usuario.Cel);
+                datos.setearParametro("@direccion", usuario.Direccion);
+                datos.setearParametro("@dni", usuario.DNI);
+                datos.setearParametro("@fecha_nacimiento", usuario.Fecha_Nacimiento);
+                datos.setearParametro("@foto", usuario.Foto);
+                datos.setearParametro("@idplan", usuario.plan.ID);
+                datos.setearParametro("@sexo", usuario.sexo.ID);
+                datos.setearParametro("@tel_emergencia", usuario.Tel_Emergencia);
+                datos.setearParametro("@id_establecimiento", usuario.ID_Establecimiento);
+                datos.setearParametro("@id_rutina", usuario.ID_rutina);
+
+                // Ejecuta el procedimiento almacenado
+                datos.ejecutarAccion();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion(); 
+            }
+
+        }
+
         public void ModificarCliente(Usuario usuario)
         {
             try
@@ -237,7 +280,6 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-
 
         //busca un usuario o entrenador sin filtro
         public Usuario BuscarAllCliente(string buscar)
@@ -1107,11 +1149,11 @@ namespace ACCIONES
             }
         }
 
-        public void ModificarEjercicio(int rutinaId,int IDejercicioQueMeTraigoDelFront, int ejercicioID)
+        public void ModificarEjercicio(int rutinaId, int IDejercicioQueMeTraigoDelFront, int ejercicioID)
         {
             try
             {
-                
+
                 datos.setearQuery("UPDATE RUTINA_EJERCICIO SET  ID_EJERCICIO=@ID_EJERCICIO WHERE ID_RUTINA = @ID_RUTINAS AND ID_EJERCICIO=@ID_EJERCICIOANTERIOR");
                 datos.setearParametro("@ID_RUTINAS", rutinaId);
                 datos.setearParametro("@ID_EJERCICIO", ejercicioID);
@@ -1126,23 +1168,23 @@ namespace ACCIONES
             }
         }
         //REVISION DE METODO SI LO USO...
-        public  int ObtenerEjercicioIDAnterior(int rutinaId)     //Metodo que lo utilizo para cambiar el ejercicio a rutina.
+        public int ObtenerEjercicioIDAnterior(int rutinaId)     //Metodo que lo utilizo para cambiar el ejercicio a rutina.
         {
             int ejercicioIdAnterior = 0;
             try
             {
-            
+
                 datos.setearQuery("SELECT ID_EJERCICIO FROM RUTINA_EJERCICIO WHERE ID_RUTINA = @ID_RUTINA");
                 datos.setearParametro("@ID_RUTINA", rutinaId);
 
                 datos.ejecutarLectura();
 
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
-                     ejercicioIdAnterior = (int)datos.Lector["ID_EJERCICIO"];
+                    ejercicioIdAnterior = (int)datos.Lector["ID_EJERCICIO"];
                 }
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
             finally
             {
                 datos.cerrarConexion();
@@ -1226,7 +1268,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
-        public Usuario IngresoConLogin (string mail, string password) 
+        public Usuario IngresoConLogin(string mail, string password)
         {
             Usuario usuario = new Usuario();
 
@@ -1280,7 +1322,7 @@ namespace ACCIONES
 
         }
 
-     
+
 
 
 

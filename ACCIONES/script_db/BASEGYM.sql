@@ -366,3 +366,35 @@ VALUES
 -- Abdomen
 (6, 6, 56, 7), 
 (6, 6, 57, 7);
+GO
+create or alter procedure SP_Nuevo_cliente (
+@mail varchar(100), 
+@pasword nvarchar(100), 
+@apellido varchar(100), 
+@nombre varchar(100), 
+@aptofisico nvarchar(100), 
+@celular varchar(100), 
+@direccion nvarchar(100), 
+@dni varchar(100), 
+@fecha_nacimiento datetime,
+@foto nvarchar(100), 
+@idplan int,
+@sexo int,
+@tel_emergencia varchar(100), 
+@id_establecimiento int,
+@id_rutina int
+)
+as begin
+
+insert into USUARIO (MAIL, PASWORD, IDNIVEL) values (@mail,@pasword, 1)
+declare @ID_usuario int;
+select @ID_usuario=SCOPE_IDENTITY() FROM USUARIO
+
+
+
+
+insert into PERSONA (ID_USUARIO, APELLIDO, NOMBRE, APTO_FISICO, CELULAR, DIRECCION, dni, FECHA_INGRESO, FECHA_NACIMIENTO, foto, IDPLANES, SEXO, TEL_EMERGENCIA, ID_ESTABLECIMIENTO, ID_RUTINA)
+values (@ID_usuario,@apellido,@nombre,@aptofisico,@celular,@direccion,@dni,GETDATE(),@fecha_nacimiento,@foto,@idplan,@sexo,@tel_emergencia,@id_establecimiento,1)
+
+
+end
