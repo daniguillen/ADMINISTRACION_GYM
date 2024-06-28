@@ -29,6 +29,12 @@ namespace Proyecto_GYM_WEB
 
                 if (aux.ID != 0)
                 {
+                    if(aux.nivel.ID == 1)
+                    {
+                        Session["PerfilUsuario"] = aux;
+                        Session["navbar"] = "u";
+                        Response.Redirect("VistaCliente/VistaPerfilUsuarioCliente.aspx", false);
+                    }
                     if (aux.nivel.ID == 2)
                     {
 

@@ -212,10 +212,7 @@ namespace Proyecto_GYM_WEB
             Response.Redirect("PantallaPrincipalEntrenador", false);
         }
 
-        protected void ddlIDRutina_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -226,6 +223,19 @@ namespace Proyecto_GYM_WEB
             lbxEjercicio.DataValueField = "ID";
             lbxEjercicio.DataTextField = "NOMBRE";
             lbxEjercicio.DataBind();
-        }   
+        }
+
+        //protected void BuscarPorNombre_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        protected void TxtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            List<Ejercicio> listaEjercicio = (List<Ejercicio>)Session["ListaEjercicios"];
+            List<Ejercicio> listaEjercicioFiltrada = listaEjercicio.FindAll(x => x.Nombre.ToUpper().Contains(TxtBusqueda.Text.ToUpper()));
+            lbxEjercicio.DataSource = listaEjercicioFiltrada;
+            lbxEjercicio.DataBind();
+        }
     }
 }

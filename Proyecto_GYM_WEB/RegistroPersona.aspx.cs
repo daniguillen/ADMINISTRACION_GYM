@@ -20,7 +20,7 @@ namespace Proyecto_GYM_WEB
         }
 
         protected void btnGuardar_Ingreso(object sender, EventArgs e)
-        {
+        {   
             usuario.Mail = txtMail.Text;
             usuario.Password=txtContraseña.Text;
             usuario.Nombre= txtNombre_Ingreso.Text;
@@ -32,10 +32,8 @@ namespace Proyecto_GYM_WEB
             usuario.Tel_Emergencia = txtTelEmergencia.Text;
             usuario.Direccion=txtDireccion.Text;
             usuario.plan.ID = int.Parse(ddlplanes.SelectedValue);
-
-
-            datos.AltaCliente(usuario);
-
+           
+            datos.AltaCliente(usuario,txtBoxArchivoAptoFisico,txtFoto);
 
         }
     }

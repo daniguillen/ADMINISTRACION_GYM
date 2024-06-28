@@ -67,16 +67,16 @@
                             <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" />
                         </div>
                         <div class="row mt-3">
-                            <%--   <label class="form-check-label text-dark">Adjunte Apto Físico:</label>
+                             <label class="form-check-label text-dark">Adjunte Apto Físico:</label>
                     <div class="col">
                         <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="txtBoxArchivoAptoFisico" />
                     </div>
                 </div>
-                <div class="row mt-3">
+               <div class="row mt-3">
                     <label class="form-check-label text-dark">Suba una foto para su perfil:</label>
                     <div class="col">
-                        <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="TextBox2" />
-                    </div>--%>
+                        <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="txtFoto" />
+                    </div>-
                         </div>
                     </div>
         </div>

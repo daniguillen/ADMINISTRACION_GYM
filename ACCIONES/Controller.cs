@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.Remoting.Messaging;
@@ -199,25 +200,43 @@ namespace ACCIONES
 
         }
 
-        public void AltaCliente(Usuario usuario)
+        public void AltaCliente(Usuario usuario, FileUpload fileupload, FileUpload fileupload2)
         {
             try
 
               
             {
-                datos.setearProcedimiento("EXEC SP_Nuevo_cliente @mail, @pasword, @apellido, @nombre, @aptofisico, @celular, @direccion, @dni, @fecha_nacimiento, @foto, @idplan, @sexo, @tel_emergencia, @id_establecimiento, @id_rutina");
+                string aptoFisico = null;
+
+                if (fileupload.HasFile)
+                {
+                    using (StreamReader reader = new StreamReader(fileupload.PostedFile.InputStream))
+                    {
+                        aptoFisico = reader.ReadToEnd();
+                    }
+                }
+                string foto = null;
+                if (fileupload2.HasFile)
+                {
+                    using (StreamReader reader = new StreamReader(fileupload2.PostedFile.InputStream))
+                    {
+                        foto = reader.ReadToEnd();
+                    }
+                }
+
+                datos.setearProcedimiento("SP_Nuevo_cliente");
 
                 // Define los parámetros del procedimiento almacenado
                 datos.setearParametro("@mail", usuario.Mail);
                 datos.setearParametro("@pasword", usuario.Password);
                 datos.setearParametro("@apellido", usuario.Apellido);
                 datos.setearParametro("@nombre", usuario.Nombre);
-                datos.setearParametro("@aptofisico", usuario.Apto_Fisico);
+                datos.setearParametro("@aptofisico", aptoFisico);
                 datos.setearParametro("@celular", usuario.Cel);
                 datos.setearParametro("@direccion", usuario.Direccion);
                 datos.setearParametro("@dni", usuario.DNI);
                 datos.setearParametro("@fecha_nacimiento", usuario.Fecha_Nacimiento);
-                datos.setearParametro("@foto", usuario.Foto);
+                datos.setearParametro("@foto", foto);
                 datos.setearParametro("@idplan", usuario.plan.ID);
                 datos.setearParametro("@sexo", usuario.sexo.ID);
                 datos.setearParametro("@tel_emergencia", usuario.Tel_Emergencia);
