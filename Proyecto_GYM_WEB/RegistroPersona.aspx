@@ -1,33 +1,58 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistroPersona.aspx.cs" Inherits="Proyecto_GYM_WEB.RegistroPersona" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1 class="text-center">Realice su registro</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese DNI:</label>
-                    <asp:TextBox ID="txtDNI" CssClass="form-control" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Nombre:</label>
-                    <asp:TextBox ID="txtNombre_Ingreso" CssClass="form-control" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Apellido:</label>
-                    <asp:TextBox ID="txtApellido_Ingreso" CssClass="form-control" runat="server" />
-                </div>
+    <style>
+        /* Estilo para cambiar el color del texto del FileUpload */
+        input[type="file"]::file-selector-button {
+            color: white;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Ingrese Contraseña:</label>
-                    <asp:TextBox ID="txtContraseña" CssClass="form-control" TextMode="Password" runat="server" />
-                    <small class="form-text text-muted">Debe tener entre 4-6 caracteres con letras y números.</small>
+            input[type="file"]::file-selector-button:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+        input[type="file"] {
+            color: white; /* Color del texto "Sin archivos seleccionado" */
+        }
+
+        .container {
+            margin-top: 2em;
+        }
+    </style>
+    <video autoplay muted loop id="videoFondo">
+        <source src="Assets/vecteezy_animated-green-color-fading-particles-background_24476461.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1 class="text-center mt-5 text-white">Realice su registro</h1>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container" style="max-width: 23%;">
+            <div class="w-100">
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese DNI:</label>
+                    <asp:TextBox ID="txtDNI" CssClass="form-control w-100 mb-3" runat="server" />
                 </div>
-            </div>
-            <div class="col-md-6 offset-md-3">
-                <div class="form-group">
-                    <label class="form-check-label text-dark">Sexo:</label>
-                    <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Nombre:</label>
+                    <asp:TextBox ID="txtNombre_Ingreso" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Apellido:</label>
+                    <asp:TextBox ID="txtApellido_Ingreso" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Contraseña:</label>
+                    <asp:TextBox ID="txtContraseña" CssClass="form-control mb-3 w-100" TextMode="Password" runat="server" />
+                    <small class="form-text text-muted text-white">Debe tener entre 4-6 caracteres con letras y números.</small>
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Sexo:</label>
+                    <asp:DropDownList ID="DropDownList1" CssClass="form-control mb-3 w-100" runat="server">
                         <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
                         <asp:ListItem Text="MASCULINO" Value="1"></asp:ListItem>
                         <asp:ListItem Text="FEMENINO" Value="2"></asp:ListItem>
@@ -35,59 +60,54 @@
                         <asp:ListItem Text="S/D" Value="4"></asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <div class="form-group">
-                    <!--PLANES AGREGAR abm-->
-                    <label class="form-check-label text-dark">PLANES:</label>
-                    <asp:DropDownList ID="ddlplanes" CssClass="form-control" runat="server">
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">PLANES:</label>
+                    <asp:DropDownList ID="ddlplanes" CssClass="form-control mb-3 w-100" runat="server">
                         <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
                         <asp:ListItem Text="BASICO" Value="1"></asp:ListItem>
                         <asp:ListItem Text="STANDART" Value="2"></asp:ListItem>
                         <asp:ListItem Text="PREMIUM" Value="3"></asp:ListItem>
-                       </asp:DropDownList>
-                 </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label class="form-check-label text-dark">Ingrese Fecha Nacimiento:</label>
-                            <asp:TextBox ID="txtFechaNac" CssClass="form-control" TextMode="Date" runat="server" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label text-dark">Ingrese Mail:</label>
-                            <asp:TextBox ID="txtMail" CssClass="form-control" runat="server" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label text-dark">Ingrese Celular:</label>
-                            <asp:TextBox ID="txtCelular" CssClass="form-control Celular" runat="server" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label text-dark">Ingrese Tel. Emergencia:</label>
-                            <asp:TextBox ID="txtTelEmergencia" CssClass="form-control Celular" runat="server" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label text-dark">Ingrese su Dirección:</label>
-                            <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" />
-                        </div>
-                        <div class="row mt-3">
-                             <label class="form-check-label text-dark">Adjunte Apto Físico:</label>
-                    <div class="col">
-                        <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="txtBoxArchivoAptoFisico" />
+                    </asp:DropDownList>
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Fecha Nacimiento:</label>
+                    <asp:TextBox ID="txtFechaNac" CssClass="form-control mb-3 w-100" TextMode="Date" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Mail:</label>
+                    <asp:TextBox ID="txtMail" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Celular:</label>
+                    <asp:TextBox ID="txtCelular" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese Tel. Emergencia:</label>
+                    <asp:TextBox ID="txtTelEmergencia" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Ingrese su Dirección:</label>
+                    <asp:TextBox ID="txtDireccion" CssClass="form-control mb-3 w-100" runat="server" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Adjunte Apto Físico:</label>
+                    <asp:FileUpload runat="server" CssClass="form-control-file mb-3 form-control-sm w-100" ID="txtBoxArchivoAptoFisico" />
+                </div>
+                <div class="form-group w-100">
+                    <label class="form-check-label text-white d-block text-left w-100">Suba una foto para su perfil:</label>
+                    <asp:FileUpload runat="server" CssClass="form-control-file mb-5 form-control-sm w-100" ID="txtFoto" />
+                </div>
+                <div class="form-group r w-100">
+                    <div class="form-check-label justify-content-center d-flex text-white d-block text-left w-100">
+                        <asp:Button Text="Guardar ingreso" CssClass="btn btn-primary " OnClick="btnGuardar_Ingreso" runat="server" />
+                        <a href="Default.aspx" class="btn btn-danger ms-4 ">Cancelar</a>
                     </div>
                 </div>
-               <div class="row mt-3">
-                    <label class="form-check-label text-dark">Suba una foto para su perfil:</label>
-                    <div class="col">
-                        <asp:FileUpload runat="server" CssClass="form-control-file form-control-sm" ID="txtFoto" />
-                    </div>-
-                        </div>
-                    </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-md-6 offset-md-3">
-                <asp:Button Text="Guardar ingreso" CssClass="btn btn-primary" OnClick="btnGuardar_Ingreso" runat="server" />
-                <a href="Default.aspx" class="btn btn-danger">Cancelar</a>
             </div>
         </div>
     </div>
-        </div>
+
+
     <!-- mascara para celular-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
