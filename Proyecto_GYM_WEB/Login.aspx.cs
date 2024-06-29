@@ -33,7 +33,7 @@ namespace Proyecto_GYM_WEB
                     {
                         Session["PerfilUsuario"] = aux;
                         Session["navbar"] = "u";
-                        Response.Redirect("VistaCliente/VistaPerfilUsuarioCliente.aspx", false);
+                        Response.Redirect("VistaCliente/VistaUsuarioCliente.aspx", false);
                     }
                     if (aux.nivel.ID == 2)
                     {

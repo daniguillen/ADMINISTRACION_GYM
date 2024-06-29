@@ -27,18 +27,21 @@
                         <img src="<%=Perfil.Foto %>" class="card-img-top" alt="....">
                         <div class="card-body">
                             <h4 class="card-title"><% =Perfil.Nombre + " " + Perfil.Apellido %> </h4>
-                            <h5 class="card-text">Plan: <%=Plan.Tipo_Plan  %></h5>
+                            <h5 class="card-text">Plan: <%=Perfil.plan.Tipo_Plan  %></h5>
                             <h5 class="card-text">Dni: <%=Perfil.DNI  %></h5>
                             <br />
-                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
+                            <a href="VistaPerfilUsuarioCliente.aspx"
+                                class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="col-8 d-flex justify-content-center m-5">
-
-                    <asp:Label ID="LblInformacion" runat="server" Font-Size="X-Large" ForeColor="White" BorderStyle="Double" BorderColor="#009933" Text="En este Text van a recibir las noticias con respecto al gimnasio, sea horarios de feriados, o algun informacion relevante"></asp:Label>
+<!-- se saco el mensaje  aca en la propiedad Text-->
+                    <asp:Label ID="LblInformacion" runat="server" Font-Size="X-Large" 
+                        ForeColor="White" BorderStyle="Double" BorderColor="#009933" 
+                        ></asp:Label>
 
                 </div>
 
@@ -63,7 +66,8 @@
         <div class="row me-5">
 
             <div class="card-body">
-                <table id="datatablesSimple" class="table table-striped table-bordered table table-dark table-hover">
+                <table id="datatablesSimple"
+                    class="table table-striped table-bordered table table-dark table-hover">
                     <thead>
                         <tr>
                             <th>Hora</th>

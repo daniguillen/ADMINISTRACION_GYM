@@ -32,8 +32,29 @@ namespace Proyecto_GYM_WEB
             usuario.Tel_Emergencia = txtTelEmergencia.Text;
             usuario.Direccion=txtDireccion.Text;
             usuario.plan.ID = int.Parse(ddlplanes.SelectedValue);
-           
-            datos.AltaCliente(usuario,txtBoxArchivoAptoFisico,txtFoto);
+
+        
+           // datos.AltaCliente(usuario,txtBoxArchivoAptoFisico,txtFoto);
+
+          //  txtBoxArchivoAptoFisico=
+
+            if (txtBoxArchivoAptoFisico!=null)
+            {
+                string ruta = Server.MapPath("~/Assets/Aptos/");
+                txtBoxArchivoAptoFisico.PostedFile.SaveAs(ruta + "Apto_Fisico" + usuario.ID + ".jpg");
+
+                usuario.Apto_Fisico = "~/Assets/Aptos/Apto_Fisico" + usuario.ID + ".jpg";
+               
+            }
+            if (txtFoto != null)
+            {
+                string ruta = Server.MapPath("~/Assets/perfil/");
+                txtFoto.PostedFile.SaveAs(ruta + "Perfil-" + usuario.ID + ".jpg");
+
+                usuario.Foto = "/Assets/perfil/Perfil-" + usuario.ID + ".jpg";
+
+            }
+            datos.AltaCliente(usuario);
 
         }
     }

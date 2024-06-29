@@ -370,6 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Aptos\" />
     <Folder Include="Assets\perfil\" />
   </ItemGroup>
   <ItemGroup>
