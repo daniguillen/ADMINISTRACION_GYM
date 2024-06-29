@@ -16,13 +16,13 @@
     </style>
 
 
-    <div id="Vista-Usuario" class="Vista-Usuario justify-content-center ms-5">
+    <div id="Vista-Usuario" class="Vista-Usuario justify-content-center">
 
         <div id="noticias" class="d-flex justify-content-center align-items-center mb-5 mt-5">
 
-            <div class="d-flex justify-content-center justify-content-center me-5 ms-5">
-                <div class="col-2 d-flex me-2 ms-2">
-                    <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <div class ="row w-100" >
+                <div class="col-4 d-flex justify-content-center" >
+                    <div class="card" style="width:18em;  background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
 
                         <img src="<%=Perfil.Foto %>" class="card-img-top" alt="....">
                         <div class="card-body">
@@ -37,17 +37,16 @@
 
                 </div>
 
-                <div class="col-8 d-flex justify-content-center m-5">
+                <div class="col-4 d-flex justify-content-center">
 <!-- se saco el mensaje  aca en la propiedad Text-->
-                    <asp:Label ID="LblInformacion" runat="server" Font-Size="X-Large" 
+                    <asp:Label ID="LblInformacion" runat="server" Class="w-100" Font-Size="X-Large" 
                         ForeColor="White" BorderStyle="Double" BorderColor="#009933" 
                         ></asp:Label>
 
                 </div>
 
-
-                <div class="col-2 d-flex me-5">
-                    <div class="card" style="width: 18rem; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                <div class="col-4 d-flex justify-content-center ">
+                    <div class="card" style="width:18em;  background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
                         <img src="/Assets/Lionel_Scaloni_-_2022.jpg" class="card-img-top" alt="Assets/usuario.png">
                         <div class="card-body">
                             <h4 class="card-title">Lionel Scaloni </h4>
@@ -63,7 +62,8 @@
         </div>
 
 
-        <div class="row me-5">
+    </div>
+        <div class="row me-5 ms-5 row">
 
             <div class="card-body">
                 <table id="datatablesSimple"
@@ -120,7 +120,6 @@
                 </table>
             </div>
         </div>
-    </div>
     <script>
         function evento(element) {
             var dia = element.dataset.dia;

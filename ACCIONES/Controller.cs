@@ -128,7 +128,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID WHERE p.ID=@ID");
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID_USUARIO  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID WHERE p.ID=@ID");
                 datos.setearParametro("@ID", idusuario);
 
 
@@ -1279,7 +1279,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID WHERE u.MAIL = @MAIL AND u.PASWORD= @PASSWORD");
+                datos.setearQuery(" SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE,  p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO,  p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p  INNER JOIN USUARIO u on u.ID=p.ID_USUARIO   INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID WHERE u.MAIL = @MAIL AND u.PASWORD= @PASSWORD");
                 datos.setearParametro("@MAIL", mail);
                 datos.setearParametro("@PASSWORD", password);
 
@@ -1328,36 +1328,46 @@ namespace ACCIONES
         }
 
 
-        public string MensajeDeAdministrador() {
+        public string MensajeDeAdministrador()
+        {
 
 
             string mensaje = "";
 
             try
             {
-                datos.setearQuery("select top 1  DescripcionNota from Mensajes order by id desc");
+                datos.setearQuery("  select top 1 cast(FechaMensaje as date) as fecha, DescripcionNota from Mensajes");
 
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
+                    
+                        DateTime fechaMensaje = datos.Lector.GetDateTime(0);
+                        string textoMensaje = datos.Lector.GetString(1);
 
-                    mensaje = datos.Lector.GetString(0);
+                        mensaje = $"{fechaMensaje:dd-MM-yyyy} -- {textoMensaje}";
+                 
+
+
 
 
                 }
-
+                if (mensaje.Equals(""))
+                {
+                    mensaje = "No hay mensajes";
+                }
 
                 return mensaje;
             }
             catch (Exception ex)
             {
-               throw ex;
-               
+                throw ex;
+
             }
             finally { datos.cerrarConexion(); }
-        } 
+        }
 
 
 

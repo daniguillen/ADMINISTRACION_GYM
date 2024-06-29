@@ -26,7 +26,14 @@ namespace Proyecto_GYM_WEB
             usuario.Nombre= txtNombre_Ingreso.Text;
             usuario.Apellido=txtApellido_Ingreso.Text;
             usuario.DNI = txtDNI.Text;
-            usuario.sexo.ID = int.Parse(DropDownList1.SelectedValue);
+            if (DropDownList1.SelectedValue == "")
+            {
+                usuario.sexo.ID = 4;
+            }
+            else
+            {
+                usuario.sexo.ID = int.Parse(DropDownList1.SelectedValue);
+            }
             usuario.Fecha_Nacimiento =Convert.ToDateTime(txtFechaNac.Text);
             usuario.Cel=txtCelular.Text;
             usuario.Tel_Emergencia = txtTelEmergencia.Text;
@@ -34,24 +41,21 @@ namespace Proyecto_GYM_WEB
             usuario.plan.ID = int.Parse(ddlplanes.SelectedValue);
 
         
-           // datos.AltaCliente(usuario,txtBoxArchivoAptoFisico,txtFoto);
-
-          //  txtBoxArchivoAptoFisico=
 
             if (txtBoxArchivoAptoFisico!=null)
             {
                 string ruta = Server.MapPath("~/Assets/Aptos/");
-                txtBoxArchivoAptoFisico.PostedFile.SaveAs(ruta + "Apto_Fisico" + usuario.ID + ".jpg");
+                txtBoxArchivoAptoFisico.PostedFile.SaveAs(ruta + "Apto_Fisico" + usuario.DNI + ".jpg");
 
-                usuario.Apto_Fisico = "~/Assets/Aptos/Apto_Fisico" + usuario.ID + ".jpg";
+                usuario.Apto_Fisico = "~/Assets/Aptos/Apto_Fisico" + usuario.DNI + ".jpg";
                
             }
             if (txtFoto != null)
             {
                 string ruta = Server.MapPath("~/Assets/perfil/");
-                txtFoto.PostedFile.SaveAs(ruta + "Perfil-" + usuario.ID + ".jpg");
+                txtFoto.PostedFile.SaveAs(ruta + "Perfil-" + usuario.DNI + ".jpg");
 
-                usuario.Foto = "/Assets/perfil/Perfil-" + usuario.ID + ".jpg";
+                usuario.Foto = "/Assets/perfil/Perfil-" + usuario.DNI + ".jpg";
 
             }
             datos.AltaCliente(usuario);

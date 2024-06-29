@@ -33,14 +33,12 @@ namespace Proyecto_GYM_WEB
                 LblInformacion.Text = mensaje;
                 dia_semana = controller.ListarDias();
                 dia_semana = dia_semana.OrderBy(d => d.id).ToList();
-                //      string[] prueba = (String[])Session["PerfilUsuario"];
+             
                 Perfil = (Usuario)Session["PerfilUsuario"];
                 Perfil.Foto = ".././" + Perfil.Foto;
                 string ruta = Perfil.Foto.ToString();
-                // Plan.ID = Perfil.plan.ID;
-                // Plan = controller.ListarPLan().Find(x => x.ID == Plan.ID);
-                rutinas_usuario = controller.Rutinas_id(1);
-                Session["PerfilUsuario"] = Perfil;
+              
+                rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
                 RepeaterUsuario.DataSource = dia_semana;
                 RepeaterUsuario.DataBind();
 

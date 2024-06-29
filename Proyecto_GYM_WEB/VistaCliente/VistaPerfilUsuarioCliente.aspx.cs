@@ -90,9 +90,9 @@ namespace Proyecto_GYM_WEB
                 if (!txtimagen.Value.Equals(""))
                 {
                     string ruta = Server.MapPath(".././Assets/perfil/");
-                    txtimagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.ID + ".jpg");
+                    txtimagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.DNI + ".jpg");
 
-                    usuario.Foto = "../Assets/perfil/perfil-" + usuario.ID + ".jpg";
+                    usuario.Foto = "../Assets/perfil/perfil-" + usuario.DNI + ".jpg";
                     ImagePerfil.ImageUrl = usuario.Foto;
                 }
                 else
