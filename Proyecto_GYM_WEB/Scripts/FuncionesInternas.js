@@ -1,7 +1,7 @@
 ﻿
 
 
-
+/*
 $(window).on('resize', function () {
     if (window.innerWidth < 1500) {
         $(".inscribete").removeClass("col-4");
@@ -35,7 +35,7 @@ $(window).on('resize', function () {
 
 });
 
-
+*/
 
 
 $(window).on('resize', function () {

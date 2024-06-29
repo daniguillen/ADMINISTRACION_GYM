@@ -11,22 +11,22 @@
 
         <div class="container " id="planes">
             <div class="row ">
-                <div class="col-4 inscribete d-flex justify-content-center align-items-center">
+                <div class="col-12 mb-5 inscribete d-flex justify-content-center align-items-center">
                     <div class="tranformar d-flex align-items-center">
                         <h1>!INSCRÍBETE HOY MISMO!</h1>
                         <a href="#" type="button" class="btn btn-success">SUSCRIBITE</a>
                     </div>
 
                 </div>
-                <div class="col-8 d-flex promos  justify-content-between">
+                <div class="col-12 d-flex promos  justify-content-between">
 
                     <div class="card align-items-md-center ms-5 me-5">
-                        
+
 
                         <div class="egg d-flex justify-content-center align-items-md-center mt-4" style="background: linear-gradient(to left, #36a9fc, #010ef3 );">
                             <h2>BASIC</h2>
                         </div>
-                        
+
 
                         <div class="card-body">
                             <h3 class="card-title precio">PRECIO: 5000</h3>
