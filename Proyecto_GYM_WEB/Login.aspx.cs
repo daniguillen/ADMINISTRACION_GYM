@@ -15,13 +15,26 @@ namespace Proyecto_GYM_WEB
         public Usuario aux { get; set; } = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["nuevoUsuario"]!=null)
+            {
+                if (Session["nuevoUsuario"].Equals("activo"))
+                    
+                {
+                    lblNuevoUsuario.Text = "<div class=\"alert alert-info\" role=\"alert\">Usuario creado con Exito!!</div>";
+                    lblNuevoUsuario.Visible = true;
 
+                }
+            }
         }
 
         protected void btnIngresoSesion_Click(object sender, EventArgs e)
         {
+           
 
-            Controller objController = new Controller();
+
+            
+
+                Controller objController = new Controller();
             try
             {
                 usuario.Mail = txtMail.Text;
