@@ -1,10 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Proyecto_GYM_WEB.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <video autoplay muted loop id="videoFondo">
+    <div  class="video-background">
+
+        <video autoplay muted loop id="bgVideo2">
             <source  src="Assets/vecteezy_animated-green-color-fading-particles-background_24476461.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+    </div>
     <div class="video-container d-flex flex-column justify-content-center min-vh-100 align-items-center">
         
            

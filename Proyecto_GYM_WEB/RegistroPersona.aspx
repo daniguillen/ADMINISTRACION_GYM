@@ -25,10 +25,13 @@
             margin-top: 2em;
         }
     </style>
-    <video autoplay muted loop id="videoFondo">
-        <source src="Assets/vecteezy_animated-green-color-fading-particles-background_24476461.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="video-background">
+
+        <video autoplay muted loop id=" bgVideo">
+            <source src="Assets/vecteezy_animated-green-color-fading-particles-background_24476461.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <h1 class="text-center mt-5 text-white">Realice su registro</h1>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="container" style="max-width: 23%;">
