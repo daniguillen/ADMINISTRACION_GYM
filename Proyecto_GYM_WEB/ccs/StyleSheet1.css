@@ -4,6 +4,16 @@
 
     
 }
+.panel {
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.panel h5, .panel p, .panel input {
+    color: white;
+}
 #videoFondo {
     position: fixed;
     z-index: -100;
@@ -11,8 +21,6 @@
     height:200vh;
     top:-500px;
 
-
-   
 }
 #datatablesSimple {
     font-size: xx-small;

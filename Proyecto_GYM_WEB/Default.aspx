@@ -10,12 +10,8 @@
          background-position: center; /* Centra la imagen */
          min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
      }
-             .panel {
-            background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        
+        
      </style>
   
     <main class="mainDefaul">

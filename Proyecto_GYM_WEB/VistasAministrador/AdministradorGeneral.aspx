@@ -1,7 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="AdministradorGeneral.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.AdministradorGeneral" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark">
+     <style>
+ body {
+    background-image: url(../Assets/Gaming0_generated.jpg);
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo */
+    background-position: center; /* Centra la imagen */
+    min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+
+ 
+     
+    }
+ </style>
+    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 ">
         <asp:Literal ID="LiteralUsuarios" runat="server" Text="<h1>Usuarios</h1>" />
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around w-100">
@@ -18,24 +31,13 @@
                         <asp:ListItem Text="Entrenador" Value="2"></asp:ListItem>
                         <asp:ListItem Text="Rutina" Value="3"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1 bg-dark text-light" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1  text-light" runat="server"></asp:TextBox>
                     <asp:Button ID="BtnBuscar" CssClass="btn btn-primary m-1" runat="server" OnClick="Buscar" Text="Buscar" UseSubmitBehavior="false" />
                     <asp:Label ID="Resultado" runat="server" Text="" CssClass="text-light m-1" Visible="false"></asp:Label>
                 </div>
             </li>
         </ul>
-        <div class="m-2">
-            <div class="bg-dark text-light">
-                <h5 class="mb-2">Mensajes a usuarios y entrenadores</h5>
-                <asp:Label ID="Label1" runat="server" Text="Label" AssociatedControlID="TextBox1" CssClass="text-light mt-2"></asp:Label>
-            </div>
-            <asp:Label ID="TextBox2" runat="server" Text="dsa" CssClass="text-light mt-2"></asp:Label>
-
-            <div class="">
-                <asp:TextBox ID="TextBox1" CssClass="form-control mb-lg-1 bg-dark text-light" runat="server"></asp:TextBox>
-                <asp:Button ID="BtnMensaje" runat="server" CssClass="btn btn-primary mt-2 mb-3" Text="Guardar Mensaje" OnClick="MensajeAUsuarioYEntrenadores" />
-            </div>
-        </div>
+  
 
         <!-- Tabla de los Usuarios y Entrenadores -->
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">

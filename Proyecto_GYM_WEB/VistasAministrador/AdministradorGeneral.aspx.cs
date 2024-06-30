@@ -99,7 +99,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             void buscar()
             {
                 List<Usuario> usuario = new List<Usuario>();
-                Label1.Text = TxtBusquedad.Text;
+                
                 if (!TxtBusquedad.Text.Equals(""))
                 {
 
@@ -197,27 +197,18 @@ namespace Proyecto_GYM_WEB.VistasAministrador
           //  BindRepeater();
 
         }
-        protected void MensajeAUsuarioYEntrenadores(object sender, EventArgs e)
-        {
-            TextBox2.Text = "Mensaje enviado: " + TextBox1.Text;
-            TextBox1.Text = "";
-            Resultado.Visible = false;
-            Resultado.Text = "";
-        }
+
 
         protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {
        
             if (int.TryParse(e.CommandArgument.ToString(), out int  userId))
             {
-                Label1.Text = "ID del usuario: " + userId.ToString();
+                
                 dato.Eliminar_Persona_x_ID(userId);
                 FiltrarPorNivel();
             }
-            else
-            {
-                Label1.Text = "No se pudo obtener el ID del usuario.";
-            }
+
         }
         protected void BtnActivar(object sender, CommandEventArgs e)
         {
