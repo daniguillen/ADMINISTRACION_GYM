@@ -97,10 +97,10 @@
                     <img src="Assets/cali.png" class="img-fluid rounded" />
                 </div>
 
-                <div class="col-lg-6 d-flex justify-content-center imagen">
+                <div class="col-lg-6 d-flex justify-content-center imagen mt-5">
                     <img src="Assets/Mancuernas.png" class="img-fluid rounded" />
                 </div>
-                <div class="col-lg-6 d-flex justify-content-center imagen">
+                <div class="col-lg-6 d-flex justify-content-center imagen mt-5">
                     <img src="Assets/pila.png" class="img-fluid rounded" />
                 </div>
             </div>

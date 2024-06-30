@@ -263,7 +263,10 @@ footer {
     width: 90%;
     padding: 0;
 }
-
+.imagen img {
+    margin-bottom: 5em;
+    min-width: 90%
+}
 
 .noticias{
 
