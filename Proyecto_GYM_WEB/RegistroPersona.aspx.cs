@@ -59,7 +59,7 @@ namespace Proyecto_GYM_WEB
 
             }
             datos.AltaCliente(usuario);
-
+            Response.Redirect("Login.aspx", false);
         }
     }
 }

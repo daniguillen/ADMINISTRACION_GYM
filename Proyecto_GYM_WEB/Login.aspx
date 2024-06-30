@@ -28,6 +28,10 @@
                 <div >
                     <a href="RegistroPersona.aspx" class="text-white">Registrarse</a>
                 </div>
+              <div>
+
+                 <asp:Label ID="lblError" runat="server" Text="" Visible="false"></asp:Label>
+              </div>
            
            
         </div>

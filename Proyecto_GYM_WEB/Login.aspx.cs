@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ACCIONES;
+using System.EnterpriseServices.CompensatingResourceManager;
 namespace Proyecto_GYM_WEB
 {
     public partial class Login : System.Web.UI.Page
@@ -45,7 +46,8 @@ namespace Proyecto_GYM_WEB
                 }
                 else
                 {
-                    Response.Redirect("error.aspx",false);
+                    lblError.Text = "<div class=\"alert alert-danger\" role=\"alert\">Usuario o Clave no Válida!!</div>";
+                    lblError.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -53,5 +55,7 @@ namespace Proyecto_GYM_WEB
                 throw ex;
             }
         }
+
+       
     }
 }
