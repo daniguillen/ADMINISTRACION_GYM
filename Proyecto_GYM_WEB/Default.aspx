@@ -1,7 +1,17 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proyecto_GYM_WEB._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+     <style>
+     body {
+         background-image: url(./Assets/Gaming0_generated.jpg);
+         background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+         background-repeat: repeat; /* Evita que la imagen se repita */
+         background-attachment: fixed; /* Fija la imagen al fondo */
+         background-position: center; /* Centra la imagen */
+         min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+     }
+     </style>
+  
     <main class="mainDefaul">
 
         <img class="img-fluid" src="Assets/Img2.png" />
@@ -12,8 +22,8 @@
         <div class="container " id="planes">
             <div class="row ">
                 <div class="col-12 mb-5 inscribete d-flex justify-content-center align-items-center">
-                    <div class="tranformar d-flex align-items-center">
-                        <h1>!INSCRÍBETE HOY MISMO!</h1>
+                    <div  class="tranformar d-flex align-items-center tex-white">
+                        <h1 class="inscribite">!INSCRÍBETE HOY MISMO!</h1>
                         <a href="#" type="button" class="btn btn-success">SUSCRIBITE</a>
                     </div>
 
@@ -107,10 +117,10 @@
 
                     <div>
 
-                        <h3 class="tranformar">¡Transforma tu vida con nosotros!</h3>
+                        <h3 class="tranformar inscribite" >¡Transforma tu vida con nosotros!</h3>
                     </div>
-                    <div class="parrafoNosotro">
-                        <p>En [Nombre del Gimnasio], estamos dedicados a ayudarte a alcanzar tus objetivos de salud y bienestar. Con más de [x] años de experiencia en la industria del fitness, nuestro equipo de profesionales altamente capacitados está aquí para guiarte en cada paso de tu viaje hacia una vida más saludable.</p>
+                    <div class="parrafoNosotro tex-white">
+                        <p class="inscribite">En GYM, estamos dedicados a ayudarte a alcanzar tus objetivos de salud y bienestar. Con más de [x] años de experiencia en la industria del fitness, nuestro equipo de profesionales altamente capacitados está aquí para guiarte en cada paso de tu viaje hacia una vida más saludable.</p>
 
 
                     </div>

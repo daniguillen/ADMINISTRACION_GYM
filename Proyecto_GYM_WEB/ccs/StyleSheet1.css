@@ -39,7 +39,7 @@ main {
     overflow: hidden;
 }
 .mainDefaul {
-    background-color:black;
+    background-color:transparent;
 }
 
 a:hover {
@@ -57,6 +57,9 @@ h1, h3, p {
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+.inscribite{
+    color :white;
 }
 
 h2 {
