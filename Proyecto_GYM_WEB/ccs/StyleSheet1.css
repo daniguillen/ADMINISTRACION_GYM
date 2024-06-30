@@ -1,8 +1,14 @@
-﻿body, li, a {
+﻿
+body, li, a {
     list-style: none;
-    text-decoration: none;
-
-    
+    text-decoration: none;    
+}
+.nav-item a {
+    color: white;
+    font-weight: bold;
+}
+.logo {
+    font-size: 25px;
 }
 .panel {
     background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */

@@ -2,6 +2,85 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+
+
+    <style>
+    body {
+    background-image: url(../Assets/Gaming0_generated.jpg);
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo */
+    background-position: center; /* Centra la imagen */
+    min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+    }
+    </style>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 text-white">Panel del Entrenador</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Administrar Usuarios y Entrenadores</h5>
+                    <p class="text-dark font-weight-bold">Modificar, habilitar y deshabilitar</p>
+                    <asp:Button ID="btn" runat="server" Text="Button" CssClass="btn btn-primary"/>
+                    <%--                 <asp:Button ID="BtnIrUsuario" CssClass="btn btn-primary" Text="Usuarios y Entrenadores" OnClick="IrAUsuario" runat="server" />--%>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Administrar Rutina</h5>
+                    <p class="text-dark font-weight-bold">Modificar, habilitar y deshabilitar</p>
+                     <asp:Button ID="btnRutina" runat="server" Text="Administrar Rutina" CssClass="btn btn-primary" OnClick="btnRutina_Click"/>
+                    <%--                 <asp:Button ID="Button6" CssClass="btn btn-primary" Text="Administrar Rutina" OnClick="IrAModificarRutina" runat="server" />--%>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Administrar Permiso</h5>
+                    <p class="text-dark font-weight-bold">Modificar, habilitar y deshabilitar</p>
+                    <asp:Button ID="Button2" runat="server" Text="Button" CssClass="btn btn-primary"/>
+                    <%--                 <asp:Button ID="Button7" CssClass="btn btn-primary" Text="Administrar Permiso" OnClick="IrAUsuario" runat="server" />--%>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container">
         <div class="row mt-4">
             <div class="col-4">

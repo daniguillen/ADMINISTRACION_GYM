@@ -1311,6 +1311,7 @@ namespace ACCIONES
                     usuario.plan.Tipo_Plan = datos.Lector.GetString(20);
                     usuario.ID_Establecimiento = datos.Lector.GetInt32(21);
                     usuario.Estado = datos.Lector.GetBoolean(22);
+                    usuario.ID_rutina = datos.Lector.GetInt32(23);
 
                     return usuario;
                 }

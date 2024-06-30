@@ -5,7 +5,10 @@
 
     <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark ">
         <h1>RUTINA STANDART</h1>
+        <div class="text-end">
+
         <asp:Button ID="btnvolver" runat="server" Text="Volver" OnClick="btnvolver_Click"/>
+        </div>
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around">
                 <div class="d-flex justify-content-between">

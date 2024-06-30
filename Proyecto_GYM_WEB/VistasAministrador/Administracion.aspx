@@ -23,8 +23,9 @@
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            /*background-color: #007bff;*/
+            border-color: #2C6D00;
+            background: linear-gradient(to left, #74EB1E, #2C6D00);
         }
 
         .text-dark {
