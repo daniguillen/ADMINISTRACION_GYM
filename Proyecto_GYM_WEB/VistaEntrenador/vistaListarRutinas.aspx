@@ -7,7 +7,7 @@
         <h1>RUTINA STANDART</h1>
         <div class="text-end">
 
-        <asp:Button ID="btnvolver" runat="server" Text="Volver" OnClick="btnvolver_Click"/>
+        <asp:Button ID="btnvolver" runat="server" Text="🢀" OnClick="btnvolver_Click"/>
         </div>
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around">
@@ -45,7 +45,7 @@
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
                         <td><%= ListaTablaRuti[i].DescripcionRutina %></td>                        
                         <td>
-                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>" class="btn btn-secondary">Editar Rutina</a>
+                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>"  > ✍ </a>
                         </td>
                     </tr>          
                     <%

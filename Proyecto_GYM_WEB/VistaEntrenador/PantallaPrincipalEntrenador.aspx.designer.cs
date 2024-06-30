@@ -15,13 +15,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
     {
 
         /// <summary>
-        /// Control btn.
+        /// Control btnRutinaAlta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn;
+        protected global::System.Web.UI.WebControls.Button btnRutinaAlta;
 
         /// <summary>
         /// Control btnRutina.
@@ -33,6 +33,24 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.Button btnRutina;
 
         /// <summary>
+        /// Control btnListadoEjercicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListadoEjercicio;
+
+        /// <summary>
+        /// Control btnAltaEjercicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAltaEjercicio;
+
+        /// <summary>
         /// Control Button2.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// Control Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// Control lblBienvenida.
@@ -51,15 +78,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.Label lblBienvenida;
 
         /// <summary>
-        /// Control ddlAltas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAltas;
-
-        /// <summary>
         /// Control ddlModificar.
         /// </summary>
         /// <remarks>
@@ -67,15 +85,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlModificar;
-
-        /// <summary>
-        /// Control ddlListar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlListar;
 
         /// <summary>
         /// Control btnSalirX1.

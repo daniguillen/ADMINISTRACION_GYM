@@ -62,7 +62,7 @@
                                         </td>
                                         <td>
                                             <a href="#" class="btn btn-secondary" data-id="<%= ejercicio.ID_Ejercicio %>" onclick="openModal(this)">Ver detalles</a>
-                                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
+                                            <asp:Button ID="btnEliminar" runat="server" Text="🗑️" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
                                         </td>
                                     </tr>
                                     <% } %>

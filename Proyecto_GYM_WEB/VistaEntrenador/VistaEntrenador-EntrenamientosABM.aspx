@@ -2,16 +2,26 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        .btn-primary {
+   
+    border-color: #2C6D00;
+    background: linear-gradient(to left, #74EB1E, #2C6D00);
+}
+    </style>
 
     <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark ">
         <h1>LISTA DE EJERCICIOS POR GRUPO MUSCULAR</h1>
         <ul class="breadcrumb mb-4 w-100">
-            <li class="d-flex justify-content-around">
-                <div class="d-flex justify-content-between">
+            <li class="d-flex justify-content-between w-100">
+                <div >
                     <asp:Button ID="btnOpenModal3" runat="server" CssClass="btn btn-primary m-2" Text="AGREGAR EJERCICIO A RUTINA" OnClick="btnOpenModal3_Click" />
-                    <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn btn-success m-2 " OnClick="btnVolver_Click" />
                 </div>
 
+                <div class="ms-auto">
+
+                    <asp:Button ID="btnVolver" runat="server" Text="🢀"  OnClick="btnVolver_Click" />
+                </div>
             </li>
         </ul>
 

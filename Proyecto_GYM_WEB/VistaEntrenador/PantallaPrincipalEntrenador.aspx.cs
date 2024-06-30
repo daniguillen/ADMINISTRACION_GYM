@@ -106,29 +106,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
         }
-        protected void ddlListar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlListar.SelectedValue == "1")
-            {
-                Response.Redirect("VistaEntrenador-EntrenamientosABM", false);
-            }
-            if (ddlListar.SelectedValue == "2")
-            {
-                Response.Redirect("vistaListarRutinas.aspx", false);
-            }
-        }
+      
 
-        protected void ddlAltas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlAltas.SelectedValue == "1")
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
-            }
-            if(ddlAltas.SelectedValue == "2")
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
-            }
-        }
+       
 
         protected void ddlModificar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -197,6 +177,22 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void btnRutina_Click(object sender, EventArgs e)
         {
             Response.Redirect("../VistaEntrenador/vistaListarRutinas.aspx");
+        }
+
+        protected void btnListadoEjercicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../VistaEntrenador/VistaEntrenador-EntrenamientosABM.aspx", false);
+        }
+
+        protected void btnRutinaAlta_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal2();", true);
+
+        }
+
+        protected void btnAltaEjercicio_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
         }
     }
 }
