@@ -10,6 +10,12 @@
          background-position: center; /* Centra la imagen */
          min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
      }
+             .panel {
+            background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
      </style>
   
     <main class="mainDefaul">
@@ -24,7 +30,7 @@
                 <div class="col-12 mb-5 inscribete d-flex justify-content-center align-items-center">
                     <div  class="tranformar d-flex align-items-center tex-white">
                         <h1 class="inscribite">!INSCRÍBETE HOY MISMO!</h1>
-                        <a href="#" type="button" class="btn btn-success">SUSCRIBITE</a>
+                        <a href="#" type="button" class="btn m-3 btn-success">SUSCRIBITE</a>
                     </div>
 
                 </div>
@@ -115,12 +121,12 @@
 
                 <div class="SubContainerAcerca d-flex justify-content-center">
 
-                    <div>
+                    <div class="">
 
                         <h3 class="tranformar inscribite" >¡Transforma tu vida con nosotros!</h3>
                     </div>
-                    <div class="parrafoNosotro tex-white">
-                        <p class="inscribite">En GYM, estamos dedicados a ayudarte a alcanzar tus objetivos de salud y bienestar. Con más de [x] años de experiencia en la industria del fitness, nuestro equipo de profesionales altamente capacitados está aquí para guiarte en cada paso de tu viaje hacia una vida más saludable.</p>
+                    <div class="parrafoNosotro  tex-white">
+                        <p class="inscribite panel ">En GYM, estamos dedicados a ayudarte a alcanzar tus objetivos de salud y bienestar. Con más de [x] años de experiencia en la industria del fitness, nuestro equipo de profesionales altamente capacitados está aquí para guiarte en cada paso de tu viaje hacia una vida más saludable.</p>
 
 
                     </div>
