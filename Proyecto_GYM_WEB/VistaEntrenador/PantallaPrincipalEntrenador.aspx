@@ -60,8 +60,8 @@
 
       <div class="col-md-4">
           <div class="panel">
-              <h5 class="text-white"></h5>
-              <p class="text-dark font-weight-bold"></p>
+              <h5 class="text-white">Solicitud rutinas</h5>
+              <p class="text-dark font-weight-bold">Solicitudes de los usuarios</p>
               <asp:Button ID="Button2" runat="server" Text="" CssClass="btn btn-primary"  />
           </div>
       </div>

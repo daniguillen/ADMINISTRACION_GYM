@@ -1,30 +1,42 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="vistaModificarRutina.aspx.cs" Inherits="Proyecto_GYM_WEB.VistaEntrenador.vistaModificarRutina" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <style>
+        body {
+            background-image: url(../Assets/Gaming0_generated.jpg);
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen al fondo */
+            background-position: center; /* Centra la imagen */
+            min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+        }
+    </style>
+
     <div class="container">
         <div class="row">
             <h3>MODIFICAR CAMPOS RUTINA</h3>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="lblNombreRutina" class="form-label">NOMBRE RUTINA:</label>
+                    <label for="lblNombreRutina" class="form-label lblModificarRutina">NOMBRE RUTINA:</label>
                     <asp:TextBox ID="txtNombreRutina" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
+                    <label for="lblDescripcion" class="form-label lblModificarRutina">DESCRIPCION:</label>
                     <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="8"></asp:TextBox>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="lblHorario" class="form-label">HORARIO:</label>
+                    <label for="lblHorario" class="form-label lblModificarRutina">HORARIO:</label>
                     <asp:DropDownList ID="ddlHorario" runat="server" CssClass="form-control"></asp:DropDownList>
                 </div>
                 <div class="mb-3">
-                    <label for="lblDia" class="form-label">DIA DE LA RUTINA:</label>
+                    <label for="lblDia" class="form-label lblModificarRutina">DIA DE LA RUTINA:</label>
                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
                 </div>
                 <div class="mb-3 mt-xl-5">
-                    <asp:CheckBox runat="server" type="radio" Text=" Ver detalles"
+                    <asp:CheckBox runat="server" type="radio" class="lblModificarRutina" Text=" Ver detalles"
                         ID="chkAFiltroAvanzado" AutoPostBack="true"
                         OnCheckedChanged="chkAFiltroAvanzado_CheckedChanged" />
                 </div>
@@ -52,7 +64,7 @@
                                         var ejercicios = ListaTablaRuti.Where(x => x.ID_Rutina == rutinaID).ToList();
                                         foreach (var ejercicio in ejercicios)
                                         {
-                        %>
+                                    %>
                                     <tr>
                                         <td hidden><%= ejercicio.ID_Ejercicio %></td>
                                         <td>

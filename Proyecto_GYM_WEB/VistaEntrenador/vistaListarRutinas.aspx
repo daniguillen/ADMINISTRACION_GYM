@@ -1,13 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="vistaListarRutinas.aspx.cs" Inherits="Proyecto_GYM_WEB.vistaListarRutinas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        body {
+            background-image: url(../Assets/Gaming0_generated.jpg);
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen al fondo */
+            background-position: center; /* Centra la imagen */
+            min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+        }
+    </style>
 
-
-    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark ">
+    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4">
         <h1>RUTINA STANDART</h1>
         <div class="text-end">
 
-        <asp:Button ID="btnvolver" runat="server" Text="🢀" OnClick="btnvolver_Click"/>
+            <asp:Button ID="btnvolver" runat="server" Text="🢀" OnClick="btnvolver_Click" />
         </div>
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around">
@@ -22,7 +31,7 @@
                     <tr class="row-class">
                         <td>DIA - HORARIO</td>
                         <td>RUTINA</td>
-                        <td>DESCRIPCION</td>                      
+                        <td>DESCRIPCION</td>
                         <td>ACCIONES</td>
                     </tr>
                 </thead>
@@ -35,7 +44,7 @@
                             if (nuevaRuti)
                             {
                                 rutinaID = ListaTablaRuti[i].ID_Rutina;
-                            %>
+                    %>
                     <tr>
                         <td hidden><%= ListaTablaRuti[i].ID_Rutina %></td>
                         <td>
@@ -43,11 +52,11 @@
                             <span><%= ListaTablaRuti[i].Horario %></span> Hs
                         </td>
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
-                        <td><%= ListaTablaRuti[i].DescripcionRutina %></td>                        
+                        <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
                         <td>
-                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>"  > ✍ </a>
+                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>">✍ </a>
                         </td>
-                    </tr>          
+                    </tr>
                     <%
                             }
                         }
@@ -56,10 +65,10 @@
             </table>
         </div>
     </div>
-    
+
     <script>        
 
-      
-    </script>
+
+</script>
 </asp:Content>
 

@@ -21,6 +21,11 @@ body, li, a {
     color: white;
 }
 
+.lblModificarRutina {
+    color: white;
+    font-weight: bold;
+}
+
 #bgVideo, #bgVideo2 {
     position: absolute;
     top: 50%;

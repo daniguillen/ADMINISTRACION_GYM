@@ -3,24 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
+        body {
+            background-image: url(../Assets/Gaming0_generated.jpg);
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen al fondo */
+            background-position: center; /* Centra la imagen */
+            min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+        }
+
         .btn-primary {
-   
-    border-color: #2C6D00;
-    background: linear-gradient(to left, #74EB1E, #2C6D00);
-}
+            border-color: #2C6D00;
+            background: linear-gradient(to left, #74EB1E, #2C6D00);
+        }
     </style>
 
-    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 bg-dark ">
+    <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4">
         <h1>LISTA DE EJERCICIOS POR GRUPO MUSCULAR</h1>
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-between w-100">
-                <div >
+                <div>
                     <asp:Button ID="btnOpenModal3" runat="server" CssClass="btn btn-primary m-2" Text="AGREGAR EJERCICIO A RUTINA" OnClick="btnOpenModal3_Click" />
                 </div>
 
                 <div class="ms-auto">
 
-                    <asp:Button ID="btnVolver" runat="server" Text="🢀"  OnClick="btnVolver_Click" />
+                    <asp:Button ID="btnVolver" runat="server" Text="🢀" OnClick="btnVolver_Click" />
                 </div>
             </li>
         </ul>
@@ -56,8 +64,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <asp:Label Text="FILTRAR POR NOMBRE:" runat="server" AssociatedControlID="TxtBusqueda" />
-                                            <asp:TextBox runat="server" ID="TxtBusqueda" CssClass="form-control mt-4" AutoPostBack="true" OnTextChanged="TxtBusqueda_TextChanged"/>
-<%--                                            <asp:Button ID="BuscarPorNombre" Text="Buscar" runat="server" OnClick="BuscarPorNombre_Click" CssClass="mt-xl-4" Style="margin-left: 150px" />--%>
+                                            <asp:TextBox runat="server" ID="TxtBusqueda" CssClass="form-control mt-4" AutoPostBack="true" OnTextChanged="TxtBusqueda_TextChanged" />
+                                            <%--                                            <asp:Button ID="BuscarPorNombre" Text="Buscar" runat="server" OnClick="BuscarPorNombre_Click" CssClass="mt-xl-4" Style="margin-left: 150px" />--%>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -101,7 +109,7 @@
             modal.classList.remove('show');
 
         }
-      
+
 
     </script>
 </asp:Content>
