@@ -20,9 +20,9 @@
 
         <div id="noticias" class="d-flex justify-content-center align-items-center mb-5 mt-5">
 
-            <div class ="row w-100" >
-                <div class="col-4 d-flex justify-content-center" >
-                    <div class="card" style="width:18em;  background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <div class="row w-100">
+                <div class="col-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18em; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
 
                         <img src="<%=Perfil.Foto %>" class="card-img-top" alt="....">
                         <div class="card-body">
@@ -38,15 +38,14 @@
                 </div>
 
                 <div class="col-4 d-flex justify-content-center panel">
-<!-- se saco el mensaje  aca en la propiedad Text-->
-                    <asp:Label ID="LblInformacion" runat="server" Class="w-100" Font-Size="X-Large" 
-                        ForeColor="White" BorderStyle="Double" BorderColor="#009933" 
-                        ></asp:Label>
+                    <!-- se saco el mensaje  aca en la propiedad Text-->
+                    <asp:Label ID="LblInformacion" runat="server" Class="w-100" Font-Size="X-Large"
+                        ForeColor="White" BorderStyle="Double" BorderColor="#009933"></asp:Label>
 
                 </div>
 
                 <div class="col-4 d-flex justify-content-center ">
-                    <div class="card" style="width:18em;  background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                    <div class="card" style="width: 18em; background-image: url('../Assets/fondocard.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
                         <img src="/Assets/Lionel_Scaloni_-_2022.jpg" class="card-img-top" alt="Assets/usuario.png">
                         <div class="card-body">
                             <h4 class="card-title">Lionel Scaloni </h4>
@@ -61,7 +60,19 @@
 
         </div>
 
+        <div class=" mb-5 d-flex justify-content-center">
 
+  <asp:DropDownList ID="ddlRutina">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Seleccione Rutina
+  </button>
+     <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
+   <asp:ListItem Text="MASCULINO" Value="1"></asp:ListItem>
+   <asp:ListItem Text="FEMININO" Value="2"></asp:ListItem>
+   <asp:ListItem Text="BINARIO" Value="3"></asp:ListItem>
+   <asp:ListItem Text="S/D" Value="4"></asp:ListItem>
+</div>
+   
     </div>
         <div class="row me-5 ms-5 row">
 
