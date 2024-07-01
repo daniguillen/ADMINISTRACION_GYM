@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ACCIONES;
 using System.EnterpriseServices.CompensatingResourceManager;
+using Proyecto_GYM_WEB.VistasAministrador;
 namespace Proyecto_GYM_WEB
 {
     public partial class Login : System.Web.UI.Page
@@ -55,6 +56,12 @@ namespace Proyecto_GYM_WEB
                         Session["Entrenador"] = aux;
                         Session["navbar"] = "c";
                         Response.Redirect("VistaEntrenador/PantallaPrincipalEntrenador.aspx", false);
+                    }
+                    if (aux.nivel.ID == 3)
+                    {
+
+                       
+                        Response.Redirect("VistasAdministrador/Administracion.aspx", false);
                     }
                 }
                 else

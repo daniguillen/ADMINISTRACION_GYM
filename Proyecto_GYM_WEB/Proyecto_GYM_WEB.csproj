@@ -213,9 +213,9 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VistaEntrenador\vistaModificarRutina.aspx" />
     <Content Include="VistaEntrenador\VistaPerfil-Entrenador.aspx" />
-    <Content Include="VistasAministrador\Administracion.aspx" />
-    <Content Include="VistasAministrador\AdministradorEditarUsuario.aspx" />
-    <Content Include="VistasAministrador\AdministradorGeneral.aspx" />
+    <Content Include="VistasAdministrador\Administracion.aspx" />
+    <Content Include="VistasAdministrador\AdministradorEditarUsuario.aspx" />
+    <Content Include="VistasAdministrador\AdministradorGeneral.aspx" />
     <Content Include="VistaCliente\VistaUsuarioCliente.aspx" />
     <Content Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx" />
     <Content Include="Web.config" />
@@ -334,25 +334,25 @@
     <Compile Include="VistaEntrenador\VistaPerfil-Entrenador.aspx.designer.cs">
       <DependentUpon>VistaPerfil-Entrenador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistasAministrador\Administracion.aspx.cs">
+    <Compile Include="VistasAdministrador\Administracion.aspx.cs">
       <DependentUpon>Administracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistasAministrador\Administracion.aspx.designer.cs">
+    <Compile Include="VistasAdministrador\Administracion.aspx.designer.cs">
       <DependentUpon>Administracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistasAministrador\AdministradorEditarUsuario.aspx.cs">
+    <Compile Include="VistasAdministrador\AdministradorEditarUsuario.aspx.cs">
       <DependentUpon>AdministradorEditarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistasAministrador\AdministradorEditarUsuario.aspx.designer.cs">
+    <Compile Include="VistasAdministrador\AdministradorEditarUsuario.aspx.designer.cs">
       <DependentUpon>AdministradorEditarUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistasAministrador\AdministradorGeneral.aspx.cs">
+    <Compile Include="VistasAdministrador\AdministradorGeneral.aspx.cs">
       <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistasAministrador\AdministradorGeneral.aspx.designer.cs">
+    <Compile Include="VistasAdministrador\AdministradorGeneral.aspx.designer.cs">
       <DependentUpon>AdministradorGeneral.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaCliente\VistaUsuarioCliente.aspx.cs">
