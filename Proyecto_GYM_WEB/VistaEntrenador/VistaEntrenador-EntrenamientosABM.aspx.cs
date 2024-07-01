@@ -39,16 +39,16 @@ namespace Proyecto_GYM_WEB
                     CargaListaEjercicios();
 
                     List<Dificultad> lista = objController.ListadoDeDificultad();
-                    //ddlDificultad.DataSource = lista;
-                    //ddlDificultad.DataValueField = "ID";
-                    //ddlDificultad.DataTextField = "Descripcion";
-                    //ddlDificultad.DataBind();
+                    ddlDificultad.DataSource = lista;
+                    ddlDificultad.DataValueField = "ID";
+                    ddlDificultad.DataTextField = "Descripcion";
+                    ddlDificultad.DataBind();
 
                     List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
-                    //ddlTipo.DataSource = listaTipoEj;
-                    //ddlTipo.DataValueField = "ID";
-                    //ddlTipo.DataTextField = "Descripcion";
-                    //ddlTipo.DataBind();
+                    ddlTipo.DataSource = listaTipoEj;
+                    ddlTipo.DataValueField = "ID";
+                    ddlTipo.DataTextField = "Descripcion";
+                    ddlTipo.DataBind();
 
                     List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
                     ddlGrupoMuscular.DataSource = listaGrupo;
@@ -81,7 +81,11 @@ namespace Proyecto_GYM_WEB
                     }
                     ddlHorario.DataBind();
 
-
+                    List<GrupoMuscular> listaGrupoM = objController.ListarGrupoMuscular();
+                    ddlGrupoMuscu.DataSource = listaGrupoM;
+                    ddlGrupoMuscu.DataValueField = "ID";
+                    ddlGrupoMuscu.DataTextField = "Descripcion";
+                    ddlGrupoMuscu.DataBind();
                     Session["ListaEjercicios"] = listaEjercicio;
                 }
             }
@@ -211,9 +215,6 @@ namespace Proyecto_GYM_WEB
         {
             Response.Redirect("PantallaPrincipalEntrenador", false);
         }
-
-        
-
         protected void ddlGrupoMuscular_SelectedIndexChanged(object sender, EventArgs e)
         {
             int grupoMuscularID = int.Parse(ddlGrupoMuscular.SelectedValue);
@@ -225,17 +226,22 @@ namespace Proyecto_GYM_WEB
             lbxEjercicio.DataBind();
         }
 
-        //protected void BuscarPorNombre_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         protected void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
             List<Ejercicio> listaEjercicio = (List<Ejercicio>)Session["ListaEjercicios"];
             List<Ejercicio> listaEjercicioFiltrada = listaEjercicio.FindAll(x => x.Nombre.ToUpper().Contains(TxtBusqueda.Text.ToUpper()));
             lbxEjercicio.DataSource = listaEjercicioFiltrada;
             lbxEjercicio.DataBind();
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
+        }
+
+        protected void btnModificarEjercicio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

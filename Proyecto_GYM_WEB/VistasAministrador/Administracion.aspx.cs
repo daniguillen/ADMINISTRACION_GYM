@@ -50,22 +50,22 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void Mensaje(object sender, EventArgs e)
         {
-            bool estado;
+          //  bool estado;
             Controller mensaje = new Controller();
-            estado = mensaje.enviarMensaje(TextMensaje.Text);
-            if (estado)
-            {
+            //estado = mensaje.enviarMensaje(TextMensaje.Text);
+        //    if (estado)
+           // {
 
-                LblMensaje.Text = "Mensaje enviado: " + TextMensaje.Text;
-                LblMensaje.Visible = true;
-                TextMensaje.Text = "";
-            }
-            else
-            {
+             //   LblMensaje.Text = "Mensaje enviado: " + TextMensaje.Text;
+            //    LblMensaje.Visible = true;
+             //   TextMensaje.Text = "";
+          //  }
+          //  else
+          //  {
 
-                LblMensaje.Text = "No se envio el mensaje";
+             //   LblMensaje.Text = "No se envio el mensaje";
 
-            }
+          //  }
 
 
         }

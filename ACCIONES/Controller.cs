@@ -1371,6 +1371,30 @@ namespace ACCIONES
         }
 
 
+        public void ModificarEjercicio(Ejercicio ejercicio)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE EJERCICIO SET DESCRIPCION=@DESCRIPCION, NOMBRE=@NOMBRE, REPETICIONES=@REPETICIONES, ID_DIFICULTAD=@ID_DIFICULTAD, VIDEO=@VIDEO, ID_TIPO=@ID_TIPO, ID_GRUPOMUSCULAR=@ID_GRUPOMUSCULAR  WHERE ID=@ID");
+                datos.setearParametro("@ID", ejercicio.ID);
+                datos.setearParametro("@DESCRIPCION", ejercicio.Descripcion);
+                datos.setearParametro("@NOMBRE", ejercicio.Nombre);
+                datos.setearParametro("@ID_DIFICULTAD", ejercicio.Tipo_Dificultad.ID);
+                datos.setearParametro("@VIDEO", ejercicio.Video);
+                datos.setearParametro("@ID_TIPO", ejercicio.Tipo_Ejercicio.ID);
+                datos.setearParametro("@ID_GRUPOMUSCULAR", ejercicio.Grupo_Muscular.ID);
+                datos.ejecutarLectura();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
 
 
