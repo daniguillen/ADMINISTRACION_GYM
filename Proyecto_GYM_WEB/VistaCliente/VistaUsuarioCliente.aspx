@@ -6,7 +6,7 @@
 
     <style>
         body {
-            background-image: url(../Assets/fondo.jpg);
+            background-image: url(../Assets/Gaming0_generated.jpg);
             background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             background-attachment: fixed; /* Fija la imagen al fondo */
@@ -37,7 +37,7 @@
 
                 </div>
 
-                <div class="col-4 d-flex justify-content-center">
+                <div class="col-4 d-flex justify-content-center panel">
 <!-- se saco el mensaje  aca en la propiedad Text-->
                     <asp:Label ID="LblInformacion" runat="server" Class="w-100" Font-Size="X-Large" 
                         ForeColor="White" BorderStyle="Double" BorderColor="#009933" 
@@ -53,7 +53,7 @@
                             <h5 class="card-text">Entrenador</h5>
                             <br />
                             <a href="VistaPerfilUsuarioCliente.aspx?id=2" class="btn btn-secondary d-flex justify-content-center">Ver Perfil</a>
-                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2 ms">Solicitar Rutina</a>
+                            <a href="VistaPerfilUsuarioCliente.aspx" class="btn btn-secondary d-flex justify-content-center mt-2 ms">Solicitar Nueva Rutina</a>
                         </div>
                     </div>
                 </div>
