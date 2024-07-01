@@ -136,12 +136,12 @@
 
 
     </main>
-    <footer class="footer">
-         <div class="footer-conter ms-5">
-        <h2>Gym </h2>
-        <h5>Contacto</h5>
+    <footer class="footer ">
+         <div class="footer-conter align-items-center ms-5">
+      
+        <h5 class="h-100 align-content-md-around">Contactos</h5>
         </div>
-    <div class="social-network">
+    <div class="social-network align-items-center">
         <a href="https://www.facebook.com">
 
             <i class="fab fa-facebook"></i>

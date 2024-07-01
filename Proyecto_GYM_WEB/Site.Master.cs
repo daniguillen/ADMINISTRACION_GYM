@@ -12,38 +12,10 @@ namespace Proyecto_GYM_WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["navbar"] == null){
-
-             Session["navbar"]=""  ;
-            }
-            if (!IsPostBack)
-            {
-
-                if (Session["navbar"] != null)
-                {
-                    if (Session["navbar"].ToString() == "c")
-                    {
-                        NavbarEntrenador.Controls.Add(LoadNavbarEntrenador());
-                    }
-                    else if (Session["navbar"].ToString() == "u")
-                    {
-                        NavbarUsuarios.Controls.Add(LoadNavbarUsuario());
-                    }
-                }
-            }
-
+          
 
         }
-        private Control LoadNavbarUsuario()
-        {
-            string aux = "<nav class=navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark>  <div class=container>" +
-                "  <a class=navbar-brand runat=server href=~/>Nombre de la aplicación</a> " +
-                "  <button type=buttonclass=navbar-togglerdata-bs-toggle=collapse data-bs-target=.navbar-collapse title=Alternar navegación aria-controls=navbarSupportedContent aria-expanded=false aria-label=Toggle navigation>" +
-                " <span class=navbar-toggler-icon></span> </button><div class=collapse navbar-collapse d-sm-inline-flex justify-content-between><ul class=navbar-nav flex-grow-1> " +
-                "  <li class=nav-item><a class=nav-linkrunat=serverhref=/Default>Regresar</a></li> " +
-                "<li class=nav-item><a href=Login.aspx?id class=btn btn-success me-2>Login</a></li> </ul>  </div> </div> </nav>";
-            return new LiteralControl(aux);
-        }
+
 
         private Control LoadNavbarEntrenador()
         {
@@ -53,6 +25,15 @@ namespace Proyecto_GYM_WEB
             return new LiteralControl(aux);
 
 
+        }
+
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            
+            Session.Abandon();
+
+           
+            Response.Redirect("~/");
         }
 
     }

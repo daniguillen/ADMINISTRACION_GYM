@@ -16,6 +16,7 @@ namespace Proyecto_GYM_WEB
         public Usuario aux { get; set; } = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
+        Session["Nivel"]="";
             if (Session["nuevoUsuario"]!=null)
             {
                 if (Session["nuevoUsuario"].Equals("activo"))
@@ -46,21 +47,22 @@ namespace Proyecto_GYM_WEB
                 {
                     if(aux.nivel.ID == 1)
                     {
+                        Session["Nivel"] = "1";
                         Session["PerfilUsuario"] = aux;
-                        Session["navbar"] = "u";
+                        
                         Response.Redirect("VistaCliente/VistaUsuarioCliente.aspx", false);
                     }
                     if (aux.nivel.ID == 2)
                     {
-
+                        Session["Nivel"] = "2";
                         Session["Entrenador"] = aux;
-                        Session["navbar"] = "c";
+                        
                         Response.Redirect("VistaEntrenador/PantallaPrincipalEntrenador.aspx", false);
                     }
                     if (aux.nivel.ID == 3)
                     {
 
-                       
+                        Session["Nivel"] = "3";
                         Response.Redirect("VistasAdministrador/Administracion.aspx", false);
                     }
                 }
