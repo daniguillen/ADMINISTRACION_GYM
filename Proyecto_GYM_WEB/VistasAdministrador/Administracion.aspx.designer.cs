@@ -78,13 +78,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// Control BtnModificarPrecio.
+        /// Control BtnModificarPrecioa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnModificarPrecio;
+        protected global::System.Web.UI.WebControls.Button BtnModificarPrecioa;
 
         /// <summary>
         /// Control BtnRegistro.

@@ -76,31 +76,34 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void BtnModificarPrecio_Click(object sender, EventArgs e)
         {
            
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal()", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal", true);
         }
 
 
 
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
+            // Obtener valores
+            string value = DdlPlan.SelectedIndex.ToString();
+            string text = TxtNuevoPrecio.Text;
+
+            // Aquí puedes agregar tu lógica de guardado de datos
+
             // Ocultar el modal
-
-
-        
             ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
 
             // Eliminar la clase modal-backdrop
             ScriptManager.RegisterStartupScript(this, this.GetType(), "EliminarBackDrop", "$('.modal-backdrop').remove();", true);
-        }
-        protected void Cerrar(object sender, EventArgs e)
-        {
-            //BORRA EL MODAL
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
 
-            //BORRA EL FONDO DEL MODAL
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "EliminarBackDrop", "$('.modal-backdrop').remove();", true);
-
+            // Volver a registrar el script para abrir el modal en el evento click
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "RegistrarAbrirModal", @"
+        $(document).ready(function () {
+            $('#BtnModificarPrecio').click(function () {
+                $('#exampleModal').modal('show');
+            });
+        });
+    ", true);
         }
-      
+       
     }
 }

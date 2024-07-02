@@ -1,5 +1,5 @@
-﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administracion.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.Administracion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administracion.aspx.cs" Inherits="Proyecto_GYM_WEB.VistasAministrador.Administracion" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Style="background-image: url(../Assets/Gaming0_generated.jpg);" runat="server">
 
     <style>
@@ -19,9 +19,9 @@
             margin-bottom: 20px;
         }
 
-        .panel h5, .panel p, .panel input {
-            color: white;
-        }
+            .panel h5, .panel p, .panel input {
+                color: white;
+            }
 
         .btn-primary {
             border-color: #2C6D00;
@@ -89,7 +89,8 @@
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
                     <p class="text-dark font-weight-bold">Configura ajustes del sistema del gimnasio.</p>
-                    <asp:Button ID="BtnModificarPrecio" CssClass="btn btn-primary" Text="Modificar Precios" OnCommand="BtnModificarPrecio_Click" runat="server" />
+                    <asp:Button ID="BtnModificarPrecioa" CssClass="btn btn-primary" Text="Modificar Precios" OnCommand="BtnModificarPrecio_Click" runat="server" />
+                    <button type="button" id="BtnModificarPrecio" class="btnModal">enviar</button>
                 </div>
             </div>
 
@@ -128,7 +129,7 @@
                 </div>
             </div>
         </div>
-    <!-- Modal para Modificar precio planes -->
+        <!-- Modal para Modificar precio planes -->
         <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -136,7 +137,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modificar Precio de Planes</h5>
-                                <asp:Button runat="server" Class="btn-close" OnClick="Cerrar" data-bs-dismiss="modal" aria-label="Close"></asp:Button>
+                                <button type="button" class="btn-close" aria-label="Close" onclick="$('#exampleModal').modal('hide');"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
@@ -150,7 +151,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="NuevoPrecio">Nuevo Precio:</label>
-                                    <asp:TextBox ID="TxtNuevoPrecio"  runat="server" CssClass="form-control" TextMode="SingleLine" ClientIDMode="Static"></asp:TextBox>
+                                    <asp:TextBox ID="TxtNuevoPrecio" runat="server" CssClass="form-control" TextMode="SingleLine" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -163,26 +164,21 @@
             </ContentTemplate>
         </asp:UpdatePanel>
 
-
-
-
-
-
-
-
-
-
-
     </div>
-   
+    
     <script>
-        function showModal() {
-            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            modal.show();
-        }
-        function showModalUsuarioEntrenador() {
-            var modal = new bootstrap.Modal(document.getElementById('exampleModal2'));
-            modal.show();
-        }
-    </script>:Content>
-    </asp:Content>
+
+        $(document).ready(function () {
+            // Verifica si el modal existe
+            var modal = $('#exampleModal');
+            if (modal.length > 0) {
+                // Agrega el evento click al botón
+                $('#BtnModificarPrecio').click(function () {
+                    modal.modal('show');
+                });
+            }
+        });
+
+
+    </script>
+</asp:Content>
