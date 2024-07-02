@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.WebSockets;
@@ -86,6 +87,7 @@ namespace Proyecto_GYM_WEB
                     ddlGrupoMuscu.DataValueField = "ID";
                     ddlGrupoMuscu.DataTextField = "Descripcion";
                     ddlGrupoMuscu.DataBind();
+                                                  
                     Session["ListaEjercicios"] = listaEjercicio;
                 }
             }
@@ -126,8 +128,8 @@ namespace Proyecto_GYM_WEB
                 int grupoMuscularId = ListaEjercicios[j].Grupo_Muscular.ID;
                 if (ejerciciosPorGrupo.ContainsKey(grupoMuscularId))
                 {
-                    // ejerciciosPorGrupo[grupoMuscularId].Add(ListaEjercicios[j].Nombre);
-                    ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
+                    //ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
+                    ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='#' class='{linkClass}' data-id='{ListaEjercicios[j].ID}'>{ListaEjercicios[j].Nombre}</a>");
                 }
             }
 
@@ -243,5 +245,7 @@ namespace Proyecto_GYM_WEB
         {
 
         }
+
+        
     }
 }

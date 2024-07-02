@@ -44,7 +44,6 @@
                         <asp:Button type="button" ID="btnbtnSalirX3" CssClass="btn-close" data-bs-dismiss="modal" runat="server" aria-label="Close" OnClick="btnbtnSalirX3_Click" />
                     </div>
                     <div class="modal-body">
-                        <%--        AGREGAR EJERCICIO A RUTINA --%>
                         <div class="container">
                             <asp:UpdatePanel runat="server" ID="UpdatePanel2" UpdateMode="Conditional">
                                 <ContentTemplate>
@@ -65,7 +64,6 @@
                                         <div class="col-md-6">
                                             <asp:Label Text="FILTRAR POR NOMBRE:" runat="server" AssociatedControlID="TxtBusqueda" />
                                             <asp:TextBox runat="server" ID="TxtBusqueda" CssClass="form-control mt-4" AutoPostBack="true" OnTextChanged="TxtBusqueda_TextChanged" />
-                                            <%--                                            <asp:Button ID="BuscarPorNombre" Text="Buscar" runat="server" OnClick="BuscarPorNombre_Click" CssClass="mt-xl-4" Style="margin-left: 150px" />--%>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -96,63 +94,63 @@
         </div>
     </div>
 
-             <div class="modal" id="nuevoModal4" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title ">ASIGNAR EJERCICIO A RUTINA.</h3>
-                        <asp:Button Text="" runat="server" type="button" ID="btnClose" CssClass="btn-close" data-bs-dismiss="modal" aria-label="Close" OnClick="btnClose_Click" />
-                    </div>
-                    <div class="modal-body">
-                        <%--        MODIFICAR EJERCICIO --%>
-                        <div class="container">
-                            <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
-                                <ContentTemplate>
-                                    <div class="row mb-3">
-                                        <div class="col-md-12 modal-dialog-centered">
-                                            <label for="txtNombreEjercicio" class="form-label">NOMBRE:</label>
-                                            <asp:TextBox runat="server" ID="txtNombreEjercicio" CssClass="form-control" />
-                                        </div>
+    <%--        MODIFICAR EJERCICIO --%>
+    <div class="modal" id="nuevoModal4" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title ">MODIFICAR EJERCICIO.</h3>
+                    <asp:Button Text="" runat="server" type="button" ID="btnClose" CssClass="btn-close" data-bs-dismiss="modal" aria-label="Close" OnClick="btnClose_Click" />
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <div class="row mb-3">
+                                    <div class="col-md-12 modal-dialog-centered">
+                                        <label for="txtNombreEjercicio" class="form-label">NOMBRE:</label>
+                                        <asp:TextBox runat="server" ID="txtNombreEjercicio" CssClass="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="lblEjercicios" class="form-label">DESCRIPCIÓN:</label>
+                                    <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Rows="5" />
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="lblVideo" class="form-label">INGRESE URL DEL VIDEO:</label>
+                                        <asp:TextBox ID="txtVideo" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lblRepeticiones" class="form-label">REPETICIONES:</label>
+                                        <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                     <div class="row mb-3">
-                                      <label for="lblEjercicios" class="form-label">DESCRIPCIÓN:</label>
-                                        <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Rows="5" />
-                                    </div>
-                                   <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="lblVideo" class="form-label">INGRESE URL DEL VIDEO:</label>
-                                            <asp:TextBox ID="txtVideo" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <div class="col-md-6 ">
+                                            <label for="lblIdGrupoMusc" class="form-label">GRUPO MUSCULAR:</label>
+                                            <asp:DropDownList ID="ddlGrupoMuscu" runat="server" CssClass="form-control"></asp:DropDownList>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="lblRepeticiones" class="form-label">REPETICIONES:</label>
-                                            <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <label for="lblIdTipo" class="form-label">TIPO:</label>
+                                            <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control"></asp:DropDownList>
                                         </div>
-                                        <div class="row mb-3">
-                                           <div class="col-md-6 ">
-                                                <label for="lblIdGrupoMusc" class="form-label">GRUPO MUSCULAR:</label>
-                                                <asp:DropDownList ID="ddlGrupoMuscu" runat="server" CssClass="form-control"></asp:DropDownList>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="lblIdTipo" class="form-label">TIPO:</label>
-                                                <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control"></asp:DropDownList>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="lblIDDificultad" class="form-label">DIFICULTAD:</label>
-                                                <asp:DropDownList ID="ddlDificultad" CssClass="form-control" runat="server"></asp:DropDownList>
-                                            </div>
+                                        <div class="col-md-6">
+                                            <label for="lblIDDificultad" class="form-label">DIFICULTAD:</label>
+                                            <asp:DropDownList ID="ddlDificultad" CssClass="form-control" runat="server"></asp:DropDownList>
                                         </div>
                                     </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </div>
-                    <div class="modal-footer">
-                      <a href="VistaEntrenador-EntrenamientosABM.aspx"type="button" class="btn btn-secondary">VOLVER</a>
-                        <asp:Button runat="server" ID="btnModificarEjercicio" type="button" CssClass="btn btn-primary" Text="GUARDAR CAMBIOS" OnClick="btnModificarEjercicio_Click"/>
-                        </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">VOLVER</a>
+                    <asp:Button runat="server" ID="btnModificarEjercicio" type="button" CssClass="btn btn-primary" Text="GUARDAR CAMBIOS" OnClick="btnModificarEjercicio_Click" />
                 </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -173,22 +171,22 @@
         }
         function openModalModificarEjercicio(ejercicioId) {
 
-        var modal = document.getElementById('nuevoModal4');
-        modal.style.display = 'block';
-        modal.classList.add('show');
+            var modal = document.getElementById('nuevoModal4');
+            modal.style.display = 'block';
+            modal.classList.add('show');
             console.log('ID del ejercicio:', ejercicioId);
-        }
 
         document.addEventListener('DOMContentLoaded', function () {
             var links = document.querySelectorAll('.custom-link');
             links.forEach(function (link) {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                var ejercicioId = this.getAttribute('data-id');
-                openModalModificarEjercicio(ejercicioId);
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var ejercicioId = this.getAttribute('data-id');
+                    openModalModificarEjercicio(ejercicioId);
+                });
             });
         });
-        });
+
         function closeModalModificarEjercicio() {
             var modal = document.getElementById('nuevoModal4');
             modal.style.display = 'none';
