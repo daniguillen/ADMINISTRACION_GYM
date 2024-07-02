@@ -27,8 +27,6 @@ namespace Proyecto_GYM_WEB
 
         {
 
-            if (!IsPostBack)
-            {
                 mensaje =controller.MensajeDeAdministrador();
                 LblInformacion.Text = mensaje;
                 dia_semana = controller.ListarDias();
@@ -37,22 +35,38 @@ namespace Proyecto_GYM_WEB
                 Perfil = (Usuario)Session["PerfilUsuario"];
                 Perfil.Foto = ".././" + Perfil.Foto;
                 string ruta = Perfil.Foto.ToString();
+
               
-                rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
+
                 RepeaterUsuario.DataSource = dia_semana;
                 RepeaterUsuario.DataBind();
-
-
-
-            }
-
-
-
-
+            
         }
 
+        public void DdlrutinaCLiente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idRutina = int.Parse(DdlrutinaCLiente.SelectedValue);
+                if (idRutina == 1) {
+                    rutinas_usuario = controller.Rutinas_id(1);
+                }
+                else if (idRutina == 2) {
+                    rutinas_usuario = controller.Rutinas_id(2);
+                }
+                else if (idRutina == 3)
+                {
+                    rutinas_usuario = controller.Rutinas_id(3);
+                }
+                else if (idRutina == 4)
+                {
+                    rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
+                }
+                RepeaterUsuario.DataSource = rutinas_usuario.rutina_Ejercicios;
+           
+                 RepeaterUsuario.DataBind();
 
 
-
+            
+        }
+      
     }
 }

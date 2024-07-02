@@ -62,75 +62,72 @@
 
         <div class=" mb-5 d-flex justify-content-center">
 
-  <asp:DropDownList ID="ddlRutina">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-   Seleccione Rutina
-  </button>
+        <asp:DropDownList ID="DdlrutinaCLiente" runat="server" CssClass="form-control" ClientIDMode="Static"  AutoPostBack="true"  OnSelectedIndexChanged="DdlrutinaCLiente_SelectedIndexChanged">
      <asp:ListItem Text="Seleccione..." Value=""></asp:ListItem>
-   <asp:ListItem Text="MASCULINO" Value="1"></asp:ListItem>
-   <asp:ListItem Text="FEMININO" Value="2"></asp:ListItem>
-   <asp:ListItem Text="BINARIO" Value="3"></asp:ListItem>
-   <asp:ListItem Text="S/D" Value="4"></asp:ListItem>
-</div>
-   
-    </div>
-        <div class="row me-5 ms-5 row">
+     <asp:ListItem Text="Rutina Básica" Value="1"></asp:ListItem>
+     <asp:ListItem Text="Rutina Estándar" Value="2"></asp:ListItem>
+     <asp:ListItem Text="Rutina Premium" Value="3"></asp:ListItem>
+     <asp:ListItem Text="Rutina Personalizada" Value="4"></asp:ListItem>
+         </asp:DropDownList>
 
-            <div class="card-body">
-                <table id="datatablesSimple"
-                    class="table table-striped table-bordered table table-dark table-hover">
-                    <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <asp:Repeater ID="RepeaterUsuario" runat="server">
-                                <ItemTemplate>
-                                    <th data-dia="<%# Eval("dia") %>" onclick="evento(this)">
-                                        <%# Eval("dia") %>
-                                    </th>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (int x = 8; x <= 22; x++)
-                            { %>
-                        <tr>
-                            <td><%=x %></td>
-                            <% 
-                                // Recorrer cada día
-                                foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
-                                {
-                                    // Obtener los ejercicios para este día y hora
-                                    var ejerciciosParaDiaYHora = dia.Where(e => e.hora == x);
+        </div>
+    <div class="row me-5 ms-5 row">
 
-                                    // Verificar si hay ejercicios para este día y hora
-                                    if (ejerciciosParaDiaYHora.Any())
-                                    { %>
-                            <td>
-                                <% 
-                                    foreach (var ejercicio in ejerciciosParaDiaYHora)
-                                    {
-                                        // Iterar sobre la lista de ejercicios dentro de rutina_ejercicio
-                                        foreach (var ejercicioIndividual in ejercicio.ejercicio)
-                                        { %>
-                                <%=ejercicioIndividual.Nombre %><br />
-                                <% }
-                                    }
-                                %>
-                            </td>
-                            <% }
-                                else
+        <div class="card-body">
+            <table id="datatablesSimple"
+                class="table table-striped table-bordered table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <asp:Repeater ID="RepeaterUsuario" runat="server">
+                            <ItemTemplate>
+                                <th data-dia="<%# Eval("dia") %>" onclick="evento(this)">
+                                    <%# Eval("dia") %>
+                                </th>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (int x = 8; x <= 22; x++)
+                        { %>
+                    <tr>
+                        <td><%=x %></td>
+                        <% 
+                            // Recorrer cada día
+                            foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
+                            {
+                                // Obtener los ejercicios para este día y hora
+                                var ejerciciosParaDiaYHora = dia.Where(e => e.hora == x);
+
+                                // Verificar si hay ejercicios para este día y hora
+                                if (ejerciciosParaDiaYHora.Any())
                                 { %>
-                            <td></td>
+                        <td>
+                            <% 
+                                foreach (var ejercicio in ejerciciosParaDiaYHora)
+                                {
+                                    // Iterar sobre la lista de ejercicios dentro de rutina_ejercicio
+                                    foreach (var ejercicioIndividual in ejercicio.ejercicio)
+                                    { %>
+                            <%=ejercicioIndividual.Nombre %><br />
                             <% }
                                 }
                             %>
-                        </tr>
-                        <% } %>
-                    </tbody>
-                </table>
-            </div>
+                        </td>
+                        <% }
+                            else
+                            { %>
+                        <td></td>
+                        <% }
+                            }
+                        %>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
+    </div>
     <script>
         function evento(element) {
             var dia = element.dataset.dia;

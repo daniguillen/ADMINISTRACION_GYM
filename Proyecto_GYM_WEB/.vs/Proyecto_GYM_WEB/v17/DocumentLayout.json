@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
+  "WorkspaceRootPath": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistasadministrador\\administracion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administracion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\fedex\\onedrive\\escritorio\\utn\\programacion3\\administracion_gym\\proyecto_gym_web\\vistacliente\\vistausuariocliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistacliente\\vistausuariocliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\vistasadministrador\\administracion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\fedex\\onedrive\\escritorio\\utn\\programacion3\\administracion_gym\\proyecto_gym_web\\vistacliente\\vistausuariocliente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistacliente\\vistausuariocliente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\fedex\\onedrive\\escritorio\\utn\\programacion3\\administracion_gym\\proyecto_gym_web\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistasadministrador\\administracion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administracion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 288,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,10 +39,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Bookmark",
@@ -51,27 +55,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Administracion.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx.cs",
-              "RelativeDocumentMoniker": "VistasAdministrador\\Administracion.aspx.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx.cs",
-              "RelativeToolTip": "VistasAdministrador\\Administracion.aspx.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAcwFQAAAAJAAAA",
+              "Title": "VistaUsuarioCliente.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaUsuarioCliente.aspx.cs",
+              "RelativeDocumentMoniker": "VistaCliente\\VistaUsuarioCliente.aspx.cs",
+              "ToolTip": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaUsuarioCliente.aspx.cs",
+              "RelativeToolTip": "VistaCliente\\VistaUsuarioCliente.aspx.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T00:07:32.11Z",
+              "WhenOpened": "2024-07-02T02:20:18.459Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Administracion.aspx",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx",
-              "RelativeDocumentMoniker": "VistasAdministrador\\Administracion.aspx",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx",
-              "RelativeToolTip": "VistasAdministrador\\Administracion.aspx",
+              "Title": "VistaUsuarioCliente.aspx",
+              "DocumentMoniker": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaUsuarioCliente.aspx",
+              "RelativeDocumentMoniker": "VistaCliente\\VistaUsuarioCliente.aspx",
+              "ToolTip": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistaCliente\\VistaUsuarioCliente.aspx",
+              "RelativeToolTip": "VistaCliente\\VistaUsuarioCliente.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-07-02T00:06:11.502Z",
+              "WhenOpened": "2024-07-02T02:00:35.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-02T02:03:42.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Administracion.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx.cs",
+              "RelativeDocumentMoniker": "VistasAdministrador\\Administracion.aspx.cs",
+              "ToolTip": "C:\\Users\\fedex\\OneDrive\\Escritorio\\UTN\\PROGRAMACION3\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx.cs",
+              "RelativeToolTip": "VistasAdministrador\\Administracion.aspx.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwFQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T00:07:32.11Z",
               "EditorCaption": ""
             }
           ]
