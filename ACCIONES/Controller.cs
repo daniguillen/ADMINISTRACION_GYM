@@ -1420,6 +1420,29 @@ namespace ACCIONES
             }
             return estado;
         }
+        public bool ActualizacionDePrecio(int precio , int id)
+        {
+
+            bool estado;
+            try
+            {
+                datos.setearQuery("update PLANES set CUOTA=@precio where id=@id");
+                datos.setearParametro("@precio", precio);
+                datos.setearParametro("@id", id);
+                datos.ejecutarLectura();
+                estado = true;
+            }
+            catch (Exception ex)
+            {
+                estado = false;
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return estado;
+        }
 
 
 

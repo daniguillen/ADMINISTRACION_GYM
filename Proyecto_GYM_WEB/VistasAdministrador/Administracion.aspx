@@ -89,8 +89,10 @@
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
                     <p class="text-dark font-weight-bold">Configura ajustes del sistema del gimnasio.</p>
-                    <asp:Button ID="BtnModificarPrecioa" CssClass="btn btn-primary" Text="Modificar Precios" OnCommand="BtnModificarPrecio_Click" runat="server" />
-                    <button type="button" id="BtnModificarPrecio" class="btnModal">enviar</button>
+                  
+                    <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">enviar</button>
+                    <asp:Label ID="CambioPrecio" runat="server" Text="hoola"  CssClass="text-white" ></asp:Label>
+
                 </div>
             </div>
 
@@ -130,8 +132,7 @@
             </div>
         </div>
         <!-- Modal para Modificar precio planes -->
-        <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
-            <ContentTemplate>
+       
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -155,14 +156,15 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                               
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <asp:Label ID="Label1" runat="server" Visible="false" Text="Cancelar"></asp:Label></button>
                                 <asp:Button ID="BtnGuardarCambios" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="BtnGuardarCambios_Click" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
+
 
     </div>
     

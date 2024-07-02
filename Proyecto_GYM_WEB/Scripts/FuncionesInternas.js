@@ -36,11 +36,7 @@ $(window).on('resize', function () {
 });
 
 */
-function showModal() {
-    console.log("Modal1")
-    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    modal.show(); 
-}
+
 function showModalUsuarioEntrenador() {
     var modal = new bootstrap.Modal(document.getElementById('exampleModal2'));
     modal.show();

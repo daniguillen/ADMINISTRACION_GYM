@@ -7,24 +7,11 @@
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administracion.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\vistasadministrador\\administracion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\vistasadministrador\\administracion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administracion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\scripts\\funcionesinternas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:scripts\\funcionesinternas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\vistasadministrador\\administradorgeneral.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administradorgeneral.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\vistasadministrador\\administradorgeneral.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:vistasadministrador\\administradorgeneral.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\proyecto_gym_web\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{642F065E-82A3-451C-A329-BDE481E292B3}|Proyecto_GYM_WEB.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{F98E54F4-4532-4DF6-A320-EADBEBCB24E7}|..\\ACCIONES\\ACCIONES.csproj|c:\\users\\zaske\\onedrive\\documentos\\github\\administracion_gym\\acciones\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 288,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,54 +53,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdministradorGeneral.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\AdministradorGeneral.aspx.cs",
-              "RelativeDocumentMoniker": "VistasAdministrador\\AdministradorGeneral.aspx.cs",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\AdministradorGeneral.aspx.cs",
-              "RelativeToolTip": "VistasAdministrador\\AdministradorGeneral.aspx.cs",
-              "ViewState": "AQIAAOMAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T00:21:12.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdministradorGeneral.aspx",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\AdministradorGeneral.aspx",
-              "RelativeDocumentMoniker": "VistasAdministrador\\AdministradorGeneral.aspx",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\AdministradorGeneral.aspx",
-              "RelativeToolTip": "VistasAdministrador\\AdministradorGeneral.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-07-02T00:19:30.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Site.Master",
-              "RelativeDocumentMoniker": "Site.Master",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Site.Master",
-              "RelativeToolTip": "Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-07-02T00:09:50.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FuncionesInternas.js",
-              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Scripts\\FuncionesInternas.js",
-              "RelativeDocumentMoniker": "Scripts\\FuncionesInternas.js",
-              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\Scripts\\FuncionesInternas.js",
-              "RelativeToolTip": "Scripts\\FuncionesInternas.js",
-              "ViewState": "AQIAADEAAAAAAAAAAAAgwEEAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-02T00:10:36.312Z",
+              "Title": "Controller.cs",
+              "DocumentMoniker": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\ACCIONES\\Controller.cs",
+              "RelativeDocumentMoniker": "..\\ACCIONES\\Controller.cs",
+              "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\ACCIONES\\Controller.cs",
+              "RelativeToolTip": "..\\ACCIONES\\Controller.cs",
+              "ViewState": "AQIAAIgFAAAAAAAAAAAIwJ0FAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T00:54:50.035Z",
               "EditorCaption": ""
             },
             {
@@ -124,7 +72,7 @@
               "RelativeDocumentMoniker": "VistasAdministrador\\Administracion.aspx.cs",
               "ToolTip": "C:\\Users\\zaske\\OneDrive\\Documentos\\GitHub\\ADMINISTRACION_GYM\\Proyecto_GYM_WEB\\VistasAdministrador\\Administracion.aspx.cs",
               "RelativeToolTip": "VistasAdministrador\\Administracion.aspx.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAmwFwAAAAMAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAMwFwAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-02T00:07:32.11Z",
               "EditorCaption": ""

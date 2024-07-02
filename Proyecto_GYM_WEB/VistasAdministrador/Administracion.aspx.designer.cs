@@ -78,13 +78,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// Control BtnModificarPrecioa.
+        /// Control CambioPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnModificarPrecioa;
+        protected global::System.Web.UI.WebControls.Label CambioPrecio;
 
         /// <summary>
         /// Control BtnRegistro.
@@ -141,15 +141,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Button Button10;
 
         /// <summary>
-        /// Control UpdatePanel3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
-
-        /// <summary>
         /// Control DdlPlan.
         /// </summary>
         /// <remarks>
@@ -166,6 +157,15 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtNuevoPrecio;
+
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control BtnGuardarCambios.

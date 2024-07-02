@@ -23,12 +23,21 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 Response.Redirect("/");
             }
              */
-            
-            
-            
-            
 
-    
+            if (!IsPostBack)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "RegistrarAbrirModal", @"
+            $(document).ready(function () {
+                $('#BtnModificarPrecio').click(function () {
+                    $('#exampleModal').modal('show');
+                });
+            });
+        ", true);
+            }
+
+
+
+
 
         }
         protected void IrAUsuario(object sender, EventArgs e)
@@ -73,12 +82,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
 
 
-        protected void BtnModificarPrecio_Click(object sender, EventArgs e)
-        {
-           
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "showModal", true);
-        }
-
 
 
         protected void BtnGuardarCambios_Click(object sender, EventArgs e)
@@ -86,24 +89,12 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             // Obtener valores
             string value = DdlPlan.SelectedIndex.ToString();
             string text = TxtNuevoPrecio.Text;
+            Controller controller = new Controller();
+                 CambioPrecio.Text = "Se cambio Correctamente a  "+text;
+            
 
-            // Aquí puedes agregar tu lógica de guardado de datos
-
-            // Ocultar el modal
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "CerrarModal", "$('#exampleModal').modal('hide');", true);
-
-            // Eliminar la clase modal-backdrop
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "EliminarBackDrop", "$('.modal-backdrop').remove();", true);
-
-            // Volver a registrar el script para abrir el modal en el evento click
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "RegistrarAbrirModal", @"
-        $(document).ready(function () {
-            $('#BtnModificarPrecio').click(function () {
-                $('#exampleModal').modal('show');
-            });
-        });
-    ", true);
+    
         }
-       
+
     }
 }
