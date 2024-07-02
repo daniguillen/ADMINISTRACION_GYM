@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.UI.WebControls;
 using Dominio;
+using Microsoft.SqlServer.Server;
 
 
 
@@ -1397,7 +1398,28 @@ namespace ACCIONES
         }
 
 
+        public bool enviarMensaje(String a) {
 
+            bool estado;
+            try
+            {
+                datos.setearQuery("insert into Mensajes (DescripcionNota) values(@mensaje)");
+                datos.setearParametro("@mensaje", a);
+             
+                datos.ejecutarLectura();
+                estado=true;
+            }
+            catch (Exception ex)
+            {
+                estado=false;   
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return estado;
+        }
 
 
 
