@@ -24,18 +24,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             }
              */
 
-            if (!IsPostBack)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "RegistrarAbrirModal", @"
-            $(document).ready(function () {
-                $('#BtnModificarPrecio').click(function () {
-                    $('#exampleModal').modal('show');
-                });
-            });
-        ", true);
-            }
-
-
 
 
 
@@ -94,6 +82,17 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             
 
     
+        }
+            protected void BuscarHistorial(object sender, EventArgs e)
+        {
+            // Obtener valores
+            string value = DdlPlan.SelectedIndex.ToString();
+            string text = TxtNuevoPrecio.Text;
+            Controller controller = new Controller();
+            CambioPrecio.Text = "Se cambio Correctamente a  " + text;
+
+
+
         }
 
     }
