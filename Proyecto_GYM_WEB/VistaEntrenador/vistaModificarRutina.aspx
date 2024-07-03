@@ -18,25 +18,25 @@
             <h3>MODIFICAR CAMPOS RUTINA</h3>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="lblNombreRutina" class="form-label lblModificarRutina">NOMBRE RUTINA:</label>
+                    <label for="lblNombreRutina" class="form-label lblCampos">NOMBRE RUTINA:</label>
                     <asp:TextBox ID="txtNombreRutina" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="lblDescripcion" class="form-label lblModificarRutina">DESCRIPCION:</label>
+                    <label for="lblDescripcion" class="form-label lblCampos">DESCRIPCION:</label>
                     <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="8"></asp:TextBox>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="lblHorario" class="form-label lblModificarRutina">HORARIO:</label>
+                    <label for="lblHorario" class="form-label lblCampos">HORARIO:</label>
                     <asp:DropDownList ID="ddlHorario" runat="server" CssClass="form-control"></asp:DropDownList>
                 </div>
                 <div class="mb-3">
-                    <label for="lblDia" class="form-label lblModificarRutina">DIA DE LA RUTINA:</label>
+                    <label for="lblDia" class="form-label lblCampos">DIA DE LA RUTINA:</label>
                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control btn-secondary"></asp:DropDownList>
                 </div>
                 <div class="mb-3 mt-xl-5">
-                    <asp:CheckBox runat="server" type="radio" class="lblModificarRutina" Text=" Ver detalles"
+                    <asp:CheckBox runat="server" type="radio" class="lblCampos" Text=" Ver detalles"
                         ID="chkAFiltroAvanzado" AutoPostBack="true"
                         OnCheckedChanged="chkAFiltroAvanzado_CheckedChanged" />
                 </div>

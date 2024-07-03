@@ -40,13 +40,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
-                //int idEjercicio = int.Parse(Request.QueryString["id"]);
-                //string nombreEjercicio= txtNombreEjercicio.Text;
-                //string descripcionEjercicio = txtDescripcion.Text;
-                //int repeticionesEjercicio = int.Parse(txtRepeticiones.Text);
-                //int dificultadEjercicio = int.Parse(ddlDificultad.SelectedValue);
-                //int grupoMusculaEjercicio = int.Parse(ddlGrupoMuscu.SelectedValue);
-                //int TipoEjercicio = int.Parse(ddlTipo.SelectedValue);
 
                 Ejercicio modificarEjercicio = new Ejercicio()
                 {
@@ -63,20 +56,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 GrupoMuscular muscular = new GrupoMuscular { ID = int.Parse(ddlGrupoMuscu.SelectedValue) };
                 TipoEjercicio tipo = new TipoEjercicio { ID = int.Parse(ddlTipo.SelectedValue) };
                 Dificultad dificultad = new Dificultad { ID = int.Parse(ddlDificultad.SelectedValue) };
-
-                //Dificultad modificarDificultad = new Dificultad()
-                //{
-                //    ID = dificultadEjercicio
-                //};
-
-                //GrupoMuscular modificarGrupo = new GrupoMuscular()
-                //{
-                //    ID = grupoMusculaEjercicio
-                //};
-                //TipoEjercicio modificarTipo = new TipoEjercicio()
-                //{
-                //    ID = TipoEjercicio
-                //};
 
                 objController.ModificarEjercicioCompleto(modificarEjercicio, muscular, tipo, dificultad);
                 Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
@@ -106,6 +85,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             ddlTipo.DataValueField = "ID";
             ddlTipo.DataTextField = "Descripcion";
             ddlTipo.DataBind();
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
         }
     }
 }

@@ -35,25 +35,13 @@ namespace Proyecto_GYM_WEB
             {
                 if (!IsPostBack)
                 {
-
                     CargaGruposMusculares();
                     CargaListaEjercicios();
                     LLenarDropDownList();
+                    
                     List<Ejercicio> listaEjercicio = objController.ListarEjercicios();                    
-
-                    foreach (int hora in horario_rutinas)
-                    {
-                        ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
-                    }
-                    ddlHorario.DataBind();
-
-                    List<GrupoMuscular> listaGrupoM = objController.ListarGrupoMuscular();
-                    ddlGrupoMuscu.DataSource = listaGrupoM;
-                    ddlGrupoMuscu.DataValueField = "ID";
-                    ddlGrupoMuscu.DataTextField = "Descripcion";
-                    ddlGrupoMuscu.DataBind();
-                                                  
                     Session["ListaEjercicios"] = listaEjercicio;
+                                                                    
                 }
             }
             catch (Exception ex)
@@ -133,17 +121,7 @@ namespace Proyecto_GYM_WEB
         }
         private void LLenarDropDownList()
         {
-            List<Dificultad> listaDificultad = objController.ListadoDeDificultad();
-            ddlDificultad.DataSource = listaDificultad;
-            ddlDificultad.DataValueField = "ID";
-            ddlDificultad.DataTextField = "Descripcion";
-            ddlDificultad.DataBind();
-
-            List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
-            ddlTipo.DataSource = listaTipoEj;
-            ddlTipo.DataValueField = "ID";
-            ddlTipo.DataTextField = "Descripcion";
-            ddlTipo.DataBind();
+           
 
             List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
             ddlGrupoMuscular.DataSource = listaGrupo;
@@ -169,6 +147,13 @@ namespace Proyecto_GYM_WEB
             ddlIDRutina.DataValueField = "ID";
             ddlIDRutina.DataTextField = "Nombre";
             ddlIDRutina.DataBind();
+
+            foreach (int hora in horario_rutinas)
+            {
+                ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
+            }
+            ddlHorario.DataBind();
+           
         }
         protected void btnAgregarEjercicioARutina_Click(object sender, EventArgs e)
         {
