@@ -86,11 +86,10 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             protected void BuscarHistorial(object sender, EventArgs e)
         {
             // Obtener valores
-            string value = DdlPlan.SelectedIndex.ToString();
-            string text = TxtNuevoPrecio.Text;
+           // TxtDNI
             Controller controller = new Controller();
-            CambioPrecio.Text = "Se cambio Correctamente a  " + text;
 
+            controller.historiaPorDNI(12345677);
 
 
         }

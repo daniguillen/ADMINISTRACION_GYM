@@ -10,9 +10,9 @@ namespace Dominio
     {
         public int ID { get; set; } 
 
-        public int ID_Persona { get; set; }
+        public string NombrePersona { get; set; }
 
-        public int ID_Planes { get; set; }
+        public string Plan { get; set; }
 
         public SqlMoney Pago {  get; set; }
         

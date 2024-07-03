@@ -1446,7 +1446,40 @@ namespace ACCIONES
         }
 
 
+        public List<Historial> historiaPorDNI(int dni)
+        {
 
+                List<Historial> historial = new List<Historial>();
+            
+            try
+            {
+                datos.setearQuery("select h.id, p.NOMBRE, (select TIPO_PLAN from PLANES where id= H.ID_Planes) as 'Plan', h.Pago,h.FechaPago, h.DescripcionNota from PERSONA P inner join Historial H on H.Id_Persona= p.ID where p.DNI=@dni");
+                datos.setearParametro("@dni", dni);
+                datos.ejecutarLectura();
+                
+                while (datos.Lector.Read()) {
+                    Historial Aux = new Historial();
+                    Aux.ID = datos.Lector.GetInt32(0);
+                    Aux.NombrePersona = datos.Lector.GetString(1);
+                    Aux.Plan= datos.Lector.GetString(2);
+                    Aux.Pago= datos.Lector.GetSqlMoney(3);
+                    Aux.FechaPago= datos.Lector.GetDateTime(4);
+                    Aux.DescripcionNota= datos.Lector.GetString(5);
+
+                    historial.Add(Aux);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return historial;
+        }
 
 
         //Metodo para listar las rutinas con sus ejercicios

@@ -70,7 +70,6 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Historial de Usuario por DNI</h5>
-                    <asp:TextBox ID="TextBox3" CssClass="form-control mb-3" runat="server"></asp:TextBox>
                     <button type="button" id="btnModalHistorial" class="btnModalHistorial btn btn-primary">Historial</button>
                 </div>
             </div>
@@ -80,18 +79,18 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Reportes de Asistencia</h5>
-                    <asp:TextBox ID="TextBox4" CssClass="form-control mb-3" runat="server"></asp:TextBox>
-                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte" OnClick="IrAUsuario" runat="server" />
+                   
+                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte"  runat="server" />
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
-                    <p class="text-dark font-weight-bold">Configura ajustes del sistema del gimnasio.</p>
+                  
 
-                    <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">enviar</button>
-                    <asp:Label ID="CambioPrecio" runat="server" Text="hoola" CssClass="text-white"></asp:Label>
+                    <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">Modificar</button>
+                    <asp:Label ID="CambioPrecio" runat="server" Text="" CssClass="text-white"></asp:Label>
 
                 </div>
             </div>
@@ -99,7 +98,7 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Agregar Nuevo Usuario/Entrenador</h5>
-                    <p class="text-dark font-weight-bold">Añade nuevos usuarios o entrenadores al sistema.</p>
+                   
                     <asp:Button ID="BtnRegistro" CssClass="btn btn-primary" Text="Agregar" OnClick="IrARegistro" runat="server" />
                 </div>
             </div>
@@ -118,7 +117,7 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Clientes que No Han Pagado el Mes</h5>
-                    <p class="text-dark font-weight-bold">Lista de clientes pendientes de pago.</p>
+              
                     <asp:Button ID="Button9" CssClass="btn btn-primary" Text="Ver Clientes" OnClick="IrAUsuario" runat="server" />
                 </div>
             </div>
@@ -126,7 +125,7 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Estado Financiero</h5>
-                    <p class="text-dark font-weight-bold">Genera reportes de ingresos del gimnasio.</p>
+                  
                     <asp:Button ID="Button10" CssClass="btn btn-primary" Text="Generar Reporte" OnClick="IrARegistro" runat="server" />
                 </div>
             </div>
