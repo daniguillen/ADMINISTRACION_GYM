@@ -169,9 +169,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             int rutinaid = int.Parse(hfRutinaID.Value);
-            int ejercicioIDAnterior = objController.ObtenerEjercicioIDAnterior(rutinaid);
-
-            objController.eliminarEjercicio(rutinaid, ejercicioIDAnterior);
+            int ejercicioSeleccionado = int.Parse(hfEjercicioID.Value);
+            objController.eliminarEjercicio(rutinaid, ejercicioSeleccionado);
             ListaTablaRuti = objController.ListarTablaRutinas();
 
             Response.Redirect("vistaModificarRutina.aspx?id=" + hfRutinaID.Value, false);

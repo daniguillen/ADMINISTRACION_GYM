@@ -74,7 +74,7 @@
                                         </td>
                                         <td>
                                             <a href="#" class="btn btn-secondary" data-id="<%= ejercicio.ID_Ejercicio %>" onclick="openModal(this)">Ver detalles</a>
-                                            <asp:Button ID="btnEliminar" runat="server" Text="🗑️" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
+                                            <asp:Button ID="btnEliminar" runat="server" Text="🗑️" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="capturarEjercicioID(this); return confirm('¿Está seguro de que desea eliminar este ejercicio?');"/>
                                         </td>
                                     </tr>
                                     <% } %>
@@ -157,6 +157,12 @@
             closeModal();
         };
 
+        function capturarEjercicioID(button) {
+            var row = button.parentNode.parentNode;
+            var ejercicioID = row.cells[0].innerText.trim();
+            document.getElementById('<%= hfEjercicioID.ClientID %>').value = ejercicioID;
+            return true;
+        }
 
 
     </script>
