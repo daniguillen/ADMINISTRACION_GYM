@@ -1372,19 +1372,20 @@ namespace ACCIONES
         }
 
 
-        public void ModificarEjercicio(Ejercicio ejercicio)
+        public void ModificarEjercicioCompleto(Ejercicio ejercicio,GrupoMuscular muscular,TipoEjercicio tipo, Dificultad dificultad)
         {
             try
             {
-                datos.setearQuery("UPDATE EJERCICIO SET DESCRIPCION=@DESCRIPCION, NOMBRE=@NOMBRE, REPETICIONES=@REPETICIONES, ID_DIFICULTAD=@ID_DIFICULTAD, VIDEO=@VIDEO, ID_TIPO=@ID_TIPO, ID_GRUPOMUSCULAR=@ID_GRUPOMUSCULAR  WHERE ID=@ID");
+                datos.setearQuery("UPDATE EJERCICIO SET DESCRIPCION=@DESCRIPCION, NOMBRE=@NOMBRE, REPETICIONES=@REPETICIONES, ID_DIFICULTAD=@ID_DIFICULTAD, VIDEO=@VIDEO, ID_TIPO=@ID_TIPO, ID_GRUPO_MUSCULAR=@ID_GRUPO_MUSCULAR  WHERE ID=@ID");
                 datos.setearParametro("@ID", ejercicio.ID);
                 datos.setearParametro("@DESCRIPCION", ejercicio.Descripcion);
                 datos.setearParametro("@NOMBRE", ejercicio.Nombre);
-                datos.setearParametro("@ID_DIFICULTAD", ejercicio.Tipo_Dificultad.ID);
+                datos.setearParametro("@REPETICIONES", ejercicio.Repeticiones);
+                datos.setearParametro("@ID_DIFICULTAD", dificultad.ID);
                 datos.setearParametro("@VIDEO", ejercicio.Video);
-                datos.setearParametro("@ID_TIPO", ejercicio.Tipo_Ejercicio.ID);
-                datos.setearParametro("@ID_GRUPOMUSCULAR", ejercicio.Grupo_Muscular.ID);
-                datos.ejecutarLectura();
+                datos.setearParametro("@ID_TIPO", tipo.ID);
+                datos.setearParametro("@ID_GRUPO_MUSCULAR", muscular.ID);
+                datos.ejecutarAccion();
 
             }
             catch (Exception ex)

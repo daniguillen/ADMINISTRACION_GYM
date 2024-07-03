@@ -38,43 +38,8 @@ namespace Proyecto_GYM_WEB
 
                     CargaGruposMusculares();
                     CargaListaEjercicios();
-
-                    List<Dificultad> lista = objController.ListadoDeDificultad();
-                    ddlDificultad.DataSource = lista;
-                    ddlDificultad.DataValueField = "ID";
-                    ddlDificultad.DataTextField = "Descripcion";
-                    ddlDificultad.DataBind();
-
-                    List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
-                    ddlTipo.DataSource = listaTipoEj;
-                    ddlTipo.DataValueField = "ID";
-                    ddlTipo.DataTextField = "Descripcion";
-                    ddlTipo.DataBind();
-
-                    List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
-                    ddlGrupoMuscular.DataSource = listaGrupo;
-                    ddlGrupoMuscular.DataValueField = "ID";
-                    ddlGrupoMuscular.DataTextField = "Descripcion";
-                    ddlGrupoMuscular.DataBind();
-
-                    List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
-                    lbxEjercicio.DataSource = listaEjercicio;
-                    lbxEjercicio.DataValueField = "ID";
-                    lbxEjercicio.DataTextField = "Nombre";
-                    lbxEjercicio.DataBind();
-
-
-                    List<Dias> listaDias = objController.ListarDias();
-                    ddlDia.DataSource = listaDias;
-                    ddlDia.DataValueField = "ID";
-                    ddlDia.DataTextField = "dia";
-                    ddlDia.DataBind();
-
-                    List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
-                    ddlIDRutina.DataSource = listaRutina;
-                    ddlIDRutina.DataValueField = "ID";
-                    ddlIDRutina.DataTextField = "Nombre";
-                    ddlIDRutina.DataBind();
+                    LLenarDropDownList();
+                    List<Ejercicio> listaEjercicio = objController.ListarEjercicios();                    
 
                     foreach (int hora in horario_rutinas)
                     {
@@ -128,8 +93,8 @@ namespace Proyecto_GYM_WEB
                 int grupoMuscularId = ListaEjercicios[j].Grupo_Muscular.ID;
                 if (ejerciciosPorGrupo.ContainsKey(grupoMuscularId))
                 {
-                    //ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
-                    ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='#' class='{linkClass}' data-id='{ListaEjercicios[j].ID}'>{ListaEjercicios[j].Nombre}</a>");
+                    ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
+                    //ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='#' class='{linkClass}' data-id='{ListaEjercicios[j].ID}'>{ListaEjercicios[j].Nombre}</a>");
                 }
             }
 
@@ -166,7 +131,45 @@ namespace Proyecto_GYM_WEB
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
         }
+        private void LLenarDropDownList()
+        {
+            List<Dificultad> listaDificultad = objController.ListadoDeDificultad();
+            ddlDificultad.DataSource = listaDificultad;
+            ddlDificultad.DataValueField = "ID";
+            ddlDificultad.DataTextField = "Descripcion";
+            ddlDificultad.DataBind();
 
+            List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
+            ddlTipo.DataSource = listaTipoEj;
+            ddlTipo.DataValueField = "ID";
+            ddlTipo.DataTextField = "Descripcion";
+            ddlTipo.DataBind();
+
+            List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
+            ddlGrupoMuscular.DataSource = listaGrupo;
+            ddlGrupoMuscular.DataValueField = "ID";
+            ddlGrupoMuscular.DataTextField = "Descripcion";
+            ddlGrupoMuscular.DataBind();
+
+            List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
+            lbxEjercicio.DataSource = listaEjercicio;
+            lbxEjercicio.DataValueField = "ID";
+            lbxEjercicio.DataTextField = "Nombre";
+            lbxEjercicio.DataBind();
+
+
+            List<Dias> listaDias = objController.ListarDias();
+            ddlDia.DataSource = listaDias;
+            ddlDia.DataValueField = "ID";
+            ddlDia.DataTextField = "dia";
+            ddlDia.DataBind();
+
+            List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
+            ddlIDRutina.DataSource = listaRutina;
+            ddlIDRutina.DataValueField = "ID";
+            ddlIDRutina.DataTextField = "Nombre";
+            ddlIDRutina.DataBind();
+        }
         protected void btnAgregarEjercicioARutina_Click(object sender, EventArgs e)
         {
             try
@@ -243,9 +246,8 @@ namespace Proyecto_GYM_WEB
 
         protected void btnModificarEjercicio_Click(object sender, EventArgs e)
         {
-
         }
 
-        
+     
     }
 }

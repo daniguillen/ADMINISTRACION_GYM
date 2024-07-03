@@ -132,15 +132,6 @@ namespace Proyecto_GYM_WEB
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvArchivoAptoFisico;
 
         /// <summary>
-        /// Control txtFoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtFoto;
-
-        /// <summary>
         /// Control rfvFoto.
         /// </summary>
         /// <remarks>
@@ -148,5 +139,14 @@ namespace Proyecto_GYM_WEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFoto;
+
+        /// <summary>
+        /// Control txtFoto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload txtFoto;
     }
 }

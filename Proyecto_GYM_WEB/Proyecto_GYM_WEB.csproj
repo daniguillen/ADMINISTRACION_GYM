@@ -147,6 +147,7 @@
     <Content Include="Scripts\FuncionesInternas.js" />
     <Content Include="Scripts\LICENSE.txt" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="VistaEntrenador\ModificarEjercicio.aspx" />
     <Content Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx" />
     <Content Include="VistaEntrenador\vistaListarRutinas.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-Clases.aspx" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\ModificarEjercicio.aspx.cs">
+      <DependentUpon>ModificarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\ModificarEjercicio.aspx.designer.cs">
+      <DependentUpon>ModificarEjercicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx.cs">
       <DependentUpon>PantallaPrincipalEntrenador.aspx</DependentUpon>

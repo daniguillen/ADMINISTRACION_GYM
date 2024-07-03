@@ -108,7 +108,7 @@
                             <ContentTemplate>
                                 <div class="row mb-3">
                                     <div class="col-md-12 modal-dialog-centered">
-                                        <label for="txtNombreEjercicio" class="form-label">NOMBRE:</label>
+                                        <label for="txtNombreEjercicio" id="lblNombre" class="form-label">NOMBRE:</label>
                                         <asp:TextBox runat="server" ID="txtNombreEjercicio" CssClass="form-control" />
                                     </div>
                                 </div>
@@ -153,7 +153,7 @@
     </div>
 
 
-
+    <asp:HiddenField ID="HFIDejercicio" runat="server" />
 
     <script>        
         function openModal3() {
@@ -162,6 +162,7 @@
             modal.style.display = 'block';
             modal.classList.add('show');
 
+
         }
         function closeModal3() {
             var modal = document.getElementById('nuevoModal3');
@@ -169,31 +170,41 @@
             modal.classList.remove('show');
 
         }
-        function openModalModificarEjercicio(ejercicioId) {
+
+       <%-- function openModalModificarEjercicio(ejercicioId) {
 
             var modal = document.getElementById('nuevoModal4');
             modal.style.display = 'block';
             modal.classList.add('show');
             console.log('ID del ejercicio:', ejercicioId);
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var links = document.querySelectorAll('.custom-link');
-            links.forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var ejercicioId = this.getAttribute('data-id');
-                    openModalModificarEjercicio(ejercicioId);
-                });
-            });
-        });
+            document.getElementById('<%= HFIDejercicio.ClientID %>').value = ejercicioId;
+           
+        }--%>
+         
+      
 
-        function closeModalModificarEjercicio() {
-            var modal = document.getElementById('nuevoModal4');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
+        //document.addEventListener('DOMContentLoaded', function () {
+        //    var links = document.querySelectorAll('.custom-link');
+        //    links.forEach(function (link) {
+        //        link.addEventListener('click', function (event) {
+        //            event.preventDefault();
+        //            var ejercicioId = this.getAttribute('data-id');
+        //            openModalModificarEjercicio(ejercicioId);
+                   
+        //        });
+        //    });
+        //});
 
-        }
 
+
+        //function closeModalModificarEjercicio() {
+        //    var modal = document.getElementById('nuevoModal4');
+        //    modal.style.display = 'none';
+        //    modal.classList.remove('show');
+
+        //}
+        
 
     </script>
 </asp:Content>

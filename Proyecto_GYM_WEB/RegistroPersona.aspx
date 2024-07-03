@@ -108,9 +108,9 @@
                     <asp:RequiredFieldValidator ErrorMessage="Debe adjuntar el Apto Físico." ID="rfvArchivoAptoFisico" ControlToValidate="txtBoxArchivoAptoFisico"  Display="Dynamic"  runat="server" CssClass="text-danger"/>
                     </div>
                 <div class="form-group w-100">
+                    <asp:RequiredFieldValidator ErrorMessage="Debe adjuntar foto" ID="rfvFoto"  ControlToValidate="txtFoto" runat="server" CssClass="alert alert-danger" Display="Dynamic"/>
                     <label class="form-check-label text-white d-block text-left w-100">Suba una foto para su perfil:</label>
                     <asp:FileUpload runat="server" CssClass="form-control-file mb-5 form-control-sm w-100" ID="txtFoto" required="" />
-                    <asp:RequiredFieldValidator ErrorMessage="Debe adjuntar foto" ID="rfvFoto"  ControlToValidate="txtFoto" runat="server" CssClass="alert alert-danger" Display="Dynamic"/>
                 </div>
                 <div class="form-group r w-100">
                     <div class="form-check-label justify-content-center d-flex text-white d-block text-left w-100">

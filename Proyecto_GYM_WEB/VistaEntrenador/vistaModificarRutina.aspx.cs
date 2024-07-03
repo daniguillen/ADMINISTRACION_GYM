@@ -35,7 +35,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     List<Dias> listaDias = objController.ListarDias();
                     ddlDia.DataSource = listaDias;
                     ddlDia.DataValueField = "ID";
-                    ddlDia.DataTextField = "dia";
+                    ddlDia.DataTextField = "dia";   
                     ddlDia.DataBind();
 
                     Session["listaGrupoMuscular"] = objController.ListarGrupoMuscular();
