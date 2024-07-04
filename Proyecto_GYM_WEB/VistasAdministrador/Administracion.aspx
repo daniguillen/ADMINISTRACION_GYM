@@ -73,16 +73,6 @@
                     <button type="button" id="btnModalHistorial" class="btnModalHistorial btn btn-primary">Historial</button>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="panel">
-                    <h5 class="text-white">Reportes de Asistencia</h5>
-
-                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte" runat="server" />
-                </div>
-            </div>
 
             <div class="col-md-4">
                 <div class="panel">
@@ -94,6 +84,26 @@
 
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Mensaje a Clientes y Entrenadores</h5>
+                    <asp:TextBox ID="TextMensaje" CssClass="form-control mb-3" runat="server"></asp:TextBox>
+                    <asp:Button ID="MensajeAClienteEntrenadores" CssClass="btn btn-primary" Text="Enviar Mensaje" OnClick="Mensaje" runat="server" />
+                    <asp:Label ID="LblMensaje" CssClass="text-white" Visible="false" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Reportes de Asistencia</h5>
+
+                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte" runat="server" />
+                </div>
+            </div>
+
 
             <div class="col-md-4">
                 <div class="panel">
@@ -105,14 +115,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
-                <div class="panel">
-                    <h5 class="text-white">Mensaje a Clientes y Entrenadores</h5>
-                    <asp:TextBox ID="TextMensaje" CssClass="form-control mb-3" runat="server"></asp:TextBox>
-                    <asp:Button ID="MensajeAClienteEntrenadores" CssClass="btn btn-primary" Text="Enviar Mensaje" OnClick="Mensaje" runat="server" />
-                    <asp:Label ID="LblMensaje" CssClass="text-white" Visible="false" runat="server" Text=""></asp:Label>
-                </div>
-            </div>
+
 
             <div class="col-md-4">
                 <div class="panel">

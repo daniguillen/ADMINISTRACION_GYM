@@ -33,15 +33,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Button Button6;
 
         /// <summary>
-        /// Control Button4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
-
-        /// <summary>
         /// Control CambioPrecio.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CambioPrecio;
-
-        /// <summary>
-        /// Control BtnRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRegistro;
 
         /// <summary>
         /// Control TextMensaje.
@@ -85,6 +67,24 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblMensaje;
+
+        /// <summary>
+        /// Control Button4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button4;
+
+        /// <summary>
+        /// Control BtnRegistro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRegistro;
 
         /// <summary>
         /// Control Button9.
