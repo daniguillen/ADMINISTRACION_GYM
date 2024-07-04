@@ -25,12 +25,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["Nivel"] == null || !Session["Nivel"].Equals("3"))
-            {
+           
+                        if (Session["Nivel"] == null || !Session["Nivel"].Equals("3"))
+                        {
 
 
-                Response.Redirect("/");
-            }
+                            Response.Redirect("/");
+                        }
             Session["TOKEN"] = "ENTRO";
             if (Session["TOKEN"] != null)
             {
@@ -43,7 +44,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 {
                     if (!IsPostBack)
                     {
-
                         if (Session["UsuarioNivel"] == null)
                         {
                             Session["UsuarioNivel"] = 1;
@@ -151,7 +151,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void Entrenadores(object sender, EventArgs e)
         {
-            Session["Nivel"] = 2;
+            Session["UsuarioNivel"] = 2;
             ListaUsuarios = dato.Listar_Clientes();
 
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
