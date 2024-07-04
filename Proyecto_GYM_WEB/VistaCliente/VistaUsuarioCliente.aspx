@@ -81,10 +81,10 @@
                         <th>Hora</th>
                         <asp:Repeater ID="RepeaterUsuario" runat="server">
                             <ItemTemplate>
-                                <th data-dia="<%# Eval("dia") %>" onclick="evento(this)">
-                                    <%# Eval("dia") %>
-                                </th>
-                            </ItemTemplate>
+                                    <th data-dia="<%# Eval("dia") %>" onclick="evento(this)">
+                                        <%# Eval("dia") %>
+                                    </th>
+                                </ItemTemplate>
                         </asp:Repeater>
                     </tr>
                 </thead>
@@ -95,7 +95,7 @@
                         <td><%=x %></td>
                         <% 
                             // Recorrer cada día
-                            foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
+                               foreach (var dia in rutinas_usuario.rutina_Ejercicios.GroupBy(e => e.dia.id))
                             {
                                 // Obtener los ejercicios para este día y hora
                                 var ejerciciosParaDiaYHora = dia.Where(e => e.hora == x);

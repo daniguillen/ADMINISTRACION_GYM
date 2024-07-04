@@ -36,34 +36,36 @@ namespace Proyecto_GYM_WEB
                 Perfil.Foto = ".././" + Perfil.Foto;
                 string ruta = Perfil.Foto.ToString();
 
-              
 
-                RepeaterUsuario.DataSource = dia_semana;
-                RepeaterUsuario.DataBind();
-            
+
+            RepeaterUsuario.DataSource = dia_semana;
+            RepeaterUsuario.DataBind();
+
+
         }
 
         public void DdlrutinaCLiente_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idRutina = int.Parse(DdlrutinaCLiente.SelectedValue);
                 if (idRutina == 1) {
-                    rutinas_usuario = controller.Rutinas_id(1);
+                Perfil.ID_rutina =1;
                 }
                 else if (idRutina == 2) {
-                    rutinas_usuario = controller.Rutinas_id(2);
-                }
+                Perfil.ID_rutina = 2;
+            }
                 else if (idRutina == 3)
                 {
-                    rutinas_usuario = controller.Rutinas_id(3);
-                }
+                Perfil.ID_rutina = 3;
+            }
                 else if (idRutina == 4)
                 {
-                    rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
+                //    rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
                 }
-                RepeaterUsuario.DataSource = rutinas_usuario.rutina_Ejercicios;
-           
-                 RepeaterUsuario.DataBind();
 
+            rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
+            Session["PerfilUsuario"]= Perfil;
+
+               
 
             
         }

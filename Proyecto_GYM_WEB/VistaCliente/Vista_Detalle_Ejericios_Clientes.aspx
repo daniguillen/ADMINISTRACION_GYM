@@ -22,7 +22,7 @@
 
                     <div class="fluid-width-video-wrapper ">
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=ejercicio.Video %>" title="<%=ejercicio.Nombre %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="<%=ejercicio.Video %>" title="<%=ejercicio.Nombre %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <p>Su navegador no soporta vídeos HTML5.</p>
 
                     </div>
@@ -30,6 +30,7 @@
 
                 <div class="col-4 ">
                     <div class="align-items-center">
+                                     <h4>Nombre: <%=ejercicio.Nombre %></h4>
                                     <h4>Tipo: <%=ejercicio.Tipo_Ejercicio.Descripcion %></h4>
                                     <h4>Dificultad: <%=ejercicio.Tipo_Dificultad.Descripcion %></h4>
                                     <h4>Grupo Muscular: <%=ejercicio.Grupo_Muscular.Descripcion %></h4>
