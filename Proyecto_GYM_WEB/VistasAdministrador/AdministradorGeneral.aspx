@@ -15,10 +15,13 @@
     }
  </style>
     <div class="container-fluid pb-xxl-1 align-items-center min-vh-100 px-4 ">
+
         <asp:Literal ID="LiteralUsuarios" runat="server" Text="<h1>Usuarios</h1>" />
+           <asp:Button ID="btnvolver" runat="server" Text="🢀" OnClick="btnvolver_Click"   />
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around w-100">
                 <div class="d-flex justify-content-between ">
+                    <asp:Label ID="LblQusuarios" runat="server" Text="Label"></asp:Label>
                     <asp:Button ID="BtnEntrenador" CssClass="btn btn-primary m-2" runat="server" Text="Entrenadores" OnClick="Entrenadores" />
                     <asp:Button ID="BtnUsuario" CssClass="btn btn-primary m-2" runat="server" Text="Usuarios" OnClick="Usuarios" />
                     

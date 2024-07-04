@@ -24,6 +24,24 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Literal LiteralUsuarios;
 
         /// <summary>
+        /// Control btnvolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnvolver;
+
+        /// <summary>
+        /// Control LblQusuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblQusuarios;
+
+        /// <summary>
         /// Control BtnEntrenador.
         /// </summary>
         /// <remarks>

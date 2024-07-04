@@ -95,6 +95,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
             }
 
+            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             ListaUsuarios = AuxListaUsuarios;
             BindRepeater();
 
@@ -155,6 +156,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             ListaUsuarios = dato.Listar_Clientes();
 
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
+           
             foreach (var i in ListaUsuarios)
             {
                 if (i.nivel.ID == 2)
@@ -163,7 +165,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-
+            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
             ListaUsuarios = AuxListaUsuarios;
             Resultado.Visible = false;
@@ -183,7 +185,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-
+            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             LiteralUsuarios.Text = "<h1> Usuarios </h1>";
             ListaUsuarios = AuxListaUsuarios;
             Resultado.Visible = false;
@@ -273,6 +275,10 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             Response.Redirect(Request.RawUrl);
         }
 
+        protected void btnvolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("./Administracion");
+        }
     }
 
 }

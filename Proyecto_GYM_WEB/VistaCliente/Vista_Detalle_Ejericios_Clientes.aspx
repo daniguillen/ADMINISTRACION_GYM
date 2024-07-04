@@ -10,6 +10,7 @@
             <h1>Rutina <%=dia_rutina.dia %></h1>
         </div>
         <div class="container mt-0">
+              <asp:Button ID="btnvolver" runat="server" Text="🢀" OnClick="btnvolver_Click" />
           <% foreach (var rutinaEjercicio in rutina_usuario.rutina_Ejercicios.Where(e => e.dia.id == dia_rutina.id)) { %>
                     <% foreach (var ejercicio in rutinaEjercicio.ejercicio) { %>
             <div class="row d-flex justify-content-center">

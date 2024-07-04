@@ -121,7 +121,7 @@
 
                         <div class="form-group">
                             <label for="TxtFechaIngresoEditar" class="text-light mt-2">Fecha Ingreso:</label>
-                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtFechaIngresoEditar" CssClass="red-text" runat="server" ValidationExpression="^[\d-]+$" />
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtFechaIngresoEditar" CssClass="red-text" runat="server" ValidationExpression="^[\d/]+$" />
 
                             <asp:TextBox ID="TxtFechaIngresoEditar" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtFechaIngresoEditar" runat="server" CssClass="red-text" />

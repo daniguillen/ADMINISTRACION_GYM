@@ -13,7 +13,7 @@
 
         <div>
 
-            <asp:Label ID="lblNuevoUsuario" runat="server" Text="" Visible="false"></asp:Label>
+            <asp:Label ID="lblNuevoUsuario" runat="server" Text="" Visible="false" CssClass="text-white"></asp:Label>
         </div>
         <div>
             <label for="txtMail" class="form-label text-white ">Email</label>
