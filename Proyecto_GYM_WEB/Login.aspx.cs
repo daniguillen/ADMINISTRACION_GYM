@@ -43,7 +43,7 @@ namespace Proyecto_GYM_WEB
                 usuario.Password = txtContraseña.Text;
                 aux = objController.IngresoConLogin(usuario.Mail, usuario.Password);
 
-                if (aux.ID != 0)
+                if (aux.ID != 0 && aux.Estado)
                 {
                     if(aux.nivel.ID == 1)
                     {

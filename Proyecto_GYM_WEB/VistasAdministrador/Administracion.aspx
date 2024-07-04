@@ -61,7 +61,7 @@
                 <div class="panel">
                     <h5 class="text-white">Administrar Permiso</h5>
                     <p class="text-dark font-weight-bold">Modificar, habilitar y deshabilitar</p>
-                    <asp:Button ID="Button7" CssClass="btn btn-primary" Text="Administrar Permiso" OnClick="IrAUsuario" runat="server" />
+                    <button id="btnModalPermiso" type="button" class="btn btn-primary">Administrar Permiso</button>
                 </div>
             </div>
         </div>
@@ -79,15 +79,15 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Reportes de Asistencia</h5>
-                   
-                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte"  runat="server" />
+
+                    <asp:Button ID="Button4" CssClass="btn btn-primary" Text="Generar Reporte" runat="server" />
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
-                  
+
 
                     <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">Modificar</button>
                     <asp:Label ID="CambioPrecio" runat="server" Text="" CssClass="text-white"></asp:Label>
@@ -97,8 +97,8 @@
 
             <div class="col-md-4">
                 <div class="panel">
-                    <h5 class="text-white">Agregar Nuevo Usuario/Entrenador</h5>
-                   
+                    <h5 class="text-white">Registro</h5>
+
                     <asp:Button ID="BtnRegistro" CssClass="btn btn-primary" Text="Agregar" OnClick="IrARegistro" runat="server" />
                 </div>
             </div>
@@ -117,7 +117,7 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Clientes que No Han Pagado el Mes</h5>
-              
+
                     <asp:Button ID="Button9" CssClass="btn btn-primary" Text="Ver Clientes" OnClick="IrAUsuario" runat="server" />
                 </div>
             </div>
@@ -125,7 +125,7 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Estado Financiero</h5>
-                  
+
                     <asp:Button ID="Button10" CssClass="btn btn-primary" Text="Generar Reporte" OnClick="IrARegistro" runat="server" />
                 </div>
             </div>
@@ -190,7 +190,32 @@
             </div>
         </div>
 
-        <!-- Fin Modal para Modificar precio planes -->
+        <!-- Fin Modal para Modificar Historial -->
+
+
+        <!-- Modal para Modificar Permiso -->
+
+        <div class="modal fade" id="ModalPermiso" tabindex="-1" aria-labelledby="LblModalPermiso" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="LblModalPermiso">Ingrese el DNI</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" TextMode="SingleLine" ClientIDMode="Static"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <asp:Button ID="Button2" runat="server" Text="Buscar Historial" CssClass="btn btn-primary" OnClick="BuscarHistorial" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fin Modal para Modificar Permiso -->
     </div>
 
     <script>
@@ -199,6 +224,7 @@
             // Verifica si el modal existe
             var modal = $('#ModalPrecio');
             var modal2 = $('#ModalHistorial');
+            var modal3 = $('#ModalPermiso');
             if (modal.length > 0) {
                 // Agrega el evento click al botón
                 $('#BtnModificarPrecio').click(function () {
@@ -209,6 +235,12 @@
                 // Agrega el evento click al botón
                 $('#btnModalHistorial').click(function () {
                     modal2.modal('show');
+                });
+            }
+            if (modal3.length > 0) {
+                // Agrega el evento click al botón
+                $('#btnModalPermiso').click(function () {
+                    modal3.modal('show');
                 });
             }
         });
