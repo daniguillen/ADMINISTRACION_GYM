@@ -25,6 +25,12 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["Nivel"] == null || !Session["Nivel"].Equals("3"))
+            {
+
+
+                Response.Redirect("/");
+            }
             Session["TOKEN"] = "ENTRO";
             if (Session["TOKEN"] != null)
             {
@@ -37,9 +43,10 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 {
                     if (!IsPostBack)
                     {
-                        if (Session["Nivel"] == null)
+
+                        if (Session["UsuarioNivel"] == null)
                         {
-                            Session["Nivel"] = 1;
+                            Session["UsuarioNivel"] = 1;
                             ListaUsuarios = dato.Listar_Clientes();
                             BindRepeater();
                         }
@@ -65,7 +72,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             ListaUsuarios = dato.Listar_Clientes();
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
 
-            if (Session["Nivel"] != null && Convert.ToInt32(Session["Nivel"]) == 1)
+            if (Session["UsuarioNivel"] != null && Convert.ToInt32(Session["UsuarioNivel"]) == 1)
             {
                 foreach (var i in ListaUsuarios)
                 {
@@ -76,7 +83,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
                 LiteralUsuarios.Text = "<h1> Usuarios </h1>";
             }
-            else if (Session["Nivel"] != null && Convert.ToInt32(Session["Nivel"]) == 2)
+            else if (Session["UsuarioNivel"] != null && Convert.ToInt32(Session["UsuarioNivel"]) == 2)
             {
                 foreach (var i in ListaUsuarios)
                 {
@@ -165,7 +172,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         }
         protected void Usuarios(object sender, EventArgs e)
         {
-            Session["Nivel"] = 1;
+            Session["UsuarioNivel"] = 1;
             ListaUsuarios = dato.Listar_Clientes();
             List<Usuario> AuxListaUsuarios = new List<Usuario>();
             foreach (var i in ListaUsuarios)

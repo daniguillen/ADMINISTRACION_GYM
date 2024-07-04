@@ -15,7 +15,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            /*
+            
              
              
             if (Session["Nivel"] == null ||  !Session["Nivel"].Equals("3")){
@@ -23,7 +23,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
                 Response.Redirect("/");
             }
-             */
+             
 
 
 
