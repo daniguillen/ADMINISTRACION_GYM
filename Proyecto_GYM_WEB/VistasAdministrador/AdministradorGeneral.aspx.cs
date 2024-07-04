@@ -138,11 +138,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 aux = dato.BuscarOneEntrenador(TxtBusquedad.Text);
                 buscar();
             }
-            //filtrar Rutinas no esta hecha
-            if (DropDownList1.SelectedValue.Equals("3"))
-            {
 
-            }
 
             BindRepeater();
         }
@@ -187,17 +183,7 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             Resultado.Text = "";
             BindRepeater();
         }
-        protected void Rutinas(object sender, EventArgs e)
-        {
-            Session["Nivel"] = 3;
-            LiteralUsuarios.Text = "<h1> Rutina </h1>";
-            Resultado.Visible = false;
-            Resultado.Text = "";
-            //   ListarRutina = dato.ListarRutinas();
-          //  BindRepeater();
-
-        }
-
+   
 
         protected void BtnEliminar_Persona_Command(object sender, CommandEventArgs e)
         {

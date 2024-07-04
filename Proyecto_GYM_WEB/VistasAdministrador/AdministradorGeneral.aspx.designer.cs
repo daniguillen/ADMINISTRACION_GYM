@@ -42,15 +42,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected global::System.Web.UI.WebControls.Button BtnUsuario;
 
         /// <summary>
-        /// Control BtnRutina.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRutina;
-
-        /// <summary>
         /// Control DropDownList1.
         /// </summary>
         /// <remarks>

@@ -21,7 +21,7 @@
                 <div class="d-flex justify-content-between ">
                     <asp:Button ID="BtnEntrenador" CssClass="btn btn-primary m-2" runat="server" Text="Entrenadores" OnClick="Entrenadores" />
                     <asp:Button ID="BtnUsuario" CssClass="btn btn-primary m-2" runat="server" Text="Usuarios" OnClick="Usuarios" />
-                    <asp:Button ID="BtnRutina" CssClass="btn btn-primary m-2" runat="server" Text="Rutinas" OnClick="Rutinas" />
+                    
                 </div>
                 <div class="d-flex justify-content-lg-around">
                     <asp:Label AssociatedControlID="TxtBusquedad" runat="server" Text="Filtrar por: " CssClass="text-light m-1"></asp:Label>
@@ -29,7 +29,7 @@
                         <asp:ListItem Text="Seleccion.." Value=""></asp:ListItem>
                         <asp:ListItem Text="Usuario" Value="1"></asp:ListItem>
                         <asp:ListItem Text="Entrenador" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="Rutina" Value="3"></asp:ListItem>
+                       
                     </asp:DropDownList>
                     <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1  text-light" runat="server"></asp:TextBox>
                     <asp:Button ID="BtnBuscar" CssClass="btn btn-primary m-1" runat="server" OnClick="Buscar" Text="Buscar" UseSubmitBehavior="false" />
