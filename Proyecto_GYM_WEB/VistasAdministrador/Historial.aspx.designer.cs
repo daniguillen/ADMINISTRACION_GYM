@@ -11,8 +11,17 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 {
 
 
-    public partial class AdministradorEditarUsuario
+    public partial class Historiales
     {
+
+        /// <summary>
+        /// Control RepeaterHistorial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterHistorial;
 
         /// <summary>
         /// Control Button1.

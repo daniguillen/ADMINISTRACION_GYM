@@ -11,13 +11,12 @@ namespace Dominio
         public int ID { get; set; } 
 
         public string NombrePersona { get; set; }
+        public int Edad { get; set; }
 
+        public DateTime Ingreso { get; set; }
         public string Plan { get; set; }
-
-        public SqlMoney Pago {  get; set; }
-        
+        public SqlMoney Pago {  get; set; }        
         public DateTime FechaPago { get; set; }
-
         public string DescripcionNota { get; set; }
 
 

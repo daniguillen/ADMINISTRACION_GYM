@@ -1453,18 +1453,21 @@ namespace ACCIONES
             
             try
             {
-                datos.setearQuery("select h.id, p.NOMBRE, (select TIPO_PLAN from PLANES where id= H.ID_Planes) as 'Plan', h.Pago,h.FechaPago, h.DescripcionNota from PERSONA P inner join Historial H on H.Id_Persona= p.ID where p.DNI=@dni");
+                datos.setearQuery("SELECT h.id, p.NOMBRE,p.APELLIDO, p.FECHA_INGRESO,DATEDIFF(YEAR, p.FECHA_NACIMIENTO, GETDATE()) - CASE WHEN MONTH(GETDATE()) < MONTH(p.FECHA_NACIMIENTO) OR (MONTH(GETDATE()) = MONTH(p.FECHA_NACIMIENTO) AND DAY(GETDATE()) < DAY(p.FECHA_NACIMIENTO)) THEN 1 ELSE 0 END AS Edad,(SELECT TIPO_PLAN FROM PLANES WHERE id = h.ID_Planes) AS 'Plan', h.Pago,h.FechaPago, h.DescripcionNota FROM PERSONA p INNER JOIN Historial h ON h.Id_Persona = p.ID WHERE p.DNI = @dni");
                 datos.setearParametro("@dni", dni);
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read()) {
                     Historial Aux = new Historial();
                     Aux.ID = datos.Lector.GetInt32(0);
-                    Aux.NombrePersona = datos.Lector.GetString(1);
-                    Aux.Plan= datos.Lector.GetString(2);
-                    Aux.Pago= datos.Lector.GetSqlMoney(3);
-                    Aux.FechaPago= datos.Lector.GetDateTime(4);
-                    Aux.DescripcionNota= datos.Lector.GetString(5);
+                    Aux.NombrePersona = datos.Lector.GetString(1) + " " + datos.Lector.GetString(2);
+                    Aux.Ingreso = datos.Lector.GetDateTime(3);
+                    Aux.Edad = datos.Lector.GetInt32(4);
+                    Aux.Plan= datos.Lector.GetString(5);
+                    Aux.Pago= datos.Lector.GetSqlMoney(6);
+                    Aux.FechaPago= datos.Lector.GetDateTime(7);
+                    Aux.DescripcionNota= datos.Lector.GetString(8);
+
 
                     historial.Add(Aux);
 

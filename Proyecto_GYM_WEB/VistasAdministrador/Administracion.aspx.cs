@@ -1,4 +1,5 @@
 ﻿using ACCIONES;
+using Dominio;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
@@ -83,16 +84,20 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
     
         }
-            protected void BuscarHistorial(object sender, EventArgs e)
+        protected void BuscarHistorial(object sender, EventArgs e)
         {
             // Obtener valores
            // TxtDNI
             Controller controller = new Controller();
 
-            controller.historiaPorDNI(12345677);
+            
 
-
+            List<Historial> list = new List<Historial>();
+            list= controller.historiaPorDNI(int.Parse(TxtDNI.Text));
+            if (list.Count > 0) {
+                Session["Historial"] = list;
+                Response.Redirect("Historial.aspx");
+            }
         }
-
     }
 }
