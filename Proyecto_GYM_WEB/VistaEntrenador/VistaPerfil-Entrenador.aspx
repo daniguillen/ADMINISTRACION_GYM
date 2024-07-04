@@ -10,6 +10,10 @@
             background-position: center; /* Centra la imagen */
             min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
         }
+
+        .red-text {
+            color: red;
+        }
     </style>
 
     <div class="container">
@@ -38,46 +42,64 @@
                         <!--DATOS DE LA PERSONA--->
                         <div class="form-group">
 
-                            <label for="TxtDniEditar" class="text-light mt-2">DNI</label>
+                            <label for="TxtDniEditar" class="text-light mt-2">DNI:</label>
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtDniEditar" CssClass="red-text" runat="server" ValidationExpression="\d+" />
                             <asp:TextBox ID="TxtDniEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtDniEditar" runat="server" CssClass="red-text" />
                         </div>
 
                         <div class="form-group">
                             <label for="TxtNombreEditar" class="text-light mt-2">Nombre:</label>
                             <asp:TextBox ID="TxtNombreEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtNombreEditar" runat="server" CssClass="red-text" />
 
                         </div>
 
                         <div class="form-group">
                             <label for="TxtApellidoEditar" class="text-light mt-2">Apellido:</label>
                             <asp:TextBox ID="TxtApellidoEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtApellidoEditar" runat="server" CssClass="red-text" />
+
                         </div>
 
                         <div class="form-group">
                             <label for="TxtPlanEditar" class="text-light mt-2">Plan:</label>
                             <asp:TextBox ID="TxtPlanEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtPlanEditar" runat="server" CssClass="red-text" />
+
                         </div>
 
                         <div class="form-group">
                             <label for="TxtCelularEditar" class="text-light mt-2">Celular:</label>
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtCelularEditar" CssClass="red-text" runat="server" ValidationExpression="^[\d-]+$" />
                             <asp:TextBox ID="TxtCelularEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtCelularEditar" runat="server" CssClass="red-text" />
+
                         </div>
                     </div>
                     <div class="col-md-6">
 
                         <div class="form-group">
                             <label for="TxtTelEmergenciaEditar" class="text-light mt-2">Tel Emergencia:</label>
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtTelEmergenciaEditar" CssClass="red-text" runat="server" ValidationExpression="^[\d-]+$" />
                             <asp:TextBox ID="TxtTelEmergenciaEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtTelEmergenciaEditar" runat="server" CssClass="red-text" />
+
                         </div>
 
                         <div class="form-group">
                             <label for="TxtEmailEditar" class="text-light mt-2">Email:</label>
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtEmailEditar" runat="server" CssClass="red-text" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
                             <asp:TextBox ID="TxtEmailEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtEmailEditar" runat="server" CssClass="red-text" />
+
                         </div>
 
                         <div class="form-group">
                             <label for="TxtPasswordEditar" class="text-light mt-2">Password:</label>
                             <asp:TextBox ID="TxtPasswordEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtPasswordEditar" runat="server" CssClass="red-text" />
+
                         </div>
 
                         <div class="form-group">
@@ -99,7 +121,11 @@
 
                         <div class="form-group">
                             <label for="TxtFechaIngresoEditar" class="text-light mt-2">Fecha Ingreso:</label>
+                            <asp:RegularExpressionValidator ErrorMessage="Invalido" ControlToValidate="TxtFechaIngresoEditar" CssClass="red-text" runat="server" ValidationExpression="^[\d-]+$" />
+
                             <asp:TextBox ID="TxtFechaIngresoEditar" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ControlToValidate="TxtFechaIngresoEditar" runat="server" CssClass="red-text" />
+
                         </div>
                     </div>
                 </div>

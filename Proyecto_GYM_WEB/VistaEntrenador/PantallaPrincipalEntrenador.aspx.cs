@@ -32,7 +32,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     if (Session["Entrenador"] != null)
                     {
                         Usuario usuario = (Usuario)Session["Entrenador"];
-                        lblBienvenida.Text = "BIENVENIDO ENTRENADOR " + usuario.Nombre + " QUE DESEA HACER HOY";
                     }
                     else
                     {
@@ -106,9 +105,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
         }
-      
 
-       
+
+
 
         protected void ddlModificar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,6 +123,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
+
+
                 Ejercicio nuevoEjercicio = new Ejercicio();
 
                 nuevoEjercicio.Nombre = txtNombre.Text;
@@ -156,8 +157,21 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
         protected void btnAgregarRutina_Click1(object sender, EventArgs e)
         {
+
+
             try
             {
+
+                string nombre = txtNombreRutina.Text.Trim();
+                string descripcion = txtDescripcionRutina.Text.Trim();
+
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion))
+                {
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Por favor, complete todos los campos.');", true);
+                    return;
+                }
+
                 Rutina nuevarutina = new Rutina();
 
                 nuevarutina.nombre = txtNombreRutina.Text;
@@ -172,6 +186,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 throw;
                 //redirigir a pantalla error.
             }
+
         }
 
         protected void btnRutina_Click(object sender, EventArgs e)
@@ -193,6 +208,12 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected void btnAltaEjercicio_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
+        }
+
+        protected void btnPerfil_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("VistaPerfil-Entrenador.aspx", false);
         }
     }
 }

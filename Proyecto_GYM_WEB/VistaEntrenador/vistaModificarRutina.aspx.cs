@@ -32,11 +32,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                 if (!IsPostBack)
                 {
 
-                    List<Dias> listaDias = objController.ListarDias();
-                    ddlDia.DataSource = listaDias;
-                    ddlDia.DataValueField = "ID";
-                    ddlDia.DataTextField = "dia";   
-                    ddlDia.DataBind();
+                    //List<Dias> listaDias = objController.ListarDias();
+                    //ddlDia.DataSource = listaDias;
+                    //ddlDia.DataValueField = "ID";
+                    //ddlDia.DataTextField = "dia";   
+                    //ddlDia.DataBind();
 
                     Session["listaGrupoMuscular"] = objController.ListarGrupoMuscular();
                     ddlGrupoMuscular.DataSource = Session["listaGrupoMuscular"];
@@ -44,11 +44,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     ddlGrupoMuscular.DataTextField = "DESCRIPCION";
                     ddlGrupoMuscular.DataBind();
 
-                    foreach (int hora in horario_rutinas)
-                    {
-                        ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
-                    }
-                    ddlHorario.DataBind();
+                    //foreach (int hora in horario_rutinas)
+                    //{
+                    //    ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
+                    //}
+                    //ddlHorario.DataBind();
 
 
                     if (Request.QueryString["id"] != null)
@@ -62,8 +62,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                         txtDescripcionRutina.Text = objRuti.descripcion;
 
                         Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
-                        ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
-                        ddlHorario.SelectedValue = objRuti_Ejer.hora.ToString();
+                        //ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
+                        //ddlHorario.SelectedValue = objRuti_Ejer.hora.ToString();
 
                     }
 
@@ -91,8 +91,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     int idRuti = int.Parse(hfRutinaID.Value);
                     string nombre = txtNombreRutina.Text;
                     string descripcion = txtDescripcionRutina.Text;
-                    int idDiaSeleccionado = int.Parse(ddlDia.SelectedValue);
-                    int horarioSeleccionado = int.Parse(ddlHorario.SelectedValue);
+                    //int idDiaSeleccionado = int.Parse(ddlDia.SelectedValue);
+                    //int horarioSeleccionado = int.Parse(ddlHorario.SelectedValue);
 
                     Rutina rutinaModificar = new Rutina
 
@@ -103,18 +103,18 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
                     };
                     objController.ModificarRutina(rutinaModificar);
-                    Dias diasModif = new Dias
-                    {
+                    //Dias diasModif = new Dias
+                    //{
 
-                        id = idDiaSeleccionado,
-                    };
+                    //    id = idDiaSeleccionado,
+                    //};
 
-                    Rutina_ejercicio rutina_HoraModi = new Rutina_ejercicio
-                    {
-                        hora = horarioSeleccionado
-                    };
+                    //Rutina_ejercicio rutina_HoraModi = new Rutina_ejercicio
+                    //{
+                    //    hora = horarioSeleccionado
+                    //};
 
-                    objController.ModificarRutinaEjerciDiaHora(diasModif, rutina_HoraModi, rutinaModificar);
+                   // objController.ModificarRutinaEjerciDiaHora(/*diasModif, rutina_HoraModi,*/ rutinaModificar);
                     Response.Redirect("vistaListarRutinas.aspx", false);
                 }
             }
@@ -188,8 +188,8 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             Session["NombreRutina"] = txtNombreRutina.Text;
             Session["DescripcionRutina"] = txtDescripcionRutina.Text;
-            Session["Horario"] = ddlHorario.SelectedValue;
-            Session["Dia"] = ddlDia.SelectedValue;
+            //Session["Horario"] = ddlHorario.SelectedValue;
+            //Session["Dia"] = ddlDia.SelectedValue;
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModal();", true);
         }
         protected void btnVolver_Click(object sender, EventArgs e)

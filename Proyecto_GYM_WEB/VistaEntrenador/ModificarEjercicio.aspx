@@ -15,6 +15,11 @@
             border-color: #2C6D00;
             background: linear-gradient(to left, #74EB1E, #2C6D00);
         }
+        
+        .red-text{
+            color: red;
+        }
+
     </style>
 
 
@@ -27,47 +32,51 @@
             <ContentTemplate>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="txtNombreEjercicio" id="lblNombre" class="form-label lblCampos">NOMBRE:</label>
-                        <asp:TextBox runat="server" ID="txtNombreEjercicio" CssClass="form-control" />
+                        <label for="txtNombreEjercicio" id="lblNombre" class="form-label lblCampos">NOMBRE:</label>                     
+                            <asp:TextBox runat="server" ID="txtNombreEjercicio" CssClass="form-control" />                        
+                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombreEjercicio" ErrorMessage="Campo es obligatorio" CssClass="red-text" />                        
                     </div>
                 </div>
                 <div class="row mb-3 m-0">
-                    <label for="lblEjercicios" class="form-label lblCampos">DESCRIPCIÓN:</label>
+                    <label for="txtDescripcion" class="form-label lblCampos">DESCRIPCIÓN:</label>
                     <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Rows="5" />
+                    <asp:RequiredFieldValidator ErrorMessage="Campo es obligatorio" ControlToValidate="txtDescripcion" runat="server" CssClass="red-text"/>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6 mb">
-                        <label for="lblVideo" class="form-label lblCampos">INGRESE URL DEL VIDEO:</label>
+                        <label for="txtVideo" class="form-label lblCampos">INGRESE URL DEL VIDEO:</label>
                         <asp:TextBox ID="txtVideo" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ErrorMessage="Campo es obligatorio" ControlToValidate="txtVideo" runat="server" CssClass="red-text"/>
                     </div>
                     <div class="col-md-6">
-                        <label for="lblRepeticiones" class="form-label lblCampos">REPETICIONES:</label>
+                        <label for="txtRepeticiones" class="form-label lblCampos">REPETICIONES:</label>
                         <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ErrorMessage="Campo es obligatorio" ControlToValidate="txtRepeticiones" runat="server" CssClass="red-text"/>
                     </div>
                 </div>
-                    <div class="row mb-3">
-                        <div class="col-md-6 mt-4">
-                            <label for="lblIdGrupoMusc" class="form-label lblCampos">GRUPO MUSCULAR:</label>
-                            <asp:DropDownList ID="ddlGrupoMuscu" runat="server" CssClass="form-control"></asp:DropDownList>
-                        </div>
-                        <div class="col-md-6 mt-4">
-                            <label for="lblIdTipo" class="form-label lblCampos">TIPO:</label>
-                            <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control"></asp:DropDownList>
-                        </div>
-                        <div class="col-md-6 mt-4">
-                            <label for="lblIDDificultad" class="form-label lblCampos">DIFICULTAD:</label>
-                            <asp:DropDownList ID="ddlDificultad" CssClass="form-control" runat="server"></asp:DropDownList>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-md-6 mt-4">
+                        <label for="lblIdGrupoMusc" class="form-label lblCampos">GRUPO MUSCULAR:</label>
+                        <asp:DropDownList ID="ddlGrupoMuscu" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
+                    <div class="col-md-6 mt-4">
+                        <label for="lblIdTipo" class="form-label lblCampos">TIPO:</label>
+                        <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <label for="lblIDDificultad" class="form-label lblCampos">DIFICULTAD:</label>
+                        <asp:DropDownList ID="ddlDificultad" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
             </ContentTemplate>
         </asp:UpdatePanel>
 
-    
+
         <div class="col-12">
             <asp:Button ID="btnGuardarCambiosEjercicio" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" OnClick="btnGuardarCambiosEjercicio_Click" />
             <a href="VistaEntrenador-EntrenamientosABM.aspx" type="button" class="btn btn-secondary">Cancelar</a>
         </div>
-    
+
     </div>
 
 

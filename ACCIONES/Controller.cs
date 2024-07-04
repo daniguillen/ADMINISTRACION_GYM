@@ -866,6 +866,7 @@ namespace ACCIONES
             try
             {
                 datos.setearQuery("UPDATE RUTINA_EJERCICIO SET ID_DIA =@ID_DIA, HORARIO=@HORARIO WHERE ID_RUTINA =@ID_RUTINA ");
+                datos.setearQuery("UPDATE RUTINA_EJERCICIO  WHERE ID_RUTINA =@ID_RUTINA ");
                 datos.setearParametro("@ID_DIA", idDia.id);
                 datos.setearParametro("@HORARIO", rutina_EjerHora.hora);
                 datos.setearParametro("@ID_RUTINA", rutina.ID);

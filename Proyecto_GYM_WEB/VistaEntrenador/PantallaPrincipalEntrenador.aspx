@@ -11,13 +11,31 @@
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             background-attachment: fixed; /* Fija la imagen al fondo */
             background-position: center; /* Centra la imagen */
-            min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
+            min-height: 100vh;
         }
 
+        .panel {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+            .panel h5, .panel p, .panel input {
+                color: white;
+            }
+
         .btn-primary {
-           
             border-color: #2C6D00;
             background: linear-gradient(to left, #74EB1E, #2C6D00);
+        }
+
+        .text-dark {
+            color: white !important;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
         }
     </style>
     <div class="container mt-5">
@@ -28,7 +46,7 @@
                 <div class="panel">
                     <h5 class="text-white">Nueva Rutina</h5>
                     <p class="text-dark font-weight-bold">Dar de alta nueva rutina</p>
-                    <asp:Button ID="btnRutinaAlta" runat="server" Text="Alta rutina" CssClass="btn btn-primary" OnClick="btnRutinaAlta_Click"/>
+                    <asp:Button ID="btnRutinaAlta" runat="server" Text="Alta rutina" CssClass="btn btn-primary" OnClick="btnRutinaAlta_Click" />
                 </div>
             </div>
 
@@ -49,79 +67,23 @@
             </div>
         </div>
 
-          <div class="row">
-      <div class="col-md-4">
-          <div class="panel">
-              <h5 class="text-white">NuevoEjercicio</h5>
-              <p class="text-dark font-weight-bold">Dar de alta nueva ejercicio</p>
-              <asp:Button ID="btnAltaEjercicio" runat="server" Text="Alta ejercicio" CssClass="btn btn-primary" OnClick="btnAltaEjercicio_Click"/>
-          </div>
-      </div>
-
-      
-  </div>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-4">
-                <div class="col-12 ">
-                    <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">NuevoEjercicio</h5>
+                    <p class="text-dark font-weight-bold">Dar de alta nueva ejercicio</p>
+                    <asp:Button ID="btnAltaEjercicio" runat="server" Text="Alta ejercicio" CssClass="btn btn-primary" OnClick="btnAltaEjercicio_Click" />
                 </div>
-                <div class="row mt-2">
-                    <div class="col-12 text-center">
-                        <h2>Menu:</h2>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center mt-2">
-                    <div class="col-12 text-center">
-                        <asp:DropDownList ID="ddlModificar" runat="server" CssClass="form-select m-1" AutoPostBack="true" OnSelectedIndexChanged="ddlModificar_SelectedIndexChanged">
-                            <asp:ListItem Text="Modificar" Value=""></asp:ListItem>
-                            <asp:ListItem Text="Modificar Ejercicio" Value="1"></asp:ListItem>
-                            <asp:ListItem Text="Modificar Rutina" Value="2"></asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
+            </div>        
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Mi Perfil</h5>
+                    <p class="text-dark font-weight-bold">Modificar Perfil</p>
+                    <asp:Button ID="btnPerfil" runat="server" Text="Ver Perfil" CssClass="btn btn-primary" OnClick="btnPerfil_Click" />
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!--*****************************************************************-->
     <%--        AGREGAR EJERCICIO --%>
@@ -195,22 +157,22 @@
                         <div class="mb-3 uP">
                             <label for="lblNombreRutina" class="form-label">NOMBRE RUTINA:</label>
                             <asp:TextBox ID="txtNombreRutina" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
-                            <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                            <%--                            <asp:RequiredFieldValidator ErrorMessage="Nombre requerido" ControlToValidate="txtNombreRutina" runat="server"  CssClass="text-danger" Display="Dynamic"/>--%>
+                            <div class="mb-3">
+                                <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
+                                <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="PantallaPrincipalEntrenador.aspx" type="button" class="btn btn-secondary">VOLVER</a>
-                    <asp:Button ID="btnAgregarRutina" runat="server" type="button" CssClass="btn btn-primary" Text="GUARDAR" OnClick="btnAgregarRutina_Click1" />
+                    <div class="modal-footer">
+                        <a href="PantallaPrincipalEntrenador.aspx" type="button" class="btn btn-secondary">VOLVER</a>
+                        <asp:Button ID="btnAgregarRutina" runat="server" type="button" CssClass="btn btn-primary" Text="GUARDAR" OnClick="btnAgregarRutina_Click1" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <
     <script>        
         function openModal() {
             console.log("entro al modal");

@@ -51,22 +51,13 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         protected global::System.Web.UI.WebControls.Button btnAltaEjercicio;
 
         /// <summary>
-        /// Control lblBienvenida.
+        /// Control btnPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBienvenida;
-
-        /// <summary>
-        /// Control ddlModificar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlModificar;
+        protected global::System.Web.UI.WebControls.Button btnPerfil;
 
         /// <summary>
         /// Control btnSalirX1.
