@@ -390,11 +390,54 @@ insert into USUARIO (MAIL, PASWORD, IDNIVEL) values (@mail,@pasword, 1)
 declare @ID_usuario int;
 select @ID_usuario=SCOPE_IDENTITY() FROM USUARIO
 
-
-
-
 insert into PERSONA (ID_USUARIO, APELLIDO, NOMBRE, APTO_FISICO, CELULAR, DIRECCION, dni, FECHA_INGRESO, FECHA_NACIMIENTO, foto, IDPLANES, SEXO, TEL_EMERGENCIA, ID_ESTABLECIMIENTO, ID_RUTINA)
 values (@ID_usuario,@apellido,@nombre,@aptofisico,@celular,@direccion,@dni,GETDATE(),@fecha_nacimiento,@foto,@idplan,@sexo,@tel_emergencia,@id_establecimiento,1)
-
-
 end
+
+GO
+
+CREATE OR ALTER PROCEDURE SP_Modificar_Cliente (
+    @ID INT,
+    @PASS NVARCHAR(100), 
+    @MAIL VARCHAR(100), 
+    @Nombre VARCHAR(100), 
+    @Apellido VARCHAR(100), 
+    @Direccion VARCHAR(100), 
+    @FechaNacimiento DATETIME,
+    @Sexo INT,
+    @Foto NVARCHAR(100), 
+    @DNI VARCHAR(100), 
+    @AptoFisico NVARCHAR(100), 
+    @TelEmergencia VARCHAR(100), 
+    @Celular VARCHAR(100), 
+	@FechaIngreso DATETIME,
+    @IDPlanes INT,
+    @IDEstablecimiento INT,
+    @Estado INT,
+    @IDRutina INT
+)
+AS
+BEGIN
+    UPDATE PERSONA
+    SET 
+        APELLIDO = @Apellido,
+        NOMBRE = @Nombre,
+        APTO_FISICO = @AptoFisico,
+        CELULAR = @Celular,
+        DIRECCION = @Direccion,
+        DNI = @DNI,
+        FECHA_INGRESO = GETDATE(),
+        FECHA_NACIMIENTO = @FechaNacimiento,
+        FOTO = @Foto,
+        IDPLANES = @IDPlanes,
+        SEXO = @Sexo,
+        TEL_EMERGENCIA = @TelEmergencia,
+        ID_ESTABLECIMIENTO = @IDEstablecimiento,
+        ESTADO = @Estado,
+        ID_RUTINA = @IDRutina
+    WHERE ID = @ID;
+    UPDATE USUARIO
+    SET 
+        PASWORD = @PASS
+    WHERE MAIL = @MAIL
+END;
