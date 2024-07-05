@@ -53,16 +53,16 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Administrar Rutina</h5>
-                    <p class="text-dark font-weight-bold">Modificar</p>
+                    <p class="text-dark font-weight-bold">Modificar, Listado, Ver detalles</p>
                     <asp:Button ID="btnRutina" runat="server" Text="Administrar Rutina" CssClass="btn btn-primary" OnClick="btnRutina_Click" />
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="panel">
-                    <h5 class="text-white">Listado Ejercicios</h5>
-                    <p class="text-dark font-weight-bold">Modificar, Agregar ejercicio a rutina</p>
-                    <asp:Button ID="btnListadoEjercicio" runat="server" Text="Listado" CssClass="btn btn-primary" OnClick="btnListadoEjercicio_Click" />
+                    <h5 class="text-white">Administrar Ejercicios</h5>
+                    <p class="text-dark font-weight-bold">Modificar, Listado, Agregar ejercicio a rutina</p>
+                    <asp:Button ID="btnListadoEjercicio" runat="server" Text="Administrar ejercicio" CssClass="btn btn-primary" OnClick="btnListadoEjercicio_Click" />
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="panel">
-                    <h5 class="text-white">NuevoEjercicio</h5>
+                    <h5 class="text-white">Nuevo Ejercicio</h5>
                     <p class="text-dark font-weight-bold">Dar de alta nueva ejercicio</p>
                     <asp:Button ID="btnAltaEjercicio" runat="server" Text="Alta ejercicio" CssClass="btn btn-primary" OnClick="btnAltaEjercicio_Click" />
                 </div>
@@ -157,7 +157,6 @@
                         <div class="mb-3 uP">
                             <label for="lblNombreRutina" class="form-label">NOMBRE RUTINA:</label>
                             <asp:TextBox ID="txtNombreRutina" runat="server" CssClass="form-control"></asp:TextBox>
-                            <%--                            <asp:RequiredFieldValidator ErrorMessage="Nombre requerido" ControlToValidate="txtNombreRutina" runat="server"  CssClass="text-danger" Display="Dynamic"/>--%>
                             <div class="mb-3">
                                 <label for="lblDescripcion" class="form-label">DESCRIPCION:</label>
                                 <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>

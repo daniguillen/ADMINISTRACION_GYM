@@ -150,7 +150,6 @@
     <Content Include="VistaEntrenador\ModificarEjercicio.aspx" />
     <Content Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx" />
     <Content Include="VistaEntrenador\vistaListarRutinas.aspx" />
-    <Content Include="VistaEntrenador\VistaEntrenador-Clases.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-EntrenamientosABM.aspx" />
     <Content Include="VistaCliente\VistaPerfilUsuarioCliente.aspx" />
     <Content Include="RegistroPersona.aspx" />
@@ -277,13 +276,6 @@
     </Compile>
     <Compile Include="VistaEntrenador\vistaListarRutinas.aspx.designer.cs">
       <DependentUpon>vistaListarRutinas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VistaEntrenador\VistaEntrenador-Clases.aspx.cs">
-      <DependentUpon>VistaEntrenador-Clases.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VistaEntrenador\VistaEntrenador-Clases.aspx.designer.cs">
-      <DependentUpon>VistaEntrenador-Clases.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\VistaEntrenador-EntrenamientosABM.aspx.cs">
       <DependentUpon>VistaEntrenador-EntrenamientosABM.aspx</DependentUpon>

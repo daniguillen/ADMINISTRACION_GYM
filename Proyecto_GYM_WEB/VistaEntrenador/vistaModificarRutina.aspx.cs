@@ -30,13 +30,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             {
                 FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 if (!IsPostBack)
-                {
-
-                    //List<Dias> listaDias = objController.ListarDias();
-                    //ddlDia.DataSource = listaDias;
-                    //ddlDia.DataValueField = "ID";
-                    //ddlDia.DataTextField = "dia";   
-                    //ddlDia.DataBind();
+                {                   
 
                     Session["listaGrupoMuscular"] = objController.ListarGrupoMuscular();
                     ddlGrupoMuscular.DataSource = Session["listaGrupoMuscular"];
@@ -44,33 +38,23 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     ddlGrupoMuscular.DataTextField = "DESCRIPCION";
                     ddlGrupoMuscular.DataBind();
 
-                    //foreach (int hora in horario_rutinas)
-                    //{
-                    //    ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
-                    //}
-                    //ddlHorario.DataBind();
-
-
                     if (Request.QueryString["id"] != null)
-                    {   //Modifico la rutina 
+                    {   
                         int rutinaid = int.Parse(Request.QueryString["id"]);
                         hfRutinaID.Value = rutinaid.ToString();
-
 
                         Rutina objRuti = objController.RutinaIdParaModificarRutina(rutinaid);
                         txtNombreRutina.Text = objRuti.nombre;
                         txtDescripcionRutina.Text = objRuti.descripcion;
 
-                        Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);
-                        //ddlDia.SelectedValue = objRuti_Ejer.dia.id.ToString();
-                        //ddlHorario.SelectedValue = objRuti_Ejer.hora.ToString();
+                        Rutina_ejercicio objRuti_Ejer = objController.Rutina_EjercicioIdParaModificarRutina(rutinaid);                       
 
                     }
 
                 }
                 else
                 {
-                    // Mantén el estado del checkbox durante el postback
+                 
                     FiltroAvanzado = chkAFiltroAvanzado.Checked;
                 }
 
@@ -91,8 +75,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
                     int idRuti = int.Parse(hfRutinaID.Value);
                     string nombre = txtNombreRutina.Text;
                     string descripcion = txtDescripcionRutina.Text;
-                    //int idDiaSeleccionado = int.Parse(ddlDia.SelectedValue);
-                    //int horarioSeleccionado = int.Parse(ddlHorario.SelectedValue);
 
                     Rutina rutinaModificar = new Rutina
 
@@ -103,18 +85,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
                     };
                     objController.ModificarRutina(rutinaModificar);
-                    //Dias diasModif = new Dias
-                    //{
-
-                    //    id = idDiaSeleccionado,
-                    //};
-
-                    //Rutina_ejercicio rutina_HoraModi = new Rutina_ejercicio
-                    //{
-                    //    hora = horarioSeleccionado
-                    //};
-
-                   // objController.ModificarRutinaEjerciDiaHora(/*diasModif, rutina_HoraModi,*/ rutinaModificar);
                     Response.Redirect("vistaListarRutinas.aspx", false);
                 }
             }
@@ -181,7 +151,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             int ejercicioID = int.Parse(ddlEjercicios.SelectedValue);
             Ejercicio objEjercicioID = objController.BuscarEjercicioPorID(ejercicioID);
-            txtRepeticiones.Text = objEjercicioID.Repeticiones.ToString();
         }
 
         protected void btnOpenModal_Click(object sender, EventArgs e)
