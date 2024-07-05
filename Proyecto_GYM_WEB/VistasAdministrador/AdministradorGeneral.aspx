@@ -21,7 +21,7 @@
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around w-100">
                 <div class="d-flex justify-content-between ">
-                    <asp:Label ID="LblQusuarios" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="LblQusuarios" runat="server"  CssClass="text-white"></asp:Label>
                     <asp:Button ID="BtnEntrenador" CssClass="btn btn-primary m-2" runat="server" Text="Entrenadores" OnClick="Entrenadores" />
                     <asp:Button ID="BtnUsuario" CssClass="btn btn-primary m-2" runat="server" Text="Usuarios" OnClick="Usuarios" />
                     
@@ -34,7 +34,7 @@
                         <asp:ListItem Text="Entrenador" Value="2"></asp:ListItem>
                        
                     </asp:DropDownList>
-                    <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1  text-light" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TxtBusquedad" CssClass="form-control m-1  " runat="server"></asp:TextBox>
                     <asp:Button ID="BtnBuscar" CssClass="btn btn-primary m-1" runat="server" OnClick="Buscar" Text="Buscar" UseSubmitBehavior="false" />
                     <asp:Label ID="Resultado" runat="server" Text="" CssClass="text-light m-1" Visible="false"></asp:Label>
                 </div>
