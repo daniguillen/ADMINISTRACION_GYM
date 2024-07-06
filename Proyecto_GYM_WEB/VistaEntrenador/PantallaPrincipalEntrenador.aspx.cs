@@ -40,49 +40,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
                     CargaGruposMusculares();
                     CargaListaEjercicios();
-
-                    List<Dificultad> lista = objController.ListadoDeDificultad();
-                    ddlDificultad.DataSource = lista;
-                    ddlDificultad.DataValueField = "ID";
-                    ddlDificultad.DataTextField = "Descripcion";
-                    ddlDificultad.DataBind();
-
-                    List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
-                    ddlTipo.DataSource = listaTipoEj;
-                    ddlTipo.DataValueField = "ID";
-                    ddlTipo.DataTextField = "Descripcion";
-                    ddlTipo.DataBind();
-
-                    List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
-                    ddlGrupoMuscu.DataSource = listaGrupo;
-                    ddlGrupoMuscu.DataValueField = "ID";
-                    ddlGrupoMuscu.DataTextField = "Descripcion";
-                    ddlGrupoMuscu.DataBind();
-
+                    LlenarDropDownList();
                     List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
-                    //lbxEjercicio.DataSource = listaEjercicio;
-                    //lbxEjercicio.DataValueField = "ID";
-                    //lbxEjercicio.DataTextField = "Nombre";
-                    //lbxEjercicio.DataBind();
 
-
-                    List<Dias> listaDias = objController.ListarDias();
-                    //ddlDia.DataSource = listaDias;
-                    //ddlDia.DataValueField = "ID";
-                    //ddlDia.DataTextField = "dia";
-                    //ddlDia.DataBind();
-
-                    List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
-                    //ddlIDRutina.DataSource = listaRutina;
-                    //ddlIDRutina.DataValueField = "ID";
-                    //ddlIDRutina.DataTextField = "Nombre";
-                    //ddlIDRutina.DataBind();
-
-                    //foreach (int hora in horario_rutinas)
-                    //{
-                    //    ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
-                    //}
-                    //ddlHorario.DataBind();
 
 
                     Session["ListaEjercicios"] = listaEjercicio;
@@ -96,6 +56,51 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             }
 
         }
+        public void LlenarDropDownList()
+        {
+            List<Dificultad> lista = objController.ListadoDeDificultad();
+            ddlDificultad.DataSource = lista;
+            ddlDificultad.DataValueField = "ID";
+            ddlDificultad.DataTextField = "Descripcion";
+            ddlDificultad.DataBind();
+
+            List<TipoEjercicio> listaTipoEj = objController.ListadoTipoEjercicio();
+            ddlTipo.DataSource = listaTipoEj;
+            ddlTipo.DataValueField = "ID";
+            ddlTipo.DataTextField = "Descripcion";
+            ddlTipo.DataBind();
+
+            List<GrupoMuscular> listaGrupo = objController.ListarGrupoMuscular();
+            ddlGrupoMuscu.DataSource = listaGrupo;
+            ddlGrupoMuscu.DataValueField = "ID";
+            ddlGrupoMuscu.DataTextField = "Descripcion";
+            ddlGrupoMuscu.DataBind();
+
+            List<Ejercicio> listaEjercicio = objController.ListarEjercicios();
+            //lbxEjercicio.DataSource = listaEjercicio;
+            //lbxEjercicio.DataValueField = "ID";
+            //lbxEjercicio.DataTextField = "Nombre";
+            //lbxEjercicio.DataBind();
+
+
+            List<Dias> listaDias = objController.ListarDias();
+            //ddlDia.DataSource = listaDias;
+            //ddlDia.DataValueField = "ID";
+            //ddlDia.DataTextField = "dia";
+            //ddlDia.DataBind();
+
+            List<Rutina> listaRutina = objController.ListarRutinaParaAgregarEjercicio();
+            //ddlIDRutina.DataSource = listaRutina;
+            //ddlIDRutina.DataValueField = "ID";
+            //ddlIDRutina.DataTextField = "Nombre";
+            //ddlIDRutina.DataBind();
+
+            //foreach (int hora in horario_rutinas)
+            //{
+            //    ddlHorario.Items.Add(new ListItem(hora.ToString(), hora.ToString()));
+            //}
+            //ddlHorario.DataBind();
+        }
         private void CargaListaEjercicios()
         {
             ListaEjercicios = objController.ListarEjercicios();
@@ -105,10 +110,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             ListagrupoMusculares = objController.ListarGrupoMuscular();
         }
-
-
-
-
         protected void ddlModificar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -123,8 +124,16 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             try
             {
+                string nombre = txtNombre.Text.Trim();
+                string descripcion = txtDescripcionEj.Text.Trim();
+                string repeticiones = txtRepeticiones.Text.Trim();
+                string UrlVideo = txtVideo.Text.Trim();
 
-
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(repeticiones) || string.IsNullOrEmpty(UrlVideo))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Por favor, complete todos los campos.');", true);
+                    return;
+                }
                 Ejercicio nuevoEjercicio = new Ejercicio();
 
                 nuevoEjercicio.Nombre = txtNombre.Text;
@@ -167,7 +176,6 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
                 if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion))
                 {
-
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Por favor, complete todos los campos.');", true);
                     return;
                 }

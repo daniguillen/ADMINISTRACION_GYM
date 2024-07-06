@@ -24,7 +24,8 @@ namespace Proyecto_GYM_WEB
                 usuario = (Usuario)Session["Entrenador"];
                     
                     ImagePerfil.ImageUrl = usuario.Foto;
-                    TxtDniEditar.Text = usuario.DNI;
+                     TxtDniEditar.Text = usuario.DNI;
+                //lblDNI.Text = usuario.DNI;
                     TxtNombreEditar.Text = usuario.Nombre;
                     TxtApellidoEditar.Text = usuario.Apellido;
                     TxtPlanEditar.Text = usuario.plan.Tipo_Plan;

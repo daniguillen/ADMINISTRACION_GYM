@@ -252,8 +252,8 @@ namespace ACCIONES
             try
             {
                 // Define la consulta SQL para actualizar los datos del cliente
-                datos.setearQuery("BEGIN TRANSACTION\r\n  UPDATE PERSONA AS p\r\n  SET \r\n    APELLIDO = @Apellido,\r\n    NOMBRE = @Nombre,\r\n    APTO_FISICO = @AptoFisico,\r\n    CELULAR = @Celular,\r\n    DIRECCION = @Direccion,\r\n    DNI = @DNI,\r\n    FECHA_INGRESO = @FechaIngreso,\r\n    FECHA_NACIMIENTO = @FechaNacimiento,\r\n    FOTO = @Foto,\r\n    IDPLANES = @IDPlanes,\r\n    SEXO = @Sexo,\r\n    TEL_EMERGENCIA = @TelEmergencia,\r\n    ID_ESTABLECIMIENTO = @IDEstablecimiento,\r\n    ESTADO = @Estado,\r\n    ID_RUTINA = @IDRutina\r\n  WHERE p.ID = @ID;\r\n\r\n  UPDATE USUARIO AS u\r\n  SET PASWORD = @PASS\r\n  WHERE u.MAIL = @MAIL;\r\n\r\nCOMMIT TRANSACTION; \r\nGO ");
-
+                //datos.setearQuery("BEGIN TRANSACTION\r\n  UPDATE PERSONA AS p\r\n  SET \r\n    APELLIDO = @Apellido,\r\n    NOMBRE = @Nombre,\r\n    APTO_FISICO = @AptoFisico,\r\n    CELULAR = @Celular,\r\n    DIRECCION = @Direccion,\r\n    DNI = @DNI,\r\n    FECHA_INGRESO = @FechaIngreso,\r\n    FECHA_NACIMIENTO = @FechaNacimiento,\r\n    FOTO = @Foto,\r\n    IDPLANES = @IDPlanes,\r\n    SEXO = @Sexo,\r\n    TEL_EMERGENCIA = @TelEmergencia,\r\n    ID_ESTABLECIMIENTO = @IDEstablecimiento,\r\n    ESTADO = @Estado,\r\n    ID_RUTINA = @IDRutina\r\n  WHERE p.ID = @ID;\r\n\r\n  UPDATE USUARIO AS u\r\n  SET PASWORD = @PASS\r\n  WHERE u.MAIL = @MAIL;\r\n\r\nCOMMIT TRANSACTION; \r\nGO ");
+                datos.setearProcedimiento("SP_Modificar_Cliente");
 
                 datos.setearParametro("@ID", usuario.ID);
                 datos.setearParametro("@PASS", usuario.Password);

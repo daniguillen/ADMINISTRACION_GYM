@@ -11,6 +11,10 @@
             background-position: center; /* Centra la imagen */
             min-height: 100vh; /* Asegura que el fondo tenga al menos la altura de la ventana */
         }
+
+        .red-text {
+            color: red;
+        }
     </style>
 
     <div class="container">
@@ -20,10 +24,12 @@
                 <div class="mb-3">
                     <label for="lblNombreRutina" class="form-label lblCampos">NOMBRE RUTINA:</label>
                     <asp:TextBox ID="txtNombreRutina" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
+                    <asp:RequiredFieldValidator ErrorMessage="Campo obligatorio" ControlToValidate="txtNombreRutina" runat="server" CssClass="red-text" />
+                </div>
                 <div class="mb-3">
                     <label for="lblDescripcion" class="form-label lblCampos">DESCRIPCION:</label>
                     <asp:TextBox ID="txtDescripcionRutina" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="8"></asp:TextBox>
+                    <asp:RequiredFieldValidator ErrorMessage="Campo obligatorio" ControlToValidate="txtDescripcionRutina" runat="server" CssClass="red-text"/>
                 </div>
             </div>
             <div class="col-md-6">
@@ -74,7 +80,7 @@
                                         </td>
                                         <td>
                                             <a href="#" class="btn btn-secondary" data-id="<%= ejercicio.ID_Ejercicio %>" onclick="openModal(this)">Ver detalles</a>
-                                            <asp:Button ID="btnEliminar" runat="server" Text="🗑️" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="capturarEjercicioID(this); return confirm('¿Está seguro de que desea eliminar este ejercicio?');"/>
+                                            <asp:Button ID="btnEliminar" runat="server" Text="🗑️" class="btn btn-danger btn-icon-split btnAdministrador" OnClick="btnEliminar_Click" OnClientClick="capturarEjercicioID(this); return confirm('¿Está seguro de que desea eliminar este ejercicio?');" />
                                         </td>
                                     </tr>
                                     <% } %>
@@ -89,7 +95,7 @@
         <div class="row">
             <div class="col-12">
                 <asp:Button ID="btnModificarRutina" Text="Guardar Cambios" runat="server" CssClass="btn btn-primary m-2" OnClick="btnModificarRutina_Click" />
-                <asp:Button ID="btnVolver" runat="server" Text="Cancelar" CssClass="btn btn-secondary m-2" OnClick="btnVolver_Click" />
+                <asp:Button ID="btnVolver" runat="server" Text="Cancelar" CssClass="btn btn-secondary m-2" OnClick="btnVolver_Click" CausesValidation="false"/>
             </div>
         </div>
     </div>
@@ -115,10 +121,10 @@
                                     <asp:Label ID="lblEjercicios" runat="server" Text="Seleccion Ejercicio:" class="form-label"></asp:Label>
                                     <asp:DropDownList ID="ddlEjercicios" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEjercicios_SelectedIndexChanged"></asp:DropDownList>
                                 </div>
-                                <div class="mb-3">
+                                <%--<div class="mb-3">
                                     <label for="lblRepeticiones" class="form-label">Repeticiones:</label>
                                     <asp:TextBox ID="txtRepeticiones" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
+                                </div>--%>
                             </ContentTemplate>
                         </asp:UpdatePanel>
 
