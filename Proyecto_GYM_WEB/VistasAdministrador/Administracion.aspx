@@ -70,6 +70,8 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Historial de Usuario por DNI</h5>
+                      <br />
+                      <br />
                     <button type="button" id="btnModalHistorial" class="btnModalHistorial btn btn-primary">Historial</button>
                 </div>
             </div>
@@ -77,7 +79,8 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
-
+                      <br />
+                      <br />
 
                     <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">Modificar</button>
                     <asp:Label ID="CambioPrecio" runat="server" Text="" CssClass="text-white"></asp:Label>
@@ -93,6 +96,47 @@
                 </div>
             </div>
         </div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel">
+            <h5 class="text-white">Cantidad de Clientes</h5>
+            <br />
+             <h2 type="button" id="" class="table-responsive-lg text-white">100</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel">
+            <h5 class="text-white">Cantidad de Entrenadores</h5>
+
+              <br />
+            <h2 id="" class="table-responsive-lg text-white">4</h2>
+            <asp:Label ID="Label1" runat="server" Text="" CssClass="text-white"></asp:Label>
+
+        </div>
+    </div>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--
         <div class="row">

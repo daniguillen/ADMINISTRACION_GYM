@@ -21,7 +21,7 @@
         <ul class="breadcrumb mb-4 w-100">
             <li class="d-flex justify-content-around w-100">
                 <div class="d-flex justify-content-between ">
-                    <asp:Label ID="LblQusuarios" runat="server"  CssClass="text-white"></asp:Label>
+                    
                     <asp:Button ID="BtnEntrenador" CssClass="btn btn-primary m-2" runat="server" Text="Entrenadores" OnClick="Entrenadores" />
                     <asp:Button ID="BtnUsuario" CssClass="btn btn-primary m-2" runat="server" Text="Usuarios" OnClick="Usuarios" />
                     

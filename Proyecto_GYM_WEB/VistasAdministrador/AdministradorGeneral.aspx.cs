@@ -25,13 +25,13 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           
+           /*
                         if (Session["Nivel"] == null || !Session["Nivel"].Equals("3"))
                         {
 
 
                             Response.Redirect("/");
-                        }
+                        }*/
             Session["TOKEN"] = "ENTRO";
             if (Session["TOKEN"] != null)
             {
@@ -97,7 +97,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 LiteralUsuarios.Text = "<h1> Entrenadores: "+AuxListaUsuarios.Count.ToString()+" </h1>";
             }
 
-            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             ListaUsuarios = AuxListaUsuarios;
             BindRepeater();
 
@@ -172,7 +171,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             
             LiteralUsuarios.Text = "<h1> Entrenadores: " + AuxListaUsuarios.Count.ToString() + " </h1>";
             ListaUsuarios = AuxListaUsuarios;
@@ -193,7 +191,6 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 }
 
             }
-            LblQusuarios.Text = AuxListaUsuarios.Count.ToString();
             LiteralUsuarios.Text = "<h1> Usuarios:  " + AuxListaUsuarios.Count.ToString() + " </h1>";
             ListaUsuarios = AuxListaUsuarios;
             Resultado.Visible = false;
