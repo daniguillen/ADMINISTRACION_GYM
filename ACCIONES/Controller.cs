@@ -261,17 +261,17 @@ namespace ACCIONES
                 datos.setearParametro("@Nombre", usuario.Nombre);
                 datos.setearParametro("@Apellido", usuario.Apellido);
                 datos.setearParametro("@Direccion", usuario.Direccion);
-                datos.setearParametro("@FechaNacimiento", usuario.Fecha_Nacimiento);
+             //   datos.setearParametro("@FechaNacimiento", usuario.Fecha_Nacimiento);
                 datos.setearParametro("@Sexo", usuario.sexo.ID);
                 datos.setearParametro("@Foto", usuario.Foto);
-                datos.setearParametro("@DNI", usuario.DNI);
+               // datos.setearParametro("@DNI", usuario.DNI);
                 datos.setearParametro("@AptoFisico", usuario.Apto_Fisico);
                 datos.setearParametro("@TelEmergencia", usuario.Tel_Emergencia);
                 datos.setearParametro("@Celular", usuario.Cel);
-                datos.setearParametro("@FechaIngreso", usuario.Fecha_ingreso);
-                datos.setearParametro("@IDPlanes", usuario.plan.ID);
+             //   datos.setearParametro("@FechaIngreso", usuario.Fecha_ingreso);
+             //   datos.setearParametro("@IDPlanes", usuario.plan.ID);
                 datos.setearParametro("@IDEstablecimiento", usuario.ID_Establecimiento);
-                datos.setearParametro("@Estado", usuario.Estado);
+             //   datos.setearParametro("@Estado", usuario.Estado);
                 datos.setearParametro("@IDRutina", usuario.ID_rutina);
 
                 datos.ejecutarAccion();

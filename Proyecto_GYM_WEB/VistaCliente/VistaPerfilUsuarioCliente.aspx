@@ -42,7 +42,7 @@
 
                     <label  for="TxtDniEditar" Class="text-light mt-2" <% if (nivel.Equals("2"))
                         {%> style="display:none" <%}%> )  >DNI</label>
-                    <asp:TextBox ID="TxtDniEditar" runat="server" CssClass="form-control text-black"  ></asp:TextBox>
+                    <asp:TextBox ID="TxtDniEditar" runat="server" CssClass="form-control text-black" Readonly="true" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -89,7 +89,7 @@
                 <div class="form-group">
                     <label for="TxtFechaNacimientoEditar" Class="text-light mt-2" <% if (nivel.Equals("2"))
                         {%> style="display:none" <%}%> >Fecha Nacimiento:</label>
-                    <asp:TextBox ID="TxtFechaNacimientoEditar" Type="date"  runat="server" CssClass="form-control text-black" ></asp:TextBox>
+                    <asp:TextBox ID="TxtFechaNacimientoEditar" Type="date"  runat="server" CssClass="form-control text-black" Readonly="true" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">

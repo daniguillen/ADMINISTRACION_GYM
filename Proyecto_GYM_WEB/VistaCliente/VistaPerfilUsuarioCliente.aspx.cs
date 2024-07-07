@@ -105,9 +105,9 @@ namespace Proyecto_GYM_WEB
                     }
 
                 }
-
                 Controller datos = new Controller();
                 datos.ModificarCliente(usuario);
+                Response.Redirect(Request.RawUrl);
 
             
             }

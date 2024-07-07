@@ -403,18 +403,19 @@ CREATE OR ALTER PROCEDURE SP_Modificar_Cliente (
     @Nombre VARCHAR(100), 
     @Apellido VARCHAR(100), 
     @Direccion VARCHAR(100), 
-    @FechaNacimiento DATETIME,
+  --  @FechaNacimiento DATETIME,
     @Sexo INT,
     @Foto NVARCHAR(100), 
-    @DNI VARCHAR(100), 
+ --   @DNI VARCHAR(100), 
     @AptoFisico NVARCHAR(100), 
     @TelEmergencia VARCHAR(100), 
     @Celular VARCHAR(100), 
-	@FechaIngreso DATETIME,
-    @IDPlanes INT,
+--	@FechaIngreso DATETIME,
+--    @IDPlanes INT,
     @IDEstablecimiento INT,
-    @Estado INT,
+--    @Estado INT,
     @IDRutina INT
+	
 )
 AS
 BEGIN
@@ -425,19 +426,24 @@ BEGIN
         APTO_FISICO = @AptoFisico,
         CELULAR = @Celular,
         DIRECCION = @Direccion,
-        DNI = @DNI,
+    --    DNI = @DNI,
         FECHA_INGRESO = GETDATE(),
-        FECHA_NACIMIENTO = @FechaNacimiento,
+  --      FECHA_NACIMIENTO = @FechaNacimiento,
         FOTO = @Foto,
-        IDPLANES = @IDPlanes,
+ --       IDPLANES = @IDPlanes,
         SEXO = @Sexo,
         TEL_EMERGENCIA = @TelEmergencia,
         ID_ESTABLECIMIENTO = @IDEstablecimiento,
-        ESTADO = @Estado,
+--        ESTADO = @Estado,
         ID_RUTINA = @IDRutina
-    WHERE ID = @ID;
+    WHERE ID_USUARIO = @ID;
+	
+
     UPDATE USUARIO
     SET 
         PASWORD = @PASS
     WHERE MAIL = @MAIL
 END;
+select * from PERSONA
+	
+	
