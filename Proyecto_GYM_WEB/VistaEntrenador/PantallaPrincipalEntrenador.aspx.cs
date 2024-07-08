@@ -223,5 +223,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
             Response.Redirect("VistaPerfil-Entrenador.aspx", false);
         }
+
+        protected void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

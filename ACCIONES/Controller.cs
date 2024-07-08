@@ -66,6 +66,7 @@ namespace ACCIONES
 
 
         }
+
         public List<Usuario> Listar_Clientes()
         {
 
@@ -261,17 +262,17 @@ namespace ACCIONES
                 datos.setearParametro("@Nombre", usuario.Nombre);
                 datos.setearParametro("@Apellido", usuario.Apellido);
                 datos.setearParametro("@Direccion", usuario.Direccion);
-             //   datos.setearParametro("@FechaNacimiento", usuario.Fecha_Nacimiento);
+                //   datos.setearParametro("@FechaNacimiento", usuario.Fecha_Nacimiento);
                 datos.setearParametro("@Sexo", usuario.sexo.ID);
                 datos.setearParametro("@Foto", usuario.Foto);
-               // datos.setearParametro("@DNI", usuario.DNI);
+                // datos.setearParametro("@DNI", usuario.DNI);
                 datos.setearParametro("@AptoFisico", usuario.Apto_Fisico);
                 datos.setearParametro("@TelEmergencia", usuario.Tel_Emergencia);
                 datos.setearParametro("@Celular", usuario.Cel);
-             //   datos.setearParametro("@FechaIngreso", usuario.Fecha_ingreso);
-             //   datos.setearParametro("@IDPlanes", usuario.plan.ID);
+                //   datos.setearParametro("@FechaIngreso", usuario.Fecha_ingreso);
+                //   datos.setearParametro("@IDPlanes", usuario.plan.ID);
                 datos.setearParametro("@IDEstablecimiento", usuario.ID_Establecimiento);
-             //   datos.setearParametro("@Estado", usuario.Estado);
+                //   datos.setearParametro("@Estado", usuario.Estado);
                 datos.setearParametro("@IDRutina", usuario.ID_rutina);
 
                 datos.ejecutarAccion();
@@ -452,7 +453,7 @@ namespace ACCIONES
             }
         }
 
-        public List<Usuario >BuscarEntrenadorFiltro(string buscar)
+        public List<Usuario> BuscarEntrenadorFiltro(string buscar)
         {
 
             try
@@ -462,7 +463,7 @@ namespace ACCIONES
                 datos.ejecutarLectura();
 
                 Usuario aux = null;
-                List<Usuario> listaEntrenadores = new List<Usuario>(); 
+                List<Usuario> listaEntrenadores = new List<Usuario>();
 
 
                 while (datos.Lector.Read())
@@ -1403,12 +1404,12 @@ namespace ACCIONES
                 while (datos.Lector.Read())
                 {
 
-                    
-                        DateTime fechaMensaje = datos.Lector.GetDateTime(0);
-                        string textoMensaje = datos.Lector.GetString(1);
 
-                        mensaje = $"{fechaMensaje:dd-MM-yyyy} -- {textoMensaje}";
-                 
+                    DateTime fechaMensaje = datos.Lector.GetDateTime(0);
+                    string textoMensaje = datos.Lector.GetString(1);
+
+                    mensaje = $"{fechaMensaje:dd-MM-yyyy} -- {textoMensaje}";
+
 
 
 
@@ -1430,7 +1431,7 @@ namespace ACCIONES
         }
 
 
-        public void ModificarEjercicioCompleto(Ejercicio ejercicio,GrupoMuscular muscular,TipoEjercicio tipo, Dificultad dificultad)
+        public void ModificarEjercicioCompleto(Ejercicio ejercicio, GrupoMuscular muscular, TipoEjercicio tipo, Dificultad dificultad)
         {
             try
             {
@@ -1457,20 +1458,21 @@ namespace ACCIONES
         }
 
 
-        public bool enviarMensaje(String a) {
+        public bool enviarMensaje(String a)
+        {
 
             bool estado;
             try
             {
                 datos.setearQuery("insert into Mensajes (DescripcionNota) values(@mensaje)");
                 datos.setearParametro("@mensaje", a);
-             
+
                 datos.ejecutarLectura();
-                estado=true;
+                estado = true;
             }
             catch (Exception ex)
             {
-                estado=false;   
+                estado = false;
                 throw ex;
             }
             finally
@@ -1479,7 +1481,7 @@ namespace ACCIONES
             }
             return estado;
         }
-        public bool ActualizacionDePrecio(int precio , int id)
+        public bool ActualizacionDePrecio(int precio, int id)
         {
 
             bool estado;
@@ -1507,24 +1509,25 @@ namespace ACCIONES
         public List<Historial> historiaPorDNI(int dni)
         {
 
-                List<Historial> historial = new List<Historial>();
-            
+            List<Historial> historial = new List<Historial>();
+
             try
             {
                 datos.setearQuery("SELECT h.id, p.NOMBRE,p.APELLIDO, p.FECHA_INGRESO,DATEDIFF(YEAR, p.FECHA_NACIMIENTO, GETDATE()) - CASE WHEN MONTH(GETDATE()) < MONTH(p.FECHA_NACIMIENTO) OR (MONTH(GETDATE()) = MONTH(p.FECHA_NACIMIENTO) AND DAY(GETDATE()) < DAY(p.FECHA_NACIMIENTO)) THEN 1 ELSE 0 END AS Edad,(SELECT TIPO_PLAN FROM PLANES WHERE id = h.ID_Planes) AS 'Plan', h.Pago,h.FechaPago, h.DescripcionNota FROM PERSONA p INNER JOIN Historial h ON h.Id_Persona = p.ID WHERE p.DNI = @dni");
                 datos.setearParametro("@dni", dni);
                 datos.ejecutarLectura();
-                
-                while (datos.Lector.Read()) {
+
+                while (datos.Lector.Read())
+                {
                     Historial Aux = new Historial();
                     Aux.ID = datos.Lector.GetInt32(0);
                     Aux.NombrePersona = datos.Lector.GetString(1) + " " + datos.Lector.GetString(2);
                     Aux.Ingreso = datos.Lector.GetDateTime(3);
                     Aux.Edad = datos.Lector.GetInt32(4);
-                    Aux.Plan= datos.Lector.GetString(5);
-                    Aux.Pago= datos.Lector.GetSqlMoney(6);
-                    Aux.FechaPago= datos.Lector.GetDateTime(7);
-                    Aux.DescripcionNota= datos.Lector.GetString(8);
+                    Aux.Plan = datos.Lector.GetString(5);
+                    Aux.Pago = datos.Lector.GetSqlMoney(6);
+                    Aux.FechaPago = datos.Lector.GetDateTime(7);
+                    Aux.DescripcionNota = datos.Lector.GetString(8);
 
 
                     historial.Add(Aux);
@@ -1540,6 +1543,47 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
             return historial;
+        }
+
+
+
+        public List<SolicitudRutinas> Listar_Solicitudes()
+        {
+            List<SolicitudRutinas> ListaSolicitudes = new List<SolicitudRutinas>();
+
+            try
+            {
+                datos.setearQuery("SELECT sr.ID_SolicitudRutina, sr.ID_Usuario, sr.ID_Entrenador, sr.Mensaje, sr.FechaSolicitud, sr.Estado, p.NOMBRE, p.APELLIDO  FROM SolicitudRutinas sr INNER JOIN USUARIO u ON u.ID = sr.ID_Usuario INNER JOIN Entrenador e ON e.ID_Entrenador = sr.ID_Entrenador INNER JOIN PERSONA p ON p.ID = u.ID");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    SolicitudRutinas aux = new SolicitudRutinas();
+                    aux.usuario = new Usuario();
+                    aux.entrenador = new Entrenador();
+
+
+                    aux.ID_SolicitudRutinas = datos.Lector.GetInt32(0);
+                    aux.usuario.ID = datos.Lector.GetInt32(1);
+                    aux.entrenador.ID = datos.Lector.GetInt32(2);
+                    aux.Mensaje = datos.Lector.GetString(3);
+                    aux.FechaSolicitud = datos.Lector.GetDateTime(4);
+                    aux.Estado = datos.Lector.GetBoolean(5);
+                    aux.usuario.Nombre = datos.Lector.GetString(6);
+                    aux.usuario.Apellido = datos.Lector.GetString(7);
+
+                    ListaSolicitudes.Add(aux);
+                }
+                return ListaSolicitudes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
 

@@ -74,12 +74,20 @@
                     <p class="text-dark font-weight-bold">Dar de alta nueva ejercicio</p>
                     <asp:Button ID="btnAltaEjercicio" runat="server" Text="Alta ejercicio" CssClass="btn btn-primary" OnClick="btnAltaEjercicio_Click" />
                 </div>
-            </div>        
+            </div>
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Mi Perfil</h5>
                     <p class="text-dark font-weight-bold">Modificar Perfil</p>
                     <asp:Button ID="btnPerfil" runat="server" Text="Ver Perfil" CssClass="btn btn-primary" OnClick="btnPerfil_Click" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Solicitudes</h5>
+                    <p class="text-dark font-weight-bold">Ver solicitudes, armar rutinas personalizadas</p>
+                    <asp:Button ID="btnSolicitudes" runat="server" Text="Tienes Mensajes" CssClass="btn btn-primary" OnClick="btnSolicitudes_Click" />
                 </div>
             </div>
         </div>
