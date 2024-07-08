@@ -57,14 +57,14 @@
 
         <div class="row mb-3 text-white panel">
             <div class="col-md-12">
-                <h4>Historial de Sesiones</h4>
+                <h4>Historial de Pagos</h4>
                 <table class="table text-white">
                     <thead class="text-white">
                         <tr>
                             <th>#</th>
                             <th>Fecha</th>
-                            <th>Importe</th>
-                            <th>Duración</th>
+                            <th>Plan</th>
+                            <th>Pago</th>
                             <th>Nota</th>
                         </tr>
                     </thead>

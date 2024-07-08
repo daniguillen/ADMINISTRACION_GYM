@@ -12,8 +12,25 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 {
     public partial class Administracion : System.Web.UI.Page
     {
+        public int usuarios= 0 ;
+        public int entrenadores = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<Usuario> ListaUsuarios=new List<Usuario>();
+            Controller dato= new Controller();
+            ListaUsuarios = dato.Listar_Clientes();
+            foreach (var item in ListaUsuarios)
+            {
+                if (item.nivel.ID == 1) {
+                    usuarios++;
+                }
+                if (item.nivel.ID == 2)
+                {
+                    entrenadores++;
+                }
+
+            }
 
             /*
              
@@ -70,19 +87,21 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         }
 
-
-
-
-        protected void BtnGuardarCambios_Click(object sender, EventArgs e)
+        protected void BtnCambiarPrecioPlanes(object sender, EventArgs e)
         {
             // Obtener valores
             string value = DdlPlan.SelectedIndex.ToString();
             string text = TxtNuevoPrecio.Text;
             Controller controller = new Controller();
-                 CambioPrecio.Text = "Se cambio Correctamente a  "+text;
-            
-
-    
+            bool estado=false;
+            estado = controller.ActualizacionDePrecio(int.Parse(text), int.Parse(value));
+            if (estado)
+            {
+                CambioPrecio.Text = "Se cambio Correctamente a  " + text;
+            }
+            else { CambioPrecio.Text = "Ocurrio un error contacte a soporte"; }
+            TxtNuevoPrecio.Text = "";
+            DdlPlan.SelectedIndex = -1;
         }
         protected void BuscarHistorial(object sender, EventArgs e)
         {
@@ -98,6 +117,26 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 Session["Historial"] = list;
                 Response.Redirect("Historial.aspx");
             }
+        }
+        protected void Pagar(object sender, EventArgs e) {
+
+         //   TxtDniUsuarioPagar
+
+            Controller controller1 = new Controller();  
+            Usuario usuario = new Usuario();
+           
+                usuario = controller1.BuscarOneClientePorDNI(int.Parse(TxtDniUsuarioPagar.Text));
+            if (usuario.DNI != null)
+            {
+
+                NoseEncuentraUsuario.Text = "Usuario Encontrado" + usuario.Nombre + " " + usuario.Apellido + " " + usuario.DNI;
+            }
+            else { 
+                NoseEncuentraUsuario.Text = "No se encontro el Usuario";
+            
+            }
+
+                NoseEncuentraUsuario.Visible = true;
         }
     }
 }

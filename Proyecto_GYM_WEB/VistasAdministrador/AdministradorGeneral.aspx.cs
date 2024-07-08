@@ -104,7 +104,9 @@ namespace Proyecto_GYM_WEB.VistasAministrador
         protected void Buscar(object sender, EventArgs e)
         {
 
-            Usuario aux;
+            //Usuario aux;
+          //  List<Usuario> lista = new List<Usuario>();
+            
             void buscar()
             {
                 List<Usuario> usuario = new List<Usuario>();
@@ -112,45 +114,38 @@ namespace Proyecto_GYM_WEB.VistasAministrador
                 if (!TxtBusquedad.Text.Equals(""))
                 {
 
-                    if (aux != null)
-                    {
-                        usuario.Add(aux);
-                        ListaUsuarios = usuario;
-                    }
-                    else
+                    if (ListaUsuarios.Count == 0)
                     {
                         Resultado.Text = "Sin Resultado";
                         LiteralUsuarios.Text = "<h1> Sin Resultado </h1>";
                         Resultado.Visible = true;
                     }
                 }
-                else
-                {
-                    Resultado.Text = "Sin Resultado";
-                    LiteralUsuarios.Text = "<h1> Sin Resultado </h1>";
-                    Resultado.Visible = true;
-                }
             }
             //no hay filtro (Persona y entrenadores)
             if (DropDownList1.SelectedValue.Equals(""))
             {
-                aux = dato.BuscarAllCliente(TxtBusquedad.Text);
+                ListaUsuarios = dato.BuscarAllCliente(TxtBusquedad.Text);
                 LiteralUsuarios.Text = "<h1> Usuarios o Entrenadores </h1>";
                 buscar();
+                
             }
             //filtrar por usuario
             if (DropDownList1.SelectedValue.Equals("1"))
             {
-                aux = dato.BuscarOneCliente(TxtBusquedad.Text);
+                ListaUsuarios = dato.BuscarClienteConFiltro(TxtBusquedad.Text);
                 LiteralUsuarios.Text = "<h1> Usuarios </h1>";
                 buscar();
+
+
             }
             //filtrar por Entranadores
             if (DropDownList1.SelectedValue.Equals("2"))
             {
-                aux = dato.BuscarOneEntrenador(TxtBusquedad.Text);
+                ListaUsuarios = dato.BuscarEntrenadorFiltro(TxtBusquedad.Text);
                 LiteralUsuarios.Text = "<h1> Entrenadores </h1>";
                 buscar();
+
             }
 
 

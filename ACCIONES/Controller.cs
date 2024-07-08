@@ -290,7 +290,7 @@ namespace ACCIONES
         }
 
         //busca un usuario o entrenador sin filtro
-        public Usuario BuscarAllCliente(string buscar)
+        public List<Usuario> BuscarAllCliente(string buscar)
         {
 
             try
@@ -298,7 +298,7 @@ namespace ACCIONES
                 datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID_USUARIO  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where p.NOMBRE like '%' + @Buscar + '%' or p.APELLIDO like '%'+ @Buscar + '%'or p.DNI=@Buscar");
                 datos.setearParametro("@Buscar", buscar);
                 datos.ejecutarLectura();
-
+                List<Usuario> usuarios = new List<Usuario>();
                 Usuario aux = null;
 
 
@@ -328,8 +328,9 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
+                    usuarios.Add(aux);
                 }
-                return aux;
+                return usuarios;
 
 
 
@@ -347,12 +348,64 @@ namespace ACCIONES
 
         }
         //buscar por usuario
-        public Usuario BuscarOneCliente(string buscar)
+        public List<Usuario> BuscarClienteConFiltro(string buscar)
         {
 
             try
             {
                 datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID_USUARIO  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where (p.NOMBRE like '%' + @Buscar + '%' or p.APELLIDO like '%'+ @Buscar + '%'or p.DNI=@Buscar) and u.IDNIVEL=1");
+                datos.setearParametro("@Buscar", buscar);
+                datos.ejecutarLectura();
+
+                Usuario aux = null;
+                List<Usuario> listaUsuario = new List<Usuario>();
+
+                while (datos.Lector.Read())
+                {
+                    aux = new Usuario();
+                    aux.ID = datos.Lector.GetInt32(0);
+                    aux.Mail = datos.Lector.GetString(1);
+                    aux.Password = datos.Lector.GetString(2);
+                    aux.nivel.ID = datos.Lector.GetInt32(3);
+                    aux.nivel.level = datos.Lector.GetString(4);
+                    aux.Nombre = datos.Lector.GetString(5);
+                    aux.Apellido = datos.Lector.GetString(6);
+                    aux.Direccion = datos.Lector.GetString(7);
+                    aux.Fecha_Nacimiento = datos.Lector.GetDateTime(8);
+                    aux.sexo.ID = datos.Lector.GetInt32(9);
+                    aux.sexo.Tipo = datos.Lector.GetString(10);
+                    aux.Foto = datos.Lector.GetString(11);
+                    aux.DNI = datos.Lector.GetString(12);
+                    aux.Apto_Fisico = datos.Lector.GetString(13);
+                    aux.Tel_Emergencia = datos.Lector.GetString(14);
+                    aux.Cel = datos.Lector.GetString(15);
+                    aux.Fecha_ingreso = datos.Lector.GetDateTime(16);
+                    aux.plan.ID = datos.Lector.GetInt32(17);
+                    aux.plan.Descripcion = datos.Lector.GetString(18);
+                    aux.plan.Cuotas = datos.Lector.GetSqlMoney(19);
+                    aux.plan.Tipo_Plan = datos.Lector.GetString(20);
+                    aux.ID_Establecimiento = datos.Lector.GetInt32(21);
+                    aux.Estado = datos.Lector.GetBoolean(22);
+                    listaUsuario.Add(aux);
+                }
+                return listaUsuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public Usuario BuscarOneClientePorDNI(int buscar)
+        {
+
+            try
+            {
+                datos.setearQuery("SELECT  u.ID AS id_USUARIO, u.MAIL,u.PASWORD, u.IDNIVEL , NI.Nivel_Acceso , p.NOMBRE, p.APELLIDO, p.DIRECCION, p.FECHA_NACIMIENTO, p.SEXO, S.TIPO, p.FOTO, p.DNI, p.APTO_FISICO, p.TEL_EMERGENCIA, p.CELULAR, p.FECHA_INGRESO, p.IDPLANES, PL.DESCRIPCION, PL.CUOTA , PL.TIPO_PLAN , p.ID_ESTABLECIMIENTO , p.ESTADO, p.ID_RUTINA FROM PERSONA p INNER JOIN USUARIO u on u.ID=p.ID_USUARIO  INNER JOIN PLANES PL ON PL.ID=P.IDPLANES INNER JOIN NIVEL NI ON NI.ID=U.IDNIVEL INNER JOIN SEXO S ON P.SEXO=S.ID where  p.DNI=@Buscar and u.IDNIVEL=1");
                 datos.setearParametro("@Buscar", buscar);
                 datos.ejecutarLectura();
 
@@ -399,7 +452,7 @@ namespace ACCIONES
             }
         }
 
-        public Usuario BuscarOneEntrenador(string buscar)
+        public List<Usuario >BuscarEntrenadorFiltro(string buscar)
         {
 
             try
@@ -409,6 +462,7 @@ namespace ACCIONES
                 datos.ejecutarLectura();
 
                 Usuario aux = null;
+                List<Usuario> listaEntrenadores = new List<Usuario>(); 
 
 
                 while (datos.Lector.Read())
@@ -437,8 +491,9 @@ namespace ACCIONES
                     aux.plan.Tipo_Plan = datos.Lector.GetString(20);
                     aux.ID_Establecimiento = datos.Lector.GetInt32(21);
                     aux.Estado = datos.Lector.GetBoolean(22);
+                    listaEntrenadores.Add(aux);
                 }
-                return aux;
+                return listaEntrenadores;
             }
             catch (Exception ex)
             {

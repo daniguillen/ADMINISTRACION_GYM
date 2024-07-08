@@ -59,9 +59,9 @@
 
             <div class="col-md-4">
                 <div class="panel">
-                    <h5 class="text-white">Administrar Permiso</h5>
-                    <p class="text-dark font-weight-bold">Modificar, habilitar y deshabilitar</p>
-                    <button id="btnModalPermiso" type="button" class="btn btn-primary">Administrar Permiso</button>
+                    <h5 class="text-white">Aprobar Apto Fisico</h5>
+                    <p class="text-dark font-weight-bold">Verificas los Aptos</p>
+                    <button id="btnModalPermiso" type="button" class="btn btn-primary">Ver</button>
                 </div>
             </div>
         </div>
@@ -70,8 +70,8 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Historial de Usuario por DNI</h5>
-                      <br />
-                      <br />
+                    <br />
+                    <br />
                     <button type="button" id="btnModalHistorial" class="btnModalHistorial btn btn-primary">Historial</button>
                 </div>
             </div>
@@ -79,9 +79,8 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Modificar Precio de los Planes</h5>
-                      <br />
-                      <br />
-
+                    <br />
+                    <br />
                     <button type="button" id="BtnModificarPrecio" class="btnModal btn btn-primary">Modificar</button>
                     <asp:Label ID="CambioPrecio" runat="server" Text="" CssClass="text-white"></asp:Label>
 
@@ -90,35 +89,48 @@
             <div class="col-md-4">
                 <div class="panel">
                     <h5 class="text-white">Mensaje a Clientes y Entrenadores</h5>
-                    <asp:TextBox ID="TextMensaje" CssClass="form-control mb-3" runat="server"></asp:TextBox>
-                    <asp:Button ID="MensajeAClienteEntrenadores" CssClass="btn btn-primary" Text="Enviar Mensaje" OnClick="Mensaje" runat="server" />
+                    <br />
+                    <br />
+                    <button id="btnModalMensaje" type="button" class="btn btn-primary">Mensaje</button>
                     <asp:Label ID="LblMensaje" CssClass="text-white" Visible="false" runat="server" Text=""></asp:Label>
                 </div>
             </div>
         </div>
 
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="panel">
-            <h5 class="text-white">Cantidad de Clientes</h5>
-            <br />
-             <h2 type="button" id="" class="table-responsive-lg text-white">100</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Cantidad de Usuarios</h5>
+                    <br />
+                    <br />
+                    <h2 id="" class="table-responsive-lg text-white text-center"><%=usuarios %></h2>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Cantidad de Entrenadores</h5>
+                    <br />
+                    <br />
+                    <h2 id="" class="table-responsive-lg text-white text-center"><%=entrenadores %></h2>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel">
+                    <h5 class="text-white">Cobrar</h5>
+                    <br />
+                    <br />
+                    <button id="btnModalPago" type="button" class="btn btn-primary">Pagar</button>
+                    <asp:Label ID="NoseEncuentraUsuario" CssClass="text-white" Visible="false" runat="server" Text=""></asp:Label>
+
+
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="panel">
-            <h5 class="text-white">Cantidad de Entrenadores</h5>
-
-              <br />
-            <h2 id="" class="table-responsive-lg text-white">4</h2>
-            <asp:Label ID="Label1" runat="server" Text="" CssClass="text-white"></asp:Label>
-
-        </div>
-    </div>
-   
-</div>
 
 
 
@@ -138,7 +150,7 @@
 
 
 
-<!--
+        <!--
         <div class="row">
             <div class="col-md-4">
                 <div class="panel">
@@ -205,7 +217,7 @@
 
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Cancelar</button>
-                        <asp:Button ID="BtnGuardarCambios" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="BtnGuardarCambios_Click" />
+                        <asp:Button ID="BtnGuardarCambios" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary" OnClick="BtnCambiarPrecioPlanes" />
                     </div>
                 </div>
             </div>
@@ -263,6 +275,59 @@
         </div>
 
         <!-- Fin Modal para Modificar Permiso -->
+
+
+
+
+        <!-- Modal para Mensajes -->
+
+        <div class="modal fade" id="ModalMensaje" tabindex="-1" aria-labelledby="LblModalMensaje" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="LblModalMensaje">Ingrese el Mensaje</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <asp:TextBox ID="TextMensaje" CssClass="form-control mb-3" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <asp:Button ID="MensajeAClienteEntrenadores" CssClass="btn btn-primary" Text="Enviar Mensaje" OnClick="Mensaje" runat="server" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fin Modal para Mensajes-->
+
+
+
+          <!-- Modal para Pagar -->
+
+  <div class="modal fade" id="ModalPago" tabindex="-1" aria-labelledby="LblModalMensaje" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="LblModalPago">Ingrese el DNI</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                      <asp:TextBox ID="TxtDniUsuarioPagar" CssClass="form-control mb-3" runat="server"></asp:TextBox>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <asp:Button ID="Button3" CssClass="btn btn-primary" Text="Buscar" OnClick="Pagar" runat="server" />
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Fin Modal para Pagar-->
     </div>
 
     <script>
@@ -272,6 +337,8 @@
             var modal = $('#ModalPrecio');
             var modal2 = $('#ModalHistorial');
             var modal3 = $('#ModalPermiso');
+            var modal4 = $('#ModalMensaje');
+            var modal5 = $('#ModalPago');
             if (modal.length > 0) {
                 // Agrega el evento click al botón
                 $('#BtnModificarPrecio').click(function () {
@@ -288,6 +355,18 @@
                 // Agrega el evento click al botón
                 $('#btnModalPermiso').click(function () {
                     modal3.modal('show');
+                });
+            } if (modal4.length > 0) {
+                // Agrega el evento click al botón
+                $('#btnModalMensaje').click(function () {
+                    modal4.modal('show');
+
+                });
+            } if (modal5.length > 0) {
+                // Agrega el evento click al botón
+                $('#btnModalPago').click(function () {
+                    modal5.modal('show');
+
                 });
             }
         });

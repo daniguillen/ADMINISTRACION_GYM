@@ -44,7 +44,16 @@ namespace Proyecto_GYM_WEB
         }
         protected void btnvolver_Click(object sender, EventArgs e)
         {
+
+            if (Session["Nivel"].Equals("3") )
+            {
+                Response.Redirect("../VistasAdministrador/Administracion.aspx", false);
+            }
+            else { 
+            
             Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
+            }
+
         }
     }
 

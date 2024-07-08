@@ -17,28 +17,17 @@ namespace Proyecto_GYM_WEB.VistasAministrador
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            
-            
-            
-
-            //   ListUsuarios = (List<Usuario>)Session["ModificarCliente"];
-            {
                 HistorialUsuario= (List<Historial>)Session["Historial"];
 
-                Session["Historial"] = null;
+               
                 RepeaterHistorial.DataSource = HistorialUsuario;
                 RepeaterHistorial.DataBind();
-            }
+            
         }
-       
             protected void Volver(object sender, EventArgs e)
         {
-
-
-
-
-            Response.Redirect("./Administracion");
+            Session["Historial"] = null;
+            Response.Redirect("./Administracion"); 
         }
     }
 }
