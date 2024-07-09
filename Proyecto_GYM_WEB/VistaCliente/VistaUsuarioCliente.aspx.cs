@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,60 +14,37 @@ namespace Proyecto_GYM_WEB
     public partial class VistaUsuarioCliente : System.Web.UI.Page
     {
 
-        public Rutina rutinas_usuario = new Rutina();
+        public Rutina rutinas_usuario;
         public Usuario Perfil = new Usuario();
         public Plan Plan = new Plan();
-
-
         public Controller controller = new Controller();
-        public Rutina_ejercicio RutinaCliente = new Rutina_ejercicio();
-        public List<Dias> dia_semana = new List<Dias>();
+        
 
         public string mensaje = "";
         protected void Page_Load(object sender, EventArgs e)
 
         {
+            rutinas_usuario = new Rutina();
 
-                mensaje =controller.MensajeDeAdministrador();
+            mensaje = controller.MensajeDeAdministrador();
                 LblInformacion.Text = mensaje;
-                dia_semana = controller.ListarDias();
-                dia_semana = dia_semana.OrderBy(d => d.id).ToList();
-             
+              
+
                 Perfil = (Usuario)Session["PerfilUsuario"];
                 Perfil.Foto = ".././" + Perfil.Foto;
-                string ruta = Perfil.Foto.ToString();
 
-
-
-            RepeaterUsuario.DataSource = dia_semana;
-            RepeaterUsuario.DataBind();
+             
 
 
         }
 
         public void DdlrutinaCLiente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idRutina = int.Parse(DdlrutinaCLiente.SelectedValue);
-                if (idRutina == 1) {
-                Perfil.ID_rutina =1;
-                }
-                else if (idRutina == 2) {
-                Perfil.ID_rutina = 2;
-            }
-                else if (idRutina == 3)
-                {
-                Perfil.ID_rutina = 3;
-            }
-                else if (idRutina == 4)
-                {
-                //    rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
-                }
+           
+                int idRutina = int.Parse(DdlrutinaCLiente.SelectedValue);
+                rutinas_usuario = controller.Rutinas_id(idRutina == 4 ? Perfil.ID_rutina : idRutina);
 
-            rutinas_usuario = controller.Rutinas_id(Perfil.ID_rutina);
-            Session["PerfilUsuario"]= Perfil;
-
-               
-
+             
             
         }
       

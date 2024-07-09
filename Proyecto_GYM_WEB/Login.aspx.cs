@@ -33,9 +33,6 @@ namespace Proyecto_GYM_WEB
         {
            
 
-
-            
-
                 Controller objController = new Controller();
             try
             {
@@ -78,6 +75,5 @@ namespace Proyecto_GYM_WEB
             }
         }
 
-       
     }
 }
