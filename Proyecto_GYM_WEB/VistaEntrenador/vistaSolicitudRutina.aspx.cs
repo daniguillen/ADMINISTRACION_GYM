@@ -14,13 +14,60 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         Controller datos = new Controller();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
             dgvSolicitudes.DataSource = datos.Listar_Solicitudes();
             dgvSolicitudes.DataBind();
+
+                
+
+            }
+        }
+     
+
+        protected void btnSalirAltaRutina_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("vistaSolicitudRutina.aspx", false);
         }
 
-        protected void btnVerDetalles_Click(object sender, EventArgs e)
+        protected void btnAsignarRutina_Click(object sender, EventArgs e)
         {
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModalRutiAsignada();", true);
+        }
 
+        protected void btnAgregarRutinaSolicitada_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string nombre = txtNombreRutina.Text.Trim();
+                string descripcion = txtDescripcionRutina.Text.Trim();
+
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Por favor, complete todos los campos.');", true);
+                    return;
+                }
+
+                Rutina nuevarutina = new Rutina();
+
+                nuevarutina.nombre = txtNombreRutina.Text;
+                nuevarutina.descripcion = txtDescripcionRutina.Text;
+                datos.AgregarRutina(nuevarutina);
+                Response.Redirect("vistaSolicitudRutina", false);
+
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
+                //redirigir a pantalla error.
+            }
+        }
+
+        protected void btnvolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
         }
     }
 }

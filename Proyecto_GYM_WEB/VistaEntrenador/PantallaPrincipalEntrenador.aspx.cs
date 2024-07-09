@@ -226,7 +226,7 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
 
         protected void btnSolicitudes_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../VistaEntrenador/vistaSolicitudRutina.aspx", false);
         }
     }
 }
