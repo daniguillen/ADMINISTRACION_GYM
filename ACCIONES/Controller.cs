@@ -1043,11 +1043,9 @@ namespace ACCIONES
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
-        }
+        }       
         public List<GrupoMuscular> ListarGrupoMuscular()
         {
-
-
             try
             {
                 List<GrupoMuscular> aux = new List<GrupoMuscular>();
@@ -1075,6 +1073,8 @@ namespace ACCIONES
 
 
         }
+
+        
         public List<Dificultad> ListadoDeDificultad()
         {
             try
@@ -1430,7 +1430,7 @@ namespace ACCIONES
             finally { datos.cerrarConexion(); }
         }
 
-
+       
         public void ModificarEjercicioCompleto(Ejercicio ejercicio, GrupoMuscular muscular, TipoEjercicio tipo, Dificultad dificultad)
         {
             try
@@ -1553,7 +1553,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT sr.ID_SolicitudRutina, sr.ID_Usuario, sr.ID_Entrenador, sr.Mensaje, sr.FechaSolicitud, sr.Estado, p.NOMBRE, p.APELLIDO  FROM SolicitudRutinas sr INNER JOIN USUARIO u ON u.ID = sr.ID_Usuario INNER JOIN Entrenador e ON e.ID_Entrenador = sr.ID_Entrenador INNER JOIN PERSONA p ON p.ID = u.ID");
+                datos.setearQuery("SELECT sr.ID_SolicitudRutina, p.ID, sr.ID_Entrenador, sr.Mensaje, sr.FechaSolicitud, sr.Estado, p.NOMBRE, p.APELLIDO  FROM SolicitudRutinas sr INNER JOIN USUARIO u ON u.ID = sr.ID_Usuario INNER JOIN Entrenador e ON e.ID_Entrenador = sr.ID_Entrenador INNER JOIN PERSONA p ON p.ID_USUARIO = u.ID");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -1561,7 +1561,7 @@ namespace ACCIONES
                     SolicitudRutinas aux = new SolicitudRutinas();
                     aux.usuario = new Usuario();
                     aux.entrenador = new Entrenador();
-
+                    
 
                     aux.ID_SolicitudRutinas = datos.Lector.GetInt32(0);
                     aux.usuario.ID = datos.Lector.GetInt32(1);
@@ -1571,7 +1571,7 @@ namespace ACCIONES
                     aux.Estado = datos.Lector.GetBoolean(5);
                     aux.usuario.Nombre = datos.Lector.GetString(6);
                     aux.usuario.Apellido = datos.Lector.GetString(7);
-
+                    
                     ListaSolicitudes.Add(aux);
                 }
                 return ListaSolicitudes;
@@ -1587,6 +1587,56 @@ namespace ACCIONES
         }
 
 
+        public List<Rutina> ListarSoloRutinas()
+        {
+            try
+            {
+                List<Rutina> aux = new List<Rutina>();
+                datos.setearQuery("Select * from Rutina");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Rutina rutina = new Rutina();
+
+                    rutina.ID = datos.Lector.GetInt32(0);
+                    rutina.nombre = datos.Lector.GetString(1);
+                    rutina.descripcion = datos.Lector.GetString(2);
+                    rutina.personal = datos.Lector.GetBoolean(3);
+                    rutina.estado = datos.Lector.GetBoolean(4);
+
+                    aux.Add(rutina);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void AsignarRutinaAUsuario(int rutinaID, int usuarioID)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE PERSONA SET ID_RUTINA=@ID_RUTINA where ID=@ID");
+                datos.setearParametro("@ID_RUTINA", rutinaID);
+                datos.setearParametro("@ID", usuarioID);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         //Metodo para listar las rutinas con sus ejercicios
 
         //Creo el metodo para realizar la modificación de la rutina

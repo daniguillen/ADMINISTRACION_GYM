@@ -11,7 +11,7 @@ namespace Dominio
         public Entrenador() { Persona persona = new Persona(); }
 
 
-        public Usuario usuario { get; set; }
+       // public Usuario usuario { get; set; }
 
     }
 }

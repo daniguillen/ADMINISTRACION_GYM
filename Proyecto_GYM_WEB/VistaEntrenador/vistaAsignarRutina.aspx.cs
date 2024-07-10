@@ -1,0 +1,42 @@
+﻿using ACCIONES;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Proyecto_GYM_WEB.VistaEntrenador
+{
+    public partial class vistaAsignarRutina : System.Web.UI.Page
+    {
+        Controller datos = new Controller();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                string usuarioID= Request.QueryString["ID"];
+                lblUsuarioID.Text = usuarioID;
+
+                dgvRutinas.DataSource = datos.ListarSoloRutinas();
+                dgvRutinas.DataBind();
+            }
+        }
+
+        protected void btnvolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
+        }
+
+        protected void btnAsignarRutina_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int rutinaId = int.Parse(button.CommandArgument);
+            int usuarioID = int.Parse(lblUsuarioID.Text);
+
+            datos.AsignarRutinaAUsuario(rutinaId, usuarioID);
+            Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
+        }
+    }
+}

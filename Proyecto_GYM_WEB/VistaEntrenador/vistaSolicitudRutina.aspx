@@ -42,7 +42,8 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button Text="Crear Rutina" ID="btnAsignarRutina" runat="server" CommandArgument='<%#Eval("ID_SolicitudRutinas") %>' CssClass="btn btn-secondary" OnClick="btnAsignarRutina_Click" />
+                            <asp:Button Text="Crear Rutina" ID="btnAsignarRutina" runat="server" CommandArgument='<%#Eval("usuario.ID") %>' CssClass="btn btn-secondary" OnClick="btnAsignarRutina_Click" />
+                             <a href="vistaAsignarRutina.aspx?id=<%# Eval("usuario.ID") %>">🏋️ </a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

@@ -54,7 +54,7 @@
                         <td><%= ListaTablaRuti[i].NombreRutina %></td>
                         <td><%= ListaTablaRuti[i].DescripcionRutina %></td>
                         <td>
-                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>">✍ </a>
+                            <a href="vistaModificarRutina.aspx?id=<%= ListaTablaRuti[i].ID_Rutina %>">✍ </a>                          
                         </td>
                     </tr>
                     <%

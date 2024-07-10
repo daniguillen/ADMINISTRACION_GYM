@@ -149,6 +149,7 @@
     <Content Include="Scripts\scripts.js" />
     <Content Include="VistaEntrenador\ModificarEjercicio.aspx" />
     <Content Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx" />
+    <Content Include="VistaEntrenador\vistaAsignarRutina.aspx" />
     <Content Include="VistaEntrenador\vistaListarRutinas.aspx" />
     <Content Include="VistaEntrenador\VistaEntrenador-EntrenamientosABM.aspx" />
     <Content Include="VistaCliente\VistaPerfilUsuarioCliente.aspx" />
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="VistaEntrenador\PantallaPrincipalEntrenador.aspx.designer.cs">
       <DependentUpon>PantallaPrincipalEntrenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaAsignarRutina.aspx.cs">
+      <DependentUpon>vistaAsignarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaEntrenador\vistaAsignarRutina.aspx.designer.cs">
+      <DependentUpon>vistaAsignarRutina.aspx</DependentUpon>
     </Compile>
     <Compile Include="VistaEntrenador\vistaListarRutinas.aspx.cs">
       <DependentUpon>vistaListarRutinas.aspx</DependentUpon>
