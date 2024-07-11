@@ -1553,7 +1553,7 @@ namespace ACCIONES
 
             try
             {
-                datos.setearQuery("SELECT sr.ID_SolicitudRutina, p.ID, sr.ID_Entrenador, sr.Mensaje, sr.FechaSolicitud, sr.Estado, p.NOMBRE, p.APELLIDO  FROM SolicitudRutinas sr INNER JOIN USUARIO u ON u.ID = sr.ID_Usuario INNER JOIN Entrenador e ON e.ID_Entrenador = sr.ID_Entrenador INNER JOIN PERSONA p ON p.ID_USUARIO = u.ID");
+                datos.setearQuery("SELECT sr.ID_SolicitudRutina, p.ID, sr.ID_Entrenador, sr.Mensaje, sr.FechaSolicitud, sr.RutinaAsignada, sr.Estado, p.NOMBRE, p.APELLIDO  FROM SolicitudRutinas sr INNER JOIN USUARIO u ON u.ID = sr.ID_Usuario INNER JOIN Entrenador e ON e.ID_Entrenador = sr.ID_Entrenador INNER JOIN PERSONA p ON p.ID_USUARIO = u.ID WHERE sr.RutinaAsignada = 0");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -1568,9 +1568,10 @@ namespace ACCIONES
                     aux.entrenador.ID = datos.Lector.GetInt32(2);
                     aux.Mensaje = datos.Lector.GetString(3);
                     aux.FechaSolicitud = datos.Lector.GetDateTime(4);
-                    aux.Estado = datos.Lector.GetBoolean(5);
-                    aux.usuario.Nombre = datos.Lector.GetString(6);
-                    aux.usuario.Apellido = datos.Lector.GetString(7);
+                    aux.RutinaAsignada = datos.Lector.GetBoolean(5);
+                    aux.Estado = datos.Lector.GetBoolean(6);
+                    aux.usuario.Nombre = datos.Lector.GetString(7);
+                    aux.usuario.Apellido = datos.Lector.GetString(8);
                     
                     ListaSolicitudes.Add(aux);
                 }
@@ -1604,7 +1605,7 @@ namespace ACCIONES
                     rutina.descripcion = datos.Lector.GetString(2);
                     rutina.personal = datos.Lector.GetBoolean(3);
                     rutina.estado = datos.Lector.GetBoolean(4);
-
+                    
                     aux.Add(rutina);
                 }
                 return aux;
@@ -1637,13 +1638,25 @@ namespace ACCIONES
                 datos.cerrarConexion();
             }
         }
-        //Metodo para listar las rutinas con sus ejercicios
 
-        //Creo el metodo para realizar la modificación de la rutina
-
-        //Modificar Rutina
-
-
+        public void SolicitudYaAsignada(int rutinaYaAsignada)
+        {
+            try
+            {
+                datos.setearQuery("UPDATE SolicitudRutinas SET RutinaAsignada = 1 WHERE ID_SolicitudRutina =@ID_SolicitudRutina ");
+                datos.setearParametro("ID_SolicitudRutina", rutinaYaAsignada);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+      
 
 
     }

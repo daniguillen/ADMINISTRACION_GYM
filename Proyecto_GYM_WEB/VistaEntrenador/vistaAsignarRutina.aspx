@@ -22,6 +22,9 @@
      </div>
      <h2 style="color: white">ASIGNACION DE RUTINA</h2>
          <asp:Label ID="lblUsuarioID" runat="server" Text="" Visible="false"></asp:Label>
+         <asp:Label ID="lblAsignarRutinaID" runat="server" Text="" Visible="false"></asp:Label>
+
+
      <div class="table-responsive mx-auto">
          <asp:GridView runat="server" ID="dgvRutinas" CssClass="table table-striped table-bordered table-dark" AutoGenerateColumns="false">
              <Columns>

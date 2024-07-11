@@ -18,5 +18,7 @@ namespace Dominio
         public DateTime FechaSolicitud { get; set; }
 
         public bool Estado { get; set; }
+
+        public bool RutinaAsignada { get; set; }
     }
 }

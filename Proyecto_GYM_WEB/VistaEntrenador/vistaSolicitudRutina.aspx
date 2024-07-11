@@ -26,7 +26,7 @@
             <asp:GridView runat="server" ID="dgvSolicitudes" CssClass="table table-striped table-bordered table-dark" AutoGenerateColumns="false">
                 <Columns>
 
-                    <asp:BoundField HeaderText="Solicitud" DataField="ID_SolicitudRutinas" />
+                    <asp:BoundField HeaderText="Solicitud Nro" DataField="ID_SolicitudRutinas" />
                     <asp:TemplateField HeaderText="ID usuario">
                         <ItemTemplate>
                             <%#Eval ("usuario.ID") %>
@@ -39,11 +39,11 @@
                     </asp:TemplateField>
                     <asp:BoundField HeaderText="Comentarios" DataField="Mensaje" />
                     <asp:BoundField HeaderText="Fecha" DataField="FechaSolicitud" />
-
+                    <asp:BoundField HeaderText="RutiAsignada0" DataField="RutinaAsignada" />
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button Text="Crear Rutina" ID="btnAsignarRutina" runat="server" CommandArgument='<%#Eval("usuario.ID") %>' CssClass="btn btn-secondary" OnClick="btnAsignarRutina_Click" />
-                             <a href="vistaAsignarRutina.aspx?id=<%# Eval("usuario.ID") %>">🏋️ </a>
+                            <asp:Button Text="Crear Rutina" ID="btnCrearRutina" runat="server" CommandArgument='<%#Eval("usuario.ID") %>' CssClass="btn btn-secondary" OnClick="btnCrearRutina_Click" />
+                             <a href="vistaAsignarRutina.aspx?id=<%# Eval("ID_SolicitudRutinas") + "&userid=" + Eval("usuario.ID") %>">🏋️ </a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -81,7 +81,7 @@
     </div>
 
     <script> 
-        function openModalRutiAsignada() {
+        function openModalCrearRutina() {
             console.log("entro al modal");
             var modal = document.getElementById('CrearRutinaAsignada');
             modal.style.display = 'block';

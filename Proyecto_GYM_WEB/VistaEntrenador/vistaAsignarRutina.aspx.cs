@@ -1,6 +1,7 @@
 ﻿using ACCIONES;
 using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,8 +17,10 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
         {
             if(!IsPostBack)
             {
-                string usuarioID= Request.QueryString["ID"];
+                string usuarioID= Request.QueryString["userid"];
+                string rutinaAsignadaID = Request.QueryString["id"];
                 lblUsuarioID.Text = usuarioID;
+                lblAsignarRutinaID.Text = rutinaAsignadaID;
 
                 dgvRutinas.DataSource = datos.ListarSoloRutinas();
                 dgvRutinas.DataBind();
@@ -34,8 +37,11 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             Button button = (Button)sender;
             int rutinaId = int.Parse(button.CommandArgument);
             int usuarioID = int.Parse(lblUsuarioID.Text);
+            int rutinaAsignadaID = int.Parse(lblAsignarRutinaID.Text);
 
             datos.AsignarRutinaAUsuario(rutinaId, usuarioID);
+            datos.SolicitudYaAsignada(rutinaAsignadaID);
+
             Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
         }
     }

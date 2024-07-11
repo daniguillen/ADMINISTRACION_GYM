@@ -30,9 +30,9 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             Response.Redirect("vistaSolicitudRutina.aspx", false);
         }
 
-        protected void btnAsignarRutina_Click(object sender, EventArgs e)
+        protected void btnCrearRutina_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModalRutiAsignada();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "openModalCrearRutina();", true);
         }
 
         protected void btnAgregarRutinaSolicitada_Click(object sender, EventArgs e)
