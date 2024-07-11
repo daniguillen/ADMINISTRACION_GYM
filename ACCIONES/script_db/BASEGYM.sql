@@ -121,6 +121,15 @@ create table Mensajes(
     FechaMensaje DATETIME DEFAULT GETDATE() NOT NULL,
 );
 
+CREATE TABLE SolicitudRutinas(
+ID_SolicitudRutina INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+ID_Usuario INT FOREIGN KEY REFERENCES USUARIO(ID),
+ID_Entrenador INT FOREIGN KEY REFERENCES Entrenador(ID_Entrenador),
+Mensaje VARCHAR(300),
+FechaSolicitud DATETIME DEFAULT GETDATE() NOT NULL,
+Estado BIT NOT NULL DEFAULT 1,
+RutinaAsignada BIT NOT NULL DEFAULT 0,
+);
 
 -- Insertar valores en NIVEL
 
@@ -345,6 +354,14 @@ VALUES('Pecho', 'Rutina enfocada en ejercicios de pecho', 0, 1),
 ('Hombros', 'Rutina enfocada en ejercicios de hombros', 0, 1),
 ('Abdomen', 'Rutina enfocada en ejercicios de abdomen', 0, 1);
 GO
+
+INSERT INTO SolicitudRutinas (ID_Usuario, ID_Entrenador, Mensaje, FechaSolicitud, Estado,RutinaAsignada)
+VALUES 
+(1, 1, 'Necesito una rutina para mejorar mi fuerza.', GETDATE(), 1,0),
+(2, 2, 'Quisiera una rutina personalizada para bajar de peso.', GETDATE(), 1,0),
+(3, 3, 'Me gustaría una rutina que se enfoque en cardio.', GETDATE(), 1,0),
+(4, 4, 'Solicito una rutina para ganar masa muscular.', GETDATE(), 1,0),
+(5, 5, 'Necesito una rutina específica de enfoque en piernas.', GETDATE(), 1,0);
 
 INSERT INTO RUTINA_EJERCICIO (ID_RUTINA,ID_DIA, ID_EJERCICIO, HORARIO)
 VALUES

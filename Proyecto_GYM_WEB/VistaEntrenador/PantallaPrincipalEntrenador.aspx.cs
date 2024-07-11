@@ -21,12 +21,22 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             }
             set { Session["ListaEjercicios"] = value; }
         }
+        public int rutinasSolicitadas = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-
+                List<SolicitudRutinas> listaSolicitudRutina = new List<SolicitudRutinas> ();
                 if (!IsPostBack)
+                listaSolicitudRutina = objController.Listar_Solicitudes();
+
+                foreach(var item  in listaSolicitudRutina)
+                {
+                    if(item.Estado)
+                    {
+                        rutinasSolicitadas++;
+                    }
+                }
                 {
 
                     if (Session["Entrenador"] != null)

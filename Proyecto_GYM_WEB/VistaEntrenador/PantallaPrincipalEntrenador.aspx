@@ -87,6 +87,7 @@
                 <div class="panel">
                     <h5 class="text-white">Solicitudes</h5>
                     <p class="text-dark font-weight-bold">Ver solicitudes, armar rutinas personalizadas</p>
+                    <h2 class="text-white"><%=rutinasSolicitadas %></h2>
                     <asp:Button ID="btnSolicitudes" runat="server" Text="Tienes Mensajes" CssClass="btn btn-primary" OnClick="btnSolicitudes_Click" />
                 </div>
             </div>
