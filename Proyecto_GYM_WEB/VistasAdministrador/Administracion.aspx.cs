@@ -115,7 +115,8 @@ namespace Proyecto_GYM_WEB.VistasAministrador
             list= controller.historiaPorDNI(int.Parse(TxtDNI.Text));
             if (list.Count > 0) {
                 Session["Historial"] = list;
-                Response.Redirect("Historial.aspx");
+                //  Response.Redirect("Historial.aspx");
+                Response.Redirect("AprobarAptoFisico.aspx");
             }
         }
         protected void Pagar(object sender, EventArgs e) {

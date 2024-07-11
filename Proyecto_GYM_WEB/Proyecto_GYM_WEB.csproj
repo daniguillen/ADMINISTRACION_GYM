@@ -220,6 +220,7 @@
     <Content Include="VistasAdministrador\AdministradorGeneral.aspx" />
     <Content Include="VistaCliente\VistaUsuarioCliente.aspx" />
     <Content Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx" />
+    <Content Include="VistasAdministrador\AprobarAptoFisico.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="VistaCliente\Vista_Detalle_Ejericios_Clientes.aspx.designer.cs">
       <DependentUpon>Vista_Detalle_Ejericios_Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistasAdministrador\AprobarAptoFisico.aspx.cs">
+      <DependentUpon>AprobarAptoFisico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistasAdministrador\AprobarAptoFisico.aspx.designer.cs">
+      <DependentUpon>AprobarAptoFisico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
