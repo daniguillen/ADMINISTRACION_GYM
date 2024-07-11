@@ -1,4 +1,5 @@
 ﻿using ACCIONES;
+using Dominio;
 using System;
 using System.Collections.Generic;
 using System.EnterpriseServices;
@@ -43,6 +44,14 @@ namespace Proyecto_GYM_WEB.VistaEntrenador
             datos.SolicitudYaAsignada(rutinaAsignadaID);
 
             Response.Redirect("PantallaPrincipalEntrenador.aspx", false);
+        }
+
+        protected void TxtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            List<Rutina> listaSolicitudesRutinas = datos.ListarSoloRutinas();
+            List<Rutina> listaSolicitudesFiltrada = listaSolicitudesRutinas.FindAll(x => x.nombre.ToUpper().Contains(TxtBusqueda.Text.ToUpper()));
+            dgvRutinas.DataSource = listaSolicitudesFiltrada;
+            dgvRutinas.DataBind();
         }
     }
 }

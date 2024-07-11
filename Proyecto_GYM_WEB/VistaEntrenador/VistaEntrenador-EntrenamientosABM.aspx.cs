@@ -82,7 +82,6 @@ namespace Proyecto_GYM_WEB
                 if (ejerciciosPorGrupo.ContainsKey(grupoMuscularId))
                 {
                     ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='ModificarEjercicio.aspx?id={ListaEjercicios[j].ID}' class='{linkClass}'>{ListaEjercicios[j].Nombre}</a>");
-                    //ejerciciosPorGrupo[grupoMuscularId].Add($"<a href='#' class='{linkClass}' data-id='{ListaEjercicios[j].ID}'>{ListaEjercicios[j].Nombre}</a>");
                 }
             }
 
@@ -104,7 +103,6 @@ namespace Proyecto_GYM_WEB
                 }
                 ejercicio += "</tr>";
             }
-            //string styloTabla= "class="
             string tablaCompleta = $"<table class='{tableClass}'>" + musculos + ejercicio + "</table>";
 
             myLiteralControl.Text = tablaCompleta;
@@ -227,12 +225,6 @@ namespace Proyecto_GYM_WEB
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("VistaEntrenador-EntrenamientosABM.aspx", false);
-        }
-
-        protected void btnModificarEjercicio_Click(object sender, EventArgs e)
-        {
-        }
-
-     
+        } 
     }
 }
